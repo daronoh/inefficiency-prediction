@@ -74,22 +74,58 @@ pip install -r requirements.txt
 
 ## How to Run
 
-## 1) Build base data tables + orderbook snapshots
-Open and run [data-pipeline/data_loader.ipynb](data-pipeline/data_loader.ipynb) top-to-bottom.
+## 1) Build base data tables + orderbook snapshots (script)
+Run:
 
-This notebook:
-- Reads markets with [`src.data_loader.read_market_to_df`](src/data_loader.py)
-- Reads token rows with [`src.data_loader.read_token_to_df`](src/data_loader.py)
-- Pulls orderbook snapshots and saves per-token parquet files (under `data/orderbook/`)
+```bash
+python .\data-pipeline\run_data_loader.py
+```
 
-## 2) Build token feature parquet files
-Open and run [data-pipeline/feature.ipynb](data-pipeline/feature.ipynb) top-to-bottom.
+What it does:
+- Reads `data/polymarket_markets_1y.jsonl`
+- Builds and writes:
+  - `data/processed/markets.parquet`
+  - `data/processed/tokens.parquet`
+- Filters top markets (default: top 70 by volume, end date after `2026-01-01`)
+- Writes filtered token IDs to:
+  - `data/processed/70_markets_token_ids.parquet`
+- Downloads orderbook snapshots per token to:
+  - `data/orderbook/ob_<token_id>.parquet`
 
-This notebook:
-- Loads relevant token IDs
-- Iterates over `data/orderbook/ob_*.parquet`
-- Calls [`src.features.build_token_feature_table_from_parquet`](src/features.py)
-- Writes `feat_<token_id>.parquet` under `data/processed/orderbook/`
+Useful options:
+```bash
+python .\data-pipeline\run_data_loader.py --skip-download
+python .\data-pipeline\run_data_loader.py --top-markets 100 --max-concurrent 12
+python .\data-pipeline\run_data_loader.py --start-date 2025-10-14 --end-date 2026-03-31
+```
+
+## 2) Build token feature parquet files (script)
+Run:
+
+```bash
+python .\data-pipeline\run_feature_pipeline.py
+```
+
+What it does:
+- Reads:
+  - `data/orderbook/ob_<token_id>.parquet`
+  - `data/processed/70_markets_token_ids.parquet`
+  - `data/processed/tokens.parquet`
+- Builds per-token feature files:
+  - `data/processed/orderbook/feat_<token_id>.parquet`
+
+Useful options:
+```bash
+python .\data-pipeline\run_feature_pipeline.py --depth-n 5
+python .\data-pipeline\run_feature_pipeline.py --process-all-files
+```
+
+## Optional: Notebook workflow
+You can still run:
+- `data-pipeline/data_loader.ipynb`
+- `data-pipeline/feature.ipynb`
+
+The scripts above are CLI equivalents of those notebooks.
 
 ---
 
