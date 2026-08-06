@@ -140,15 +140,15 @@ def attach_token_metadata(
 ) -> pd.DataFrame:
     # NOTE (lookahead): `closed_time` (realised resolution time) and `volume` /
     # `volume_clob` (lifetime totals as of the metadata dump) are deliberately
-    # excluded — none of them are knowable at snapshot time.
+    # excluded — none of them are knowable at snapshot time. `fee_decimal` is
+    # also excluded: the gamma `fee` field is absent on modern markets (all-NaN
+    # here); fee rates live in data/processed/fee_schedule.parquet instead.
     if metadata_cols is None:
         metadata_cols = [
             "token_id",
             "market_id",
             "outcome_index",
-            "outcome",
             "end_date",
-            "fee_decimal",
             "neg_risk",
         ]
 

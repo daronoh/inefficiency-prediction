@@ -98,6 +98,28 @@ pip install -r requirements.txt
   aligned snapshots). Intra-market `BUY_YES + BUY_NO < 1` therefore cannot occur except
   as capture-desync noise; inefficiency labels must be constructed **across** markets
   (negRisk event groups, logically related markets).
+- **Time-to-expiry semantics:** 11.4% of snapshot rows fall *after* the scheduled
+  `end_date` (markets trade until actual resolution), so `time_to_expiry_hours` is
+  negative there and `log_time_to_expiry_hours` clips those rows to 0. Conversely some
+  markets resolve months before `end_date` (long-dated futures), so the feature can
+  greatly overstate remaining life. Both are inherent to using only ex-ante information.
+- **Availability clock quirks:** ~0.12% of rows have `indexed_at_ms` earlier than
+  `snapshot_timestamp_ms` (upstream clock skew), and indexing lag can reach ~33 min.
+  Latency-sensitive evaluation should treat `indexed_at` as the data-available clock
+  and be robust to these outliers.
+- **negRisk columns:** the per-snapshot `orderbook_neg_risk` feed value flaps to False
+  on a minority of snapshots for some negRisk markets; the metadata `neg_risk` column
+  (from gamma) is authoritative.
+- **Pair-panel validity flags:** `valid_pair_{2,5,10,30}s` mean both sides are *fresh*,
+  not *tradeable* — additionally filter on `flag_no_bids` / `flag_no_asks` /
+  `flag_crossed_book` per side before computing labels.
+- **Fee status:** the per-market in-sample fee authority is gamma's `feesEnabled`
+  (all 70 selected markets: **fee-free for their entire sampled life** — the 2026
+  category fee rollout applied to serial 15-minute crypto markets first and reached
+  other categories only after this sample ends). The regime table in
+  `build_fee_schedule.py` provides category-level *counterfactual current* rates;
+  `clob_base_fee` from the live endpoint is retroactive current config, not
+  historical fee state.
 
 ---
 

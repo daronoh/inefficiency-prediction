@@ -44,6 +44,14 @@ def main():
     event_dir.mkdir(parents=True, exist_ok=True)
     grid_dir.mkdir(parents=True, exist_ok=True)
 
+    # Remove previous outputs so a market that fails/skips on this run cannot
+    # silently keep a stale panel from an earlier run.
+    stale = list(event_dir.glob("pair_*.parquet")) + list(grid_dir.glob("pair_*.parquet"))
+    for p in stale:
+        p.unlink()
+    if stale:
+        print(f"Cleared {len(stale)} existing panel files")
+
     relevant_token_ids = set(
         pd.read_parquet(args.filtered_tokens_path)["token_id"].astype(str)
     )

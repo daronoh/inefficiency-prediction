@@ -12,8 +12,14 @@ computed after aligning both books in time. This module builds, per market:
 Staleness is never silently capped here: rows carry `y0_staleness_s` /
 `y1_staleness_s`, and validity flags are provided at several caps so downstream
 label code can run sensitivity analysis without rebuilding the panel.
+
+NOTE: `valid_pair_*` means both sides are *fresh*, not that both books are
+*tradeable* — a fresh snapshot can still be one-sided or crossed. Downstream
+code must additionally filter on the per-side `flag_no_bids` / `flag_no_asks` /
+`flag_crossed_book` columns.
 """
 
+from datetime import timedelta
 from pathlib import Path
 
 import polars as pl
@@ -125,8 +131,13 @@ def build_pair_panels(
         pl.lit(market_id).alias("market_id")
     )
 
-    # Regular grid over the overlap of both sides' coverage.
+    # Regular grid over the overlap of both sides' coverage. Ceil the start to
+    # the next whole minute so grid timestamps are wall-clock aligned and
+    # therefore joinable across markets (ceiling, not flooring, keeps every grid
+    # time inside both sides' coverage so backward as-of matches always exist).
     start = max(y0["y0_snapshot_time"].min(), y1["y1_snapshot_time"].min())
+    if start.second or start.microsecond:
+        start = start.replace(second=0, microsecond=0) + timedelta(minutes=1)
     end = min(y0["y0_snapshot_time"].max(), y1["y1_snapshot_time"].max())
     if start >= end:
         grid_panel = None

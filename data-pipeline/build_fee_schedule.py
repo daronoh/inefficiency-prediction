@@ -14,6 +14,7 @@ re-verified before the thesis quotes them.
 
 import argparse
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -36,8 +37,14 @@ CLOB_FEE_URL = "https://clob.polymarket.com/fee-rate"
 
 # category bucket -> list of (effective_from ISO date, feeRate); intervals apply
 # from that date until the next entry. Categories absent here are fee-free.
+#
+# SCOPE CAVEAT (verified 2026-08 against gamma `feesEnabled` + live CLOB rates):
+# the crypto rollout applied to SERIAL 15-minute up/down markets, not long-dated
+# price-target markets — every sampled crypto market has feesEnabled=false and
+# base_fee=0. The regime table is therefore a category-level COUNTERFACTUAL;
+# per-market in-sample fee status must come from `fees_enabled_gamma`.
 FEE_REGIME = {
-    "crypto": [("2026-01-01", 0.07)],           # all crypto markets (~Jan 2026; 15-min crypto had taker fees from ~Oct 2025)
+    "crypto": [("2026-01-01", 0.07)],           # 15-min serial crypto from ~Oct 2025; scope caveat above
     "sports": [("2026-02-18", 0.03), ("2026-07-01", 0.05)],  # hike date approximate (Jul 2026)
     "economics": [("2026-03-30", 0.05)],
     "culture": [("2026-03-30", 0.05)],
@@ -53,7 +60,7 @@ FEE_REGIME = {
 # Keyword rules mapping raw event categories/titles to fee buckets. Anything
 # unmatched comes out as "unknown" and must be classified by hand.
 BUCKET_KEYWORDS = [
-    ("crypto", ["crypto", "bitcoin", "btc", "ethereum", "eth ", "solana", "xrp", "dogecoin",
+    ("crypto", ["crypto", "bitcoin", "btc", "ethereum", "megaeth", "solana", "xrp", "dogecoin",
                 "market cap", "fdv", "launch a token"]),
     ("sports", ["sport", "nba", "nfl", "nhl", "mlb", "epl", "premier league", "ufc", "soccer",
                 "football", "basketball", "hockey", "baseball", "tennis", "golf", "f1",
@@ -63,8 +70,9 @@ BUCKET_KEYWORDS = [
                      "maduro", "cartel", "khamenei"]),
     ("politics", ["politic", "election", "president", "senate", "congress", "mayor", "primary",
                   "shutdown"]),
-    ("finance", ["finance", "fed ", "interest rate", "stock", "s&p", "nasdaq", "ipo"]),
-    ("economics", ["econom", "inflation", "cpi", "gdp", "jobs report", "unemployment"]),
+    ("economics", ["econom", "inflation", "cpi", "gdp", "jobs report", "unemployment",
+                   "fed ", "fomc"]),
+    ("finance", ["finance", "interest rate", "stock", "s&p", "nasdaq", "ipo"]),
     ("tech", ["tech", " ai ", "openai", "spacex launch", "iphone", "tesla", "self driving"]),
     ("culture", ["culture", "movie", "oscar", "grammy", "music", "celebrity", "box office",
                  "stranger things", "episode released"]),
@@ -72,17 +80,27 @@ BUCKET_KEYWORDS = [
 ]
 
 
+def _kw_match(kw: str, blob: str) -> bool:
+    # Purely alphabetic keywords anchor at a word start so e.g. "war" cannot
+    # fire inside "award"; phrases/prefixes with spaces or symbols stay as
+    # plain substring matches. This is still a heuristic — manually review the
+    # printed bucket assignments whenever the market sample changes.
+    if kw.isalpha():
+        return re.search(rf"\b{re.escape(kw)}", blob) is not None
+    return kw in blob
+
+
 def classify_bucket(*texts: str) -> str:
     blob = " ".join(t for t in texts if t).lower()
     for bucket, kws in BUCKET_KEYWORDS:
-        if any(kw in blob for kw in kws):
+        if any(_kw_match(kw, blob) for kw in kws):
             return bucket
     return "unknown"
 
 
 def fee_rate_at(bucket: str, ts: pd.Timestamp) -> float:
     rate = 0.0
-    for start, r in FEE_REGIME.get(bucket, []):
+    for start, r in sorted(FEE_REGIME.get(bucket, [])):
         if ts >= pd.Timestamp(start, tz="UTC"):
             rate = r
     return rate
@@ -113,7 +131,12 @@ def extract_event_metadata(jsonl_path: Path, market_ids: set) -> dict:
                 "event_slug": ev.get("slug"),
                 "event_category_raw": ev.get("category"),
                 "event_tags": json.dumps([t.get("label") for t in (ev.get("tags") or []) if isinstance(t, dict)]),
+                # `fee` only exists on legacy (~early-2025) records as a constant
+                # 2e16 wei (= 0.02); `feesEnabled` is the live per-market flag and
+                # the in-sample fee authority.
                 "gamma_fee_raw": market.get("fee"),
+                "fees_enabled_gamma": market.get("feesEnabled"),
+                "closed_time": market.get("closedTime"),
             }
             if len(out) == len(market_ids):
                 break
@@ -173,22 +196,44 @@ def main():
         live = None
         if not args.skip_live:
             live = fetch_live_fee_rate(rep_token.get(mid, ""))
-        starts = FEE_REGIME.get(bucket, [])
+        starts = sorted(FEE_REGIME.get(bucket, []))
+
+        # Evaluate the regime at each market's own end of trading (its close,
+        # capped at the sample end) — a market that died in October must not be
+        # labelled fee-bearing because its *category* got fees months later.
+        closed = pd.to_datetime(m.get("closed_time"), utc=True, errors="coerce")
+        market_end = min(closed, sample_end) if pd.notna(closed) else sample_end
+        regime_rate_at_market_end = fee_rate_at(bucket, market_end)
+
+        # In-sample authority is gamma's per-market feesEnabled flag (present on
+        # every record); the regime table is the category-level counterfactual.
+        fees_enabled = m.get("fees_enabled_gamma")
+        if fees_enabled is None:
+            fee_free_in_sample = regime_rate_at_market_end == 0.0
+        else:
+            fee_free_in_sample = not fees_enabled
+
         rows.append({
             "market_id": mid,
             "question": m.get("question"),
             "event_title": m.get("event_title"),
+            "event_slug": m.get("event_slug"),
             "event_category_raw": m.get("event_category_raw"),
             "event_tags": m.get("event_tags"),
             "category_bucket": bucket,
-            "gamma_fee_raw": str(m.get("gamma_fee_raw")),
+            "gamma_fee_raw": m.get("gamma_fee_raw"),
+            "fees_enabled_gamma": fees_enabled,
+            "closed_time": m.get("closed_time"),
             "fee_rate_current": fee_rate_at(bucket, now),
+            "fee_rate_at_market_end": regime_rate_at_market_end,
             "fee_rate_at_sample_end": fee_rate_at(bucket, sample_end),
-            "fee_free_in_sample": fee_rate_at(bucket, sample_end) == 0.0,
+            "fee_free_in_sample": fee_free_in_sample,
             "fee_start_date": starts[0][0] if starts else None,
             "clob_fee_rate_live": json.dumps(live) if live is not None else None,
-            # NOTE: base_fee scale vs the docs' feeRate is unverified (closed
-            # markets return their final fee state); treat as raw evidence.
+            # NOTE: base_fee reflects RETROACTIVE current config (markets closed
+            # before their category had fees can still return 1000, apparently
+            # inherited from parent events that outlived fee activation); its
+            # scale vs the docs' feeRate is unreconciled. Raw evidence only.
             "clob_base_fee": (live or {}).get("base_fee"),
         })
 

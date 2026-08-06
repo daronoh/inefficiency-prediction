@@ -6,6 +6,37 @@ Assumes a ~14-week semester (Aug–Nov 2026) ending in thesis submission.*
 
 ---
 
+## STATUS UPDATE (2026-08-07) — Week 1–2 executed; three findings change the plan
+
+Week 1–2 items (§2) are **done** (repo/leakage fixes, pair panels, fee schedule; all
+adversarially verified against the full 3.3M-row dataset). Three empirical findings:
+
+1. **The intra-market YES+NO label is structurally empty.** The two books of a binary
+   market are mirrored views of one order pool: `ask_NO = 1 − bid_YES` holds exactly in
+   ~99.999% of aligned snapshots, so `sum of asks = 1 + spread ≥ 1` by construction.
+   Only ~63 of 1.66M aligned rows violate it (capture desync, not opportunities).
+   **Week 2–4 labels must therefore target cross-market structure from day one**:
+   negRisk event groups (subset-NO / full-cover-YES rebalancing) and logically related
+   markets. The sample supports this: 33/70 markets are negRisk and 40/70 belong to 8
+   multi-market events (Pro Football Champion ×18, Fed ×4, UCL winner ×4, Iran ×4, …) —
+   though group coverage is partial, so consider downloading the missing sibling
+   markets of these events (a small, targeted expansion).
+2. **The whole sample is fee-free: 70/70** (gamma `feesEnabled=false` for every market
+   over its sampled life; the Jan-2026 crypto fees hit *serial 15-minute* markets only,
+   which the sample doesn't contain). So §4's "historical fees" layer is exactly zero,
+   and the fee analysis is purely counterfactual-current — state this explicitly in the
+   thesis, and treat the fee-bearing-regime backtest as the forward-looking design.
+3. **The mirrored-book fact strengthens the fee argument**: at the coarsest common
+   tick (1¢) the mechanical minimum of `sum of asks` is $1.01, so the naive taker
+   strategy needs a *cross-book desync* just to reach break-even before fees — another
+   structural reason the professor's critique holds.
+
+§4's centrepiece (cost-aware net-executable-profit labels with the attrition table)
+stands, but computed on **negRisk group panels** rather than binary-pair panels; the
+binary pair panels remain useful as the alignment/QA layer and for spread analytics.
+
+---
+
 ## 1. Where the project stands
 
 **Done:**
