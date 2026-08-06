@@ -30,7 +30,9 @@ def parse_args():
     parser.add_argument("--raw-orderbook-dir", type=Path, default=ORDERBOOK_DIR)
     parser.add_argument("--feat-orderbook-dir", type=Path, default=PROCESSED_DIR / "orderbook")
     parser.add_argument("--depth-n", type=int, default=3)
-    parser.add_argument("--drop-json-cols", action="store_true", default=True)
+    # JSON book columns are dropped by default; --keep-json-cols retains them
+    # (the old --drop-json-cols flag was inert: store_true with default=True).
+    parser.add_argument("--keep-json-cols", action="store_true")
     parser.add_argument("--process-all-files", action="store_true", help="Ignore filtered token list and process all ob_*.parquet files.")
     return parser.parse_args()
 
@@ -74,7 +76,7 @@ def main():
                 input_path=file_path,
                 output_path=output_path,
                 depth_n=args.depth_n,
-                drop_json_cols=args.drop_json_cols,
+                drop_json_cols=not args.keep_json_cols,
                 token_meta_df=tokens_df,
             )
             print(f"Saved {len(feat_df):,} rows -> {output_path.name}")

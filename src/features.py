@@ -88,6 +88,14 @@ def extract_snapshot_features(bids_json, asks_json, depth_n=3):
         mid_price = (best_bid + best_ask) / 2.0
         spread = best_ask - best_bid
 
+    # Data-quality flags: downstream label/panel code must be able to tell a real
+    # quote from a degenerate book state instead of silently consuming NaNs.
+    flag_no_bids = len(bids) == 0
+    flag_no_asks = len(asks) == 0
+    flag_crossed_book = (
+        not flag_no_bids and not flag_no_asks and best_bid > best_ask
+    )
+
     bid_depth_n = get_top_n_bid_depth(bids, n=depth_n)
     ask_depth_n = get_top_n_ask_depth(asks, n=depth_n)
 
@@ -118,6 +126,9 @@ def extract_snapshot_features(bids_json, asks_json, depth_n=3):
         "imbalance_total": imbalance_total,
         "n_bid_levels": len(bids),
         "n_ask_levels": len(asks),
+        "flag_no_bids": flag_no_bids,
+        "flag_no_asks": flag_no_asks,
+        "flag_crossed_book": flag_crossed_book,
     }
 
 
@@ -127,6 +138,9 @@ def attach_token_metadata(
     metadata_cols=None,
     add_time_features=True,
 ) -> pd.DataFrame:
+    # NOTE (lookahead): `closed_time` (realised resolution time) and `volume` /
+    # `volume_clob` (lifetime totals as of the metadata dump) are deliberately
+    # excluded — none of them are knowable at snapshot time.
     if metadata_cols is None:
         metadata_cols = [
             "token_id",
@@ -134,11 +148,8 @@ def attach_token_metadata(
             "outcome_index",
             "outcome",
             "end_date",
-            "closed_time",
             "fee_decimal",
             "neg_risk",
-            "volume",
-            "volume_clob",
         ]
 
     cols_to_use = [c for c in metadata_cols if c in token_meta_df.columns]
@@ -152,15 +163,12 @@ def attach_token_metadata(
 
     if add_time_features:
         out["snapshot_time"] = pd.to_datetime(out["snapshot_time"], utc=True, errors="coerce")
-        out["closed_time"] = pd.to_datetime(out.get("closed_time"), utc=True, errors="coerce")
         out["end_date"] = pd.to_datetime(out.get("end_date"), utc=True, errors="coerce")
 
-        out["effective_end_time"] = out["closed_time"].where(
-            out["closed_time"].notna(),
-            out["end_date"]
-        )
-
-        delta = out["effective_end_time"] - out["snapshot_time"]
+        # Time to expiry uses the SCHEDULED end date only. The realised
+        # `closed_time` is not knowable at snapshot time and using it leaks the
+        # actual resolution moment into the features.
+        delta = out["end_date"] - out["snapshot_time"]
 
         out["time_to_expiry_hours"] = delta.dt.total_seconds() / 3600.0
         out["log_time_to_expiry_hours"] = np.log1p(
@@ -225,6 +233,15 @@ def build_token_feature_table_from_parquet(
 
     df = pd.read_parquet(input_path)
 
+    # Deduplicate snapshots: Dome pagination can return overlapping pages, and the
+    # same book timestamp can be re-indexed. Keep the latest-indexed row per
+    # (token, book timestamp).
+    df = (
+        df.sort_values(["snapshot_timestamp_ms", "indexed_at_ms"], kind="stable")
+        .drop_duplicates(subset=["token_id", "snapshot_timestamp_ms"], keep="last")
+        .reset_index(drop=True)
+    )
+
     rows = []
     for row in df.to_dict("records"):
         feats = extract_snapshot_features(
@@ -249,6 +266,8 @@ def build_token_feature_table_from_parquet(
     if token_meta_df is not None:
         feat_df = attach_token_metadata(feat_df, token_meta_df)
         feat_df = add_token_time_series_features(feat_df)
+        # `indexed_at_time`/`indexed_at_ms` are kept: they are the honest
+        # "data available at" clock for latency-sensitive evaluation.
         feat_df = feat_df.drop(
             columns=[
                 "market_hash",
@@ -257,7 +276,6 @@ def build_token_feature_table_from_parquet(
                 "prev_best_bid",
                 "prev_best_ask",
                 "prev_mid_price",
-                "indexed_at_time",
                 "outcome",
                 "end_date",
                 "closed_time",

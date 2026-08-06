@@ -8,9 +8,18 @@ Pipeline flow:
 1. Read market JSONL and create market/token tables.
 2. Download per-token orderbook snapshots to parquet.
 3. Compute snapshot + time-series features per token.
+4. Build market-level YES/NO pair panels (as-of-aligned complementary books).
+5. Build the per-market fee schedule (category buckets + dated fee regime + live CLOB rates).
 
-Core implementation lives in [src/data_loader.py](src/data_loader.py) and [src/features.py](src/features.py).  
-Execution/orchestration is in [data-pipeline/data_loader.ipynb](data-pipeline/data_loader.ipynb) and [data-pipeline/feature.ipynb](data-pipeline/feature.ipynb).
+Core implementation lives in [src/data_loader.py](src/data_loader.py), [src/features.py](src/features.py) and [src/pairs.py](src/pairs.py).  
+Execution/orchestration is in the `data-pipeline/` runner scripts (the notebooks mirror steps 1–3 but the scripts are canonical).
+
+### Environment variables
+
+- `DOME_API_KEY` (**required for orderbook download**): Dome API key. The key is no longer
+  committed; the previously committed key must be treated as leaked and rotated.
+- `DATA_ROOT` (optional): absolute path of the `data/` directory if it lives outside this
+  checkout (e.g. when running from a git worktree). Defaults to `<repo>/data`.
 
 ---
 
@@ -39,14 +48,14 @@ pip install -r requirements.txt
 **Writes**
 - `data/processed/markets.parquet`
 - `data/processed/tokens.parquet`
-- `data/orderbook/ob_<token_id>.parquet` (one orderbook snapshot table per token)
+- `data/raw_orderbook/ob_<token_id>.parquet` (one orderbook snapshot table per token)
 - `data/processed/70_markets_token_ids.parquet` (**user-filtered token list**; name/content depends on the user)
 
 ---
 
 ### `data-pipeline/feature.ipynb`
 **Reads**
-- `data/orderbook/ob_<token_id>.parquet`
+- `data/raw_orderbook/ob_<token_id>.parquet`
 - `data/processed/70_markets_token_ids.parquet` (same file that refers to the **user-filtered token list**)
 - (optionally) `data/processed/tokens.parquet` for metadata joins
 
@@ -64,11 +73,31 @@ pip install -r requirements.txt
 **Pipeline-generated intermediates**
 - `data/processed/markets.parquet`
 - `data/processed/tokens.parquet`
-- `data/orderbook/ob_<token_id>.parquet`
+- `data/raw_orderbook/ob_<token_id>.parquet`
 - `data/processed/70_markets_token_ids.parquet` (or equivalent user-defined filtered token-id file)
 
 **Final outputs**
-- `data/processed/orderbook/feat_<token_id>.parquet`
+- `data/processed/orderbook/feat_<token_id>.parquet` (per-token features)
+- `data/processed/pairs/event/pair_<market_id>.parquet` (event-grid YES/NO pair panel)
+- `data/processed/pairs/grid_1m/pair_<market_id>.parquet` (1-minute-grid pair panel)
+- `data/processed/fee_schedule.parquet` (per-market fee categories/rates)
+
+### Research-validity notes (changed 2026-08)
+
+- `time_to_expiry_hours` now uses the **scheduled** `end_date` only. The realised
+  `closed_time` is not knowable at snapshot time (lookahead) and is no longer used.
+- Lifetime `volume` / `volume_clob` are no longer attached as features (they are totals
+  as of the metadata dump, i.e. lookahead). Market *selection* still uses them — an
+  acknowledged ex-post selection limitation.
+- Feature tables keep `indexed_at_time` / `indexed_at_ms` (Dome ingestion clock) as the
+  honest "data available at" timestamps, carry data-quality flags
+  (`flag_no_bids`, `flag_no_asks`, `flag_crossed_book`), and deduplicate snapshots on
+  `(token_id, snapshot_timestamp_ms)` keeping the latest-indexed row.
+- **Mirror-book caveat:** the YES and NO books of one binary market are complementary
+  views of the same order pool (`ask_NO = 1 − bid_YES` holds exactly in ~99.999% of
+  aligned snapshots). Intra-market `BUY_YES + BUY_NO < 1` therefore cannot occur except
+  as capture-desync noise; inefficiency labels must be constructed **across** markets
+  (negRisk event groups, logically related markets).
 
 ---
 
@@ -90,7 +119,7 @@ What it does:
 - Writes filtered token IDs to:
   - `data/processed/70_markets_token_ids.parquet`
 - Downloads orderbook snapshots per token to:
-  - `data/orderbook/ob_<token_id>.parquet`
+  - `data/raw_orderbook/ob_<token_id>.parquet`
 
 Useful options:
 ```bash
@@ -108,7 +137,7 @@ python .\data-pipeline\run_feature_pipeline.py
 
 What it does:
 - Reads:
-  - `data/orderbook/ob_<token_id>.parquet`
+  - `data/raw_orderbook/ob_<token_id>.parquet`
   - `data/processed/70_markets_token_ids.parquet`
   - `data/processed/tokens.parquet`
 - Builds per-token feature files:
@@ -118,7 +147,35 @@ Useful options:
 ```bash
 python .\data-pipeline\run_feature_pipeline.py --depth-n 5
 python .\data-pipeline\run_feature_pipeline.py --process-all-files
+python .\data-pipeline\run_feature_pipeline.py --keep-json-cols
 ```
+
+## 3) Build market-level YES/NO pair panels
+
+```bash
+python .\data-pipeline\run_pair_panel.py
+```
+
+What it does:
+- As-of aligns each market's two outcome-token books (event grid = union of both sides'
+  update times, plus a regular 1-minute grid), with per-side staleness columns and
+  `valid_pair_{2,5,10,30}s` flags.
+- Adds pair-level quote-consistency columns: `sum_best_asks`, `sum_best_bids`,
+  `long_arb_gap` (= 1 − sum of asks), `short_arb_gap` (= sum of bids − 1).
+- Writes `data/processed/pairs/event/pair_<market_id>.parquet` and
+  `data/processed/pairs/grid_1m/pair_<market_id>.parquet`.
+
+## 4) Build the fee schedule
+
+```bash
+python .\data-pipeline\build_fee_schedule.py
+```
+
+What it does:
+- Scans the markets JSONL for the selected markets' event metadata, classifies each
+  market into a fee category bucket, applies the dated 2025–26 fee-rollout table, and
+  (best effort) queries `https://clob.polymarket.com/fee-rate` for live rates.
+- Writes `data/processed/fee_schedule.parquet`.
 
 ## Optional: Notebook workflow
 You can still run:
