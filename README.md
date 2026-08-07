@@ -187,6 +187,25 @@ What it does:
 - Writes `data/processed/pairs/event/pair_<market_id>.parquet` and
   `data/processed/pairs/grid_1m/pair_<market_id>.parquet`.
 
+## (Optional) Select the expanded event-level universe
+
+```bash
+python .\data-pipeline\select_event_universe.py
+```
+
+What it does:
+- Scans the markets JSONL for all markets alive in the Dome window and selects **complete
+  event groups** by stratum: `negrisk` (winner-take-all events → rebalancing-arb labels),
+  `ladder` (date/price ladders → monotone-implication labels), `serial` (fee-bearing
+  15-min/hourly crypto up-down slice), `control` (seeded random mid-volume events, for
+  measuring selection effects). Resolution is NOT required (labels are quote-based).
+- Writes `data/processed/event_universe.parquet` + combined and per-stratum token lists
+  (`universe_token_ids[_<stratum>].parquet`), prints a download-budget estimate, and
+  downloads nothing.
+- Then download in stages via
+  `python .\data-pipeline\run_data_loader.py --token-ids-path data\processed\universe_token_ids_negrisk.parquet`
+  (needs `DOME_API_KEY`).
+
 ## 4) Build the fee schedule
 
 ```bash

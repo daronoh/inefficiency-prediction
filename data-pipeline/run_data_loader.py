@@ -40,6 +40,12 @@ def parse_args():
     parser.add_argument("--end-date", type=str, default="2026-03-31")
     parser.add_argument("--max-concurrent", type=int, default=8)
     parser.add_argument("--skip-download", action="store_true")
+    parser.add_argument(
+        "--token-ids-path", type=Path, default=None,
+        help="Download orderbooks for this token_id parquet (e.g. the output of "
+             "select_event_universe.py) instead of running the built-in "
+             "top-N-by-volume market selection.",
+    )
     return parser.parse_args()
 
 
@@ -49,6 +55,25 @@ def main():
     args.raw_orderbook_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Using project root: {PROJECT_ROOT}")
+
+    if args.token_ids_path is not None:
+        relevant_token_ids = sorted(
+            set(pd.read_parquet(args.token_ids_path)["token_id"].astype(str))
+        )
+        print(f"Loaded {len(relevant_token_ids)} token ids from {args.token_ids_path}")
+        if args.skip_download:
+            print("Skipping orderbook download (--skip-download).")
+            return
+        asyncio.run(
+            extract_orderbook_from_ids_async(
+                token_ids=relevant_token_ids,
+                start_date=args.start_date,
+                end_date=args.end_date,
+                output_path=args.raw_orderbook_dir,
+                max_concurrent=args.max_concurrent,
+            )
+        )
+        return
 
     # 1) Markets table
     markets_df = read_market_to_df(args.market_jsonl)

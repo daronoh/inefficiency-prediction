@@ -218,6 +218,15 @@ Convert the screener into a strategy and evaluate net of *all* frictions:
 
 ## 9. Data expansion (parallel track, only if Weeks 1–4 go well)
 
+> **STATUS (2026-08-07): selector built and run** — `data-pipeline/select_event_universe.py`
+> selected 105 complete event groups + 752 serial crypto markets (2,227 markets / 4,454
+> tokens; est. ~9.5M snapshots likely, 70.8M worst case, ~2–16 GB): 50 negRisk events,
+> 30 ladders, 25 seeded controls, 3-day BTC/ETH serial slice. Token lists are staged
+> per stratum in `data/processed/universe_token_ids_<stratum>.parquet`; download order:
+> negrisk → ladder → control → serial. Requires `DOME_API_KEY` (rotate the old key
+> first). Selection uses lifetime volume only to cap the download universe — re-select
+> point-in-time within analyses and use the control stratum to quantify residual bias.
+
 Current sample = 70 closed, high-volume sports/mentions markets over 3.7 months → selection-biased and
 category-narrow. If time permits (Dome history starts 2025-10-14; budget API time):
 - Add **crypto** markets (fee-bearing since Jan 2026 — real in-sample fee regime!) and **geopolitics**
