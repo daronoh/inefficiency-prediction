@@ -75,6 +75,9 @@ def get_total_depth(levels):
 
 
 def extract_snapshot_features(bids_json, asks_json, depth_n=3):
+    '''
+    parses the bids/asks JSON of one snapshot into its features
+    '''
     bids = parse_orderbook_side(bids_json)
     asks = parse_orderbook_side(asks_json)
 
@@ -138,11 +141,10 @@ def attach_token_metadata(
     metadata_cols=None,
     add_time_features=True,
 ) -> pd.DataFrame:
-    # NOTE (lookahead): `closed_time` (realised resolution time) and `volume` /
-    # `volume_clob` (lifetime totals as of the metadata dump) are deliberately
-    # excluded — none of them are knowable at snapshot time. `fee_decimal` is
-    # also excluded: the gamma `fee` field is absent on modern markets (all-NaN
-    # here); fee rates live in data/processed/fee_schedule.parquet instead.
+    '''
+    merges static token metadata with the orderbook features
+    '''
+    # `fee_decimal` is excluded: fee rates live in data/processed/fee_schedule.parquet instead.
     if metadata_cols is None:
         metadata_cols = [
             "token_id",
@@ -179,6 +181,9 @@ def attach_token_metadata(
 
 
 def add_token_time_series_features(feat_df: pd.DataFrame) -> pd.DataFrame:
+    '''
+    adds one-lag deltas to see bid/ask/mid changes, and seconds since previous snapshot.
+    '''
     # Work on a copy so the original dataframe is not modified in place.
     out = feat_df.copy()
 

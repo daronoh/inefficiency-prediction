@@ -218,6 +218,29 @@ Convert the screener into a strategy and evaluate net of *all* frictions:
 
 ## 9. Data expansion (parallel track, only if Weeks 1–4 go well)
 
+> **DECISION (2026-08-08): the universe is FINAL as selected from the existing JSONL** —
+> no metadata re-scrape; the study window stays 2025-10-14 → 2026-02-04 and the fee
+> analysis is explicitly counterfactual (no in-sample fee transition). The optional
+> `data-pipeline/refresh_markets_jsonl.py` (Gamma keyset scraper, no API key needed)
+> exists unused if the extended-window diff-in-diff is ever wanted.
+>
+> **Download runbook** (needs `DOME_API_KEY` set; rotate the old leaked key first).
+> 88 pilot tokens are already on disk; `--skip-existing` skips them and makes every
+> command below resumable after interruption — just re-run it:
+> ```
+> python data-pipeline/run_data_loader.py --token-ids-path data/processed/universe_token_ids_negrisk.parquet --skip-existing
+> python data-pipeline/run_data_loader.py --token-ids-path data/processed/universe_token_ids_ladder.parquet --skip-existing
+> python data-pipeline/run_data_loader.py --token-ids-path data/processed/universe_token_ids_control.parquet --skip-existing
+> python data-pipeline/run_data_loader.py --token-ids-path data/processed/universe_token_ids_serial.parquet --skip-existing
+> ```
+> Then rebuild features and pairs over the expanded set:
+> ```
+> python data-pipeline/run_feature_pipeline.py --filtered-tokens-path data/processed/universe_token_ids.parquet
+> python data-pipeline/run_pair_panel.py --filtered-tokens-path data/processed/universe_token_ids.parquet
+> ```
+> `fee_schedule_universe.parquet` (per-market fee reference for all 2,227 markets) is
+> built independently of the downloads.
+>
 > **STATUS (2026-08-07): selector built and run** — `data-pipeline/select_event_universe.py`
 > selected 105 complete event groups + 752 serial crypto markets (2,227 markets / 4,454
 > tokens; est. ~9.5M snapshots likely, 70.8M worst case, ~2–16 GB): 50 negRisk events,

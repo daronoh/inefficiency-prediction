@@ -68,6 +68,9 @@ def safe_float(value):
 
 
 def read_market_to_df(market_path) -> pd.DataFrame:
+    '''
+    parses the markets JSONL into a clean 27-column table(one row per market).
+    '''
     # Create an empty list to collect market-level rows.
     market_rows = []
 
@@ -120,6 +123,9 @@ def read_market_to_df(market_path) -> pd.DataFrame:
     return markets_df
 
 def read_token_to_df(token_path) -> pd.DataFrame:
+    '''
+    parses the markets JSONL into a clean 27-column table(one row per outcome token).
+    '''
     market_token_rows = []
 
     with open(token_path, "r", encoding="utf-8") as f:
@@ -180,6 +186,9 @@ async def extract_orderbook_from_ids_async(
     max_concurrent=5,
     max_retries=6,
 ):
+    '''
+    downloads orderbook snapshots per token from Dome API
+    '''
     output_path = Path(output_path)
     dome_headers = _dome_headers()
 

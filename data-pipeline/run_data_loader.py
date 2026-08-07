@@ -46,7 +46,21 @@ def parse_args():
              "select_event_universe.py) instead of running the built-in "
              "top-N-by-volume market selection.",
     )
+    parser.add_argument(
+        "--skip-existing", action="store_true",
+        help="Skip tokens that already have an ob_<token_id>.parquet in the "
+             "output dir — makes interrupted downloads resumable and avoids "
+             "re-downloading pilot tokens.",
+    )
     return parser.parse_args()
+
+
+def _filter_existing(token_ids, orderbook_dir: Path):
+    existing = {p.stem.replace("ob_", "") for p in orderbook_dir.glob("ob_*.parquet")}
+    kept = [t for t in token_ids if t not in existing]
+    print(f"--skip-existing: {len(token_ids) - len(kept)} tokens already on disk, "
+          f"{len(kept)} to download")
+    return kept
 
 
 def main():
@@ -61,8 +75,11 @@ def main():
             set(pd.read_parquet(args.token_ids_path)["token_id"].astype(str))
         )
         print(f"Loaded {len(relevant_token_ids)} token ids from {args.token_ids_path}")
-        if args.skip_download:
-            print("Skipping orderbook download (--skip-download).")
+        if args.skip_existing:
+            relevant_token_ids = _filter_existing(relevant_token_ids, args.raw_orderbook_dir)
+        if args.skip_download or not relevant_token_ids:
+            print("Nothing to download." if not relevant_token_ids
+                  else "Skipping orderbook download (--skip-download).")
             return
         asyncio.run(
             extract_orderbook_from_ids_async(
@@ -108,8 +125,11 @@ def main():
     print(f"Saved token ID list ({len(relevant_token_ids)}): {args.filtered_tokens_path}")
 
     # 5) Download orderbooks
-    if args.skip_download:
-        print("Skipping orderbook download (--skip-download).")
+    if args.skip_existing:
+        relevant_token_ids = _filter_existing(relevant_token_ids, args.raw_orderbook_dir)
+    if args.skip_download or not relevant_token_ids:
+        print("Nothing to download." if not relevant_token_ids
+              else "Skipping orderbook download (--skip-download).")
         return
 
     asyncio.run(
