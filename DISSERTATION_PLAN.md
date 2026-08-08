@@ -59,11 +59,34 @@ and a maker-side / merge-exit strategy design that does not pay taker fees.
   permitting), control = selection-bias robustness table, serial = optional
   fee-era microstructure validation (single binaries — cannot produce
   rebalancing labels). Serial download deferred.
-- **Universe is FINAL**, selected from the frozen JSONL (no re-scrape): 50
-  negrisk + 30 ladder + 25 control events (complete groups, event-size ≤ 35,
-  volume floor $1M, control seed 42) + 752 serial markets = 2,227 markets /
-  4,454 tokens. Study window 2025-10-14 → 2026-03-31 (all markets resolve by
-  ~Feb 4).
+- **Universe is FINAL (v1.1, 2026-08-08)**, selected from the frozen JSONL (no
+  re-scrape): 50 negrisk + 30 ladder + 25 control events (complete groups,
+  event-size ≤ 35, volume floor $1M, control seed 42, match-style events
+  excluded from ladder) + 752 serial markets = 2,238 markets / 4,476 tokens.
+  Study window 2025-10-14 → 2026-03-31 (all markets resolve by ~Feb 4).
+  v1→v1.1: a semantic audit caught 4 LoL BO5 prop bundles in ladder (same
+  template, no implication structure) → `is_match` exclusion added, replaced
+  by 4 genuine ladders; negrisk/control/serial unchanged.
+- **Stratification verification** (2026-08-08, three layers — rerun any time):
+  (1) `data-pipeline/verify_universe.py` re-derives the rules from the raw
+  JSONL: disjointness, raw negRisk flags, group completeness, quotas/floors,
+  independent top-50 ranking, template rule, serial slice, full-cover flags;
+  (2) an independent agent re-implemented the selection from spec without
+  reading the code — exact match (530 eligible negrisk events, top-50
+  identical); (3) a semantic audit read every selected event. Residual audit
+  findings for label code (Stage 2/ladder extension):
+  * 10 price events are TWO-sided (reach + dip chains) — implication holds
+    within a side only; never pair across sides.
+  * `what-price-will-bitcoin-hit-in-2025` contains a re-listed duplicate rung
+    (two markets, same question "dip to $100,000") — dedupe by question, keep
+    the later listing.
+  * 18/50 negrisk events are weekly Elon-tweet buckets with overlapping
+    windows — not independent observations; account for this in
+    leave-event-out folds (hold out the whole template family) and in any
+    independence claims.
+  * Control stratum is 22/25 sports/esports prop bundles and includes 3
+    treatment-like structures — describe it honestly, not as a neutral
+    baseline.
 - **Group signals** (negRisk, N sibling markets, YES books only):
   `long_gap = 1 − Σ best_ask_i` (full-cover groups only);
   `short_gap = Σ best_bid_i − 1` (valid on any subset / incomplete groups —

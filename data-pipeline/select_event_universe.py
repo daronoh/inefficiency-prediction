@@ -159,6 +159,14 @@ def scan_markets(jsonl_path: Path, w0: pd.Timestamp, w1: pd.Timestamp) -> pd.Dat
                 "n_tokens": len(tokens),
                 "token_ids": json.dumps([str(t) for t in tokens]),
                 "is_serial": "up or down" in (mk.get("question") or "").lower(),
+                # Match-style events ("X vs Y", per-game props) share question
+                # templates but have NO monotone implication structure — they
+                # must never enter the ladder stratum (semantic audit 2026-08-08
+                # caught 4 LoL BO5 bundles doing exactly that).
+                "is_match": bool(re.search(
+                    r"\bvs\.?\b",
+                    f"{mk.get('question') or ''} {ev.get('title') or ''}".lower(),
+                )),
                 # The dump holds only resolved markets, so outcomePrices are
                 # final: outcome 0 at ~1.0 means this market resolved YES.
                 "resolved_yes": bool(prices) and prices[0] >= 0.99,
@@ -183,10 +191,13 @@ def main():
         n_markets=("market_id", "size"),
         event_volume=("volume", "sum"),
         neg_risk=("neg_risk", "max"),
+        is_match=("is_match", "max"),
         n_templates=("template", "nunique"),
         max_template_group=("template", lambda s: s.value_counts().iloc[0]),
     )
-    ev["is_ladder"] = (~ev["neg_risk"]) & (ev["max_template_group"] >= 3)
+    ev["is_ladder"] = (
+        (~ev["neg_risk"]) & (~ev["is_match"]) & (ev["max_template_group"] >= 3)
+    )
 
     # ---- strata selection ----
     eligible = ev[
