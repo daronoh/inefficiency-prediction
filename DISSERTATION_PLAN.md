@@ -1,7 +1,6 @@
 # DISSERTATION_PLAN — agent briefing
 
-*Audience: a coding agent working on this repo. Read this fully before touching
-anything. README.md is the human user guide; this file carries research context,
+*README.md is the human user guide; this file carries research context,
 established findings, binding decisions, and the work queue. Last rewritten
 2026-08-08; decisions below supersede anything older in git history.*
 
@@ -81,7 +80,14 @@ and a maker-side / merge-exit strategy design that does not pay taker fees.
   1–21; train ≤Dec 21 / test Dec 22–Jan 7), 1-day embargo (≥ label horizon).
   Hyperparameters on inner folds only. No shuffling; scalers fit on train only.
 - **Leave-event-out check** within development: separates transferable
-  microstructure signal from group memorization (report both).
+  microstructure signal from group memorization (report both). Known caveat:
+  contemporaneous cross-group correlation makes it optimistic — it is the
+  decomposition exhibit, never the headline. Event-random 80/20 as the PRIMARY
+  split was considered and rejected (2026-08-08): overlapping lifetimes leak
+  calendar/regime information across the split and erase drift.
+- **Lockbox reporting**: split metrics by groups-seen-in-development vs
+  groups-first-appearing-in-lockbox (the latter is out-of-time AND
+  out-of-event — the strictest available test).
 - First thing any label code does: tag rows `development` / `lockbox`.
 
 ## 5. Data inventory
