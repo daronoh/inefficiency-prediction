@@ -141,6 +141,13 @@ def scan_markets(jsonl_path: Path, w0: pd.Timestamp, w1: pd.Timestamp) -> pd.Dat
                     evs = []
             ev = evs[0] if evs else {}
             mid = str(mk.get("id"))
+            prices = mk.get("outcomePrices")
+            if isinstance(prices, str):
+                try:
+                    prices = json.loads(prices)
+                except json.JSONDecodeError:
+                    prices = []
+            prices = [float(x) for x in (prices or [])]
             rows.append({
                 "market_id": mid,
                 "question": mk.get("question"),
@@ -155,6 +162,9 @@ def scan_markets(jsonl_path: Path, w0: pd.Timestamp, w1: pd.Timestamp) -> pd.Dat
                 "n_tokens": len(tokens),
                 "token_ids": json.dumps([str(t) for t in tokens]),
                 "is_serial": "up or down" in (mk.get("question") or "").lower(),
+                # The dump holds only resolved markets, so outcomePrices are
+                # final: outcome 0 at ~1.0 means this market resolved YES.
+                "resolved_yes": bool(prices) and prices[0] >= 0.99,
             })
     return pd.DataFrame(rows)
 
@@ -235,6 +245,16 @@ def main():
     serial["stratum"] = "serial"
     universe = pd.concat([universe, serial], ignore_index=True)
 
+    # Group-completeness flag (decision 2026-08-08: keep incomplete groups,
+    # short-side labels only). A winner-take-all group is complete iff its
+    # winning market is in the dump; events that concluded after the dump froze
+    # (~Feb 4 2026) lack their surviving markets, so full-cover long-side
+    # rebalancing labels are invalid there. Subset short-side labels never
+    # reference missing outcomes and remain valid on every group.
+    winner_present = universe.groupby("event_slug")["resolved_yes"].transform("max")
+    universe["winner_present"] = winner_present
+    universe["supports_full_cover"] = (universe["stratum"] == "negrisk") & winner_present
+
     # ---- outputs ----
     args.markets_out.parent.mkdir(parents=True, exist_ok=True)
     universe.drop(columns=["template"], errors="ignore").to_parquet(args.markets_out, index=False)
@@ -252,6 +272,15 @@ def main():
     # ---- budget report ----
     print(f"\nSaved {len(universe):,} markets -> {args.markets_out}")
     print(f"Saved {len(token_ids):,} token ids -> {args.tokens_out}\n")
+
+    neg = universe[universe["stratum"] == "negrisk"]
+    n_groups = neg["event_slug"].nunique()
+    n_full = neg[neg["supports_full_cover"]]["event_slug"].nunique()
+    print(f"negRisk groups with winner present (full-cover-capable): {n_full}/{n_groups}")
+    incomplete = neg[~neg["supports_full_cover"]].groupby("event_slug")["event_title"].first()
+    for slug, title in incomplete.items():
+        print(f"  short-side-only: {title} ({slug})")
+    print()
     summary = universe.groupby("stratum").agg(
         events=("event_slug", "nunique"),
         markets=("market_id", "size"),
