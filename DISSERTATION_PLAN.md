@@ -48,6 +48,27 @@ Strategy; ladder/control/serial → Robustness & extensions; counterfactual
 caveat (partial-equilibrium, signed conservative via limits-to-arbitrage,
 maker design fee-robust) → Limitations, written as a strength.
 
+**EVALUATION PROTOCOL (fixed 2026-08-08, BEFORE any label/model work — binding):**
+- **Lockbox holdout: 2026-01-08 → 2026-02-04 (~4 weeks).** Touched exactly once,
+  at the end, for headline out-of-sample results (models AND backtest). No plot,
+  summary stat, label-threshold choice, or feature idea may be derived from it.
+  It contains the sample's busiest stretch (Fed Jan meeting, NFL playoffs run-up).
+- **Development sample: 2025-10-14 → 2026-01-07.** All Stage 2–4 exploration lives
+  here: label definitions (sizes Q, persistence k, horizons H) are chosen and
+  FROZEN on development data only; descriptive chapter uses development data
+  (holdout re-plots only as post-hoc confirmation).
+- **Model selection inside development: walk-forward folds** (e.g. train Oct 14–Nov 30
+  → test Dec 1–21; train Oct 14–Dec 21 → test Dec 22–Jan 7), with a **1-day embargo**
+  between train end and test start (≥ label horizon, prevents overlapping-label
+  leakage). Hyperparameters tuned only on inner folds, never on the final fold or
+  the lockbox. No random shuffling anywhere; scalers/encoders fit on train folds only.
+- **Generalization-to-new-events check: leave-event-out** within development (train
+  on N−k groups, test on held-out groups) — separates "model learned market
+  microstructure" from "model memorized which groups are chronically messy" (the
+  latter is legitimate for screening but must be reported as such).
+- Fold boundaries may shift ±1 week once real data density is inspected (on
+  development data only); the lockbox start date may only move LATER, never earlier.
+
 Critical path NOW: user downloads negrisk (then ladder+control; serial deferred)
 → Claude builds src/groups.py + src/labels.py against real data.
 
