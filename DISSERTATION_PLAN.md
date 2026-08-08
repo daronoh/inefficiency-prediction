@@ -218,6 +218,22 @@ Convert the screener into a strategy and evaluate net of *all* frictions:
 
 ## 9. Data expansion (parallel track, only if Weeks 1–4 go well)
 
+> **DATA REGIME (2026-08-08, supersedes earlier window notes):** the markets JSONL is a
+> **resolved-markets-only dump** (every record `closed: true`, last resolution ~Feb 4 2026).
+> Consequences: (1) every universe market's full life-to-resolution fits inside a download
+> window ending 2026-03-31 — "entire orderbook history till resolution" is guaranteed;
+> (2) nothing in the universe lived past Feb 18, so NO fee transition is in-sample for
+> event strata (fee analysis is fully counterfactual there); the `serial` stratum is the
+> sole genuinely fee-bearing subsample (serial crypto fees since ~Oct 2025; 568 markets
+> with feesEnabled=true); (3) winner-take-all groups whose events concluded after the dump
+> are missing their surviving markets: **48/50 negRisk groups are complete (winner present)**;
+> incomplete: Pro Football Champion 2026 (finalists missing) and UEFA CL Winner (contenders
+> missing) — restrict full-cover long-side labels to the 48; short-side subset labels remain
+> valid on all 50, or fetch the few missing siblings from live Gamma as a targeted supplement.
+> `data/` was reset to: the JSONL, the 5 universe token lists, `event_universe.parquet`
+> (the frozen market→event→stratum mapping), and `fee_schedule_universe.parquet` (contains
+> the non-reproducible Aug-8 live CLOB fee snapshot). Everything else regenerates from these.
+>
 > **DECISION (2026-08-08): the universe is FINAL as selected from the existing JSONL** —
 > no metadata re-scrape; the study window stays 2025-10-14 → 2026-02-04 and the fee
 > analysis is explicitly counterfactual (no in-sample fee transition). The optional
