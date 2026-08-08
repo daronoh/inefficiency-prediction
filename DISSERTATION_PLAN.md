@@ -6,6 +6,51 @@ Assumes a ~14-week semester (Aug–Nov 2026) ending in thesis submission.*
 
 ---
 
+## RESEARCH PIPELINE (2026-08-08 — negRisk-primary scoping)
+
+Scoping decision: **negRisk groups are the study**; ladder = extension chapter,
+control = robustness table, serial = optional fee-era microstructure validation
+(cannot produce rebalancing labels — single binaries). Fee analysis: measurement
+on the fee-free sample; counterfactual threshold sweep; maker-side strategy design.
+
+Dataflow (artifact → script → artifact):
+
+```
+JSONL + universe_token_ids_negrisk.parquet
+  → run_data_loader.py --token-ids-path ... --skip-existing      [USER: needs DOME_API_KEY]
+  → data/raw_orderbook/ob_*.parquet            (1,898 tokens, full books)
+  → run_data_loader.py --skip-download          (rebuilds markets/tokens tables)
+  → run_feature_pipeline.py --filtered-tokens-path ...
+  → data/processed/orderbook/feat_*.parquet     (per-token top-of-book features)
+  → run_group_panel.py                [BUILD: src/groups.py — generalizes pairs.py]
+  → data/processed/groups/{event,grid_1m}/group_<event_slug>.parquet
+      N YES books as-of aligned; long_gap = 1 − Σask_i (full-cover groups only),
+      short_gap = Σbid_i − 1 (all groups); per-market staleness; quality flags
+  → run_labels.py                     [BUILD: src/labels.py — book-walking VWAP]
+  → data/processed/labels/…            VWAP(Q) executable gaps from raw books,
+      persistence filters, net-gap threshold sweep, binary/continuous targets
+      on the 1-min grid, ATTRITION TABLE (headline exhibit)
+  → analysis notebooks / model runs   [BUILD: descriptive chapter, walk-forward
+      LightGBM + baselines, precision@k / profit-capture frontier]
+  → run_backtest.py                   [BUILD: taker+merge-exit at VWAP with
+      latency haircuts; maker variant as bounded scenario]
+```
+
+Group-level signal definitions (negRisk, winner-take-all): buying YES on ALL N
+outcomes pays exactly $1 → `long_gap = 1 − Σ best_ask_i` (requires
+`supports_full_cover`); buying NO on any subset S guarantees ≥ |S|−1 →
+profitable iff `Σ_{i∈S} best_bid_i > 1`, so `short_gap = Σ best_bid_i − 1`
+over all observed members (valid on incomplete groups).
+
+Stage → thesis chapter mapping: group panels + labels → Methodology; attrition
+table + descriptive → Empirical anatomy; models → Screening; backtest →
+Strategy; ladder/control/serial → Robustness & extensions; counterfactual
+caveat (partial-equilibrium, signed conservative via limits-to-arbitrage,
+maker design fee-robust) → Limitations, written as a strength.
+
+Critical path NOW: user downloads negrisk (then ladder+control; serial deferred)
+→ Claude builds src/groups.py + src/labels.py against real data.
+
 ## STATUS UPDATE (2026-08-07) — Week 1–2 executed; three findings change the plan
 
 Week 1–2 items (§2) are **done** (repo/leakage fixes, pair panels, fee schedule; all
