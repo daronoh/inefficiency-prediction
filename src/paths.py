@@ -14,8 +14,12 @@ PAIR_DIR = PROCESSED_DIR / "pairs"
 
 MARKET_JSONL = DATA_DIR / "polymarket_markets_1y.jsonl"
 
-# User-defined token filter output/input shared by both notebooks
-FILTERED_TOKEN_IDS = PROCESSED_DIR / "70_markets_token_ids.parquet"
+MARKETS_PARQUET = PROCESSED_DIR / "markets.parquet"
+TOKENS_PARQUET = PROCESSED_DIR / "tokens.parquet"
+
+# Canonical study universe (written by select_event_universe.py).
+EVENT_UNIVERSE = PROCESSED_DIR / "event_universe.parquet"
+UNIVERSE_TOKEN_IDS = PROCESSED_DIR / "universe_token_ids.parquet"
 
 FEE_SCHEDULE = PROCESSED_DIR / "fee_schedule.parquet"
 

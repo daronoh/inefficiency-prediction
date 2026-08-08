@@ -31,7 +31,7 @@ PROJECT_ROOT = _resolve_project_root()
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.paths import MARKET_JSONL, PROCESSED_DIR, FILTERED_TOKEN_IDS, FEE_SCHEDULE
+from src.paths import MARKET_JSONL, TOKENS_PARQUET, UNIVERSE_TOKEN_IDS, FEE_SCHEDULE
 
 CLOB_FEE_URL = "https://clob.polymarket.com/fee-rate"
 
@@ -156,17 +156,27 @@ def fetch_live_fee_rate(token_id: str, timeout: float = 10.0):
 
 def main():
     parser = argparse.ArgumentParser(description="Build the per-market fee schedule table.")
-    parser.add_argument("--market-jsonl", type=Path, default=MARKET_JSONL)
-    parser.add_argument("--tokens-path", type=Path, default=PROCESSED_DIR / "tokens.parquet")
-    parser.add_argument("--filtered-tokens-path", type=Path, default=FILTERED_TOKEN_IDS)
-    parser.add_argument("--output", type=Path, default=FEE_SCHEDULE)
-    parser.add_argument("--sample-end", type=str, default="2026-02-04",
+    parser.add_argument(
+        "--token-ids-path", type=Path, default=UNIVERSE_TOKEN_IDS,
+        help="Token_id parquet defining which markets to cover (default: full universe).",
+    )
+    parser.add_argument("--sample-end", type=str, default="2026-03-31",
                         help="End of the orderbook sample, for the in-sample fee columns.")
     parser.add_argument("--skip-live", action="store_true", help="Skip the live CLOB endpoint.")
+    parser.add_argument("--force", action="store_true",
+                        help="Overwrite an existing fee schedule. The existing file "
+                             "contains a point-in-time live-endpoint snapshot that "
+                             "cannot be regenerated — do not overwrite it casually.")
     args = parser.parse_args()
 
-    token_ids = set(pd.read_parquet(args.filtered_tokens_path)["token_id"].astype(str))
-    tokens_df = pd.read_parquet(args.tokens_path)
+    if FEE_SCHEDULE.exists() and not args.force:
+        raise SystemExit(
+            f"{FEE_SCHEDULE} already exists and holds a non-reproducible live fee "
+            f"snapshot. Re-run with --force only if you really intend to replace it."
+        )
+
+    token_ids = set(pd.read_parquet(args.token_ids_path)["token_id"].astype(str))
+    tokens_df = pd.read_parquet(TOKENS_PARQUET)
     tokens_df = tokens_df[tokens_df["token_id"].astype(str).isin(token_ids)]
     market_ids = set(tokens_df["market_id"].astype(str))
     # one representative token per market for the live endpoint
@@ -177,8 +187,8 @@ def main():
         .to_dict()
     )
 
-    print(f"Scanning {args.market_jsonl} for {len(market_ids)} markets...")
-    meta = extract_event_metadata(args.market_jsonl, market_ids)
+    print(f"Scanning {MARKET_JSONL} for {len(market_ids)} markets...")
+    meta = extract_event_metadata(MARKET_JSONL, market_ids)
     print(f"Found event metadata for {len(meta)} markets")
 
     now = pd.Timestamp(datetime.now(timezone.utc))
@@ -238,9 +248,9 @@ def main():
         })
 
     df = pd.DataFrame(rows)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(args.output, index=False)
-    print(f"Saved {len(df)} rows -> {args.output}")
+    FEE_SCHEDULE.parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(FEE_SCHEDULE, index=False)
+    print(f"Saved {len(df)} rows -> {FEE_SCHEDULE}")
 
     print("\nBucket counts:")
     print(df["category_bucket"].value_counts().to_string())

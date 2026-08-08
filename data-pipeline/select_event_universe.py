@@ -53,7 +53,7 @@ PROJECT_ROOT = _resolve_project_root()
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.paths import MARKET_JSONL, PROCESSED_DIR
+from src.paths import MARKET_JSONL, EVENT_UNIVERSE, UNIVERSE_TOKEN_IDS
 
 # Pilot calibration (140 tokens, 3.32M snapshots, top-70-by-volume markets)
 # for the budget estimate. Snapshot counts scale with trading activity, so the
@@ -67,7 +67,6 @@ SERIAL_SNAPSHOTS_PER_TOKEN = 500  # 15-min lifetime; rough allowance
 
 def parse_args():
     p = argparse.ArgumentParser(description="Select an event-level market universe.")
-    p.add_argument("--market-jsonl", type=Path, default=MARKET_JSONL)
     p.add_argument("--window-start", type=str, default="2025-10-14",
                    help="Dome history start; markets must be alive after this.")
     p.add_argument("--window-end", type=str, default="2026-02-04",
@@ -84,8 +83,6 @@ def parse_args():
     p.add_argument("--serial-assets", type=str, default="bitcoin,ethereum")
     p.add_argument("--serial-start", type=str, default="2026-01-12")
     p.add_argument("--serial-days", type=int, default=3)
-    p.add_argument("--markets-out", type=Path, default=PROCESSED_DIR / "event_universe.parquet")
-    p.add_argument("--tokens-out", type=Path, default=PROCESSED_DIR / "universe_token_ids.parquet")
     return p.parse_args()
 
 
@@ -174,8 +171,8 @@ def main():
     w0 = pd.Timestamp(args.window_start, tz="UTC")
     w1 = pd.Timestamp(args.window_end, tz="UTC")
 
-    print(f"Scanning {args.market_jsonl} for markets alive in [{w0.date()}, {w1.date()}]...")
-    df = scan_markets(args.market_jsonl, w0, w1)
+    print(f"Scanning {MARKET_JSONL} for markets alive in [{w0.date()}, {w1.date()}]...")
+    df = scan_markets(MARKET_JSONL, w0, w1)
     print(f"In-window orderbook markets: {len(df):,}")
 
     df["template"] = df["question"].map(question_template)
@@ -256,22 +253,22 @@ def main():
     universe["supports_full_cover"] = (universe["stratum"] == "negrisk") & winner_present
 
     # ---- outputs ----
-    args.markets_out.parent.mkdir(parents=True, exist_ok=True)
-    universe.drop(columns=["template"], errors="ignore").to_parquet(args.markets_out, index=False)
+    EVENT_UNIVERSE.parent.mkdir(parents=True, exist_ok=True)
+    universe.drop(columns=["template"], errors="ignore").to_parquet(EVENT_UNIVERSE, index=False)
 
     token_ids = sorted({t for s in universe["token_ids"] for t in json.loads(s)})
-    pd.DataFrame({"token_id": token_ids}).to_parquet(args.tokens_out, index=False)
+    pd.DataFrame({"token_id": token_ids}).to_parquet(UNIVERSE_TOKEN_IDS, index=False)
 
     for stratum, grp in universe.groupby("stratum"):
         st_tokens = sorted({t for s in grp["token_ids"] for t in json.loads(s)})
-        st_path = args.tokens_out.with_name(
-            args.tokens_out.stem + f"_{stratum}" + args.tokens_out.suffix
+        st_path = UNIVERSE_TOKEN_IDS.with_name(
+            UNIVERSE_TOKEN_IDS.stem + f"_{stratum}" + UNIVERSE_TOKEN_IDS.suffix
         )
         pd.DataFrame({"token_id": st_tokens}).to_parquet(st_path, index=False)
 
     # ---- budget report ----
-    print(f"\nSaved {len(universe):,} markets -> {args.markets_out}")
-    print(f"Saved {len(token_ids):,} token ids -> {args.tokens_out}\n")
+    print(f"\nSaved {len(universe):,} markets -> {EVENT_UNIVERSE}")
+    print(f"Saved {len(token_ids):,} token ids -> {UNIVERSE_TOKEN_IDS}\n")
 
     neg = universe[universe["stratum"] == "negrisk"]
     n_groups = neg["event_slug"].nunique()
@@ -312,8 +309,8 @@ def main():
     print(f"  (pilot reference: 140 tokens -> 3.32M snapshots, 748 MB)")
     print("\nNo data was downloaded. Review the numbers, then download in stages:")
     for stratum in universe["stratum"].unique():
-        st_path = args.tokens_out.with_name(
-            args.tokens_out.stem + f"_{stratum}" + args.tokens_out.suffix
+        st_path = UNIVERSE_TOKEN_IDS.with_name(
+            UNIVERSE_TOKEN_IDS.stem + f"_{stratum}" + UNIVERSE_TOKEN_IDS.suffix
         )
         print(f"  python data-pipeline/run_data_loader.py --token-ids-path {st_path}")
 

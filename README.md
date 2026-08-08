@@ -1,234 +1,119 @@
-# Inefficiency Prediction (Polymarket Orderbook Pipeline)
+# Inefficiency Prediction — Polymarket Orderbook Pipeline
 
-## Overview
-This repository serves as a framework for working with orderbook data on polymarket, specifically with the intention of predicting inefficiency in markets.
+Research pipeline for the CP4101 dissertation: predicting short-horizon,
+net-of-cost pricing inefficiency in Polymarket winner-take-all (negRisk) event
+groups. This README is the **user guide** (what each file does, why, how to run
+it). Research context, established findings, and the work plan live in
+[DISSERTATION_PLAN.md](DISSERTATION_PLAN.md).
 
-Pipeline flow:
+## Setup
 
-1. Read market JSONL and create market/token tables.
-2. Download per-token orderbook snapshots to parquet.
-3. Compute snapshot + time-series features per token.
-4. Build market-level YES/NO pair panels (as-of-aligned complementary books).
-5. Build the per-market fee schedule (category buckets + dated fee regime + live CLOB rates).
+- Python 3.12 venv at `<repo>/.venv` (`pip install -r requirements.txt`).
+- Environment variables:
+  - `DOME_API_KEY` — required only for orderbook downloads (Dome API). Never
+    commit it; the previously committed key is treated as leaked.
+  - `DATA_ROOT` — absolute path of the `data/` directory if running from a git
+    worktree or another checkout. Defaults to `<repo>/data`.
 
-Core implementation lives in [src/data_loader.py](src/data_loader.py), [src/features.py](src/features.py) and [src/pairs.py](src/pairs.py).  
-Execution/orchestration is in the `data-pipeline/` runner scripts (the notebooks mirror steps 1–3 but the scripts are canonical).
+All scripts read/write locations from [src/paths.py](src/paths.py) — there are
+no per-script path flags. The only path most commands accept is
+`--token-ids-path`, selecting *which tokens/markets* to operate on (default:
+the full universe list; pass a per-stratum list to stage work).
 
-### Environment variables
+## Source files (`src/`)
 
-- `DOME_API_KEY` (**required for orderbook download**): Dome API key. The key is no longer
-  committed; the previously committed key must be treated as leaked and rotated.
-- `DATA_ROOT` (optional): absolute path of the `data/` directory if it lives outside this
-  checkout (e.g. when running from a git worktree). Defaults to `<repo>/data`.
+| File | What it does | Why |
+|---|---|---|
+| [paths.py](src/paths.py) | Single source of truth for every data location; `DATA_ROOT` override; `ensure_dirs()` | So a directory move is a one-line change and worktrees can reach the data |
+| [data_loader.py](src/data_loader.py) | Parses the markets JSONL into markets/tokens tables; async Dome API downloader (pagination, retry/backoff, concurrency) | Turns the raw metadata dump + external API into on-disk parquet |
+| [features.py](src/features.py) | Per-snapshot book features (best bid/ask, mid, spread, depth, imbalance, quality flags), leakage-safe metadata (scheduled-end expiry only; no lifetime volume), snapshot dedup, one-lag deltas | The model-ready per-token representation; every choice here is leakage-audited |
+| [pairs.py](src/pairs.py) | Aligns a market's YES/NO books on shared timelines (event grid + wall-clock grid) with staleness columns and naive arb-gap measures | Alignment/QA layer; note YES/NO books are mirrored, so real labels live on *group* panels (src/groups.py, upcoming) |
 
----
+## Pipeline scripts (`data-pipeline/`)
 
-## Prerequisites
+Run them in this order. All accept `--help`.
 
-- Python **3.12+** (notebook metadata shows 3.12.6)
-- Install dependencies from [requirements.txt](requirements.txt):
-  - `numpy`, `pandas`, `requests`, `aiohttp`, `polars`, `ipykernel`, `pyarrow`
-- Input JSONL files in `data/`:
-  - `data/polymarket_markets_1y.jsonl` (required)
-- Jupyter environment (VS Code notebook support is fine)
-
-Install:
-
+### 1. `select_event_universe.py` — choose the study universe (already run; outputs are frozen)
+Scans the JSONL for markets alive in the study window and selects **complete
+event groups** by stratum: `negrisk` (winner-take-all groups → rebalancing-arb
+labels), `ladder` (date/price ladders → implication-arb extension), `control`
+(seeded random mid-volume events → selection-bias check), `serial` (fee-bearing
+15-min crypto slice → fee-era comparison). Flags each group's completeness
+(`supports_full_cover`). Prints a download budget; downloads nothing.
 ```bash
-pip install -r requirements.txt
+python data-pipeline/select_event_universe.py
 ```
+Outputs: `event_universe.parquet`, `universe_token_ids[_<stratum>].parquet`.
+Re-running with unchanged arguments reproduces the frozen selection exactly.
 
----
-
-### `data-pipeline/data_loader.ipynb`
-**Reads**
-- `data/polymarket_markets_1y.jsonl`
-- (optionally) existing parquet files if rerunning cells
-
-**Writes**
-- `data/processed/markets.parquet`
-- `data/processed/tokens.parquet`
-- `data/raw_orderbook/ob_<token_id>.parquet` (one orderbook snapshot table per token)
-- `data/processed/70_markets_token_ids.parquet` (**user-filtered token list**; name/content depends on the user)
-
----
-
-### `data-pipeline/feature.ipynb`
-**Reads**
-- `data/raw_orderbook/ob_<token_id>.parquet`
-- `data/processed/70_markets_token_ids.parquet` (same file that refers to the **user-filtered token list**)
-- (optionally) `data/processed/tokens.parquet` for metadata joins
-
-**Writes**
-- `data/processed/orderbook/feat_<token_id>.parquet`
-
-
----
-
-### Directory-level summary
-
-**Required starting input**
-- `data/polymarket_markets_1y.jsonl`
-
-**Pipeline-generated intermediates**
-- `data/processed/markets.parquet`
-- `data/processed/tokens.parquet`
-- `data/raw_orderbook/ob_<token_id>.parquet`
-- `data/processed/70_markets_token_ids.parquet` (or equivalent user-defined filtered token-id file)
-
-**Final outputs**
-- `data/processed/orderbook/feat_<token_id>.parquet` (per-token features)
-- `data/processed/pairs/event/pair_<market_id>.parquet` (event-grid YES/NO pair panel)
-- `data/processed/pairs/grid_1m/pair_<market_id>.parquet` (1-minute-grid pair panel)
-- `data/processed/fee_schedule.parquet` (per-market fee categories/rates)
-
-### Research-validity notes (changed 2026-08)
-
-- `time_to_expiry_hours` now uses the **scheduled** `end_date` only. The realised
-  `closed_time` is not knowable at snapshot time (lookahead) and is no longer used.
-- Lifetime `volume` / `volume_clob` are no longer attached as features (they are totals
-  as of the metadata dump, i.e. lookahead). Market *selection* still uses them — an
-  acknowledged ex-post selection limitation.
-- Feature tables keep `indexed_at_time` / `indexed_at_ms` (Dome ingestion clock) as the
-  honest "data available at" timestamps, carry data-quality flags
-  (`flag_no_bids`, `flag_no_asks`, `flag_crossed_book`), and deduplicate snapshots on
-  `(token_id, snapshot_timestamp_ms)` keeping the latest-indexed row.
-- **Mirror-book caveat:** the YES and NO books of one binary market are complementary
-  views of the same order pool (`ask_NO = 1 − bid_YES` holds exactly in ~99.999% of
-  aligned snapshots). Intra-market `BUY_YES + BUY_NO < 1` therefore cannot occur except
-  as capture-desync noise; inefficiency labels must be constructed **across** markets
-  (negRisk event groups, logically related markets).
-- **Time-to-expiry semantics:** 11.4% of snapshot rows fall *after* the scheduled
-  `end_date` (markets trade until actual resolution), so `time_to_expiry_hours` is
-  negative there and `log_time_to_expiry_hours` clips those rows to 0. Conversely some
-  markets resolve months before `end_date` (long-dated futures), so the feature can
-  greatly overstate remaining life. Both are inherent to using only ex-ante information.
-- **Availability clock quirks:** ~0.12% of rows have `indexed_at_ms` earlier than
-  `snapshot_timestamp_ms` (upstream clock skew), and indexing lag can reach ~33 min.
-  Latency-sensitive evaluation should treat `indexed_at` as the data-available clock
-  and be robust to these outliers.
-- **negRisk columns:** the per-snapshot `orderbook_neg_risk` feed value flaps to False
-  on a minority of snapshots for some negRisk markets; the metadata `neg_risk` column
-  (from gamma) is authoritative.
-- **Pair-panel validity flags:** `valid_pair_{2,5,10,30}s` mean both sides are *fresh*,
-  not *tradeable* — additionally filter on `flag_no_bids` / `flag_no_asks` /
-  `flag_crossed_book` per side before computing labels.
-- **Fee status:** the per-market in-sample fee authority is gamma's `feesEnabled`
-  (all 70 selected markets: **fee-free for their entire sampled life** — the 2026
-  category fee rollout applied to serial 15-minute crypto markets first and reached
-  other categories only after this sample ends). The regime table in
-  `build_fee_schedule.py` provides category-level *counterfactual current* rates;
-  `clob_base_fee` from the live endpoint is retroactive current config, not
-  historical fee state.
-
----
-
-## How to Run
-
-## 1) Build base data tables + orderbook snapshots (script)
-Run:
-
+### 2. `run_data_loader.py` — metadata tables + orderbook download
+Rebuilds `markets.parquet`/`tokens.parquet` from the JSONL when missing (or on
+`--rebuild-tables`), then downloads each token's full book-snapshot history.
 ```bash
-python .\data-pipeline\run_data_loader.py
+python data-pipeline/run_data_loader.py --token-ids-path data/processed/universe_token_ids_negrisk.parquet --skip-existing
 ```
+- `--skip-existing` makes downloads resumable (re-run the same command after
+  any interruption) and never re-fetches tokens already on disk.
+- `--skip-download` = tables only. Window defaults (2025-10-14 → 2026-03-31)
+  cover every universe market's full life; you rarely need to change them.
+- Recommended order: negrisk → ladder → control (serial deferred).
 
-What it does:
-- Reads `data/polymarket_markets_1y.jsonl`
-- Builds and writes:
-  - `data/processed/markets.parquet`
-  - `data/processed/tokens.parquet`
-- Filters top markets (default: top 70 by volume, end date after `2026-01-01`)
-- Writes filtered token IDs to:
-  - `data/processed/70_markets_token_ids.parquet`
-- Downloads orderbook snapshots per token to:
-  - `data/raw_orderbook/ob_<token_id>.parquet`
-
-Useful options:
+### 3. `run_feature_pipeline.py` — per-token feature tables
 ```bash
-python .\data-pipeline\run_data_loader.py --skip-download
-python .\data-pipeline\run_data_loader.py --top-markets 100 --max-concurrent 12
-python .\data-pipeline\run_data_loader.py --start-date 2025-10-14 --end-date 2026-03-31
+python data-pipeline/run_feature_pipeline.py
 ```
+Reads `ob_*.parquet`, writes `feat_*.parquet`. `--keep-json-cols` retains the
+raw book JSON; `--depth-n` changes the top-N depth window.
 
-## 2) Build token feature parquet files (script)
-Run:
-
+### 4. `run_pair_panel.py` — YES/NO pair panels (diagnostic layer)
 ```bash
-python .\data-pipeline\run_feature_pipeline.py
+python data-pipeline/run_pair_panel.py
 ```
+Event-grid + 1-minute-grid panels per market with staleness/validity columns
+and `long_arb_gap`/`short_arb_gap`. Clears its previous outputs each run.
 
-What it does:
-- Reads:
-  - `data/raw_orderbook/ob_<token_id>.parquet`
-  - `data/processed/70_markets_token_ids.parquet`
-  - `data/processed/tokens.parquet`
-- Builds per-token feature files:
-  - `data/processed/orderbook/feat_<token_id>.parquet`
-
-Useful options:
+### 5. `build_fee_schedule.py` — per-market fee reference
 ```bash
-python .\data-pipeline\run_feature_pipeline.py --depth-n 5
-python .\data-pipeline\run_feature_pipeline.py --process-all-files
-python .\data-pipeline\run_feature_pipeline.py --keep-json-cols
+python data-pipeline/build_fee_schedule.py
 ```
+Category buckets (heuristic keywords — review the printed assignments when the
+universe changes), the dated 2025–26 fee-rollout table (counterfactual current
+rates), gamma `feesEnabled` (the in-sample fee authority), and best-effort live
+CLOB rates. `--skip-live` for offline runs. **Do not delete the output** —
+`fee_schedule.parquet` contains a non-reproducible live-endpoint snapshot and
+is the evidence behind every fee claim in the thesis.
 
-## 3) Build market-level YES/NO pair panels
+### Notebooks
+`data_loader.ipynb` / `feature.ipynb` are **legacy** mirrors of the old
+70-market pilot flow and predate the current scripts. Kept for reference only.
 
-```bash
-python .\data-pipeline\run_pair_panel.py
-```
+## Data directory (`data/`, git-ignored)
 
-What it does:
-- As-of aligns each market's two outcome-token books (event grid = union of both sides'
-  update times, plus a regular 1-minute grid), with per-side staleness columns and
-  `valid_pair_{2,5,10,30}s` flags.
-- Adds pair-level quote-consistency columns: `sum_best_asks`, `sum_best_bids`,
-  `long_arb_gap` (= 1 − sum of asks), `short_arb_gap` (= sum of bids − 1).
-- Writes `data/processed/pairs/event/pair_<market_id>.parquet` and
-  `data/processed/pairs/grid_1m/pair_<market_id>.parquet`.
+| Path | Contents | Regenerable? |
+|---|---|---|
+| `polymarket_markets_1y.jsonl` | Frozen Gamma dump, 356,736 **resolved** markets (~Feb 4 2026); final outcomePrices | **No — keep an offsite backup** |
+| `processed/event_universe.parquet` | The frozen study selection: 2,227 markets with event, stratum, `supports_full_cover` | Yes (selector, deterministic) |
+| `processed/universe_token_ids[_stratum].parquet` | Download/processing lists (4,454 tokens total) | Yes (selector) |
+| `processed/fee_schedule.parquet` | Per-market fee reference incl. one-time live snapshot (2026-08-08) | **Partially — live columns are not** |
+| `processed/markets.parquet`, `tokens.parquet` | Flattened metadata (1 row per market / per token) | Yes (`run_data_loader.py`) |
+| `raw_orderbook/ob_<token>.parquet` | Full book snapshots per token (bids/asks JSON) | Yes (re-download, costs API quota) |
+| `processed/orderbook/feat_<token>.parquet` | Per-token feature tables | Yes |
+| `processed/pairs/{event,grid_1m}/` | Pair panels | Yes |
 
-## (Optional) Select the expanded event-level universe
+## Research-validity notes (the short version)
 
-```bash
-python .\data-pipeline\select_event_universe.py
-```
-
-What it does:
-- Scans the markets JSONL for all markets alive in the Dome window and selects **complete
-  event groups** by stratum: `negrisk` (winner-take-all events → rebalancing-arb labels),
-  `ladder` (date/price ladders → monotone-implication labels), `serial` (fee-bearing
-  15-min/hourly crypto up-down slice), `control` (seeded random mid-volume events, for
-  measuring selection effects). Resolution is NOT required (labels are quote-based).
-- Writes `data/processed/event_universe.parquet` + combined and per-stratum token lists
-  (`universe_token_ids[_<stratum>].parquet`), prints a download-budget estimate, and
-  downloads nothing.
-- Then download in stages via
-  `python .\data-pipeline\run_data_loader.py --token-ids-path data\processed\universe_token_ids_negrisk.parquet`
-  (needs `DOME_API_KEY`).
-
-## 4) Build the fee schedule
-
-```bash
-python .\data-pipeline\build_fee_schedule.py
-```
-
-What it does:
-- Scans the markets JSONL for the selected markets' event metadata, classifies each
-  market into a fee category bucket, applies the dated 2025–26 fee-rollout table, and
-  (best effort) queries `https://clob.polymarket.com/fee-rate` for live rates.
-- Writes `data/processed/fee_schedule.parquet`.
-
-## Optional: Notebook workflow
-You can still run:
-- `data-pipeline/data_loader.ipynb`
-- `data-pipeline/feature.ipynb`
-
-The scripts above are CLI equivalents of those notebooks.
-
----
-
-## Notes
-
-- The `data/` directory is git-ignored in [.gitignore](.gitignore), so local parquet/jsonl files are not committed.
-- If you rerun notebooks, existing parquet files may be overwritten.
-- extracting orderbooks from ids calls an external API directly, which may end up taking a significant amount of time, subjective to the amount of markets we are querying.
+- **Mirror books:** `ask_NO = 1 − bid_YES` exactly — intra-market YES+NO arb is
+  structurally impossible; labels are cross-market (negRisk groups).
+- **Leakage rules baked into features:** scheduled `end_date` only (11.4% of
+  rows trade past it — negative expiry is real, and `log_time_to_expiry_hours`
+  clips it to 0); no lifetime volume; `indexed_at` kept as the honest
+  "data available at" clock; `flag_no_bids/asks/crossed_book` mark degenerate
+  books — filter on them before computing anything from quotes.
+- **Pair/group validity flags mean "fresh", not "tradeable"** — combine
+  `valid_pair_*s` with the book-quality flags.
+- **Fees:** the study sample is fee-free in-sample (gamma `feesEnabled=false`
+  for every negrisk/ladder/control market); fee analysis is a counterfactual
+  threshold sweep. Details and caveats: DISSERTATION_PLAN §2–3.
+- **Evaluation protocol:** development = 2025-10-14→2026-01-07; lockbox
+  holdout = 2026-01-08→2026-02-04, touched once at the end. Binding; see
+  DISSERTATION_PLAN §4.

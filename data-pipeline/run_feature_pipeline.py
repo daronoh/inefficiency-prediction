@@ -1,3 +1,15 @@
+"""Stage 1a: per-token orderbook feature tables.
+
+Reads each token's raw book snapshots (data/raw_orderbook/ob_*.parquet) and
+writes a model-ready feature table (data/processed/orderbook/feat_*.parquet):
+top-of-book prices/sizes, spread, depth, imbalance, data-quality flags,
+leakage-safe metadata, and one-lag deltas. See src/features.py.
+
+Usage:
+  python data-pipeline/run_feature_pipeline.py
+  python data-pipeline/run_feature_pipeline.py --token-ids-path data/processed/universe_token_ids_negrisk.parquet
+"""
+
 import argparse
 import sys
 from pathlib import Path
@@ -16,61 +28,46 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from src.features import build_token_feature_table_from_parquet
 from src.paths import (
-    PROCESSED_DIR,
+    TOKENS_PARQUET,
     ORDERBOOK_DIR,
-    FILTERED_TOKEN_IDS,
+    FEATURE_DIR,
+    UNIVERSE_TOKEN_IDS,
     ensure_dirs,
 )
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Build per-token orderbook feature parquet files.")
-    parser.add_argument("--tokens-path", type=Path, default=PROCESSED_DIR / "tokens.parquet")
-    parser.add_argument("--filtered-tokens-path", type=Path, default=FILTERED_TOKEN_IDS)
-    parser.add_argument("--raw-orderbook-dir", type=Path, default=ORDERBOOK_DIR)
-    parser.add_argument("--feat-orderbook-dir", type=Path, default=PROCESSED_DIR / "orderbook")
+    parser.add_argument(
+        "--token-ids-path", type=Path, default=UNIVERSE_TOKEN_IDS,
+        help="Token_id parquet to process (default: full universe list).",
+    )
     parser.add_argument("--depth-n", type=int, default=3)
-    # JSON book columns are dropped by default; --keep-json-cols retains them
-    # (the old --drop-json-cols flag was inert: store_true with default=True).
-    parser.add_argument("--keep-json-cols", action="store_true")
-    parser.add_argument("--process-all-files", action="store_true", help="Ignore filtered token list and process all ob_*.parquet files.")
+    parser.add_argument("--keep-json-cols", action="store_true",
+                        help="Retain raw bids/asks JSON columns in the output.")
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
     ensure_dirs()
-    args.feat_orderbook_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"Using project root: {PROJECT_ROOT}")
+    relevant = set(pd.read_parquet(args.token_ids_path)["token_id"].astype(str))
+    tokens_df = pd.read_parquet(TOKENS_PARQUET)
+    tokens_df = tokens_df[tokens_df["token_id"].astype(str).isin(relevant)]
+    print(f"Token ids: {len(relevant)} | metadata rows: {len(tokens_df):,}")
 
-    # Read filtered token IDs
-    relevant_token_ids = set(pd.read_parquet(args.filtered_tokens_path)["token_id"].astype(str))
-    print(f"Loaded filtered token IDs: {len(relevant_token_ids)}")
-
-    # Read token metadata
-    tokens_df = pd.read_parquet(args.tokens_path)
-    tokens_df = tokens_df[tokens_df["token_id"].astype(str).isin(relevant_token_ids)]
-    print(f"Token metadata rows after filter: {len(tokens_df):,}")
-
-    files = sorted(args.raw_orderbook_dir.glob("ob_*.parquet"))
+    files = [p for p in sorted(ORDERBOOK_DIR.glob("ob_*.parquet"))
+             if p.stem.replace("ob_", "") in relevant]
     if not files:
-        print(f"No files found in {args.raw_orderbook_dir} matching ob_*.parquet")
+        print(f"No matching ob_*.parquet in {ORDERBOOK_DIR} — download orderbooks first.")
         return
-
-    if not args.process_all_files:
-        files = [p for p in files if p.stem.replace("ob_", "") in relevant_token_ids]
-
     print(f"Files to process: {len(files)}")
 
-    success = 0
-    failed = 0
-
+    success = failed = 0
     for i, file_path in enumerate(files, start=1):
-        token_stub = file_path.stem.replace("ob_", "")
-        output_path = args.feat_orderbook_dir / f"feat_{token_stub}.parquet"
-
-        print(f"[{i}/{len(files)}] Processing {file_path.name}")
+        output_path = FEATURE_DIR / f"feat_{file_path.stem.replace('ob_', '')}.parquet"
+        print(f"[{i}/{len(files)}] {file_path.name}")
         try:
             feat_df = build_token_feature_table_from_parquet(
                 input_path=file_path,

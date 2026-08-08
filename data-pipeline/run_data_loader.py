@@ -1,3 +1,18 @@
+"""Stage 0: build metadata tables and download orderbook snapshots.
+
+Two jobs, both driven by the frozen markets JSONL and the universe token lists:
+
+1. Ensure `markets.parquet` / `tokens.parquet` exist (parsed from the JSONL).
+   They are rebuilt automatically when missing, or on --rebuild-tables.
+2. Download per-token orderbook history from the Dome API for a token list
+   (default: the full universe list; pass a per-stratum list to stage the
+   download). Requires the DOME_API_KEY environment variable.
+
+Typical usage:
+  python data-pipeline/run_data_loader.py --token-ids-path data/processed/universe_token_ids_negrisk.parquet --skip-existing
+  python data-pipeline/run_data_loader.py --skip-download          # tables only
+"""
+
 import argparse
 import asyncio
 import sys
@@ -18,126 +33,77 @@ if str(PROJECT_ROOT) not in sys.path:
 from src.data_loader import read_market_to_df, read_token_to_df, extract_orderbook_from_ids_async
 from src.paths import (
     MARKET_JSONL,
-    PROCESSED_DIR,
+    MARKETS_PARQUET,
+    TOKENS_PARQUET,
     ORDERBOOK_DIR,
-    FILTERED_TOKEN_IDS,
+    UNIVERSE_TOKEN_IDS,
     ensure_dirs,
 )
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Build market/token tables and download orderbook snapshots.")
-    parser.add_argument("--market-jsonl", type=Path, default=MARKET_JSONL)
-    parser.add_argument("--markets-path", type=Path, default=PROCESSED_DIR / "markets.parquet")
-    parser.add_argument("--tokens-path", type=Path, default=PROCESSED_DIR / "tokens.parquet")
-    parser.add_argument("--filtered-tokens-path", type=Path, default=FILTERED_TOKEN_IDS)
-    parser.add_argument("--raw-orderbook-dir", type=Path, default=ORDERBOOK_DIR)
-
-    parser.add_argument("--min-end-date", type=str, default="2026-01-01")
-    parser.add_argument("--top-markets", type=int, default=70)
-
-    parser.add_argument("--start-date", type=str, default="2025-10-14")
-    parser.add_argument("--end-date", type=str, default="2026-03-31")
+    parser = argparse.ArgumentParser(
+        description="Build market/token tables and download orderbook snapshots."
+    )
+    parser.add_argument(
+        "--token-ids-path", type=Path, default=UNIVERSE_TOKEN_IDS,
+        help="Token_id parquet to download (default: full universe list; "
+             "pass a universe_token_ids_<stratum>.parquet to stage).",
+    )
+    parser.add_argument("--start-date", type=str, default="2025-10-14",
+                        help="Snapshot window start (Dome history floor).")
+    parser.add_argument("--end-date", type=str, default="2026-03-31",
+                        help="Snapshot window end (every universe market resolves before this).")
     parser.add_argument("--max-concurrent", type=int, default=8)
-    parser.add_argument("--skip-download", action="store_true")
-    parser.add_argument(
-        "--token-ids-path", type=Path, default=None,
-        help="Download orderbooks for this token_id parquet (e.g. the output of "
-             "select_event_universe.py) instead of running the built-in "
-             "top-N-by-volume market selection.",
-    )
-    parser.add_argument(
-        "--skip-existing", action="store_true",
-        help="Skip tokens that already have an ob_<token_id>.parquet in the "
-             "output dir — makes interrupted downloads resumable and avoids "
-             "re-downloading pilot tokens.",
-    )
+    parser.add_argument("--skip-existing", action="store_true",
+                        help="Skip tokens already on disk (resumable downloads).")
+    parser.add_argument("--skip-download", action="store_true",
+                        help="Only ensure the metadata tables exist.")
+    parser.add_argument("--rebuild-tables", action="store_true",
+                        help="Re-parse markets/tokens tables even if present.")
     return parser.parse_args()
 
 
-def _filter_existing(token_ids, orderbook_dir: Path):
-    existing = {p.stem.replace("ob_", "") for p in orderbook_dir.glob("ob_*.parquet")}
-    kept = [t for t in token_ids if t not in existing]
-    print(f"--skip-existing: {len(token_ids) - len(kept)} tokens already on disk, "
-          f"{len(kept)} to download")
-    return kept
+def ensure_tables(rebuild: bool) -> None:
+    if not rebuild and MARKETS_PARQUET.exists() and TOKENS_PARQUET.exists():
+        return
+    print(f"Parsing {MARKET_JSONL} ...")
+    markets_df = read_market_to_df(MARKET_JSONL)
+    markets_df.to_parquet(MARKETS_PARQUET, index=False)
+    print(f"Saved {len(markets_df):,} markets -> {MARKETS_PARQUET}")
+    tokens_df = read_token_to_df(MARKET_JSONL)
+    tokens_df.to_parquet(TOKENS_PARQUET, index=False)
+    print(f"Saved {len(tokens_df):,} tokens -> {TOKENS_PARQUET}")
 
 
 def main():
     args = parse_args()
     ensure_dirs()
-    args.raw_orderbook_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"Using project root: {PROJECT_ROOT}")
-
-    if args.token_ids_path is not None:
-        relevant_token_ids = sorted(
-            set(pd.read_parquet(args.token_ids_path)["token_id"].astype(str))
-        )
-        print(f"Loaded {len(relevant_token_ids)} token ids from {args.token_ids_path}")
-        if args.skip_existing:
-            relevant_token_ids = _filter_existing(relevant_token_ids, args.raw_orderbook_dir)
-        if args.skip_download or not relevant_token_ids:
-            print("Nothing to download." if not relevant_token_ids
-                  else "Skipping orderbook download (--skip-download).")
-            return
-        asyncio.run(
-            extract_orderbook_from_ids_async(
-                token_ids=relevant_token_ids,
-                start_date=args.start_date,
-                end_date=args.end_date,
-                output_path=args.raw_orderbook_dir,
-                max_concurrent=args.max_concurrent,
-            )
-        )
+    ensure_tables(rebuild=args.rebuild_tables)
+    if args.skip_download:
+        print("Skipping orderbook download (--skip-download).")
         return
 
-    # 1) Markets table
-    markets_df = read_market_to_df(args.market_jsonl)
-    print("markets_df shape:", markets_df.shape)
-    markets_df.to_parquet(args.markets_path, index=False)
-    print(f"Saved: {args.markets_path}")
+    token_ids = sorted(set(pd.read_parquet(args.token_ids_path)["token_id"].astype(str)))
+    print(f"Loaded {len(token_ids)} token ids from {args.token_ids_path}")
 
-    # 2) Select relevant markets
-    working = markets_df.dropna(subset=["question", "market_id", "end_date", "closed_time"]).copy()
-    working["end_date_ts"] = pd.to_datetime(working["end_date"], errors="coerce", utc=True)
-    min_end_ts = pd.Timestamp(args.min_end_date, tz="UTC")
-
-    markets_filtered_df = (
-        working[working["end_date_ts"] > min_end_ts]
-        .sort_values("volume", ascending=False)
-        .head(args.top_markets)
-    )
-    relevant_market_ids = set(markets_filtered_df["market_id"].astype(str))
-    print(f"Selected markets: {len(relevant_market_ids)}")
-
-    # 3) Tokens table
-    tokens_df = read_token_to_df(args.market_jsonl)
-    print("tokens_df shape:", tokens_df.shape)
-    tokens_df.to_parquet(args.tokens_path, index=False)
-    print(f"Saved: {args.tokens_path}")
-
-    # 4) Filter token IDs by selected markets
-    tokens_filtered_df = tokens_df[tokens_df["market_id"].astype(str).isin(relevant_market_ids)].copy()
-    relevant_token_ids = sorted(set(tokens_filtered_df["token_id"].astype(str)))
-
-    pd.DataFrame({"token_id": relevant_token_ids}).to_parquet(args.filtered_tokens_path, index=False)
-    print(f"Saved token ID list ({len(relevant_token_ids)}): {args.filtered_tokens_path}")
-
-    # 5) Download orderbooks
     if args.skip_existing:
-        relevant_token_ids = _filter_existing(relevant_token_ids, args.raw_orderbook_dir)
-    if args.skip_download or not relevant_token_ids:
-        print("Nothing to download." if not relevant_token_ids
-              else "Skipping orderbook download (--skip-download).")
+        existing = {p.stem.replace("ob_", "") for p in ORDERBOOK_DIR.glob("ob_*.parquet")}
+        kept = [t for t in token_ids if t not in existing]
+        print(f"--skip-existing: {len(token_ids) - len(kept)} already on disk, {len(kept)} to download")
+        token_ids = kept
+
+    if not token_ids:
+        print("Nothing to download.")
         return
 
     asyncio.run(
         extract_orderbook_from_ids_async(
-            token_ids=relevant_token_ids,
+            token_ids=token_ids,
             start_date=args.start_date,
             end_date=args.end_date,
-            output_path=args.raw_orderbook_dir,
+            output_path=ORDERBOOK_DIR,
             max_concurrent=args.max_concurrent,
         )
     )
