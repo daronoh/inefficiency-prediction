@@ -281,9 +281,9 @@ Convert the screener into a strategy and evaluate net of *all* frictions:
 >
 > **DECISION (2026-08-08): the universe is FINAL as selected from the existing JSONL** —
 > no metadata re-scrape; the study window stays 2025-10-14 → 2026-02-04 and the fee
-> analysis is explicitly counterfactual (no in-sample fee transition). The optional
-> `data-pipeline/refresh_markets_jsonl.py` (Gamma keyset scraper, no API key needed)
-> exists unused if the extended-window diff-in-diff is ever wanted.
+> analysis is explicitly counterfactual (no in-sample fee transition). A Gamma keyset
+> scraper existed briefly for the extended-window option and was removed as unneeded
+> (recoverable from git history, commit f11772f, if ever wanted).
 >
 > **Download runbook** (needs `DOME_API_KEY` set; rotate the old leaked key first).
 > 88 pilot tokens are already on disk; `--skip-existing` skips them and makes every
