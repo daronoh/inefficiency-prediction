@@ -126,33 +126,56 @@ Data lives in the MAIN checkout; from a worktree set
 `DATA_ROOT=C:/Users/Daron/coding/inefficiency-prediction/data`.
 Venv python: `C:/Users/Daron/coding/inefficiency-prediction/.venv/Scripts/python.exe`.
 
-## 6. Pipeline status and specs
+## 6. Pipeline status (updated 2026-08-10)
 
-Built and adversarially verified: paths / data_loader / features / pairs /
-selector / fee schedule (see README for usage). Downloads: **user-blocked** —
-negrisk stratum first (1,898 tokens), then ladder, control; serial deferred.
+### DONE — built, run on real data, adversarially verified
+- Stage 0: negrisk orderbooks downloaded (1,872/1,898 tokens; 13 markets have
+  no Dome coverage — 12 Bolivia pre-window + 1 LoL, tracked via
+  `members.parquet.has_data`). Features (40 cols incl. VWAP-at-size
+  {10,100,1000} shares) for all downloaded tokens.
+- Stage 1: group panels for all 50 negrisk events
+  (`processed/groups/{event,grid_1m}/`, members map). Verification: an
+  independent re-implementation matched a full event panel on ALL rows/cols
+  and every gating rule across all 100 panels. Known semantic caveats:
+  **F1** backward as-of never expires dead members' quotes — 94.8% of dev
+  non-null long_gap event-rows are >30s stale; ALWAYS condition on
+  freshness/cleanliness downstream. **F2** valid_group flags skip unborn
+  members' null staleness (2,932 dev rows flagged fresh on partial groups) —
+  long_gap is protected by its own gate; short-side consumers beware.
+- Stage 1 data-sanity verdicts: sum-of-asks center is coherent (median 1.021);
+  headline top-of-book rates halve under the two-sided-book gate
+  (>1c: 0.83%→0.44% of fresh full-cover rows) and the surviving hits
+  concentrate in 2 Fed events (89% of clean hits) — leave-event-out will be
+  fragile, report honestly. Resolution-transition phantoms are fully removed
+  by the clean-book gate; market-open seeding transients exist on the short
+  side (dust value); persistence must be seconds-based, never snapshot-count.
+- Stage 2: `src/labels.py` + `run_labels.py` — executable net-gap spells
+  (long side gated on `all_books_clean`), seconds-based persistence,
+  counterfactual fee sweep via `fee_basis`, grid labels
+  (`y_long_{q}_{15m,60m}`, `max_gap_100_60m`), development/lockbox tagging,
+  attrition table. First development attrition (2025-10-14→2026-01-07):
+  518 executable spells @10sh → 405 @100sh → 289 persistent ≥5s → 44/28/20
+  after counterfactual fees 0.04/0.05/0.07 (the 20 surviving the harshest
+  regime span 6 events, median duration ~5 min, median max net gap 1.6c).
+  Dev label base rate y_long_100_60m ≈ 0.56%. Label-vs-spell alignment
+  spot-checked. Column semantics: DATA_DICTIONARY.md.
 
-To build (in order), once negrisk orderbooks are on disk:
-
-1. **`src/groups.py` + `data-pipeline/run_group_panel.py`** — generalize
-   pairs.py from 2 tokens to N sibling markets per event: as-of align YES-book
-   feature streams onto event grid + wall-clock 1-min grid (ceil start to
-   minute); per-market staleness + validity caps {2,5,10,30}s; quality-flag
-   passthrough; `long_gap`/`short_gap` columns; respect `supports_full_cover`.
-   Output `data/processed/groups/{event,grid_1m}/group_<event_slug>.parquet`.
-2. **`src/labels.py` + `run_labels.py`** — executable labels: walk raw book
-   JSON (`data/raw_orderbook`) for VWAP at Q ∈ {$10,$100,$1,000} per leg;
-   net gap; persistence filters (k snapshots / s seconds sensitivity);
-   counterfactual fee threshold sweep (0→4¢, today's category rates marked);
-   binary target Y=1 if net-executable opportunity in (t, t+H], H ∈ {15m,60m},
-   + continuous max-gap; **attrition table** (headline exhibit); rows tagged
-   development/lockbox.
-3. **Descriptive notebook(s)** — gap anatomy on development data only.
-4. **Models** — (group, minute) unit; baselines → logistic → LightGBM;
-   PR-AUC, precision@k, profit-capture frontier; protocol §4.
-5. **`run_backtest.py`** — taker + merge-exit at VWAP, latency haircuts
+### NEXT (in order)
+1. **Adversarial verification of Stage 2** (spell detection, label windows,
+   attrition math) — gate before any modeling, same pattern as Stage 1.
+2. **Descriptive chapter** (development data only): gap anatomy, spell
+   duration/hazard, concentration, near-resolution behavior, per-event
+   heterogeneity; first thesis figures.
+3. **Models**: (group, minute) unit on labels_grid; baselines → logistic →
+   LightGBM; walk-forward folds + embargo per §4; PR-AUC, precision@k,
+   profit-capture frontier; leave-event-out decomposition (hold out template
+   families together — the Elon-tweet weeks are one family).
+4. **`run_backtest.py`**: taker + merge-exit at VWAP, latency haircuts
    Δ ∈ {0,2,10,60}s, layered net results, capital usage; maker variant as
-   explicit bound; benchmarks: monitor-all, random-k.
+   explicit bound; benchmarks monitor-all / random-k. Lockbox opened once,
+   at the very end, metrics split by seen/new groups.
+5. Parallel (user): ladder + control downloads (same command, swap the list);
+   serial optional.
 
 Chapter mapping: labels+panels → Methodology; attrition+descriptive →
 Empirical anatomy; models → Screening; backtest → Strategy; ladder/control/

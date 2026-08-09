@@ -30,6 +30,8 @@ from pathlib import Path
 
 import polars as pl
 
+VWAP_SIZES = (10, 100, 1000)
+
 # Per-member state carried into the panel (from the member's YES feat file).
 MEMBER_COLS = [
     "snapshot_time",
@@ -45,7 +47,7 @@ MEMBER_COLS = [
     "flag_no_bids",
     "flag_no_asks",
     "flag_crossed_book",
-]
+] + [f"vwap_{side}_{q}" for side in ("ask", "bid") for q in VWAP_SIZES]
 
 STALENESS_CAPS_S = (2, 5, 10, 30)
 
@@ -92,9 +94,26 @@ def _add_group_columns(panel: pl.DataFrame, prefixes: list, n_members_total: int
     n_asks = pl.sum_horizontal([a.is_not_null().cast(pl.Int32) for a in asks])
     n_bids = pl.sum_horizontal([b.is_not_null().cast(pl.Int32) for b in bids])
 
+    # A member's book is "clean" when it is two-sided and not crossed. Phantom
+    # quotes from resolved/dying members are one-sided, so requiring every
+    # present member to be clean removes resolution-transition artifacts
+    # (verified empirically: it eliminates all last-24h long-gap hits).
+    clean = [
+        (
+            ~pl.col(f"{p}_flag_no_bids")
+            & ~pl.col(f"{p}_flag_no_asks")
+            & ~pl.col(f"{p}_flag_crossed_book")
+        ).cast(pl.Int32)
+        for p in prefixes
+    ]
+    n_present = pl.sum_horizontal(
+        [pl.col(f"{p}_snapshot_time").is_not_null().cast(pl.Int32) for p in prefixes]
+    )
+
     panel = panel.with_columns([
         n_asks.alias("n_asks_quoted"),
         n_bids.alias("n_bids_quoted"),
+        (pl.sum_horizontal(clean) == n_present).alias("all_books_clean"),
         pl.sum_horizontal([a.fill_null(0.0) for a in asks]).alias("sum_asks_quoted"),
         pl.sum_horizontal([b.fill_null(0.0) for b in bids]).alias("sum_bids_quoted"),
         pl.max_horizontal(stal).alias("max_staleness_s"),
@@ -111,6 +130,33 @@ def _add_group_columns(panel: pl.DataFrame, prefixes: list, n_members_total: int
         .otherwise(None)
         .alias("short_gap"),
     ])
+    # Executable (VWAP-at-size) group gaps + the fee basis Σ p(1−p) needed to
+    # price a counterfactual taker fee (fee = feeRate × fee_basis per share).
+    for q in VWAP_SIZES:
+        va = [pl.col(f"{p}_vwap_ask_{q}") for p in prefixes]
+        vb = [pl.col(f"{p}_vwap_bid_{q}") for p in prefixes]
+        n_va = pl.sum_horizontal([a.is_not_null().cast(pl.Int32) for a in va])
+        n_vb = pl.sum_horizontal([b.is_not_null().cast(pl.Int32) for b in vb])
+        panel = panel.with_columns([
+            # Full cover at size q: every member must be fillable for q shares.
+            pl.when(full_cover_ok & (n_va == n_members_total))
+            .then(1.0 - pl.sum_horizontal([a.fill_null(0.0) for a in va]))
+            .otherwise(None)
+            .alias(f"exec_long_gap_{q}"),
+            pl.when(full_cover_ok & (n_va == n_members_total))
+            .then(pl.sum_horizontal([(a * (1 - a)).fill_null(0.0) for a in va]))
+            .otherwise(None)
+            .alias(f"fee_basis_long_{q}"),
+            # Subset short side at size q over members fillable for q shares.
+            pl.when(n_vb > 0)
+            .then(pl.sum_horizontal([b.fill_null(0.0) for b in vb]) - 1.0)
+            .otherwise(None)
+            .alias(f"exec_short_gap_{q}"),
+            pl.when(n_vb > 0)
+            .then(pl.sum_horizontal([(b * (1 - b)).fill_null(0.0) for b in vb]))
+            .otherwise(None)
+            .alias(f"fee_basis_short_{q}"),
+        ])
     for cap in STALENESS_CAPS_S:
         panel = panel.with_columns(
             (pl.col("max_staleness_s") <= cap).fill_null(False).alias(f"valid_group_{cap}s")

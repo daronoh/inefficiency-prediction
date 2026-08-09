@@ -74,6 +74,39 @@ def get_total_depth(levels):
     return float(sum(x["size"] for x in levels))
 
 
+# Share counts for executable-price (VWAP) columns. A q-share full-cover basket
+# pays q dollars, so these correspond to $10 / $100 / $1,000 payouts.
+VWAP_SHARE_TARGETS = (10.0, 100.0, 1000.0)
+
+
+def get_vwap_by_shares(levels, ascending, targets=VWAP_SHARE_TARGETS):
+    """Average fill price to trade q shares, walking levels in price order.
+
+    ascending=True walks asks lowest-first (buying); False walks bids
+    highest-first (selling). NaN where the whole book holds fewer than q
+    shares — an unfillable size, not a price of 0.
+    """
+    out = {q: np.nan for q in targets}
+    if not levels:
+        return out
+    lv = sorted(levels, key=lambda x: x["price"], reverse=not ascending)
+    remaining = sorted(targets)
+    ti = 0
+    cum_sh = 0.0
+    cum_cost = 0.0
+    for level in lv:
+        px, sz = level["price"], level["size"]
+        while ti < len(remaining) and cum_sh + sz >= remaining[ti]:
+            need = remaining[ti] - cum_sh
+            out[remaining[ti]] = (cum_cost + need * px) / remaining[ti]
+            ti += 1
+        if ti == len(remaining):
+            break
+        cum_sh += sz
+        cum_cost += px * sz
+    return out
+
+
 def extract_snapshot_features(bids_json, asks_json, depth_n=3):
     '''
     parses the bids/asks JSON of one snapshot into its features
@@ -114,7 +147,7 @@ def extract_snapshot_features(bids_json, asks_json, depth_n=3):
         if denom_total > 0 else np.nan
     )
 
-    return {
+    out = {
         "best_bid": best_bid,
         "best_bid_size": best_bid_size,
         "best_ask": best_ask,
@@ -133,6 +166,13 @@ def extract_snapshot_features(bids_json, asks_json, depth_n=3):
         "flag_no_asks": flag_no_asks,
         "flag_crossed_book": flag_crossed_book,
     }
+
+    vwap_ask = get_vwap_by_shares(asks, ascending=True)
+    vwap_bid = get_vwap_by_shares(bids, ascending=False)
+    for q in VWAP_SHARE_TARGETS:
+        out[f"vwap_ask_{int(q)}"] = vwap_ask[q]
+        out[f"vwap_bid_{int(q)}"] = vwap_bid[q]
+    return out
 
 
 def attach_token_metadata(
