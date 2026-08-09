@@ -156,6 +156,18 @@ def _add_group_columns(panel: pl.DataFrame, prefixes: list, n_members_total: int
             .then(pl.sum_horizontal([(b * (1 - b)).fill_null(0.0) for b in vb]))
             .otherwise(None)
             .alias(f"fee_basis_short_{q}"),
+            # Short-side book-quality gate: every member CONTRIBUTING to the
+            # size-q short basket (non-null vwap_bid_q) must be two-sided and
+            # non-crossed. One-sided resolution-phantom books contribute the
+            # bulk of ungated short "opportunities" — this removes them.
+            (pl.sum_horizontal([
+                (vb[j].is_not_null() & ~(
+                    ~pl.col(f"{p}_flag_no_bids")
+                    & ~pl.col(f"{p}_flag_no_asks")
+                    & ~pl.col(f"{p}_flag_crossed_book")
+                )).cast(pl.Int32)
+                for j, p in enumerate(prefixes)
+            ]) == 0).alias(f"short_clean_{q}"),
         ])
     for cap in STALENESS_CAPS_S:
         panel = panel.with_columns(

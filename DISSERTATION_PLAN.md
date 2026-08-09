@@ -153,12 +153,19 @@ Venv python: `C:/Users/Daron/coding/inefficiency-prediction/.venv/Scripts/python
   (long side gated on `all_books_clean`), seconds-based persistence,
   counterfactual fee sweep via `fee_basis`, grid labels
   (`y_long_{q}_{15m,60m}`, `max_gap_100_60m`), development/lockbox tagging,
-  attrition table. First development attrition (2025-10-14→2026-01-07):
-  518 executable spells @10sh → 405 @100sh → 289 persistent ≥5s → 44/28/20
-  after counterfactual fees 0.04/0.05/0.07 (the 20 surviving the harshest
-  regime span 6 events, median duration ~5 min, median max net gap 1.6c).
-  Dev label base rate y_long_100_60m ≈ 0.56%. Label-vs-spell alignment
-  spot-checked. Column semantics: DATA_DICTIONARY.md.
+  attrition table. VERIFIED (2026-08-10): independent re-implementation
+  matched every spell/label/attrition cell; three design findings fixed
+  same-day — spells now end at the FLIP row (books unchanged between
+  event-grid rows, so opportunity life runs to the next update), short
+  spells gated on contributing-member cleanliness (short_clean_q), and a
+  60m label embargo + straddle clip at the dev/lockbox boundary.
+  Post-fix development attrition (2025-10-14→2026-01-07): 518 executable
+  spells @10sh → 405 @100sh → 344 persistent ≥5s → 58/38/26 after
+  counterfactual fees 0.04/0.05/0.07 (8 events survive the harshest
+  regime). Dev label base rate y_long_100_60m ≈ 0.63% (~12.5k positive
+  grid rows). Short side even fair-gated stays dust at the median
+  (0.2c) — attrition exhibit only, not a model target for now.
+  Column semantics: DATA_DICTIONARY.md.
 
 ### NEXT (in order)
 1. **Adversarial verification of Stage 2** (spell detection, label windows,

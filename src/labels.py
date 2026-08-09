@@ -34,35 +34,44 @@ HORIZONS_MIN = (15, 60)
 GROUP_COLS = (
     ["time", "event_slug", "long_gap", "short_gap", "max_staleness_s", "all_books_clean"]
     + [f"{m}_{q}" for q in SIZES
-       for m in ("exec_long_gap", "fee_basis_long", "exec_short_gap", "fee_basis_short")]
+       for m in ("exec_long_gap", "fee_basis_long", "exec_short_gap", "fee_basis_short",
+                 "short_clean")]
 )
 
 
 def find_spells(panel: pl.DataFrame, gap_col: str, fee_basis_col: str,
-                fee_rate: float, require_clean_books: bool = False) -> pl.DataFrame:
+                fee_rate: float, clean_col: str = None) -> pl.DataFrame:
     """Maximal runs of net_gap > 0 with per-spell metrics.
 
-    require_clean_books=True additionally demands every present member's book
-    be two-sided and non-crossed on each row of the spell — this is the gate
-    that removes resolution-transition phantoms (long-side spells use it).
+    clean_col names a boolean book-quality gate ANDed into the condition —
+    'all_books_clean' for long spells (every present member two-sided and
+    non-crossed), 'short_clean_<q>' for short spells (every CONTRIBUTING
+    member clean). The gates remove resolution-transition phantom books.
     """
-    df = panel.select(["time", gap_col, fee_basis_col, "max_staleness_s",
-                       "all_books_clean"]).with_columns(
+    cols = ["time", gap_col, fee_basis_col, "max_staleness_s"]
+    if clean_col:
+        cols.append(clean_col)
+    df = panel.select(cols).with_columns(
         (pl.col(gap_col) - fee_rate * pl.col(fee_basis_col)).alias("net_gap")
     ).with_columns(
         (
             (pl.col("net_gap") > 0)
-            & (pl.col("all_books_clean") if require_clean_books else pl.lit(True))
+            & (pl.col(clean_col) if clean_col else pl.lit(True))
         ).fill_null(False).alias("cond")
-    ).with_columns(
-        (pl.col("cond") != pl.col("cond").shift(1, fill_value=False)).cum_sum().alias("run_id")
-    )
+    ).with_columns([
+        (pl.col("cond") != pl.col("cond").shift(1, fill_value=False)).cum_sum().alias("run_id"),
+        # A spell lives until the FLIP row: between event-grid rows every book
+        # is unchanged by construction, so the condition provably holds until
+        # the next row. next_time of the run's last row = the spell's open end.
+        pl.col("time").shift(-1).fill_null(pl.col("time")).alias("next_time"),
+    ])
     spells = (
         df.filter(pl.col("cond"))
         .group_by("run_id")
         .agg([
             pl.col("time").min().alias("start_time"),
-            pl.col("time").max().alias("end_time"),
+            pl.col("time").max().alias("last_true_time"),
+            pl.col("next_time").max().alias("end_time"),
             pl.len().alias("n_rows"),
             pl.col("net_gap").max().alias("max_net_gap"),
             pl.col("net_gap").mean().alias("mean_net_gap"),
@@ -86,9 +95,10 @@ def spells_for_event(event_panel: pl.DataFrame, event_slug: str) -> pd.DataFrame
             basis_col = f"fee_basis_{side}_{q}"
             if event_panel[gap_col].null_count() == len(event_panel):
                 continue
+            clean_col = "all_books_clean" if side == "long" else f"short_clean_{q}"
             for fee in FEE_RATES:
                 sp = find_spells(event_panel, gap_col, basis_col, fee,
-                                 require_clean_books=(side == "long"))
+                                 clean_col=clean_col)
                 if sp.is_empty():
                     continue
                 pdf = sp.to_pandas()
@@ -101,6 +111,15 @@ def spells_for_event(event_panel: pl.DataFrame, event_slug: str) -> pd.DataFrame
         return pd.DataFrame()
     res = pd.concat(out, ignore_index=True)
     res["split"] = np.where(res["start_time"] < DEV_END, "development", "lockbox")
+    # A development spell whose open end crosses the boundary must not carry
+    # lockbox time into development duration/attrition: clip at the boundary.
+    straddle = (res["split"] == "development") & (res["end_time"] > DEV_END)
+    if straddle.any():
+        res.loc[straddle, "end_time"] = DEV_END
+        res.loc[straddle, "duration_s"] = (
+            (res.loc[straddle, "end_time"] - res.loc[straddle, "start_time"])
+            .dt.total_seconds()
+        )
     return res
 
 
@@ -122,7 +141,9 @@ def grid_labels_for_event(grid_times: pd.Series, spells: pd.DataFrame,
                 lab[f"y_long_{q}_{h}m"] = 0
         lab["max_gap_100_60m"] = 0.0
         lab["split"] = np.where(lab["time"] < DEV_END, "development", "lockbox")
-        return lab
+        embargo_start = DEV_END - pd.Timedelta(minutes=max(HORIZONS_MIN))
+        lab = lab[~((lab["split"] == "development") & (lab["time"] >= embargo_start))]
+        return lab.reset_index(drop=True)
     for q in SIZES:
         qual = spells[
             (spells["side"] == "long") & (spells["size_q"] == q)
@@ -149,7 +170,12 @@ def grid_labels_for_event(grid_times: pd.Series, spells: pd.DataFrame,
         elif q == 100:
             lab["max_gap_100_60m"] = 0.0
     lab["split"] = np.where(lab["time"] < DEV_END, "development", "lockbox")
-    return lab
+    # Boundary embargo: development rows whose label window crosses into the
+    # lockbox would let lockbox spells reach development labels. Drop them
+    # (max horizon = 60m; ~0.02% of rows).
+    embargo_start = DEV_END - pd.Timedelta(minutes=max(HORIZONS_MIN))
+    lab = lab[~((lab["split"] == "development") & (lab["time"] >= embargo_start))]
+    return lab.reset_index(drop=True)
 
 
 def attrition_table(all_spells: pd.DataFrame, dev_only: bool = True) -> pd.DataFrame:
