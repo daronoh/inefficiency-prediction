@@ -1,8 +1,8 @@
 import json
+import os
 import numpy as np
 import pandas as pd
 
-import json
 import asyncio
 import aiohttp
 import random
@@ -67,78 +67,10 @@ def safe_float(value):
         return np.nan
 
 
-# Define a helper function to compute best bid from a list of bid levels.
-def get_best_bid(bids):
-    # Return NaN if there are no bids.
-    if not bids:
-        return np.nan
-    
-    # Return the maximum bid price across all levels.
-    return max(float(level["price"]) for level in bids)
-
-
-# Define a helper function to compute best ask from a list of ask levels.
-def get_best_ask(asks):
-    # Return NaN if there are no asks.
-    if not asks:
-        return np.nan
-    
-    # Return the minimum ask price across all levels.
-    return min(float(level["price"]) for level in asks)
-
-
-# Define a helper function to get the size at the best bid.
-def get_best_bid_size(bids):
-    # Return NaN if there are no bids.
-    if not bids:
-        return np.nan
-    
-    # Find the bid level with the highest price.
-    best_level = max(bids, key=lambda level: float(level["price"]))
-    
-    # Return its size as float.
-    return float(best_level["size"])
-
-
-# Define a helper function to get the size at the best ask.
-def get_best_ask_size(asks):
-    # Return NaN if there are no asks.
-    if not asks:
-        return np.nan
-    
-    # Find the ask level with the lowest price.
-    best_level = min(asks, key=lambda level: float(level["price"]))
-    
-    # Return its size as float.
-    return float(best_level["size"])
-
-
-# Define a helper function to sum depth across the top n levels.
-def get_depth_top_n(levels, n):
-    # Return 0.0 if there are no levels.
-    if not levels:
-        return 0.0
-    
-    # Sort levels by price.
-    sorted_levels = levels
-    
-    # Sum the size of the first n levels.
-    return sum(float(level["size"]) for level in sorted_levels[:n])
-
-
-# Define a helper function to compute imbalance.
-def compute_imbalance(bid_depth, ask_depth):
-    # Compute the denominator.
-    denom = bid_depth + ask_depth
-    
-    # Return NaN if the denominator is zero.
-    if denom == 0:
-        return np.nan
-    
-    # Return the imbalance.
-    return (bid_depth - ask_depth) / denom
-
 def read_market_to_df(market_path) -> pd.DataFrame:
+    '''
+    parses the markets JSONL into a clean 27-column table(one row per market).
+    '''
     # Create an empty list to collect market-level rows.
     market_rows = []
 
@@ -191,6 +123,9 @@ def read_market_to_df(market_path) -> pd.DataFrame:
     return markets_df
 
 def read_token_to_df(token_path) -> pd.DataFrame:
+    '''
+    parses the markets JSONL into a clean 27-column table(one row per outcome token).
+    '''
     market_token_rows = []
 
     with open(token_path, "r", encoding="utf-8") as f:
@@ -228,11 +163,20 @@ def read_token_to_df(token_path) -> pd.DataFrame:
     market_tokens_df = pd.DataFrame(market_token_rows)
     return market_tokens_df
 
-API_KEY = "beb79777a5762ef81b41fbaae1dbb75d23fcee28"
-DOME_HEADERS = {"Authorization": f"Bearer {API_KEY}", "x-api-key": API_KEY}
-
 DOME_URL = "https://api.domeapi.io/v1/polymarket/orderbooks"
 RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+
+
+def _dome_headers():
+    # Key must come from the environment; never commit it (the old hardcoded key
+    # lives in git history and must be treated as leaked/rotated).
+    api_key = os.environ.get("DOME_API_KEY", "").strip()
+    if not api_key:
+        raise RuntimeError(
+            "DOME_API_KEY environment variable is not set. "
+            "Set it to your Dome API key before downloading orderbooks."
+        )
+    return {"Authorization": f"Bearer {api_key}", "x-api-key": api_key}
 
 async def extract_orderbook_from_ids_async(
     token_ids,
@@ -242,8 +186,12 @@ async def extract_orderbook_from_ids_async(
     max_concurrent=5,
     max_retries=6,
 ):
+    '''
+    downloads orderbook snapshots per token from Dome API
+    '''
     output_path = Path(output_path)
-    
+    dome_headers = _dome_headers()
+
     dome_history_start = pd.Timestamp("2025-10-14", tz="UTC")
     
     def _to_utc_timestamp(value):
@@ -265,7 +213,7 @@ async def extract_orderbook_from_ids_async(
         while True:
             for attempt in range(1, max_retries + 1):
                 try:
-                    async with session.get(DOME_URL, params=params, headers=DOME_HEADERS, timeout=30) as resp:
+                    async with session.get(DOME_URL, params=params, headers=dome_headers, timeout=30) as resp:
                         if resp.status in RETRYABLE_STATUS:
                             raise aiohttp.ClientResponseError(
                                 request_info=resp.request_info,

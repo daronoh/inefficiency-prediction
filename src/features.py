@@ -74,7 +74,43 @@ def get_total_depth(levels):
     return float(sum(x["size"] for x in levels))
 
 
+# Share counts for executable-price (VWAP) columns. A q-share full-cover basket
+# pays q dollars, so these correspond to $10 / $100 / $1,000 payouts.
+VWAP_SHARE_TARGETS = (10.0, 100.0, 1000.0)
+
+
+def get_vwap_by_shares(levels, ascending, targets=VWAP_SHARE_TARGETS):
+    """Average fill price to trade q shares, walking levels in price order.
+
+    ascending=True walks asks lowest-first (buying); False walks bids
+    highest-first (selling). NaN where the whole book holds fewer than q
+    shares — an unfillable size, not a price of 0.
+    """
+    out = {q: np.nan for q in targets}
+    if not levels:
+        return out
+    lv = sorted(levels, key=lambda x: x["price"], reverse=not ascending)
+    remaining = sorted(targets)
+    ti = 0
+    cum_sh = 0.0
+    cum_cost = 0.0
+    for level in lv:
+        px, sz = level["price"], level["size"]
+        while ti < len(remaining) and cum_sh + sz >= remaining[ti]:
+            need = remaining[ti] - cum_sh
+            out[remaining[ti]] = (cum_cost + need * px) / remaining[ti]
+            ti += 1
+        if ti == len(remaining):
+            break
+        cum_sh += sz
+        cum_cost += px * sz
+    return out
+
+
 def extract_snapshot_features(bids_json, asks_json, depth_n=3):
+    '''
+    parses the bids/asks JSON of one snapshot into its features
+    '''
     bids = parse_orderbook_side(bids_json)
     asks = parse_orderbook_side(asks_json)
 
@@ -87,6 +123,14 @@ def extract_snapshot_features(bids_json, asks_json, depth_n=3):
     else:
         mid_price = (best_bid + best_ask) / 2.0
         spread = best_ask - best_bid
+
+    # Data-quality flags: downstream label/panel code must be able to tell a real
+    # quote from a degenerate book state instead of silently consuming NaNs.
+    flag_no_bids = len(bids) == 0
+    flag_no_asks = len(asks) == 0
+    flag_crossed_book = (
+        not flag_no_bids and not flag_no_asks and best_bid > best_ask
+    )
 
     bid_depth_n = get_top_n_bid_depth(bids, n=depth_n)
     ask_depth_n = get_top_n_ask_depth(asks, n=depth_n)
@@ -103,7 +147,7 @@ def extract_snapshot_features(bids_json, asks_json, depth_n=3):
         if denom_total > 0 else np.nan
     )
 
-    return {
+    out = {
         "best_bid": best_bid,
         "best_bid_size": best_bid_size,
         "best_ask": best_ask,
@@ -118,7 +162,17 @@ def extract_snapshot_features(bids_json, asks_json, depth_n=3):
         "imbalance_total": imbalance_total,
         "n_bid_levels": len(bids),
         "n_ask_levels": len(asks),
+        "flag_no_bids": flag_no_bids,
+        "flag_no_asks": flag_no_asks,
+        "flag_crossed_book": flag_crossed_book,
     }
+
+    vwap_ask = get_vwap_by_shares(asks, ascending=True)
+    vwap_bid = get_vwap_by_shares(bids, ascending=False)
+    for q in VWAP_SHARE_TARGETS:
+        out[f"vwap_ask_{int(q)}"] = vwap_ask[q]
+        out[f"vwap_bid_{int(q)}"] = vwap_bid[q]
+    return out
 
 
 def attach_token_metadata(
@@ -127,18 +181,17 @@ def attach_token_metadata(
     metadata_cols=None,
     add_time_features=True,
 ) -> pd.DataFrame:
+    '''
+    merges static token metadata with the orderbook features
+    '''
+    # `fee_decimal` is excluded: fee rates live in data/processed/fee_schedule.parquet instead.
     if metadata_cols is None:
         metadata_cols = [
             "token_id",
             "market_id",
             "outcome_index",
-            "outcome",
             "end_date",
-            "closed_time",
-            "fee_decimal",
             "neg_risk",
-            "volume",
-            "volume_clob",
         ]
 
     cols_to_use = [c for c in metadata_cols if c in token_meta_df.columns]
@@ -152,15 +205,12 @@ def attach_token_metadata(
 
     if add_time_features:
         out["snapshot_time"] = pd.to_datetime(out["snapshot_time"], utc=True, errors="coerce")
-        out["closed_time"] = pd.to_datetime(out.get("closed_time"), utc=True, errors="coerce")
         out["end_date"] = pd.to_datetime(out.get("end_date"), utc=True, errors="coerce")
 
-        out["effective_end_time"] = out["closed_time"].where(
-            out["closed_time"].notna(),
-            out["end_date"]
-        )
-
-        delta = out["effective_end_time"] - out["snapshot_time"]
+        # Time to expiry uses the SCHEDULED end date only. The realised
+        # `closed_time` is not knowable at snapshot time and using it leaks the
+        # actual resolution moment into the features.
+        delta = out["end_date"] - out["snapshot_time"]
 
         out["time_to_expiry_hours"] = delta.dt.total_seconds() / 3600.0
         out["log_time_to_expiry_hours"] = np.log1p(
@@ -171,6 +221,9 @@ def attach_token_metadata(
 
 
 def add_token_time_series_features(feat_df: pd.DataFrame) -> pd.DataFrame:
+    '''
+    adds one-lag deltas to see bid/ask/mid changes, and seconds since previous snapshot.
+    '''
     # Work on a copy so the original dataframe is not modified in place.
     out = feat_df.copy()
 
@@ -225,6 +278,15 @@ def build_token_feature_table_from_parquet(
 
     df = pd.read_parquet(input_path)
 
+    # Deduplicate snapshots: Dome pagination can return overlapping pages, and the
+    # same book timestamp can be re-indexed. Keep the latest-indexed row per
+    # (token, book timestamp).
+    df = (
+        df.sort_values(["snapshot_timestamp_ms", "indexed_at_ms"], kind="stable")
+        .drop_duplicates(subset=["token_id", "snapshot_timestamp_ms"], keep="last")
+        .reset_index(drop=True)
+    )
+
     rows = []
     for row in df.to_dict("records"):
         feats = extract_snapshot_features(
@@ -249,6 +311,8 @@ def build_token_feature_table_from_parquet(
     if token_meta_df is not None:
         feat_df = attach_token_metadata(feat_df, token_meta_df)
         feat_df = add_token_time_series_features(feat_df)
+        # `indexed_at_time`/`indexed_at_ms` are kept: they are the honest
+        # "data available at" clock for latency-sensitive evaluation.
         feat_df = feat_df.drop(
             columns=[
                 "market_hash",
@@ -257,7 +321,6 @@ def build_token_feature_table_from_parquet(
                 "prev_best_bid",
                 "prev_best_ask",
                 "prev_mid_price",
-                "indexed_at_time",
                 "outcome",
                 "end_date",
                 "closed_time",
