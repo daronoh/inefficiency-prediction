@@ -6,16 +6,12 @@ established findings, binding decisions, and the work queue. Last rewritten
 
 ## 1. Project context
 
-NUS CP4101 final-year dissertation (Daron Oh, supervisor Prof. Lu Yao, thesis
-due ~Nov 2026). Research question: **can observable market state predict which
+NUS CP4101 final-year dissertation. Research question: **can observable market state predict which
 Polymarket winner-take-all event groups will exhibit short-horizon, net-of-cost
 pricing inefficiency — so monitoring effort can concentrate on a shortlist?**
 (“Contract screening”, not brute-force arbitrage scanning.)
 
-Supervisor's standing critique (must be answered head-on): *a plain YES+NO
-strategy is impossible once fees are considered; work harder on analysis and
-modelling to derive a practically workable strategy.* The thesis answer: a
-layered friction (“attrition”) analysis, cost-aware labels, screening models,
+The thesis answer: a layered friction (“attrition”) analysis, cost-aware labels, screening models,
 and a maker-side / merge-exit strategy design that does not pay taker fees.
 
 ## 2. Established empirical findings (verified; do not re-derive)
