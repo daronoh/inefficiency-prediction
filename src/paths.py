@@ -1,28 +1,44 @@
+"""Repository paths; DATA_ROOT may point to an external copy of the dataset."""
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
-# Project root = inefficiency-prediction/
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+load_dotenv(PROJECT_ROOT / '.env', override=False)
+DATA_DIR = Path(os.environ.get('DATA_ROOT', str(PROJECT_ROOT / 'data'))).resolve()
+RAW_DIR = DATA_DIR / 'raw'
+ORDERBOOK_DIR = RAW_DIR / 'orderbooks'
+LADDER_BOOK_DIR = RAW_DIR / 'ladder_orderbooks'
+METADATA_DIR = DATA_DIR / 'metadata'
+PROCESSED_DIR = DATA_DIR / 'processed'
+MARKET_JSONL = RAW_DIR / 'polymarket_markets_1y.jsonl'
+MARKETS_PARQUET = METADATA_DIR / 'markets.parquet'
+TOKENS_PARQUET = METADATA_DIR / 'tokens.parquet'
+EVENT_UNIVERSE = METADATA_DIR / 'event_universe.parquet'
+FEATURES_DIR = PROCESSED_DIR / 'features'
+FEATURES = FEATURES_DIR / 'hourly_features.parquet'
+LABELS_DIR = PROCESSED_DIR / 'labels'
+RESULTS_DIR = PROJECT_ROOT / 'results' / 'baseline'
+REPORTS_DIR = PROJECT_ROOT / 'docs' / 'reports'
 
-# data/ is git-ignored and may live outside this checkout (e.g. when running from a
-# git worktree). Override with the DATA_ROOT environment variable in that case.
-DATA_DIR = Path(os.environ.get("DATA_ROOT", str(PROJECT_ROOT / "data")))
-PROCESSED_DIR = DATA_DIR / "processed"
-ORDERBOOK_DIR = DATA_DIR / "raw_orderbook"
-FEATURE_DIR = PROCESSED_DIR / "orderbook"
-PAIR_DIR = PROCESSED_DIR / "pairs"
 
-MARKET_JSONL = DATA_DIR / "polymarket_markets_1y.jsonl"
+def book_path(token):
+    token = str(token)
+    if not token.isdecimal():
+        raise ValueError('Token IDs must be numeric')
+    for directory in (LADDER_BOOK_DIR, ORDERBOOK_DIR):
+        path = directory / f'ob_{token}.parquet'
+        if path.exists():
+            return path
+    return LADDER_BOOK_DIR / f'ob_{token}.parquet'
 
-MARKETS_PARQUET = PROCESSED_DIR / "markets.parquet"
-TOKENS_PARQUET = PROCESSED_DIR / "tokens.parquet"
 
-# Canonical study universe (written by select_event_universe.py).
-EVENT_UNIVERSE = PROCESSED_DIR / "event_universe.parquet"
-UNIVERSE_TOKEN_IDS = PROCESSED_DIR / "universe_token_ids.parquet"
+def data_relative(path):
+    return Path(path).resolve().relative_to(DATA_DIR).as_posix()
 
-FEE_SCHEDULE = PROCESSED_DIR / "fee_schedule.parquet"
 
-def ensure_dirs() -> None:
-    for p in [DATA_DIR, PROCESSED_DIR, ORDERBOOK_DIR, FEATURE_DIR, PAIR_DIR]:
-        p.mkdir(parents=True, exist_ok=True)
+def resolve_data_path(path):
+    result = (DATA_DIR / path).resolve()
+    if not result.is_relative_to(DATA_DIR):
+        raise ValueError('Input path is outside DATA_ROOT')
+    return result

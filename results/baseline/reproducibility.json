@@ -1,0 +1,17 @@
+{
+  "original_methods": 34,
+  "total_methods": 50,
+  "original_ranking_metrics_reproduced": true,
+  "original_execution_attempts_identical": true,
+  "original_score_max_absolute_difference": 3.3306690738754696e-16,
+  "metadata_fields": [
+    "m_event_type",
+    "m_topic",
+    "m_age_days"
+  ],
+  "candidate_populations_identical": true,
+  "original_predictions_sha256": "72a4067cac99276281ccc113f5b33ef33c7832441a79b5c31539ccdde2d99c7e",
+  "features_sha256": "bcaa76f1f0b729ce087d3962245dc57018aa1bf2c0712f18d25c92e24f17062a",
+  "labels_sha256": "d25a30e6fbeff304669c8198186c0ef9de3f85a65d44ad3ee2cea6a1d12c6a1d",
+  "final_lockbox_opened": false
+}

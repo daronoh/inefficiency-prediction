@@ -1,0 +1,77 @@
+{
+  "scenarios": {
+    "arrival_500ms": [
+      0.5,
+      1.0
+    ],
+    "arrival_100ms": [
+      0.1,
+      1.0
+    ],
+    "arrival_50ms": [
+      0.05,
+      1.0
+    ],
+    "arrival_10ms": [
+      0.01,
+      1.0
+    ],
+    "arrival_0ms": [
+      0.0,
+      1.0
+    ],
+    "fast_unwind_100ms": [
+      0.5,
+      0.1
+    ],
+    "instant_no_hold": [
+      0.0,
+      0.0
+    ]
+  },
+  "policies": [
+    "logistic",
+    "random_forest",
+    "boosted_trees",
+    "combined_logistic",
+    "combined_random_forest",
+    "combined_boosted_trees",
+    "rank_ensemble",
+    "combined_rank_ensemble",
+    "quoted_gap_rule",
+    "monitor_all"
+  ],
+  "contract": {
+    "version": "periodic_snapshot_screening_v5",
+    "development_start": "2025-10-14T00:00:00Z",
+    "lockbox_start": "2026-01-08T00:00:00Z",
+    "cadence_minutes": 60,
+    "horizon_minutes": 60,
+    "quantities": [
+      5,
+      10,
+      25,
+      50,
+      100,
+      250,
+      500,
+      1000
+    ],
+    "assumed_other_cost_usd": 0.0,
+    "cash_cap_usd": 1000.0,
+    "arrival_delay_s": 0.5,
+    "confirmation_s": 0.0,
+    "unwind_delay_s": 1.0,
+    "primary_clock": "snapshot_time"
+  },
+  "top_n": 5,
+  "predictions_sha256": "c267891957ebdea89a057b79c9b620e0c24880514c3286d3e857defd0837fc34",
+  "label_sha256": "d25a30e6fbeff304669c8198186c0ef9de3f85a65d44ad3ee2cea6a1d12c6a1d",
+  "source_sha256": "5fd2d502c8f627184b2a33b5afca842efd71508f44d493b7cf338c2884ddc6cb",
+  "labels_rebuilt": false,
+  "models_retrained": false,
+  "final_lockbox_opened": false,
+  "interpretation": "Fixed-selection execution sensitivity; zero delay assumes displayed liquidity is attainable. No measured feed/network latency. Same discovery, sizes, cash cap, entry rules, and quote reservations. Unwind delay also controls the conservative post-attempt hold and reserved quote version, even after complete fills.",
+  "baseline_500ms_attempts_reproduced_exactly": true,
+  "baseline_attempts_sha256": "324eaa0d17ff552364041360d8a3458257fcf7ed274ea9fd2e9b84a8e9475ca2"
+}

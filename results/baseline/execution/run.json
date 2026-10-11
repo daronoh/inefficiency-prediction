@@ -1,0 +1,14 @@
+{
+  "top_n": 5,
+  "predictions_sha256": "c267891957ebdea89a057b79c9b620e0c24880514c3286d3e857defd0837fc34",
+  "labels_sha256": "d25a30e6fbeff304669c8198186c0ef9de3f85a65d44ad3ee2cea6a1d12c6a1d",
+  "source_sha256": "068ec6cb1d3c665c50adec9f3cde913604dc681730766e5767cc71526508ebf7",
+  "final_lockbox_opened": false,
+  "quote_policies": [
+    "carry_forward"
+  ],
+  "execution_book_policy": "per_token_recording_extent",
+  "common_cash_cap_per_attempt_usd": 1000.0,
+  "portfolio_capital_model": false,
+  "interpretation": "Conditional displayed-depth replay, not actual profit. Event reservations persist across selected windows and folds. Unknowns excluded from known-P&L subtotals. No measured competition, funding or global capital budget."
+}

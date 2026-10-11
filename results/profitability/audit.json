@@ -1,0 +1,16 @@
+{
+  "final_lockbox_opened": false,
+  "models": 59,
+  "evaluation_event_windows": 20951,
+  "known_training_and_evaluation_hours": 21827,
+  "checks": [
+    "identical candidate populations",
+    "unknown targets missing",
+    "finite scores",
+    "top-five budgets",
+    "purged chronological fits",
+    "100 ms arrival",
+    "attempt/summary/curve accounting",
+    "dominant event excluded"
+  ]
+}
