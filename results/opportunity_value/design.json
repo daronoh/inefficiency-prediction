@@ -1,0 +1,279 @@
+{
+  "version": "quoted_value_prediction_v1",
+  "dataset_sha256": "740cb9ba76ff9dad7e303fa9e3cfbd71f096777d0e8d647f0fb6b8246a94aacf",
+  "dataset_completion_sha256": "0456ffef775ca3f5b9b81177206c6be557e3a4130b72cb71ff936e71a0202267",
+  "occurrence_completion_sha256": "da631ad045f82001d66b1c52172f48e492c44946e39fe0322aacd377cce5b496",
+  "window": {
+    "development_start": "2025-10-14T00:00:00Z",
+    "lockbox_start": "2026-01-08T00:00:00Z",
+    "cadence_minutes": 60,
+    "horizon_minutes": 60
+  },
+  "folds": [
+    [
+      "nov_early",
+      "2025-11-01",
+      "2025-11-22"
+    ],
+    [
+      "nov_late",
+      "2025-11-22",
+      "2025-12-15"
+    ],
+    [
+      "dec_late",
+      "2025-12-15",
+      "2026-01-08"
+    ]
+  ],
+  "feature_columns": [
+    "x_active_packages",
+    "x_active_tokens",
+    "x_seen_fraction",
+    "x_clean_fraction",
+    "x_spread_mean",
+    "x_spread_max",
+    "x_ask_depth_sum",
+    "x_book_age_max_s",
+    "x_best_quoted_net_usd",
+    "x_size_feasible_package_fraction",
+    "x_positive_quoted_net_package_fraction",
+    "x_snapshot_lag1_active_packages",
+    "x_snapshot_change1_active_packages",
+    "x_snapshot_lag1_active_tokens",
+    "x_snapshot_change1_active_tokens",
+    "x_snapshot_lag1_seen_fraction",
+    "x_snapshot_change1_seen_fraction",
+    "x_snapshot_lag1_clean_fraction",
+    "x_snapshot_change1_clean_fraction",
+    "x_snapshot_lag1_spread_mean",
+    "x_snapshot_change1_spread_mean",
+    "x_snapshot_lag1_spread_max",
+    "x_snapshot_change1_spread_max",
+    "x_snapshot_lag1_ask_depth_sum",
+    "x_snapshot_change1_ask_depth_sum",
+    "x_snapshot_lag1_book_age_max_s",
+    "x_snapshot_change1_book_age_max_s",
+    "x_snapshot_lag1_best_quoted_net_usd",
+    "x_snapshot_change1_best_quoted_net_usd",
+    "x_snapshot_lag1_size_feasible_package_fraction",
+    "x_snapshot_change1_size_feasible_package_fraction",
+    "x_snapshot_lag1_positive_quoted_net_package_fraction",
+    "x_snapshot_change1_positive_quoted_net_package_fraction",
+    "m_age_days",
+    "m_event_type",
+    "m_topic"
+  ],
+  "candidates": {
+    "random_forest": [
+      {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "min_samples_leaf": 20,
+        "max_features": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "min_samples_leaf": 5,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "min_samples_leaf": 50,
+        "max_features": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 6,
+        "min_samples_leaf": 50,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 5,
+        "max_features": 1.0
+      }
+    ],
+    "boosted_trees": [
+      {
+        "max_iter": 120,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 30,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 120,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 30,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 200,
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 50,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 50,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 120,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 30,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 200,
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 10,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 120,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 30,
+        "l2_regularization": 1.0
+      },
+      {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 50,
+        "l2_regularization": 100.0
+      }
+    ],
+    "xgboost": [
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_weight": 10,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 2,
+        "min_child_weight": 10,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 400,
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 4,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 6,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 400,
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "min_child_weight": 10,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 1.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 100.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_weight": 50,
+        "subsample": 1.0,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 100.0,
+        "reg_alpha": 10.0
+      }
+    ]
+  },
+  "primary_budget": 5,
+  "budgets": [
+    5,
+    3
+  ],
+  "target": "Largest qualifying quoted basket dollar margin within the next window; no executed returns",
+  "tuning_objective": "Sum of captured known peak quote values at N=5; ties captured positive hours then first declared setting",
+  "embargo_seconds": 3600.0,
+  "gate": "Unweighted probability of a positive opportunity; no hard gate threshold",
+  "conditional": "Fit positive quote magnitudes only; clip negative amount predictions to zero",
+  "aggregation": "A sum of per-hour maxima for ranking evaluation, not cumulative tradable profit",
+  "execution_outcomes_used": false,
+  "final_lockbox_opened": false,
+  "source_sha256": {
+    "src/models/opportunity_value.py": "50a45655b6c010d9e4373ebd71d1f809f9a3f3f2625877d3b95bbeadba6652cd",
+    "src/models/opportunities.py": "5f61d4b6dae3f7df43c9b6678e211e122cda85c3da252b0410d116614332db51",
+    "src/models/tuning.py": "f4275887b36b5a8dcef7f2582d49f1fd0b77e924c27e54d188d1d6d413e5dc09",
+    "src/models/estimators.py": "e65a6350de076a96d5618e2e85f2f93c5cc95039d37418711149666c65c178ae",
+    "src/models/profitability.py": "d030503e4dee8a5f1c1e8da5395f0f80b60fedf77ccf17013c9ee3f3d720bb7d"
+  }
+}

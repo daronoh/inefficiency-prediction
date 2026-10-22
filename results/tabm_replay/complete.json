@@ -1,0 +1,25 @@
+{
+  "files_sha256": {
+    "attempts.parquet": "ff31688cdecf2a59b02f0ede81421e426b84b5e74001e6c7e4cdd71bc70674da",
+    "design.json": "f5212ad3b77981c000ae435bebdc1b1b152d887df9f2ef96f5eddfaf193f413a",
+    "scheduler_audit.parquet": "880036a5e3f07ba66b0ae634121afd30df69d138b3368943dcefb3fc1bdeea46",
+    "selections.parquet": "1d39c494448c516e53b05094eb31ff6f67408fd6229e6ee976431e0ab0dc656b",
+    "summary.csv": "1eed0c302ab48b15cfd81206dd4b0c0b1b9dde4dd6d0ee2b18364891a4b7b359",
+    "events/avatar-fire-and-ash-opening-weekend-box-office.parquet": "ccc50a1ba77a780ae2cc6c2f98313650fd167ab151a661ba6a1be15f32f58827",
+    "events/boxing-jake-paul-vs-anthony-joshua-third-option-included.parquet": "7fcb9ac80c5a4dd1a904c68c238332f72e5367ba0c349afcc7df0b3da5d4fb09",
+    "events/fed-decision-in-december.parquet": "e6b6a1985b2f9e361476e2daa23edee96b1dc461f7b1297ee3f8aae908824b0a",
+    "events/fed-decision-in-january.parquet": "0300cf531f3429586b3f5c276d5a8f54370649ce07ee5774df6f38390966edb7",
+    "events/gensyn-public-sale-total-commitments.parquet": "ad0889b5affbb9820a68cf4c7c3c7bfa532783fccfc729d82fec09733e271dbc",
+    "events/honduras-presidential-election.parquet": "9f4adf87d50d788f7d0591264efeda80674d5d327835dc56ba74a173dc491451",
+    "events/largest-company-end-of-november.parquet": "a241bc8df60e0789bca9dfed3b4f38c1910ff65291b2c4cc566399cc34798238",
+    "events/monad-market-cap-fdv-one-day-after-launch.parquet": "807abc48572b3bb94d1b16f8a0758fd40c3fc8a937a0c9447de56e0fce396e36",
+    "events/what-price-will-bitcoin-hit-in-november-2025.parquet": "921bc3cefdc98e8854166f1fc4e634f3b0097424b7293a13ab57a0b702dd09f5",
+    "events/what-price-will-ethereum-hit-in-november-2025.parquet": "ea2f99528f91ce9a7eb0abd07aa64e9cb231f649c5af257461d136eba384bbdb",
+    "events/which-company-has-the-best-ai-model-end-of-january.parquet": "b743936625acb006ba183bb3244e92a566e545c943524ed40b669e8108bb7ecb",
+    "events/which-party-holds-the-most-seats-after-argentina-deputies-election.parquet": "a81ebdeaee166fa76b1d730cf9d08ee5b5fc24be55709aab1741479c036a68a6",
+    "events/will-the-government-shutdown-end-by-763.parquet": "1798486c686bd2284ebdf5ee8f8dec955eb121f968509d075b4fcd014739896c"
+  },
+  "models_retrained": false,
+  "labels_rebuilt": false,
+  "final_lockbox_opened": false
+}

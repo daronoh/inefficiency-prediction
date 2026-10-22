@@ -1,0 +1,9 @@
+{
+  "snapshot_features_identical": true,
+  "execution_columns_used_in_fitting": false,
+  "old_negative_return_hours": 17,
+  "old_negative_return_hours_now_opportunity": 17,
+  "new_opportunity_old_known_no_success": 10,
+  "old_positive_now_negative": 0,
+  "final_lockbox_opened": false
+}

@@ -1,0 +1,17 @@
+{
+  "training_completion_sha256": "ef6577861d895c3a6573b2d4595d16b361c746912e0183b87db60d08245045ce",
+  "report_source_sha256": "fd8468191ec6e6af1689189a334a66356944c7c11993ffd71668745a1d1d864f",
+  "final_lockbox_opened": false,
+  "files_sha256": {
+    "all_events.png": "8c2425cf15774a57469428c8e1b8dbe1c508d073afa2a22a9ab8270e650527e1",
+    "comparison.csv": "b3a0977d19b4b7acf914558069d32cefa3056b82457f199b70bf6f64127e9704",
+    "exclude_december_fed.png": "01ea68d1063e026c614cc6a971c65d0248a19ce9716735aa022c677fc029d3a0",
+    "feature_importance_by_fold.csv": "ca4440c60f96f17afec3b3eb5f0afa7a201b613ea45dd1fbf1e1eb8eea48ca4b",
+    "group_capture.csv": "77064e9a2105aa0d841415ab8c5538a02cb84ac45c8f20b62ba553ad4837ecc8",
+    "new_opportunity_value.csv": "09df750284820af99f31f936fc6ad04bdd854185b3dbed6e5deae9d8169fcaf8",
+    "paired_occurrence_intervals.csv": "079bc2d8ae4865322f52437a0eefe191c2331135d7a8601353bed3883d914e52",
+    "paired_value_intervals.csv": "b22cdc7e55bc188dd4c3e8995a41ef407c8aef1fca683389f57447128ed07af1",
+    "value_contributions.csv": "e806359eca0a2b5b4fc466dcf7473108147a96177440bee8dd6bd28c17b4c6ef",
+    "value_distribution.csv": "e6f655ef52907efe10ae13f3fc059039be09574215ac574990ce528e9d40ee67"
+  }
+}

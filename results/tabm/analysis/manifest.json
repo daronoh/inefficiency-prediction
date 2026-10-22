@@ -1,0 +1,28 @@
+{
+  "training_completion_sha256": "70fcb1bcf3fab934961c6ac7fed73a8aefb5f61c4e5db7ea695b4f2bebc50c17",
+  "replay_completion_sha256": "c39cf02f5dc6551501f2e2416fce853820b549a1784bda480c6f932c5b44bc27",
+  "baseline_completion_sha256": "1ae3bed9d6ada3c681959c7999b5151aa78e8b7c9249b964ebef98d54f8e0dc9",
+  "source_sha256": "5e6c5ef767f93b32e8eac73079b54c827a38d08058e8d4d6d13f7e97c6ec9741",
+  "files_sha256": {
+    "all_events_capture.png": "81889a64adc3da4eafcfc88800d873e51c7ad77e83c1f29712a8f5463b9664cc",
+    "all_events_latency.png": "7675d4c87d23f315fe3cef6fd5af737bb13c7c4654a4c5e078335e49ee219e0b",
+    "comparison.csv": "d75103a810705c9fcc146284a0da0212a297278dceb8be4418164ca428882120",
+    "economic_comparison.csv": "258410f158a727282c54f56eff6a2a2cc7eb6c45f54d43a598d06b11b6c36866",
+    "event_pnl.csv": "68e592e145f5ec4138e6f8a50d998a7c1a6fce1a68059df16fbc6eab329390b1",
+    "exclude_december_fed_capture.png": "73a42549631536cf52c6d07798f02aaae021ca4b99d903f302d63a5f6838b741",
+    "exclude_december_fed_latency.png": "265733e0f3a0cf9584d0b72f2de58c7e1e0008f481813231097d5ffecc6c981d",
+    "group_capture.csv": "a659d00ab89d336f2eceb3e8e61200d3188022fcbe96c2734333cd3ef9a026e3",
+    "opportunity_vs_economics.csv": "897e53046d3b4b1346cbea74a8c99031ed061d77506b47829475856cf3a49da9",
+    "paired_occurrence_intervals.csv": "e2de76256093fea82c18e35b6a91d808f7ad5b935a9be401c64547786f17a358",
+    "paired_pnl_intervals.csv": "a2ffce78061779c2ed8914ad1a24768c1c7fca678bdb3d8f46072bff6ed7eba6",
+    "paired_value_intervals.csv": "b0f2cb536d7f5dcc59362ff0e1198d094615e36b4fdacc194ca94940cb75282f",
+    "pnl_curves.parquet": "36750314afd3af48ea523644b0fb01869a52dfa00a7f905d5f95e03e4dfd4c14",
+    "prediction_errors.csv": "65933b09adc3ba6cc802cf0e9833b9c30e1e7eb0e143c9690ec72d0a4cf2f561",
+    "prediction_verification.csv": "9bc292295857793f579a61a65c04e15a86497306a37729cc825bf4011beb4094",
+    "seed_spread.csv": "e923bb80ecdd3f85dcba90f8f53e9f102ae265fa0fda32f199bd8df35e21dac0",
+    "top3_pnl_panels.png": "6486017ebf36c0bfb80ecf2deb4d04213573cad5f2672a5b70ea6d51a64a607c",
+    "top5_pnl_panels.png": "645ebb3d1b095ecc29b6708fa3b8f3e15f3680f4f23e57fcf3e7abea3394917e",
+    "value_contributions.csv": "e0e91177bfc0867f767913cb1f1a4fd96050af0d0ef69203432f0875a030960d"
+  },
+  "final_lockbox_opened": false
+}

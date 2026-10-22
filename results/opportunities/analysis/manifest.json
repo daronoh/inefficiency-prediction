@@ -1,0 +1,20 @@
+{
+  "training_completion_sha256": "da631ad045f82001d66b1c52172f48e492c44946e39fe0322aacd377cce5b496",
+  "dataset_completion_sha256": "72ee0e408462dfae223ceb4cfd634bc8d055241f2a18f022c21464a870087434",
+  "report_source_sha256": "3779c19e248ec1f9678f0e814d40ec3efeda681c1ccfe30eaff2faaa116854fa",
+  "execution_outcomes_used_in_fitting": false,
+  "final_lockbox_opened": false,
+  "files_sha256": {
+    "all_events.png": "10a28e93d1b9743e1935b63ff4bd51773e1d0187c5d613a465a36e9b7881635c",
+    "book_logistic_coefficients.csv": "7c788bfc4009fb3605c492df976b3ba7720f6453efc60163df3efe058931e522",
+    "comparison.csv": "b430419ba6ffa4740094dc82d118315b76167497826c16d45de9ce67849d6b3a",
+    "exclude_december_fed.png": "89a83cc3f3bdf9acfad211811f09c0e7748b8699869e3de9473df42730f0df2b",
+    "feature_importance_by_fold.csv": "35ebd0ca9fd54da41a42761575bf2887c5cbf75d22cd91d33005982641175c2d",
+    "group_capture.csv": "e717106b8ebf2e1f16b8e3641be423e501ae8d3fb8e7c7c6f0888fa5b2118dc2",
+    "label_audit.json": "220117a540016ae1d70fe979398165b3e14dd087607a9601ee9f4ea724b841b7",
+    "label_counts.csv": "e83141912898309b35c0f9087ef4509c732ed5bcb9e7858d8f7528f2c8344ee1",
+    "label_transition.csv": "2dcdde6e5dada83455f23e29d39c704f05a743152b73e36bd608ed9cfde514f0",
+    "model_changes.csv": "d6ae1db02072724f08602faa0369c706558ff66918510a93e409bb56d1457873",
+    "paired_family_intervals.csv": "7198b01d60c03f88a78c33f702649d54a7f45b830537b00439bce740aefd097d"
+  }
+}

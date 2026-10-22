@@ -1,0 +1,214 @@
+{
+  "version": "tabm_opportunity_v1",
+  "window": {
+    "development_start": "2025-10-14T00:00:00Z",
+    "lockbox_start": "2026-01-08T00:00:00Z",
+    "cadence_minutes": 60,
+    "horizon_minutes": 60
+  },
+  "folds": [
+    [
+      "nov_early",
+      "2025-11-01",
+      "2025-11-22"
+    ],
+    [
+      "nov_late",
+      "2025-11-22",
+      "2025-12-15"
+    ],
+    [
+      "dec_late",
+      "2025-12-15",
+      "2026-01-08"
+    ]
+  ],
+  "feature_views": {
+    "book": [
+      "x_active_packages",
+      "x_active_tokens",
+      "x_seen_fraction",
+      "x_clean_fraction",
+      "x_spread_mean",
+      "x_spread_max",
+      "x_ask_depth_sum",
+      "x_book_age_max_s",
+      "x_best_quoted_net_usd",
+      "x_size_feasible_package_fraction",
+      "x_positive_quoted_net_package_fraction",
+      "x_snapshot_lag1_active_packages",
+      "x_snapshot_change1_active_packages",
+      "x_snapshot_lag1_active_tokens",
+      "x_snapshot_change1_active_tokens",
+      "x_snapshot_lag1_seen_fraction",
+      "x_snapshot_change1_seen_fraction",
+      "x_snapshot_lag1_clean_fraction",
+      "x_snapshot_change1_clean_fraction",
+      "x_snapshot_lag1_spread_mean",
+      "x_snapshot_change1_spread_mean",
+      "x_snapshot_lag1_spread_max",
+      "x_snapshot_change1_spread_max",
+      "x_snapshot_lag1_ask_depth_sum",
+      "x_snapshot_change1_ask_depth_sum",
+      "x_snapshot_lag1_book_age_max_s",
+      "x_snapshot_change1_book_age_max_s",
+      "x_snapshot_lag1_best_quoted_net_usd",
+      "x_snapshot_change1_best_quoted_net_usd",
+      "x_snapshot_lag1_size_feasible_package_fraction",
+      "x_snapshot_change1_size_feasible_package_fraction",
+      "x_snapshot_lag1_positive_quoted_net_package_fraction",
+      "x_snapshot_change1_positive_quoted_net_package_fraction"
+    ],
+    "combined": [
+      "x_active_packages",
+      "x_active_tokens",
+      "x_seen_fraction",
+      "x_clean_fraction",
+      "x_spread_mean",
+      "x_spread_max",
+      "x_ask_depth_sum",
+      "x_book_age_max_s",
+      "x_best_quoted_net_usd",
+      "x_size_feasible_package_fraction",
+      "x_positive_quoted_net_package_fraction",
+      "x_snapshot_lag1_active_packages",
+      "x_snapshot_change1_active_packages",
+      "x_snapshot_lag1_active_tokens",
+      "x_snapshot_change1_active_tokens",
+      "x_snapshot_lag1_seen_fraction",
+      "x_snapshot_change1_seen_fraction",
+      "x_snapshot_lag1_clean_fraction",
+      "x_snapshot_change1_clean_fraction",
+      "x_snapshot_lag1_spread_mean",
+      "x_snapshot_change1_spread_mean",
+      "x_snapshot_lag1_spread_max",
+      "x_snapshot_change1_spread_max",
+      "x_snapshot_lag1_ask_depth_sum",
+      "x_snapshot_change1_ask_depth_sum",
+      "x_snapshot_lag1_book_age_max_s",
+      "x_snapshot_change1_book_age_max_s",
+      "x_snapshot_lag1_best_quoted_net_usd",
+      "x_snapshot_change1_best_quoted_net_usd",
+      "x_snapshot_lag1_size_feasible_package_fraction",
+      "x_snapshot_change1_size_feasible_package_fraction",
+      "x_snapshot_lag1_positive_quoted_net_package_fraction",
+      "x_snapshot_change1_positive_quoted_net_package_fraction",
+      "m_age_days",
+      "m_event_type",
+      "m_topic"
+    ]
+  },
+  "seeds": [
+    20261001,
+    20261002,
+    20261003
+  ],
+  "candidates": [
+    {
+      "n_blocks": 2,
+      "d_block": 128,
+      "dropout": 0.1,
+      "lr": 0.002,
+      "weight_decay": 0.0003
+    },
+    {
+      "n_blocks": 1,
+      "d_block": 64,
+      "dropout": 0.0,
+      "lr": 0.002,
+      "weight_decay": 0.0003
+    },
+    {
+      "n_blocks": 2,
+      "d_block": 64,
+      "dropout": 0.1,
+      "lr": 0.001,
+      "weight_decay": 0.001
+    },
+    {
+      "n_blocks": 2,
+      "d_block": 128,
+      "dropout": 0.2,
+      "lr": 0.001,
+      "weight_decay": 0.01
+    },
+    {
+      "n_blocks": 3,
+      "d_block": 128,
+      "dropout": 0.1,
+      "lr": 0.001,
+      "weight_decay": 0.0003
+    },
+    {
+      "n_blocks": 2,
+      "d_block": 256,
+      "dropout": 0.2,
+      "lr": 0.002,
+      "weight_decay": 0.001
+    },
+    {
+      "n_blocks": 1,
+      "d_block": 128,
+      "dropout": 0.1,
+      "lr": 0.0005,
+      "weight_decay": 0.01
+    },
+    {
+      "n_blocks": 3,
+      "d_block": 64,
+      "dropout": 0.2,
+      "lr": 0.002,
+      "weight_decay": 0.01
+    }
+  ],
+  "paper": "papers/ICLR-2025-tabm-advancing-tabular-deep-learning-with-parameter-efficient-ensembling-Paper-Conference.pdf",
+  "paper_sha256": "df7d9d4bdc8a85bdf4e5bb029459dd8fb3f280ba8ce6049742165aae4421f8c5",
+  "official_implementation": "https://github.com/yandex-research/tabm",
+  "architecture": "TabM (not mini), 32 independently supervised shared-weight members, no numeric embeddings",
+  "preprocessing": "Train-only median imputation and normal quantiles for continuous columns; binary imputation without scaling; one-hot categories; unknown categories all zero",
+  "target_normalization": "Train-only mean/std for dollar MSE; invert before clipping aggregate to zero; no log transform",
+  "loss": "Unweighted memberwise binary cross entropy or MSE; AdamW; gradient norm clip 1; no schedule",
+  "early_stopping": "Inner known validation ensemble log loss / standardized MSE; patience 16, maximum 100 epochs. No outer early stopping. Refit full earlier training history for ceil(median best inner epoch).",
+  "conditional": "Positive-only amount model with separate preprocessing; unweighted probability gate; product of predictions. Empty-positive inner validation uses fixed 16 epochs.",
+  "tuning": "Eight combined-feature settings, two purged chronological inner blocks; occurrence chooses recall@5 then AP, value chooses captured peak dollars@5 then positive-hour capture",
+  "fixed": "Candidate 0, seed 0; epochs still chosen inside training history. Book-only candidate 0 has its own inner epoch selection.",
+  "ensembles": "Tuned policies average three seed predictions, none selected by outer performance. Hybrid averages within-scan percentile ranks of tuned TabM classifier and frozen combined forest.",
+  "primary_budget": 5,
+  "budgets": [
+    5,
+    3
+  ],
+  "replay_policies": [
+    "tabm_fixed_book_classifier",
+    "tabm_fixed_classifier",
+    "tabm_tuned_classifier",
+    "tabm_fixed_regression",
+    "tabm_tuned_regression",
+    "tabm_fixed_two_stage",
+    "tabm_tuned_two_stage",
+    "tabm_forest_rank_ensemble"
+  ],
+  "device": "cuda",
+  "hardware": "NVIDIA GeForce RTX 3060 Ti",
+  "packages": {
+    "python": "3.12.6",
+    "torch": "2.10.0+cu128",
+    "tabm": "0.0.3",
+    "sklearn": "1.7.2"
+  },
+  "dataset_sha256": "740cb9ba76ff9dad7e303fa9e3cfbd71f096777d0e8d647f0fb6b8246a94aacf",
+  "dataset_completion_sha256": "0456ffef775ca3f5b9b81177206c6be557e3a4130b72cb71ff936e71a0202267",
+  "prior_completion_sha256": "ef6577861d895c3a6573b2d4595d16b361c746912e0183b87db60d08245045ce",
+  "prior_predictions_sha256": "1d8e4445d0ef4f42ccb37345316b7cd618d2d949623015b0422fc49323576f58",
+  "source_sha256": {
+    "src/models/tabm.py": "f92258534f245a859cea3b6d1c7233018a817c23313f56fc66aa3ddb5bc7fc2e",
+    "src/models/tabm_study.py": "9695ffbb27fe2c65ba9a1b9300ded742c78eb0427b286f777e699ca840003e5c",
+    "src/models/opportunities.py": "5f61d4b6dae3f7df43c9b6678e211e122cda85c3da252b0410d116614332db51",
+    "src/models/opportunity_value.py": "50a45655b6c010d9e4373ebd71d1f809f9a3f3f2625877d3b95bbeadba6652cd",
+    "src/models/evaluation.py": "bb62f78a3e9fea3efbd2b42119c4788ab0aa09f87323325c9746b88c6e2287f8",
+    "src/data/metadata.py": "7722eeff24bdf295f3506f62636688ea75faec217bdbfb66cefb40993d796fcc"
+  },
+  "execution_outcomes_used": false,
+  "final_lockbox_opened": false,
+  "interpretation": "Additional exploratory development comparison after prior results; not independent confirmation or an exact paper benchmark reproduction"
+}

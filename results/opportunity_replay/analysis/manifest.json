@@ -1,0 +1,18 @@
+{
+  "replay_completion_sha256": "1ae3bed9d6ada3c681959c7999b5151aa78e8b7c9249b964ebef98d54f8e0dc9",
+  "source_sha256": "c487d33317dfff1c436c9acf3134d5778fada9249f01d949adfdf065f9dcd001",
+  "files_sha256": {
+    "all_events_latency.png": "8c98aba90f9192997cd118c78f9ada1d95ca2b5e0d22dfc7522e8b0fb20159ca",
+    "baseline_equivalence.csv": "e648d014ebaaee12f7b774d243f19b4974606693e8eb5b8f92774e7312403d77",
+    "comparison.csv": "b941ef05062d5bda999f3b40f282337a8f2b556eba8e38f0be334d0294fb0a6e",
+    "event_contributions.csv": "9a48f3678b08dbe6a846791833b1adaefffb08e95d3706790d87b0b50a296eca",
+    "exclude_december_fed_latency.png": "567dd45d56a06012511902ca5007b1f8bfa8837f05c839b16b2e1d11c07c711a",
+    "opportunity_vs_economics.csv": "14954a8ab0a2849abd6bc18d5dfd6c916a9fcd9878e3d265237ec6f1add890bf",
+    "paired_family_intervals.csv": "2c9d2b1e9ee3169b3a93bea27cc543951562e8ec5c6d86f92e28f5a502f52406",
+    "pnl_curves.parquet": "e2e113668a838fdb191ce03bdc3117d3d2f9a2ed30ebe8a46082761b9ef8d05a",
+    "random_seed_spread.csv": "fb79f3a33cfce5556579aa8e346a99c4016a2c9e411e3e4408c8c25ffa0107d7",
+    "top3_pnl_panels.png": "8964f59d7e4230e399418140090af04cd89d598d4d347e3af9f623019cb6a2e2",
+    "top5_pnl_panels.png": "d64461bc799b150cd661cfb77ad9757b6d324fd755d5995081259ed4e1c231a2"
+  },
+  "final_lockbox_opened": false
+}

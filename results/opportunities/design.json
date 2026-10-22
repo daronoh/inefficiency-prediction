@@ -1,0 +1,384 @@
+{
+  "version": "opportunity_recall_v1",
+  "dataset_sha256": "cf14178699628873cf9714b513588b1b2e4362202013f85e80d73789137e86ed",
+  "dataset_completion_sha256": "72ee0e408462dfae223ceb4cfd634bc8d055241f2a18f022c21464a870087434",
+  "window": {
+    "development_start": "2025-10-14T00:00:00Z",
+    "lockbox_start": "2026-01-08T00:00:00Z",
+    "cadence_minutes": 60,
+    "horizon_minutes": 60
+  },
+  "qualification": {
+    "sizing": "adaptive",
+    "min_entry_gross_usd": 0.0,
+    "min_limit_margin_usd": 0.0,
+    "min_quantity": 5,
+    "max_quantity": null,
+    "cash_cap_usd": null
+  },
+  "folds": [
+    [
+      "nov_early",
+      "2025-11-01",
+      "2025-11-22"
+    ],
+    [
+      "nov_late",
+      "2025-11-22",
+      "2025-12-15"
+    ],
+    [
+      "dec_late",
+      "2025-12-15",
+      "2026-01-08"
+    ]
+  ],
+  "seed": 20261001,
+  "primary_budget": 5,
+  "budgets": [
+    5,
+    3
+  ],
+  "views": {
+    "book": [
+      "x_active_packages",
+      "x_active_tokens",
+      "x_seen_fraction",
+      "x_clean_fraction",
+      "x_spread_mean",
+      "x_spread_max",
+      "x_ask_depth_sum",
+      "x_book_age_max_s",
+      "x_best_quoted_net_usd",
+      "x_size_feasible_package_fraction",
+      "x_positive_quoted_net_package_fraction",
+      "x_snapshot_lag1_active_packages",
+      "x_snapshot_change1_active_packages",
+      "x_snapshot_lag1_active_tokens",
+      "x_snapshot_change1_active_tokens",
+      "x_snapshot_lag1_seen_fraction",
+      "x_snapshot_change1_seen_fraction",
+      "x_snapshot_lag1_clean_fraction",
+      "x_snapshot_change1_clean_fraction",
+      "x_snapshot_lag1_spread_mean",
+      "x_snapshot_change1_spread_mean",
+      "x_snapshot_lag1_spread_max",
+      "x_snapshot_change1_spread_max",
+      "x_snapshot_lag1_ask_depth_sum",
+      "x_snapshot_change1_ask_depth_sum",
+      "x_snapshot_lag1_book_age_max_s",
+      "x_snapshot_change1_book_age_max_s",
+      "x_snapshot_lag1_best_quoted_net_usd",
+      "x_snapshot_change1_best_quoted_net_usd",
+      "x_snapshot_lag1_size_feasible_package_fraction",
+      "x_snapshot_change1_size_feasible_package_fraction",
+      "x_snapshot_lag1_positive_quoted_net_package_fraction",
+      "x_snapshot_change1_positive_quoted_net_package_fraction"
+    ],
+    "combined": [
+      "x_active_packages",
+      "x_active_tokens",
+      "x_seen_fraction",
+      "x_clean_fraction",
+      "x_spread_mean",
+      "x_spread_max",
+      "x_ask_depth_sum",
+      "x_book_age_max_s",
+      "x_best_quoted_net_usd",
+      "x_size_feasible_package_fraction",
+      "x_positive_quoted_net_package_fraction",
+      "x_snapshot_lag1_active_packages",
+      "x_snapshot_change1_active_packages",
+      "x_snapshot_lag1_active_tokens",
+      "x_snapshot_change1_active_tokens",
+      "x_snapshot_lag1_seen_fraction",
+      "x_snapshot_change1_seen_fraction",
+      "x_snapshot_lag1_clean_fraction",
+      "x_snapshot_change1_clean_fraction",
+      "x_snapshot_lag1_spread_mean",
+      "x_snapshot_change1_spread_mean",
+      "x_snapshot_lag1_spread_max",
+      "x_snapshot_change1_spread_max",
+      "x_snapshot_lag1_ask_depth_sum",
+      "x_snapshot_change1_ask_depth_sum",
+      "x_snapshot_lag1_book_age_max_s",
+      "x_snapshot_change1_book_age_max_s",
+      "x_snapshot_lag1_best_quoted_net_usd",
+      "x_snapshot_change1_best_quoted_net_usd",
+      "x_snapshot_lag1_size_feasible_package_fraction",
+      "x_snapshot_change1_size_feasible_package_fraction",
+      "x_snapshot_lag1_positive_quoted_net_package_fraction",
+      "x_snapshot_change1_positive_quoted_net_package_fraction",
+      "m_age_days",
+      "m_event_type",
+      "m_topic"
+    ]
+  },
+  "candidates": {
+    "logistic": [
+      {
+        "C": 1.0,
+        "penalty": "l2",
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      {
+        "C": 0.01,
+        "penalty": "l2",
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      {
+        "C": 0.1,
+        "penalty": "l2",
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      {
+        "C": 10.0,
+        "penalty": "l2",
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      {
+        "C": 0.1,
+        "penalty": "l1",
+        "class_weight": "balanced",
+        "solver": "liblinear"
+      },
+      {
+        "C": 1.0,
+        "penalty": "l1",
+        "class_weight": "balanced",
+        "solver": "liblinear"
+      },
+      {
+        "C": 0.1,
+        "penalty": "l2",
+        "class_weight": null,
+        "solver": "lbfgs"
+      },
+      {
+        "C": 1.0,
+        "penalty": "l2",
+        "class_weight": null,
+        "solver": "lbfgs"
+      }
+    ],
+    "random_forest": [
+      {
+        "n_estimators": 200,
+        "max_depth": 10,
+        "min_samples_leaf": 20,
+        "max_features": "sqrt"
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "min_samples_leaf": 5,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "min_samples_leaf": 50,
+        "max_features": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 6,
+        "min_samples_leaf": 50,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 5,
+        "max_features": 1.0
+      }
+    ],
+    "boosted_trees": [
+      {
+        "max_iter": 120,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 30,
+        "l2_regularization": 1.0
+      },
+      {
+        "max_iter": 120,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 30,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 200,
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 50,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 50,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 120,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 30,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 200,
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 10,
+        "l2_regularization": 10.0
+      },
+      {
+        "max_iter": 120,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 30,
+        "l2_regularization": 1.0
+      },
+      {
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 50,
+        "l2_regularization": 100.0
+      }
+    ],
+    "xgboost": [
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_weight": 10,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 2,
+        "min_child_weight": 10,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 400,
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 4,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 6,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 400,
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "min_child_weight": 10,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 1.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 100.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_weight": 50,
+        "subsample": 1.0,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 100.0,
+        "reg_alpha": 10.0
+      }
+    ]
+  },
+  "inner_validation": "Two last-quarter chronological blocks within each outer training history",
+  "tuning_objective": "Pooled known positive event-hour recall at N=5; ties mean inner AP, then first declared setting",
+  "embargo_seconds": 3600.0,
+  "early_stopping": false,
+  "ensembles": "Equal mean within-scan percentile ranks; no fitted ensemble weights",
+  "execution_outcomes_used": false,
+  "final_lockbox_opened": false,
+  "source_sha256": {
+    "src/models/opportunities.py": "5f61d4b6dae3f7df43c9b6678e211e122cda85c3da252b0410d116614332db51",
+    "src/models/tuning.py": "f4275887b36b5a8dcef7f2582d49f1fd0b77e924c27e54d188d1d6d413e5dc09",
+    "src/models/estimators.py": "e65a6350de076a96d5618e2e85f2f93c5cc95039d37418711149666c65c178ae",
+    "src/models/evaluation.py": "bb62f78a3e9fea3efbd2b42119c4788ab0aa09f87323325c9746b88c6e2287f8",
+    "src/models/features.py": "e340c6a7c7ebe965c6b8872fe236110b9016c3cca74d69897fc35fec41f2c04e",
+    "src/data/metadata.py": "7722eeff24bdf295f3506f62636688ea75faec217bdbfb66cefb40993d796fcc"
+  },
+  "metadata_sha256": {
+    "markets": "b7e3fe6f1334209b314f0009e4e82910d6dd0afe852e87dae4520cecbad3eb15",
+    "universe": "68c142c4437aadd3950325658612ad610671cc31fd00e4b991185210676d0a06"
+  },
+  "packages": {
+    "python": "3.12.6",
+    "sklearn": "1.7.2",
+    "xgboost": "3.2.0"
+  },
+  "interpretation": "Exploratory development under a changed target; scores are not assumed calibrated probabilities"
+}

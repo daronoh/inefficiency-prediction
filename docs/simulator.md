@@ -3,14 +3,54 @@
 The simulator asks what the declared strategy could earn from the recorded
 orders when following each model's actual event selections. It is a historical,
 displayed-depth simulation, not an exchange matching engine or evidence of
-confirmed fills. Notebook [03_simulator.ipynb](../notebooks/03_simulator.ipynb)
-runs the comparison and displays its results.
+confirmed fills. Notebook [07_economic_replay.ipynb](../notebooks/07_economic_replay.ipynb)
+runs the fixed opportunity-model comparison. Notebook 03 preserves the earlier
+P&L-target benchmark.
 
-The current study uses **100 ms arrival with no artificial cash or share cap**
+Economic replay is the second research layer. The current first-layer models in
+notebook 06 learn opportunity occurrence or peak displayed dollar margin without
+using arrival delays, fill outcomes or unwind losses as targets. Their scores
+are not P&L forecasts. The second layer holds these predictions fixed while
+changing arrival latency: 0, 50, 100, 250 and 500ms. The primary arrival is 100ms;
+the one-second unwind/hold is fixed throughout. Budgets of three and five events
+are compared, with and without December Fed in the ranking pool. Twenty seeded
+random policies and monitor-all provide references. No models are refitted and
+the final test remains closed. Zero arrival is an optimistic same-book execution
+reference, not an upper bound on every policy's path-dependent returns.
+
+The existing economic benchmark uses **100 ms arrival with no artificial cash or share cap**
 for rebuilt targets, refitted models and policy replay. Each model supplies its
 own hourly choices. The arrival delay is an assumption, not a historical
 measurement. No additional failure probability is imposed; partial baskets
 caused by the recorded arrival books still count.
+
+`src/simulator/opportunities.py` orchestrates the new experiment using the same
+entry/execution/scheduling helpers. Each policy, latency and budget has an
+independent ledger; reservations persist across hours and folds within its run.
+Raw input hashes are verified and shared tokens across distinct events are
+rejected, because the current reservation ledger is per event. Outputs under
+`results/opportunity_replay/` include frozen selections, attempts, scheduler skip
+reasons, summaries and hashes. Notebook 07 also compares first-layer capture
+against economic outcomes; quoted-value capture is never treated as P&L.
+
+## Funding measures
+
+The largest single-order reservation and peak simultaneous in-flight reservations
+describe temporary order funding. They omit capital still tied up in completed
+baskets. Cumulative purchase cash measures turnover, not required capital.
+
+The additional `no_settlement_funding_usd` scenario assumes completed baskets
+receive no settlement cash during the experiment. It reserves order limits at
+submission, pays known entry costs at arrival and returns known partial-unwind
+proceeds. Unknown arrivals retain their full reservation; unknown exits return
+no cash. Simultaneous submissions are funded before releases. The peak cumulative
+cash requirement is reported separately from P&L and is not an estimate of live
+portfolio capital or a return-on-capital denominator. Full-period funding is the
+primary measure; fold summaries do not include inherited holdings.
+
+Completed-basket P&L is the contractual payout floor minus purchase cost, booked
+at arrival for the P&L curve. Partial P&L is booked at unwind. This is economic
+margin accounting, not a settled cash balance. Unknown P&L is excluded and counted.
 
 ## From ranking to attempted trade
 
@@ -177,3 +217,14 @@ scenario assumes sufficient funding for every order. The reference $1,000
 cap applies separately to each attempt. Contract membership and resolution
 semantics remain frozen assumptions. Reported margins are therefore conditional
 simulated P&L, not proof of commercially executable arbitrage.
+
+## TabM policy comparison
+
+Notebook 08 evaluates the TabM extension through the same persistent scheduler,
+quantity selection and fill accounting as notebook 07. Eight declared TabM or
+TabM/forest policies are replayed at 0, 50, 100, 250 and 500 ms, at N=5 and N=3,
+with both the full population and December Fed excluded before ranking.
+The primary scenario remains **100 ms, uncapped capital and shares**, with no
+imposed random failure probability. Existing classical-policy replay artifacts
+are verified and reused for comparison. Execution outcomes do not tune TabM.
+See [the TabM findings](reports/tabm.md).

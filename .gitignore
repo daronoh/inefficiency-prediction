@@ -24,3 +24,4 @@ dist/
 
 # Additional experiments; retain the submitted baseline in version control
 /results/runs/
+sql-ca.pem

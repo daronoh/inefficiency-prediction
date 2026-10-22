@@ -1,0 +1,17 @@
+{
+  "event_slug": "fed-decision-in-december",
+  "decision_time": "2025-11-19 17:00:00+00:00",
+  "start_time": "2025-11-19 17:24:06.666000+00:00",
+  "arrival_time": "2025-11-19 17:24:06.766000+00:00",
+  "unwind_time": "2025-11-19 17:24:07.766000+00:00",
+  "quantity": "3171",
+  "n_members": "4",
+  "n_filled_legs": "3",
+  "quoted_gross_usd": 4.1909999999998035,
+  "entry_cost_usd": 1803.2790000000002,
+  "pnl_usd": -131.2772000000001,
+  "model": "combined_random_forest",
+  "reconstructed_pnl_usd": -131.27720000000022,
+  "final_lockbox_opened": false,
+  "selection": "Largest model-only losing attempt, chosen after examining outcomes"
+}

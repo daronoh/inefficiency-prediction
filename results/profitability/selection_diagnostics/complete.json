@@ -1,0 +1,21 @@
+{
+  "files_sha256": {
+    "annotated_attempts.parquet": "ef2b16b84f0c01acb59f5f48e98a64ebe7f6bb975b036c7a1fe3563d76b40e6d",
+    "attempt_comparisons.parquet": "5a33e70fab6ff78187c2cf433ca30648103bafffc88ea8b479c8983a4e5f9e87",
+    "event_contributions.csv": "5cac08bbe787b5509a27ca7b60b84de4dd38e7462f207d47f9c97dce03c38572",
+    "fold_summary.csv": "3f4aa59542bebb05976e67b7e0d76461b0d29d0a8383439c5da47716af2a2a74",
+    "loss_case.json": "610248d18bf54191c4da2552aa13b2af2ab168743439065633672cfc6fdaa5e2",
+    "loss_case_books.csv": "54b9376f871acf1c16556752155472396c5f76ed47b3561e23022c3ec3fa1181",
+    "loss_case_rankings.csv": "beb7fc395df3877d0d4ec4e650112c5207ace2ae05d6aa8091f0ef595f6ff93e",
+    "manifest.json": "a1e2c8c1ceb26eaa33a276b380665b807f750fdd9031ae655dfc9811d1e48323",
+    "onset_breakdown.csv": "8070b9171b0ee4b3fba22c7bdb2540b69c7f3fc9040b69bf7e18247ca316d582",
+    "opportunity_onsets.png": "36e795506ddf94656c2738ec92e24192e3b4b28a0a63dc52ccf66d2580ad645a",
+    "policy_summary.csv": "0197b0a8298dc752a3c6172fe427324abe0381ae4ea87af4f64a520f465688fc",
+    "profit_and_losses.png": "382b0e7cf444677e45155a4d95ea6ac3b13613585e445450649f018b0293aa40",
+    "scan_states.csv": "89d68d6d5b73e3600145a278bc983d741441db7ae5b65212467e781268942be8",
+    "selected_windows.parquet": "80710a8864850ddb181f9d904ed223f33e6d91f435e73ac64496e55aa4c0040d",
+    "selection_attribution.csv": "fcc3e151c3a0c07024241bdb90c578663ad18c17f813df07b531b9424f4c0dde",
+    "selection_attribution.png": "497e47343c7bb5f924e64761678f21189afa2f2132dec2344148fc6aeb57a0d1"
+  },
+  "final_lockbox_opened": false
+}

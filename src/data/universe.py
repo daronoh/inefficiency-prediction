@@ -4,8 +4,15 @@ from src.config import SPEC
 from src.paths import EVENT_UNIVERSE, ORDERBOOK_DIR, book_path
 from src.data.rules import build_manifest
 
-def build_plan(scope, ladder_scope='audited5'):
+def build_plan(scope, ladder_scope='audited5', *, detection=None):
     """Membership is frozen retrospectively; never inferred from outcomes as a feature."""
+    if detection is not None:
+        from src.data.universe_detection import detection_plans
+        if scope not in {'all','negrisk','ladders'}:
+            raise ValueError('Unknown scope')
+        plans, excluded = detection_plans(detection, book_path)
+        selected = {'all': {'negrisk','ladder'},'negrisk': {'negrisk'},'ladders': {'ladder'}}[scope]
+        return [p for p in plans if p['stratum'] in selected], excluded
     from src.paths import TOKENS_PARQUET
     universe = pd.read_parquet(EVENT_UNIVERSE)
     plans, excluded = [], []

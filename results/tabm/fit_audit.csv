@@ -1,0 +1,81 @@
+fold,view,task,candidate,seed,artifact,training_rows,training_positive,train_last,evaluation_start,evaluation_rows,epochs,fit_seconds,parameters,transformed_features,policy,prediction_seconds,scan_rows,scan_median_ms
+nov_early,book,classifier,0,20261001,nov_early_book_classifier_c0_s20261001.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,46.0,2.748153999913484,46272.0,33.0,,,,
+nov_early,combined,classifier,0,20261001,nov_early_combined_classifier_c0_s20261001.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,30.0,1.8798468001186848,48192.0,45.0,,,,
+nov_early,combined,classifier,0,20261001,,,,,,,,,,,tabm_fixed_classifier,0.22840540017932653,14.0,17.543399706482887
+nov_early,combined,classifier,6,20261001,nov_early_combined_classifier_c6_s20261001.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,95.0,4.58529660012573,19520.0,45.0,,,,
+nov_early,combined,classifier,6,20261001,,,,,,,,,,,tabm_tuned_classifier,0.10631310008466244,14.0,15.632099937647581
+nov_early,combined,classifier,6,20261002,nov_early_combined_classifier_c6_s20261002.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,95.0,4.54094780003652,19520.0,45.0,,,,
+nov_early,combined,classifier,6,20261002,,,,,,,,,,,tabm_tuned_classifier,0.10678029991686344,14.0,14.651100151240826
+nov_early,combined,classifier,6,20261003,nov_early_combined_classifier_c6_s20261003.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,95.0,4.470410500187427,19520.0,45.0,,,,
+nov_early,combined,classifier,6,20261003,,,,,,,,,,,tabm_tuned_classifier,0.10570320021361113,14.0,14.622300397604704
+nov_early,combined,regression,0,20261001,nov_early_combined_regression_c0_s20261001.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,3.0,0.25956010026857257,48192.0,45.0,,,,
+nov_early,combined,regression,0,20261001,,,,,,,,,,,tabm_fixed_regression,0.19197629997506738,14.0,15.034900046885014
+nov_early,combined,regression,0,20261001,,,,,,,,,,,tabm_tuned_regression,0.18344239983707666,14.0,14.483799692243338
+nov_early,combined,regression,0,20261002,nov_early_combined_regression_c0_s20261002.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,3.0,0.26044669980183244,48192.0,45.0,,,,
+nov_early,combined,regression,0,20261002,,,,,,,,,,,tabm_tuned_regression,0.177772699855268,14.0,14.93739988654852
+nov_early,combined,regression,0,20261003,nov_early_combined_regression_c0_s20261003.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,3.0,0.2534048999659717,48192.0,45.0,,,,
+nov_early,combined,regression,0,20261003,,,,,,,,,,,tabm_tuned_regression,0.1841652998700738,14.0,15.296499710530043
+nov_early,combined,amount,0,20261001,nov_early_combined_amount_c0_s20261001.joblib,69.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,3.0,0.03824179992079735,47712.0,42.0,,,,
+nov_early,combined,two_stage,0,20261001,,,,,,,,,,,tabm_fixed_two_stage,0.38697490002959967,14.0,30.003000050783157
+nov_early,combined,classifier,7,20261001,nov_early_combined_classifier_c7_s20261001.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,58.0,4.3787578996270895,30976.0,45.0,,,,
+nov_early,combined,amount,7,20261001,nov_early_combined_amount_c7_s20261001.joblib,69.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,16.0,0.07963330019265413,30688.0,42.0,,,,
+nov_early,combined,two_stage,7,20261001,,,,,,,,,,,tabm_tuned_two_stage,0.1994404001161456,14.0,26.83330001309514
+nov_early,combined,classifier,7,20261002,nov_early_combined_classifier_c7_s20261002.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,58.0,4.032223700080067,30976.0,45.0,,,,
+nov_early,combined,amount,7,20261002,nov_early_combined_amount_c7_s20261002.joblib,69.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,16.0,0.08271680027246475,30688.0,42.0,,,,
+nov_early,combined,two_stage,7,20261002,,,,,,,,,,,tabm_tuned_two_stage,0.2017260999418795,14.0,31.435399781912565
+nov_early,combined,classifier,7,20261003,nov_early_combined_classifier_c7_s20261003.joblib,4859.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,58.0,4.262289899867028,30976.0,45.0,,,,
+nov_early,combined,amount,7,20261003,nov_early_combined_amount_c7_s20261003.joblib,69.0,69.0,2025-10-31 22:00:00+00:00,2025-11-01 00:00:00+00:00,8143.0,16.0,0.09861710015684366,30688.0,42.0,,,,
+nov_early,combined,two_stage,7,20261003,,,,,,,,,,,tabm_tuned_two_stage,0.2212895001284778,14.0,29.34450004249811
+nov_late,book,classifier,0,20261001,nov_late_book_classifier_c0_s20261001.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,5.0,0.9657784998416901,46272.0,33.0,,,,
+nov_late,combined,classifier,0,20261001,nov_late_combined_classifier_c0_s20261001.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,5.0,0.8354347003623843,48192.0,45.0,,,,
+nov_late,combined,classifier,0,20261001,,,,,,,,,,,tabm_fixed_classifier,0.18236639956012368,17.0,14.097800012677908
+nov_late,combined,classifier,2,20261001,nov_late_combined_classifier_c2_s20261001.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,28.0,4.443701900076121,20736.0,45.0,,,,
+nov_late,combined,classifier,2,20261001,,,,,,,,,,,tabm_tuned_classifier,0.11235570022836328,17.0,16.363900154829025
+nov_late,combined,classifier,2,20261002,nov_late_combined_classifier_c2_s20261002.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,28.0,4.991741099860519,20736.0,45.0,,,,
+nov_late,combined,classifier,2,20261002,,,,,,,,,,,tabm_tuned_classifier,0.13641910022124648,17.0,22.589900065213442
+nov_late,combined,classifier,2,20261003,nov_late_combined_classifier_c2_s20261003.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,28.0,5.193528099916875,20736.0,45.0,,,,
+nov_late,combined,classifier,2,20261003,,,,,,,,,,,tabm_tuned_classifier,0.11246109986677766,17.0,15.665099956095219
+nov_late,combined,regression,0,20261001,nov_late_combined_regression_c0_s20261001.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,40.0,7.093127500265837,48192.0,45.0,,,,
+nov_late,combined,regression,0,20261001,,,,,,,,,,,tabm_fixed_regression,0.2438437999226153,17.0,18.528299871832132
+nov_late,combined,regression,5,20261001,nov_late_combined_regression_c5_s20261001.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,49.0,9.670256900135428,127680.0,45.0,,,,
+nov_late,combined,regression,5,20261001,,,,,,,,,,,tabm_tuned_regression,0.39883159985765815,17.0,20.131499972194433
+nov_late,combined,regression,5,20261002,nov_late_combined_regression_c5_s20261002.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,49.0,8.018545699771494,127680.0,45.0,,,,
+nov_late,combined,regression,5,20261002,,,,,,,,,,,tabm_tuned_regression,0.37092140037566423,17.0,15.830300282686949
+nov_late,combined,regression,5,20261003,nov_late_combined_regression_c5_s20261003.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,49.0,7.587184600066394,127680.0,45.0,,,,
+nov_late,combined,regression,5,20261003,,,,,,,,,,,tabm_tuned_regression,0.36807690002024174,17.0,14.510300010442734
+nov_late,combined,amount,0,20261001,nov_late_combined_amount_c0_s20261001.joblib,234.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,23.0,0.1130127003416419,47872.0,43.0,,,,
+nov_late,combined,two_stage,0,20261001,,,,,,,,,,,tabm_fixed_two_stage,0.40600290009751916,17.0,34.799200017005205
+nov_late,combined,classifier,7,20261001,nov_late_combined_classifier_c7_s20261001.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,16.0,2.949805200099945,30976.0,45.0,,,,
+nov_late,combined,amount,7,20261001,nov_late_combined_amount_c7_s20261001.joblib,234.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,19.0,0.10685029998421669,30784.0,43.0,,,,
+nov_late,combined,two_stage,7,20261001,,,,,,,,,,,tabm_tuned_two_stage,0.23248380003497005,17.0,30.217799823731184
+nov_late,combined,classifier,7,20261002,nov_late_combined_classifier_c7_s20261002.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,16.0,3.4170897998847067,30976.0,45.0,,,,
+nov_late,combined,amount,7,20261002,nov_late_combined_amount_c7_s20261002.joblib,234.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,19.0,0.10824199998751283,30784.0,43.0,,,,
+nov_late,combined,two_stage,7,20261002,,,,,,,,,,,tabm_tuned_two_stage,0.2752673998475075,17.0,32.91979990899563
+nov_late,combined,classifier,7,20261003,nov_late_combined_classifier_c7_s20261003.joblib,11191.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,16.0,3.7960934001021087,30976.0,45.0,,,,
+nov_late,combined,amount,7,20261003,nov_late_combined_amount_c7_s20261003.joblib,234.0,234.0,2025-11-21 22:00:00+00:00,2025-11-22 00:00:00+00:00,8429.0,19.0,0.11211079964414239,30784.0,43.0,,,,
+nov_late,combined,two_stage,7,20261003,,,,,,,,,,,tabm_tuned_two_stage,0.30986979976296425,17.0,32.0206000469625
+dec_late,book,classifier,0,20261001,dec_late_book_classifier_c0_s20261001.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,19.0,4.984995299950242,46272.0,33.0,,,,
+dec_late,combined,classifier,0,20261001,dec_late_combined_classifier_c0_s20261001.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,22.0,6.3388052000664175,48192.0,45.0,,,,
+dec_late,combined,classifier,0,20261001,,,,,,,,,,,tabm_fixed_classifier,0.1557068000547588,13.0,21.336199715733528
+dec_late,combined,classifier,7,20261001,dec_late_combined_classifier_c7_s20261001.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,26.0,8.181532800197601,30976.0,45.0,,,,
+dec_late,combined,classifier,7,20261001,,,,,,,,,,,tabm_tuned_classifier,0.08619860000908375,13.0,17.31880009174347
+dec_late,combined,classifier,7,20261002,dec_late_combined_classifier_c7_s20261002.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,26.0,8.733694800175726,30976.0,45.0,,,,
+dec_late,combined,classifier,7,20261002,,,,,,,,,,,tabm_tuned_classifier,0.10198500007390976,13.0,20.71569999679923
+dec_late,combined,classifier,7,20261003,dec_late_combined_classifier_c7_s20261003.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,26.0,8.675186899956316,30976.0,45.0,,,,
+dec_late,combined,classifier,7,20261003,,,,,,,,,,,tabm_tuned_classifier,0.08595720026642084,13.0,17.170000355690718
+dec_late,combined,regression,0,20261001,dec_late_combined_regression_c0_s20261001.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,30.0,7.838083200156689,48192.0,45.0,,,,
+dec_late,combined,regression,0,20261001,,,,,,,,,,,tabm_fixed_regression,0.1219437001273036,13.0,17.59409997612238
+dec_late,combined,regression,2,20261001,dec_late_combined_regression_c2_s20261001.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,44.0,10.414839300327003,20736.0,45.0,,,,
+dec_late,combined,regression,2,20261001,,,,,,,,,,,tabm_tuned_regression,0.06009159982204437,13.0,16.042800154536963
+dec_late,combined,regression,2,20261002,dec_late_combined_regression_c2_s20261002.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,44.0,9.924929100088775,20736.0,45.0,,,,
+dec_late,combined,regression,2,20261002,,,,,,,,,,,tabm_tuned_regression,0.07863130001351237,13.0,25.36260010674596
+dec_late,combined,regression,2,20261003,dec_late_combined_regression_c2_s20261003.joblib,17690.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,44.0,11.19336530007422,20736.0,45.0,,,,
+dec_late,combined,regression,2,20261003,,,,,,,,,,,tabm_tuned_regression,0.06680809985846281,13.0,15.570899937301874
+dec_late,combined,amount,0,20261001,dec_late_combined_amount_c0_s20261001.joblib,405.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,61.0,0.4739914000965655,48032.0,44.0,,,,
+dec_late,combined,two_stage,0,20261001,,,,,,,,,,,tabm_fixed_two_stage,0.22671009972691536,13.0,33.48399978131056
+dec_late,combined,amount,7,20261001,dec_late_combined_amount_c7_s20261001.joblib,405.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,38.0,0.3699322999455035,30880.0,44.0,,,,
+dec_late,combined,two_stage,7,20261001,,,,,,,,,,,tabm_tuned_two_stage,0.15599869983270764,13.0,32.66650019213557
+dec_late,combined,amount,7,20261002,dec_late_combined_amount_c7_s20261002.joblib,405.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,38.0,0.3526202002540231,30880.0,44.0,,,,
+dec_late,combined,two_stage,7,20261002,,,,,,,,,,,tabm_tuned_two_stage,0.16359040001407266,13.0,33.102599903941154
+dec_late,combined,amount,7,20261003,dec_late_combined_amount_c7_s20261003.joblib,405.0,405.0,2025-12-14 22:00:00+00:00,2025-12-15 00:00:00+00:00,4379.0,38.0,0.365472000092268,30880.0,44.0,,,,
+dec_late,combined,two_stage,7,20261003,,,,,,,,,,,tabm_tuned_two_stage,0.16478799981996417,13.0,32.58279990404844

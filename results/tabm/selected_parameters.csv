@@ -1,0 +1,10 @@
+fold,method,candidate,params
+nov_early,classifier,6,"{""d_block"": 128, ""dropout"": 0.1, ""lr"": 0.0005, ""n_blocks"": 1, ""weight_decay"": 0.01}"
+nov_early,regression,0,"{""d_block"": 128, ""dropout"": 0.1, ""lr"": 0.002, ""n_blocks"": 2, ""weight_decay"": 0.0003}"
+nov_early,two_stage,7,"{""d_block"": 64, ""dropout"": 0.2, ""lr"": 0.002, ""n_blocks"": 3, ""weight_decay"": 0.01}"
+nov_late,classifier,2,"{""d_block"": 64, ""dropout"": 0.1, ""lr"": 0.001, ""n_blocks"": 2, ""weight_decay"": 0.001}"
+nov_late,regression,5,"{""d_block"": 256, ""dropout"": 0.2, ""lr"": 0.002, ""n_blocks"": 2, ""weight_decay"": 0.001}"
+nov_late,two_stage,7,"{""d_block"": 64, ""dropout"": 0.2, ""lr"": 0.002, ""n_blocks"": 3, ""weight_decay"": 0.01}"
+dec_late,classifier,7,"{""d_block"": 64, ""dropout"": 0.2, ""lr"": 0.002, ""n_blocks"": 3, ""weight_decay"": 0.01}"
+dec_late,regression,2,"{""d_block"": 64, ""dropout"": 0.1, ""lr"": 0.001, ""n_blocks"": 2, ""weight_decay"": 0.001}"
+dec_late,two_stage,7,"{""d_block"": 64, ""dropout"": 0.2, ""lr"": 0.002, ""n_blocks"": 3, ""weight_decay"": 0.01}"
