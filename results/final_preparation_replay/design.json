@@ -1,0 +1,83 @@
+{
+  "version": "n3_development_replay_v1",
+  "window": {
+    "development_start": "2025-10-14T00:00:00Z",
+    "lockbox_start": "2026-01-08T00:00:00Z",
+    "cadence_minutes": 60,
+    "horizon_minutes": 60
+  },
+  "folds": [
+    [
+      "nov_early",
+      "2025-11-01",
+      "2025-11-22"
+    ],
+    [
+      "nov_late",
+      "2025-11-22",
+      "2025-12-15"
+    ],
+    [
+      "dec_late",
+      "2025-12-15",
+      "2026-01-08"
+    ]
+  ],
+  "policies": [
+    "n3_book_logistic",
+    "n3_book_random_forest",
+    "n3_tabm_two_stage"
+  ],
+  "budgets": [
+    3,
+    5
+  ],
+  "primary_budget": 3,
+  "primary_arrival_s": 0.1,
+  "arrival_delays_s": [
+    0.1,
+    0.0,
+    0.05,
+    0.25,
+    0.5
+  ],
+  "execution": {
+    "wait_s": 0.0,
+    "delay_s": 0.1,
+    "sizing": "adaptive",
+    "min_entry_gross_usd": 0.0,
+    "freshness_s": null,
+    "max_quantity": null,
+    "cash_cap_usd": null,
+    "unwind_delay_s": 1.0,
+    "min_quantity": 5,
+    "min_limit_margin_usd": 0.0,
+    "monitoring_minutes": 60,
+    "compute_failure_stress": false
+  },
+  "scopes": {
+    "all_events": null,
+    "exclude_december_fed": "fed-decision-in-december"
+  },
+  "predictions_sha256": "c20a6a59c9a3d0ae03f0b872854ed3402d51d6780b4d1969430f8e4e5c7bb1a3",
+  "model_completion_sha256": "18c90978eb1000f5be7ea679fe54b11efd95c585a28ef0dec77f592a0b8f62c9",
+  "baseline_completion_sha256": "1ae3bed9d6ada3c681959c7999b5151aa78e8b7c9249b964ebef98d54f8e0dc9",
+  "observation_completion_sha256": "72ee0e408462dfae223ceb4cfd634bc8d055241f2a18f022c21464a870087434",
+  "source_sha256": {
+    "src/simulator/opportunities.py": "6177d55e9f35bd2bf0a3a4babaa785fbc0293317661bf6488fff690ad313869b",
+    "src/simulator/scheduler.py": "390fde81b3329fd98ec774b2e3b932e76dc5b7a1fa536d1b0260362124cc4a44",
+    "src/simulator/execution.py": "7b2f14ecbdb01c28526368757138699e403df05e841060ffc78608ffb75bc847",
+    "src/simulator/sizing.py": "71afbfd82df8bb519c652dee9b05d18301346d7138102138fbc19777c8869581",
+    "src/simulator/profitability.py": "8279386f715ddc12baad5252c60a67448320b18f49710df8c4f39ac26ad344e4",
+    "src/simulator/capacity.py": "cf8f9e8497b2c3940a87e4d6115639a2241ddf3f18d2200eb70d5b8d3c5078e6",
+    "src/simulator/sensitivity.py": "5fd2d502c8f627184b2a33b5afca842efd71508f44d493b7cf338c2884ddc6cb",
+    "src/data/books.py": "76c57050f1b3725cca02e61d4e0d34017edbba39606dc48967bca2e2a4c6ea91",
+    "src/data/io.py": "1f617507bd0dc235419176e59d6e15b9b1b9d0f112d1773c7c7f97fd470bdd86",
+    "src/data/universe.py": "90bdcb96411e15c3aca6d30c300968596fe0f128709c136fab493a7882d989c7",
+    "src/simulator/final_preparation.py": "2b6fc0606d8576c82f0d44046c9199ea397a9d18109514e35ef53392b78905f4"
+  },
+  "interpretation": "Earlier-trained outer models only; final refits are NOT evaluated on their training data. Same persistent scheduler and execution assumptions as the frozen references.",
+  "models_retrained": false,
+  "labels_rebuilt": false,
+  "final_lockbox_opened": false
+}

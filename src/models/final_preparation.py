@@ -73,8 +73,8 @@ def score_bundle(folder,bundle,frame):
                 score=classifier_score(joblib.load(folder/entry['artifact']),x)
             else:
                 # Average products: mean(P_s * V_s), not mean(P_s) * mean(V_s).
-                score=np.mean([joblib.load(folder[pair['gate']]).predict(x)*
-                               joblib.load(folder[pair['amount']]).predict(x)
+                score=np.mean([joblib.load(folder/pair['gate']).predict(x)*
+                               joblib.load(folder/pair['amount']).predict(x)
                                for pair in entry['members']],axis=0)
         if not np.isfinite(score).all():
             raise ValueError(f'Nonfinite policy scores: {name}')
@@ -86,6 +86,24 @@ def shortlist(scores,top_n=3):
     shortlist_size(0,top_n)
     return pd.concat([ranked(part,part.score,top_n).drop(columns='_score')
                       for _,part in scores.groupby('model')],ignore_index=True)
+
+
+def predict_final(folder,features,top_n=3):
+    """Frozen-bundle inference on supplied new snapshots, with no data loading.
+
+    This does not open the repository's final test. The caller is responsible
+    for as-of feature construction and supplying the eligible candidate pool.
+    """
+    folder=Path(folder)
+    bundle=json.loads((folder/'final_refit_bundle.json').read_text())
+    complete=json.loads((folder/'complete.json').read_text())
+    for p,digest in complete['files_sha256'].items():
+        if p.startswith('final_models/') or p=='final_refit_bundle.json':
+            if sha256(folder/p)!=digest:
+                raise ValueError(f'Frozen final artifact changed: {p}')
+    if features.empty or not features.time.ge(pd.Timestamp(bundle['trained_before'])).all():
+        raise ValueError('Final inference requires nonempty snapshots at/after the fitting cutoff')
+    return shortlist(score_bundle(folder,bundle,features),top_n)
 
 
 def prepare(output,device='cpu'):

@@ -1,0 +1,25 @@
+{
+  "source_sha256": "5c752e7a331898308cd93bc2c779ca5846d2a85106c07cc8e711286e316401b3",
+  "training_completion_sha256": "18c90978eb1000f5be7ea679fe54b11efd95c585a28ef0dec77f592a0b8f62c9",
+  "replay_completion_sha256": "040d2c3857050af05fb65b98d4d35ac09fb8b94ac59aa94967c573a4c4a717f6",
+  "baseline_completion_sha256": "1ae3bed9d6ada3c681959c7999b5151aa78e8b7c9249b964ebef98d54f8e0dc9",
+  "tabm_replay_completion_sha256": "c39cf02f5dc6551501f2e2416fce853820b549a1784bda480c6f932c5b44bc27",
+  "files_sha256": {
+    "all_events_latency.png": "c7a1b59d6c214f6175ba02611896a56c7ada4aa096341d4b6b229d8685aecb4b",
+    "comparison.csv": "723e1d23157c3fa404898044e59a3f637727e25f000c29e22ac108943929375f",
+    "economic_comparison.csv": "f5b7c52e8a49d73a92f04447d907c2ebc72739785529ff7db2a2c7e4fc884720",
+    "event_pnl.csv": "ba0d0283d3391a7eef72f48bf96d3be25415e40edb5f226aa93fa8354013580b",
+    "exclude_december_fed_latency.png": "a403d60bcb5dcdf8236efc530b6aa49877f53f1a9018a79539fcf29a79bec45d",
+    "family_value_capture.csv": "9477f39b728e7790a1f35134ace61647dfc9725a5e836bbe52e6ad3c2ced7e64",
+    "final_fit_inventory.csv": "434b247d73554fed02af4ed3273a9254479724b0649218b748f753493158bb0e",
+    "group_capture.csv": "afee0db46c892122b3205bc793ed6eb6247527ef396287b718b0e3c2d4a2abb4",
+    "inner_budget_choices.csv": "46a51f911ed4d6eb654dcf7ee004097d30201afe8dec6b0f723aa391a539ce36",
+    "inner_budget_metrics.csv": "e0844353d953866a05d02da9f64a71516cc5569f1da18e7d44419ac34f8d8ed2",
+    "paired_occurrence_intervals.csv": "be1655be17d4648edf89ae68eb1cf19d92b8fad6dedd9f2b3e8daa6469ee6ddb",
+    "paired_pnl_intervals.csv": "0938ab15479ce44cc0b04e8d3a2f16271e6283501326e3172b5bfdb8cf37da1b",
+    "paired_value_intervals.csv": "709f55132d6f6f658928f253b5c7d7026692336efeb2b1f4bd96553a2ef35a36",
+    "pnl_curves.parquet": "119501064888d85fa5c62d1c3bd55f220bad24788f3f288d51995c506933e696",
+    "prediction_verification.csv": "b0f95550579656e89dd85253493995f9380526e1e6c1ae6e0de4c7dd642b5e2a"
+  },
+  "final_lockbox_opened": false
+}

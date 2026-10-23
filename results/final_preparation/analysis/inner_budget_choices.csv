@@ -1,0 +1,13 @@
+origin,method,n3_candidate,n5_candidate,changed
+dec_late,logistic,6,4,True
+dec_late,random_forest,0,1,True
+dec_late,tabm_two_stage,7,7,False
+final_refit,logistic,6,1,True
+final_refit,random_forest,0,5,True
+final_refit,tabm_two_stage,1,1,False
+nov_early,logistic,6,6,False
+nov_early,random_forest,4,4,False
+nov_early,tabm_two_stage,4,7,True
+nov_late,logistic,4,1,True
+nov_late,random_forest,0,2,True
+nov_late,tabm_two_stage,7,7,False

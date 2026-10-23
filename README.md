@@ -4,8 +4,9 @@ This dissertation tests whether scheduled order-book snapshots can identify whic
 Polymarket events are worth monitoring for executable pricing inconsistencies.
 Every **W minutes**, rank all eligible events, select **N**, and monitor their
 updates until the next scan. The planned final evaluation uses **W = 60 minutes,
-N = 3 as primary and N = 5 as secondary**. Completed development runs used N=5
+N = 3 as primary and N = 5 as secondary**. Earlier development runs used N=5
 for tuning and reported both budgets; their saved designs and results are unchanged.
+Notebook 09 adds separate N=3 retuning and full-development final-model preparation.
 The research separates **opportunity prediction** from **economic evaluation**.
 The first layer predicts whether a depth-qualified quoted opportunity will appear
 and how large its displayed dollar margin could be. The second evaluates the
@@ -104,9 +105,12 @@ The first layer reports **opportunity recall and quoted-value capture at N=3 and
 N=5**. N=3 is now the primary budget for the planned final evaluation. This choice
 was made after inspecting development results, where the smaller budget imposed
 a more selective monitoring constraint; it was not prespecified before those
-results. Existing settings were tuned at N=5. Any N=3-specific retuning must use
-development data only and be saved as a separate study before final-test access.
-The final-test fitting and evaluation runner has not yet been implemented.
+results. The separate N=3 preparation retunes book-only logistic/forest occurrence
+models and the combined-feature two-stage TabM model using development data only.
+It retains the fixed classical controls and refits final models on all permitted
+known development windows. These full-development fits are not evaluated on their
+own training history. The final-test coverage/end-date audit and evaluation runner
+remain separate work; the test is unopened. See [the preparation report](docs/reports/final_preparation.md).
 Value capture weights each known
 event-hour by its peak quoted dollar margin; its summed denominator is not
 tradable profit. Precision, average precision, new-onset capture, feature-group
@@ -178,6 +182,10 @@ comparisons. The earlier notebooks preserve the data and economic studies:
    verifies saved results. Training and replay require new output directories.
    CPU works; optional CUDA-enabled PyTorch accelerates training. The saved
    models perform screening on CPU and do not download pretrained weights.
+9. **09_final_preparation.ipynb** retunes the shortlist at N=3, compares its
+   development predictions and replay with the frozen controls, and fits final
+   models on all known earlier history. Default execution verifies saved results;
+   rebuilding requires fresh paths. It does not open or evaluate the final test.
 
 Rebuilding data may take tens of minutes; fitting and replay are shorter.
 Successful runs are selected through small path manifests. Repeated runs create
@@ -205,6 +213,8 @@ results/opportunity_value/ Direct/two-stage quoted-value models and comparisons
 results/opportunity_replay/ Fixed-ranking execution and latency comparisons
 results/tabm/           TabM fits, predictions and comparative analysis
 results/tabm_replay/    Fixed TabM rankings under the same execution scenarios
+results/final_preparation/ N=3 development comparison and separate final model bundles
+results/final_preparation_replay/ Development-only replay of the N=3-retuned policies
 results/profitability/  Earlier P&L-target comparisons and policy executions
 results/baseline/       Historical classifier and fixed-ranking execution references
 results/runs/           Additional reproducible runs, when created
