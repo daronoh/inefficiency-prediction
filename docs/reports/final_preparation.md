@@ -15,10 +15,13 @@ This study separates two operations:
    then fit the final models on all permitted known examples. These fits are not
    used to calculate development accuracy or P&L.
 
-The final test from **8 January 2026 onward remains unopened**. No labels,
+At the preparation stage, the final test from **8 January 2026 onward remained unopened**. No labels,
 predictions or returns from that test influence settings, feature choices, epoch
-counts, seeds or model selection. Final-test coverage, its endpoint and the
-evaluation runner remain separate work.
+counts, seeds or model selection. A subsequent
+[timestamp-only audit and protocol](final_test_protocol.md) fixes coverage and
+the endpoint without reading final outcomes. The subsequent
+[final evaluation](final_evaluation.md) has now been completed separately, without
+refitting these models. This report's performance figures remain development results.
 
 ## Models and objectives
 

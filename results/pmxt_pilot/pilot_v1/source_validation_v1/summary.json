@@ -1,0 +1,90 @@
+{
+  "source_start": "2026-05-04 01:00:00+00:00",
+  "source_end": "2026-05-04 04:00:00+00:00",
+  "receipt_end": "2026-05-04 06:00:00+00:00",
+  "receipt_context_hours": 2.0,
+  "events": 15,
+  "tokens": 200,
+  "source_messages": 1188769,
+  "archive_hours": 6,
+  "checkpoint_comparisons": 23531,
+  "checkpoint_exact_fraction": 0.48646466363520463,
+  "checkpoint_top_price_fraction": 0.9519357443372573,
+  "checkpoint_best_ask_size_fraction": 0.9490884365305342,
+  "checkpoint_ask_exact_fraction": 0.642514130296205,
+  "event_hours": 45,
+  "fully_observed_event_hours": 1,
+  "observed_event_time_fraction": 0.07771503086419815,
+  "complete_events_per_scan": {
+    "2026-05-04 01:00:00+00:00": 1,
+    "2026-05-04 02:00:00+00:00": 0,
+    "2026-05-04 03:00:00+00:00": 1
+  },
+  "conditional_positive_event_hours": 0,
+  "maximum_conditional_one_basket_gross_usd": 0.0,
+  "arrival_checks": 0,
+  "arrival_status_counts": {},
+  "late_records_for_analysis": 42,
+  "recorded_transfer_bytes": 2078388726,
+  "raw_cache_bytes": 13580838,
+  "acceptance_targets": {
+    "complete_event_time_fraction": 0.95,
+    "fully_covered_label_fraction": 0.9,
+    "minimum_typical_complete_events_per_scan": 10,
+    "unresolved_quote_contradictions_allowed": 0
+  },
+  "historical_parameters_verified": false,
+  "model_schema_ready": false,
+  "models_trained": false,
+  "net_pnl_estimated": false,
+  "limitations": [
+    "Native full snapshot clocks assumed to identify state version; disagreement may be stream gaps or timestamp semantics.",
+    "Finite receipt buffer does not prove all delayed messages were captured.",
+    "Quality masks use later checkpoints to exclude suspect periods; never to backfill features.",
+    "Quoted positives and arrival support use zero fees, minimum 5 and initially .0001 tick assumptions.",
+    "Arrival checks sample episode starts; no reservations, monitoring policy or partial unwind P&L."
+  ],
+  "inputs": [
+    {
+      "path": "raw\\2026-05-04T00.parquet",
+      "sha256": "06aec5ec5fbd0b32548d068f5007631bf68764ff883909ba0b63c39770a4efd2",
+      "transfer_bytes": 357547818,
+      "cache_bytes": 2276685
+    },
+    {
+      "path": "raw\\2026-05-04T01.parquet",
+      "sha256": "1cda22b3c96399fe5517430fb2d1843cbcea82e1737d11b462ebbd0d116c8ff1",
+      "transfer_bytes": 361062550,
+      "cache_bytes": 2608828
+    },
+    {
+      "path": "raw\\2026-05-04T02.parquet",
+      "sha256": "014bccc9820637d8925e3cf7fd68050c6d54082078b14f926520a19ca610f3d5",
+      "transfer_bytes": 350360647,
+      "cache_bytes": 2572430
+    },
+    {
+      "path": "raw\\2026-05-04T03.parquet",
+      "sha256": "b263c8f61b1e928d203d9f63b81acda3a511d3ee30652c3aab37fab535cb2522",
+      "transfer_bytes": 323259050,
+      "cache_bytes": 2194908
+    },
+    {
+      "path": "raw\\2026-05-04T04.parquet",
+      "sha256": "5556ffd94dd609d26f0baaf81061c0d8962dd63dee44fee97def184be878709b",
+      "transfer_bytes": 331151245,
+      "cache_bytes": 1923899
+    },
+    {
+      "path": "raw\\2026-05-04T05.parquet",
+      "sha256": "0a717f830b7547de273f8ab0fe79a018538bb0a54624c9b3566e351a79f0dd9d",
+      "transfer_bytes": 355007416,
+      "cache_bytes": 2004088
+    }
+  ],
+  "design_sha256": "1ed71c80fb5bf28cfe1b86110c7ee00b3f019f52be37396a23e8da8bca64a5a1",
+  "implementation_sha256": {
+    "src/data/pmxt_validation.py": "7288eeb66dd15c88cb205ef17137234996cb45ec75801bb5f3207737d26b95f1",
+    "src/data/pmxt_source.py": "10aae3aba773cabc310c2dcfd72bad5475f855f01646072997ad9bace4f7c4de"
+  }
+}

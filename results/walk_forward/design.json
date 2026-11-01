@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "start": "2025-10-14 00:00:00+00:00",
+  "first_origin": "2025-11-11 00:00:00+00:00",
+  "end_exclusive": "2026-02-03 08:00:00+00:00",
+  "folds": [
+    [
+      "week_00",
+      "2025-11-11 00:00:00+00:00",
+      "2025-11-18 00:00:00+00:00"
+    ],
+    [
+      "week_01",
+      "2025-11-18 00:00:00+00:00",
+      "2025-11-25 00:00:00+00:00"
+    ],
+    [
+      "week_02",
+      "2025-11-25 00:00:00+00:00",
+      "2025-12-02 00:00:00+00:00"
+    ],
+    [
+      "week_03",
+      "2025-12-02 00:00:00+00:00",
+      "2025-12-09 00:00:00+00:00"
+    ],
+    [
+      "week_04",
+      "2025-12-09 00:00:00+00:00",
+      "2025-12-16 00:00:00+00:00"
+    ],
+    [
+      "week_05",
+      "2025-12-16 00:00:00+00:00",
+      "2025-12-23 00:00:00+00:00"
+    ],
+    [
+      "week_06",
+      "2025-12-23 00:00:00+00:00",
+      "2025-12-30 00:00:00+00:00"
+    ],
+    [
+      "week_07",
+      "2025-12-30 00:00:00+00:00",
+      "2026-01-06 00:00:00+00:00"
+    ],
+    [
+      "week_08",
+      "2026-01-06 00:00:00+00:00",
+      "2026-01-13 00:00:00+00:00"
+    ],
+    [
+      "week_09",
+      "2026-01-13 00:00:00+00:00",
+      "2026-01-20 00:00:00+00:00"
+    ],
+    [
+      "week_10",
+      "2026-01-20 00:00:00+00:00",
+      "2026-01-27 00:00:00+00:00"
+    ],
+    [
+      "week_11",
+      "2026-01-27 00:00:00+00:00",
+      "2026-02-03 00:00:00+00:00"
+    ],
+    [
+      "week_12",
+      "2026-02-03 00:00:00+00:00",
+      "2026-02-03 08:00:00+00:00"
+    ]
+  ],
+  "horizon_minutes": 60,
+  "primary_budget": 3,
+  "secondary_budget": 5,
+  "feature_views": {
+    "book": [
+      "x_active_packages",
+      "x_active_tokens",
+      "x_seen_fraction",
+      "x_clean_fraction",
+      "x_spread_mean",
+      "x_spread_max",
+      "x_ask_depth_sum",
+      "x_book_age_max_s",
+      "x_best_quoted_net_usd",
+      "x_size_feasible_package_fraction",
+      "x_positive_quoted_net_package_fraction",
+      "x_snapshot_lag1_active_packages",
+      "x_snapshot_change1_active_packages",
+      "x_snapshot_lag1_active_tokens",
+      "x_snapshot_change1_active_tokens",
+      "x_snapshot_lag1_seen_fraction",
+      "x_snapshot_change1_seen_fraction",
+      "x_snapshot_lag1_clean_fraction",
+      "x_snapshot_change1_clean_fraction",
+      "x_snapshot_lag1_spread_mean",
+      "x_snapshot_change1_spread_mean",
+      "x_snapshot_lag1_spread_max",
+      "x_snapshot_change1_spread_max",
+      "x_snapshot_lag1_ask_depth_sum",
+      "x_snapshot_change1_ask_depth_sum",
+      "x_snapshot_lag1_book_age_max_s",
+      "x_snapshot_change1_book_age_max_s",
+      "x_snapshot_lag1_best_quoted_net_usd",
+      "x_snapshot_change1_best_quoted_net_usd",
+      "x_snapshot_lag1_size_feasible_package_fraction",
+      "x_snapshot_change1_size_feasible_package_fraction",
+      "x_snapshot_lag1_positive_quoted_net_package_fraction",
+      "x_snapshot_change1_positive_quoted_net_package_fraction"
+    ],
+    "combined": [
+      "x_active_packages",
+      "x_active_tokens",
+      "x_seen_fraction",
+      "x_clean_fraction",
+      "x_spread_mean",
+      "x_spread_max",
+      "x_ask_depth_sum",
+      "x_book_age_max_s",
+      "x_best_quoted_net_usd",
+      "x_size_feasible_package_fraction",
+      "x_positive_quoted_net_package_fraction",
+      "x_snapshot_lag1_active_packages",
+      "x_snapshot_change1_active_packages",
+      "x_snapshot_lag1_active_tokens",
+      "x_snapshot_change1_active_tokens",
+      "x_snapshot_lag1_seen_fraction",
+      "x_snapshot_change1_seen_fraction",
+      "x_snapshot_lag1_clean_fraction",
+      "x_snapshot_change1_clean_fraction",
+      "x_snapshot_lag1_spread_mean",
+      "x_snapshot_change1_spread_mean",
+      "x_snapshot_lag1_spread_max",
+      "x_snapshot_change1_spread_max",
+      "x_snapshot_lag1_ask_depth_sum",
+      "x_snapshot_change1_ask_depth_sum",
+      "x_snapshot_lag1_book_age_max_s",
+      "x_snapshot_change1_book_age_max_s",
+      "x_snapshot_lag1_best_quoted_net_usd",
+      "x_snapshot_change1_best_quoted_net_usd",
+      "x_snapshot_lag1_size_feasible_package_fraction",
+      "x_snapshot_change1_size_feasible_package_fraction",
+      "x_snapshot_lag1_positive_quoted_net_package_fraction",
+      "x_snapshot_change1_positive_quoted_net_package_fraction",
+      "m_age_days",
+      "m_event_type",
+      "m_topic"
+    ]
+  },
+  "candidates": {
+    "logistic": [
+      {
+        "C": 1.0,
+        "penalty": "l2",
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      {
+        "C": 0.01,
+        "penalty": "l2",
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      {
+        "C": 0.1,
+        "penalty": "l2",
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      {
+        "C": 10.0,
+        "penalty": "l2",
+        "class_weight": "balanced",
+        "solver": "lbfgs"
+      },
+      {
+        "C": 0.1,
+        "penalty": "l1",
+        "class_weight": "balanced",
+        "solver": "liblinear"
+      },
+      {
+        "C": 1.0,
+        "penalty": "l1",
+        "class_weight": "balanced",
+        "solver": "liblinear"
+      },
+      {
+        "C": 0.1,
+        "penalty": "l2",
+        "class_weight": null,
+        "solver": "lbfgs"
+      },
+      {
+        "C": 1.0,
+        "penalty": "l2",
+        "class_weight": null,
+        "solver": "lbfgs"
+      }
+    ],
+    "random_forest": [
+      {
+        "n_estimators": 200,
+        "max_depth": 10,
+        "min_samples_leaf": 20,
+        "max_features": "sqrt"
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 4,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "min_samples_leaf": 5,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "min_samples_leaf": 50,
+        "max_features": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 6,
+        "min_samples_leaf": 50,
+        "max_features": 0.5
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 12,
+        "min_samples_leaf": 5,
+        "max_features": 1.0
+      }
+    ],
+    "xgboost": [
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_weight": 10,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 2,
+        "min_child_weight": 10,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 400,
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 4,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 6,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 10.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 400,
+        "learning_rate": 0.03,
+        "max_depth": 2,
+        "min_child_weight": 10,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_lambda": 1.0,
+        "reg_alpha": 0.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "min_child_weight": 20,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 100.0,
+        "reg_alpha": 1.0
+      },
+      {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_child_weight": 50,
+        "subsample": 1.0,
+        "colsample_bytree": 0.8,
+        "reg_lambda": 100.0,
+        "reg_alpha": 10.0
+      }
+    ],
+    "tabm_two_stage": [
+      {
+        "n_blocks": 2,
+        "d_block": 128,
+        "dropout": 0.1,
+        "lr": 0.002,
+        "weight_decay": 0.0003
+      },
+      {
+        "n_blocks": 1,
+        "d_block": 64,
+        "dropout": 0.0,
+        "lr": 0.002,
+        "weight_decay": 0.0003
+      },
+      {
+        "n_blocks": 2,
+        "d_block": 64,
+        "dropout": 0.1,
+        "lr": 0.001,
+        "weight_decay": 0.001
+      },
+      {
+        "n_blocks": 3,
+        "d_block": 128,
+        "dropout": 0.1,
+        "lr": 0.001,
+        "weight_decay": 0.0003
+      }
+    ]
+  },
+  "tabm_original_candidate_indices": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "forest_value_params": {
+    "n_estimators": 200,
+    "max_depth": 8,
+    "min_samples_leaf": 20,
+    "max_features": 1.0
+  },
+  "seeds": [
+    20261001,
+    20261002,
+    20261003
+  ],
+  "device": "cuda",
+  "tabm": {
+    "k": 32,
+    "max_epochs": 60,
+    "patience": 10,
+    "batch_size": 1024
+  },
+  "tuning": "Every fourth weekly origin when at least seven evaluation days remain; two purged chronological inner blocks. Refit weekly. Carry settings/epochs between tuning dates.",
+  "objective": "Pooled captured peak quoted value at N=3, ties captured positive hours, mean inner AP, candidate order.",
+  "features": "Fixed book and combined controls; tuned models and both hurdles use combined features. No outcomes or segment markers are predictors.",
+  "label_policy": "Known training windows end strictly before origin. Unknown evaluation rows consume monitoring slots.",
+  "ensembles": "Equal within-scan percentile ranks: three tuned classifiers; tuned logistic+forest+TabM; forest hurdle+TabM. No learned outer weights.",
+  "interpretation": "Retrospective chronological full-period model-development study. Existing final experiment preserved; its later observations are now explicitly included.",
+  "economic_selection": "Prediction scores only; PnL never enters fitting, tuning or ensemble weights.",
+  "source_sha256": {
+    "src/models/walk_forward.py": "78db0535dad503b0f38a3bf29c65015e3531c3e9ef5aa1fc82e45575fdd853c0",
+    "src/data/walk_forward.py": "061c5542a077fb05eb9eb58c077a09321c49f061efc5d5ac0b191dd15e07243f",
+    "src/models/opportunities.py": "5f61d4b6dae3f7df43c9b6678e211e122cda85c3da252b0410d116614332db51",
+    "src/models/opportunity_value.py": "50a45655b6c010d9e4373ebd71d1f809f9a3f3f2625877d3b95bbeadba6652cd",
+    "src/models/tabm.py": "f92258534f245a859cea3b6d1c7233018a817c23313f56fc66aa3ddb5bc7fc2e",
+    "src/models/tuning.py": "f4275887b36b5a8dcef7f2582d49f1fd0b77e924c27e54d188d1d6d413e5dc09",
+    "src/models/evaluation.py": "bb62f78a3e9fea3efbd2b42119c4788ab0aa09f87323325c9746b88c6e2287f8",
+    "src/models/estimators.py": "e65a6350de076a96d5618e2e85f2f93c5cc95039d37418711149666c65c178ae"
+  },
+  "dataset_completion_sha256": "4fe7f24179381cf7c254d9b9c503490fda91375b1bedb3c7ee42b5307b0b5af8"
+}

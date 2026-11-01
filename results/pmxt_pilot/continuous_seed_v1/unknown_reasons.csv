@@ -1,0 +1,15 @@
+scenario,reason,primary_unknown_seconds,overlapping_unknown_seconds
+isolated,missing_initial_snapshot,34617.33099999999,34617.33099999999
+isolated,retrospective_best_price_drift,8582.667,8906.115
+isolated,best_price_contradiction,0.002,0.002
+isolated,crossed_final_group,0.0,0.0
+isolated,malformed_group,0.0,0.0
+isolated,unresolved_quantity_alternatives,0.0,0.0
+isolated,other_unbounded_basket,0.0,0.0
+continuous,missing_initial_snapshot,0.0,0.0
+continuous,retrospective_best_price_drift,40529.41999999999,40529.41999999999
+continuous,best_price_contradiction,2670.580000000002,15929.208999999995
+continuous,crossed_final_group,0.0,0.0
+continuous,malformed_group,0.0,0.0
+continuous,unresolved_quantity_alternatives,0.0,0.0
+continuous,other_unbounded_basket,0.0,0.0

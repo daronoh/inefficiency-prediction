@@ -1,0 +1,111 @@
+{
+  "source_start": "2026-05-04 01:00:00+00:00",
+  "source_end": "2026-05-04 04:00:00+00:00",
+  "receipt_end": "2026-05-04 06:00:00+00:00",
+  "receipt_context_hours": 2.0,
+  "checkpoint_policy": "authoritative_snapshot",
+  "events": 15,
+  "tokens": 200,
+  "source_messages": 1188769,
+  "archive_hours": 6,
+  "checkpoint_comparisons": 23531,
+  "checkpoint_exact_fraction": 0.48646466363520463,
+  "checkpoint_top_price_fraction": 0.9519357443372573,
+  "checkpoint_best_ask_size_fraction": 0.9490884365305342,
+  "checkpoint_ask_exact_fraction": 0.642514130296205,
+  "event_hours": 45,
+  "fully_observed_event_hours": 7,
+  "observed_event_time_fraction": 0.4371615987654707,
+  "complete_events_per_scan": {
+    "2026-05-04 01:00:00+00:00": 6,
+    "2026-05-04 02:00:00+00:00": 8,
+    "2026-05-04 03:00:00+00:00": 6
+  },
+  "conditional_positive_event_hours": 0,
+  "maximum_conditional_one_basket_gross_usd": 0.0,
+  "arrival_checks": 0,
+  "arrival_status_counts": {},
+  "late_records_for_analysis": 42,
+  "recorded_transfer_bytes": 2078388726,
+  "raw_cache_bytes": 13580838,
+  "acceptance_targets": {
+    "complete_event_time_fraction": 0.95,
+    "fully_covered_label_fraction": 0.9,
+    "minimum_typical_complete_events_per_scan": 10,
+    "unresolved_quote_contradictions_allowed": 0
+  },
+  "historical_parameters_verified": false,
+  "model_schema_ready": false,
+  "models_trained": false,
+  "net_pnl_estimated": false,
+  "limitations": [
+    "Native full snapshot clocks assumed to identify state version; disagreement may be stream gaps or timestamp semantics.",
+    "Finite receipt buffer does not prove all delayed messages were captured.",
+    "Depth disagreement alone is not proof of missing data: full-book messages can supply new state.",
+    "Quality masks exclude contradictions; never backfill feature prices.",
+    "Quoted positives and arrival support use zero fees, minimum 5 and initially .0001 tick assumptions.",
+    "Arrival checks sample episode starts; no reservations, monitoring policy or partial unwind P&L."
+  ],
+  "inputs": [
+    {
+      "path": "raw\\2026-05-04T00.parquet",
+      "sha256": "06aec5ec5fbd0b32548d068f5007631bf68764ff883909ba0b63c39770a4efd2",
+      "transfer_bytes": 357547818,
+      "cache_bytes": 2276685
+    },
+    {
+      "path": "raw\\2026-05-04T01.parquet",
+      "sha256": "1cda22b3c96399fe5517430fb2d1843cbcea82e1737d11b462ebbd0d116c8ff1",
+      "transfer_bytes": 361062550,
+      "cache_bytes": 2608828
+    },
+    {
+      "path": "raw\\2026-05-04T02.parquet",
+      "sha256": "014bccc9820637d8925e3cf7fd68050c6d54082078b14f926520a19ca610f3d5",
+      "transfer_bytes": 350360647,
+      "cache_bytes": 2572430
+    },
+    {
+      "path": "raw\\2026-05-04T03.parquet",
+      "sha256": "b263c8f61b1e928d203d9f63b81acda3a511d3ee30652c3aab37fab535cb2522",
+      "transfer_bytes": 323259050,
+      "cache_bytes": 2194908
+    },
+    {
+      "path": "raw\\2026-05-04T04.parquet",
+      "sha256": "5556ffd94dd609d26f0baaf81061c0d8962dd63dee44fee97def184be878709b",
+      "transfer_bytes": 331151245,
+      "cache_bytes": 1923899
+    },
+    {
+      "path": "raw\\2026-05-04T05.parquet",
+      "sha256": "0a717f830b7547de273f8ab0fe79a018538bb0a54624c9b3566e351a79f0dd9d",
+      "transfer_bytes": 355007416,
+      "cache_bytes": 2004088
+    }
+  ],
+  "design_sha256": "57782a7bb479585f2e78dbbc5559867e799db8b2474a3b3c266d2b1bc53e86dc",
+  "derived_sha256": {
+    "hourly_features.parquet": "9efa6df956273203dc0e077105884165097440ac9d96cf31be950d15361d75c6",
+    "hourly_quote_labels.parquet": "321bd8eb3c6b010c027fda195c2716ce997c7eb9a5bad3b678b52f1c3bc1c2a4",
+    "checkpoint_comparisons.parquet": "56c741312176ce591127667c4d2473a39c6856b0545319e11f59748054dc4c4a",
+    "suspect_intervals.json": "6bef7baed9863e40e588f01dffc0872b847dea11681c12a9ef961cc6b89b8e7a"
+  },
+  "results_sha256": {
+    "event_hours.csv": "9524c11e75e1f1db5edc15b6fb2a8e081ef6dc5455c0597c48b07c0c7aac22dc",
+    "token_quality.csv": "82943ceb59ff03ecdf0f68d688dae4bdf52957c506a851bbbba71cdba41be478",
+    "arrival_checks.csv": "b99a539b0fe3bfb2123c027b1e5540ec91dcd8761e7536bbd94f2766619c2c13",
+    "checkpoint_examples.json": "228e51b8bd2254109c9f6fa19031c854ea007551799a3feb3975c5b88bd21852",
+    "contradiction_examples.json": "3a6da1fadfee22323ed01db5a69fb0bc9ce2a35ee167c3130d46ae2c309bc199"
+  },
+  "implementation_sha256": {
+    "src/data/pmxt_validation.py": "1a1f7c55e3c41997e9eb7a27cf49360d5b171cee4b30bd0d3d3cc49b7b1afeab",
+    "src/data/pmxt_source.py": "2ab3ecd253d72ecd6e4fc1903ca3ec8bd629439f9cfef4621ed91c0d8b9c0489",
+    "src/data/pmxt_audit.py": "19d916e7799d3652f124b2b41fb7d299db10bc234cf57f01352a0cff1304e591",
+    "src/data/pmxt_books.py": "e0a56e00df0f41ea45417150e517ec445430954168b6da6f596492428f68e969",
+    "src/data/pmxt_archive.py": "0b600658eb94a7a7d65436ba4ca8cbd005b94cff9e60dbeaa950a4ddaf5db02d",
+    "src/data/pmxt_pilot.py": "6d087e49c5bbc164a0bd0d9480015e02bcdebe5fb249c1ab55a31be9796b25bd",
+    "src/simulator/sizing.py": "71afbfd82df8bb519c652dee9b05d18301346d7138102138fbc19777c8869581",
+    "src/data/books.py": "76c57050f1b3725cca02e61d4e0d34017edbba39606dc48967bca2e2a4c6ea91"
+  }
+}

@@ -1,0 +1,2 @@
+from __future__ import annotations
+ATTEMPT_COLUMNS = ['event_slug', 'window', 'decision_time', 'start_time', 'confirmation_time', 'arrival_time', 'unwind_time', 'status', 'attempted', 'quantity', 'n_members', 'n_filled_legs', 'quoted_gross_usd', 'reserved_cash_usd', 'limits_json', 'entry_cost_usd', 'pnl_usd', 'filled_legs_json', 'leg_costs_json', 'pair_id', 'scope', 'top_n', 'model', 'arrival_delay_s']

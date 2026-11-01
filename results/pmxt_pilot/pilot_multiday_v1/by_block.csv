@@ -1,0 +1,5 @@
+block,event_hours,known_hours,positive_hours,negative_hours,unknown_hours,known_fraction,full_ask_hours,full_book_hours,full_ask_time_fraction,full_book_time_fraction,determined_time_fraction,exact_value_hours,maximum_hourly_value_lower_usd,positive_seconds
+may04,90,39,0,39,51,0.43333333333333335,15,14,0.5585593302469426,0.46232400308643956,0.738938444444538,39,0.0,0.0
+may06,90,4,2,2,86,0.044444444444444446,0,0,0.01911365432098896,0.010287466049383636,0.036963299382716794,2,0.7999999999999545,1977.4959999997336
+may08,90,0,0,0,90,0.0,0,0,0.0,0.0,0.0,0,0.0,0.0
+may10,90,0,0,0,90,0.0,0,0,0.0,0.0,0.0,0,0.0,0.0

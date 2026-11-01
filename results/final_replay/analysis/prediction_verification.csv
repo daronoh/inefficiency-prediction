@@ -1,0 +1,7 @@
+model,rows,maximum_error
+fixed_book_logistic,2473,0.0
+fixed_book_random_forest,2473,2.220446049250313e-16
+n3_book_logistic,2473,0.0
+n3_book_random_forest,2473,2.220446049250313e-16
+n3_tabm_two_stage,2473,0.0
+quoted_gap_rule,2473,0.0

@@ -1,0 +1,25 @@
+{
+  "method": "logistic",
+  "candidate": 1,
+  "inner": 0,
+  "params": {
+    "C": 0.01,
+    "penalty": "l2",
+    "class_weight": "balanced",
+    "solver": "lbfgs"
+  },
+  "training_rows": 3869,
+  "training_positive": 39,
+  "train_last": "2025-10-28 07:00:00+00:00",
+  "validation_start": "2025-10-28 09:00:00+00:00",
+  "validation_end": "2025-11-04 04:00:00+00:00",
+  "fitting_cutoff": "2025-11-11 00:00:00+00:00",
+  "seconds": 0.07495549999293871,
+  "total_peak_value": 141.55701000000096,
+  "captured_peak_value": 87.7771600000008,
+  "positive_windows": 47,
+  "captured_positive_windows": 38,
+  "average_precision": 0.4146137524081598,
+  "selected_unknown": 0,
+  "predictions_sha256": "9b96ae0c762c11c6edd97df8874571b7ae97474b42ece2a38eeeb3e61d19553c"
+}

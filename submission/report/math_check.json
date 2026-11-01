@@ -1,0 +1,218 @@
+{
+  "renderer": "Matplotlib mathtext / STIX vector outlines",
+  "inline_occurrences": 37,
+  "display_equations": 3,
+  "formulas": [
+    {
+      "tex": "\\mathcal{C}(t)",
+      "size_pt": 12,
+      "width_pt": 19.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "t",
+      "size_pt": 12,
+      "width_pt": 4.0,
+      "height_pt": 8.0,
+      "depth_pt": 1.0
+    },
+    {
+      "tex": "e",
+      "size_pt": 12,
+      "width_pt": 6.0,
+      "height_pt": 7.0,
+      "depth_pt": 1.0
+    },
+    {
+      "tex": "\\mathbf{x}(e,t)",
+      "size_pt": 12,
+      "width_pt": 29.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "s(e,t)",
+      "size_pt": 12,
+      "width_pt": 27.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "\\min(N,|\\mathcal{C}(t)|)",
+      "size_pt": 12,
+      "width_pt": 64.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "[t,t+H)",
+      "size_pt": 12,
+      "width_pt": 42.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "H",
+      "size_pt": 12,
+      "width_pt": 9.0,
+      "height_pt": 8.0,
+      "depth_pt": 0.0
+    },
+    {
+      "tex": "t+H",
+      "size_pt": 12,
+      "width_pt": 26.0,
+      "height_pt": 9.0,
+      "depth_pt": 1.0
+    },
+    {
+      "tex": "|\\mathcal{C}(t)|\\leq N",
+      "size_pt": 12,
+      "width_pt": 44.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "q",
+      "size_pt": 12,
+      "width_pt": 7.0,
+      "height_pt": 9.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "A",
+      "size_pt": 12,
+      "width_pt": 8.0,
+      "height_pt": 9.0,
+      "depth_pt": 0.0
+    },
+    {
+      "tex": "B",
+      "size_pt": 12,
+      "width_pt": 8.0,
+      "height_pt": 8.0,
+      "depth_pt": 0.0
+    },
+    {
+      "tex": "B\\Rightarrow A",
+      "size_pt": 12,
+      "width_pt": 31.0,
+      "height_pt": 10.0,
+      "depth_pt": 1.0
+    },
+    {
+      "tex": "\\mathrm{YES}(A)",
+      "size_pt": 12,
+      "width_pt": 38.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "\\mathrm{NO}(B)",
+      "size_pt": 12,
+      "width_pt": 33.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "m",
+      "size_pt": 12,
+      "width_pt": 9.0,
+      "height_pt": 7.0,
+      "depth_pt": 1.0
+    },
+    {
+      "tex": "C_j(q,t)",
+      "size_pt": 12,
+      "width_pt": 34.0,
+      "height_pt": 13.0,
+      "depth_pt": 4.0
+    },
+    {
+      "tex": "j",
+      "size_pt": 12,
+      "width_pt": 4.0,
+      "height_pt": 11.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "G(q,t)=q-\\sum_{j=1}^{m}C_j(q,t).",
+      "size_pt": 12,
+      "width_pt": 119.0,
+      "height_pt": 29.0,
+      "depth_pt": 13.0
+    },
+    {
+      "tex": "q\\geq 5",
+      "size_pt": 12,
+      "width_pt": 26.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "L_j(q,t)",
+      "size_pt": 12,
+      "width_pt": 33.0,
+      "height_pt": 13.0,
+      "depth_pt": 4.0
+    },
+    {
+      "tex": "q-q\\sum_{j=1}^{m}L_j(q,t)>0.",
+      "size_pt": 12,
+      "width_pt": 98.0,
+      "height_pt": 29.0,
+      "depth_pt": 13.0
+    },
+    {
+      "tex": "y(e,t)",
+      "size_pt": 12,
+      "width_pt": 28.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "y",
+      "size_pt": 12,
+      "width_pt": 6.0,
+      "height_pt": 9.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "v(e,t)",
+      "size_pt": 12,
+      "width_pt": 28.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "v",
+      "size_pt": 12,
+      "width_pt": 6.0,
+      "height_pt": 7.0,
+      "depth_pt": 1.0
+    },
+    {
+      "tex": "\\min(N,m)/m",
+      "size_pt": 12,
+      "width_pt": 61.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "\\widehat{v}(\\mathbf{x})=\\widehat{\\mathbb{P}}(y=1\\mid\\mathbf{x})\\,\\widehat{\\mathbb{E}}[v\\mid y=1,\\mathbf{x}].",
+      "size_pt": 12,
+      "width_pt": 160.0,
+      "height_pt": 15.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "-",
+      "size_pt": 12,
+      "width_pt": 9.0,
+      "height_pt": 4.0,
+      "depth_pt": 0.0
+    }
+  ],
+  "rasterized_equations": false
+}

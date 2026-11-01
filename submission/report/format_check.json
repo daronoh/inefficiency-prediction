@@ -1,0 +1,61 @@
+{
+  "page_size": "A4",
+  "body_font": "Times-Roman",
+  "body_font_size_pt": 12,
+  "body_leading_pt": 18,
+  "abstract_words": 175,
+  "main_text_pages": 24,
+  "main_text_limit": 55,
+  "main_start_physical_page": 7,
+  "references_start_physical_page": 31,
+  "appendix_start_physical_page": 32,
+  "chapter_pages": [
+    {
+      "title": "1 Introduction",
+      "physical_page": 7
+    },
+    {
+      "title": "2 Background and related work",
+      "physical_page": 9
+    },
+    {
+      "title": "3 Problem formulation",
+      "physical_page": 11
+    },
+    {
+      "title": "4 Data and example construction",
+      "physical_page": 14
+    },
+    {
+      "title": "5 Prediction methodology",
+      "physical_page": 18
+    },
+    {
+      "title": "6 Economic replay",
+      "physical_page": 21
+    },
+    {
+      "title": "7 Results",
+      "physical_page": 23
+    },
+    {
+      "title": "8 Discussion and conclusion",
+      "physical_page": 29
+    },
+    {
+      "title": "References",
+      "physical_page": 31
+    },
+    {
+      "title": "Appendix A Reproduction and artifact guide",
+      "physical_page": 32
+    },
+    {
+      "title": "Appendix B Configuration and provenance",
+      "physical_page": 33
+    }
+  ],
+  "math_rendering": "STIX vector mathematics; inline baselines and displayed equations",
+  "display_equations": 3,
+  "interpretation": "Compiled report draft; author must review claims, citations and institutional requirements before submission."
+}

@@ -1,0 +1,13 @@
+{
+  "first_origin_classifiers_refitted": [
+    "book_logistic",
+    "book_random_forest",
+    "book_xgboost",
+    "combined_logistic",
+    "combined_random_forest",
+    "combined_xgboost"
+  ],
+  "predictions_match": true,
+  "training_rows": 7652,
+  "evaluation_rows": 2861
+}

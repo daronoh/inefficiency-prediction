@@ -1,0 +1,40 @@
+{
+  "final_start": "2026-01-08 00:00:00+00:00",
+  "final_end_exclusive": "2026-02-03 08:00:00+00:00",
+  "endpoint_rule": "floor(max last source timestamp among frozen supported token files, cadence); exclude incomplete terminal hour",
+  "scheduled_hours": 632,
+  "supported_events": 51,
+  "development_events": 48,
+  "supported_negrisk": 46,
+  "supported_ladder": 5,
+  "token_files": 994,
+  "tokens_with_final_observations": 146,
+  "events_with_final_observations": 8,
+  "events_with_final_ranking_rows": 8,
+  "final_eligible_event_windows": 2473,
+  "extent_bracketed_event_windows": 1262,
+  "scopes": {
+    "development_events_only": {
+      "hours_with_events": 573,
+      "min_events": 0,
+      "max_events": 5,
+      "median_events": 2.0,
+      "selective_hours_n3": 141,
+      "selective_hours_n5": 0,
+      "monitor_all_hours_n3": 432,
+      "monitor_all_hours_n5": 573,
+      "hours_with_more_than_three_extent_bracketed_events": 0
+    },
+    "frozen_supported_universe": {
+      "hours_with_events": 632,
+      "min_events": 1,
+      "max_events": 5,
+      "median_events": 4.0,
+      "selective_hours_n3": 503,
+      "selective_hours_n5": 0,
+      "monitor_all_hours_n3": 129,
+      "monitor_all_hours_n5": 632,
+      "hours_with_more_than_three_extent_bracketed_events": 0
+    }
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "108251591904413063139495882252154135107497878738832930637657538583440424739851": [
+    {
+      "source_ms": 1777961491216,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894335,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894338,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894347,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894351,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894369,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894376,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894377,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894385,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894388,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894392,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    },
+    {
+      "source_ms": 1777967894411,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777947896849
+    }
+  ],
+  "110278798232273153409473285242656277846127034405056021257247586947529803753453": [
+    {
+      "source_ms": 1777957482798,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957483702,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957491677,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957491756,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957495152,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957495701,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957510520,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957510916,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957526545,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957545735,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957551019,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    },
+    {
+      "source_ms": 1777957577324,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777948039887
+    }
+  ],
+  "32825140231045567473519733823753658145488577746690815504132235066565756510499": [
+    {
+      "source_ms": 1777944832039,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944832712,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944832748,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944833434,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944834150,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944837892,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944879658,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944890743,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944891690,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944928146,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944945976,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    },
+    {
+      "source_ms": 1777944945978,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1777943022378
+    }
+  ],
+  "4655209727295513535859117642120184432334179761721646415109648555849060899062": [
+    {
+      "source_ms": 1777967894355,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967894361,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967894388,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967894400,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967894413,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967896623,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967896700,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967896742,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967896762,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967896782,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967896812,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    },
+    {
+      "source_ms": 1777967896823,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942638331
+    }
+  ],
+  "93207994086385268568874006716717433393966352959932150015626953142806317186909": [
+    {
+      "source_ms": 1777948330143,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948330887,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948330889,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948330891,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948332476,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948332715,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948332717,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948332720,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948339418,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948339858,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948393645,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    },
+    {
+      "source_ms": 1777948393738,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "baseline_ms": 1777942363261
+    }
+  ]
+}

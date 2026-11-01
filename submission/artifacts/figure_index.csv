@@ -1,0 +1,51 @@
+number,title,file,source_table,caption
+1,Research pipeline,figures/01_research_pipeline.png,tables/figure_01.csv,Opportunity targets and tuning are independent of execution P&L.
+2,Chronological expanding histories,figures/02_chronological_expanding_histories.png,tables/figure_02.csv,Full target windows are purged before each origin. Final block is eight hours.
+3,Supported and evaluated cohort,figures/03_supported_and_evaluated_cohort.png,tables/figure_03.csv,Supported membership differs from time-specific availability.
+4,Event observation extents,figures/04_event_observation_extents.png,tables/figure_04.csv,"Endpoints are descriptive offline extents, not continuous coverage claims."
+5,Hourly candidate competition,figures/05_hourly_candidate_competition.png,tables/figure_05.csv,Candidate counts use the complete eligible pool including unknown labels.
+6,Weekly monitoring competition,figures/06_weekly_monitoring_competition.png,tables/figure_06.csv,A budget has no exclusion effect when the pool is no larger than the budget.
+7,Outcome coverage over time,figures/07_outcome_coverage_over_time.png,tables/figure_07.csv,Unknown intervals do not become negative examples.
+8,Opportunity prevalence over time,figures/08_opportunity_prevalence_over_time.png,tables/figure_08.csv,Undefined when no known outcomes exist.
+9,Outcomes by structural event type,figures/09_outcomes_by_structural_event_type.png,tables/figure_09.csv,The much smaller ladder cohort limits comparisons between event types.
+10,Quoted gap at ranking,figures/10_quoted_gap_at_ranking.png,tables/figure_10.csv,"All eligible forward event-hours, before monitoring selection. Missing feature values excluded."
+11,Mean bid ask spread,figures/11_mean_bid_ask_spread.png,tables/figure_11.csv,"All eligible forward event-hours, before monitoring selection. Missing feature values excluded."
+12,Displayed ask depth,figures/12_displayed_ask_depth.png,tables/figure_12.csv,"All eligible forward event-hours, before monitoring selection. Missing feature values excluded."
+13,Age of carried book states,figures/13_age_of_carried_book_states.png,tables/figure_13.csv,"All eligible forward event-hours, before monitoring selection. Missing feature values excluded."
+14,Active tokens per event,figures/14_active_tokens_per_event.png,tables/figure_14.csv,"All eligible forward event-hours, before monitoring selection. Missing feature values excluded."
+15,Current feature correlations,figures/15_current_feature_correlations.png,tables/figure_15.csv,Pearson correlation of current features over all prepared examples; missing pairs excluded.
+16,Positive hour capture at N3,figures/16_positive_hour_capture_at_n3.png,tables/figure_16.csv,Same eligible forward pool. Known-outcome metrics exclude unknown labels; ranking does not.
+17,Quoted value capture at N3,figures/17_quoted_value_capture_at_n3.png,tables/figure_17.csv,Same eligible forward pool. Known-outcome metrics exclude unknown labels; ranking does not.
+18,Positive hour capture at N5,figures/18_positive_hour_capture_at_n5.png,tables/figure_18.csv,Same eligible forward pool. Known-outcome metrics exclude unknown labels; ranking does not.
+19,Quoted value capture at N5,figures/19_quoted_value_capture_at_n5.png,tables/figure_19.csv,Same eligible forward pool. Known-outcome metrics exclude unknown labels; ranking does not.
+20,Average precision of opportunity scores,figures/20_average_precision_of_opportunity_scores.png,tables/figure_20.csv,Same eligible forward pool. Known-outcome metrics exclude unknown labels; ranking does not.
+21,Known precision among selected hours,figures/21_known_precision_among_selected_hours.png,tables/figure_21.csv,Same eligible forward pool. Known-outcome metrics exclude unknown labels; ranking does not.
+22,Unknown share of selected hours,figures/22_unknown_share_of_selected_hours.png,tables/figure_22.csv,Same eligible forward pool. Known-outcome metrics exclude unknown labels; ranking does not.
+23,Event monitoring fraction at N3,figures/23_event_monitoring_fraction_at_n3.png,tables/figure_23.csv,"Selected event-hours divided by all eligible event-hours, including unknowns."
+24,Token monitoring fraction at N3,figures/24_token_monitoring_fraction_at_n3.png,tables/figure_24.csv,Token counts reflect different basket sizes; these are not measured compute timings.
+25,Value capture lift over random,figures/25_value_capture_lift_over_random.png,tables/figure_25.csv,Exact random expectation is computed separately in each scan pool.
+26,Weekly positive hour capture,figures/26_weekly_positive_hour_capture.png,tables/figure_26.csv,NA means no known positive target in that week.
+27,Weekly quoted value capture,figures/27_weekly_quoted_value_capture.png,tables/figure_27.csv,NA means zero known target value in that week.
+28,Random policy economic distribution,figures/28_random_policy_economic_distribution.png,tables/figure_28.csv,"Twenty fixed random seeds; N=3, 100 ms, uncapped funding."
+29,Metadata effect on positive capture,figures/29_metadata_effect_on_positive_capture.png,tables/figure_29.csv,"Combined minus book-only, with fixed identical family settings. Units: percentage points."
+30,Metadata effect on value capture,figures/30_metadata_effect_on_value_capture.png,tables/figure_30.csv,"Combined minus book-only, with fixed identical family settings. Units: percentage points."
+31,Tuning versus fixed combined models,figures/31_tuning_versus_fixed_combined_models.png,tables/figure_31.csv,"Outer forward performance, N=3; hyperparameters selected using earlier inner blocks."
+32,Ensembles and their component models,figures/32_ensembles_and_their_component_models.png,tables/figure_32.csv,Equal within-scan percentile-rank averages; N=3.
+33,Positive hours by event,figures/33_positive_hours_by_event.png,tables/figure_33.csv,"Known forward targets only. Value is a sum of hourly maxima, not tradable P&L."
+34,Quoted target value by event,figures/34_quoted_target_value_by_event.png,tables/figure_34.csv,"Known forward targets only. Value is a sum of hourly maxima, not tradable P&L."
+35,Positive capture excluding December Fed,figures/35_positive_capture_excluding_december_fed.png,tables/figure_35.csv,Remove the event and rerank the remaining pool at N=3.
+36,Value capture excluding December Fed,figures/36_value_capture_excluding_december_fed.png,tables/figure_36.csv,Remove the event and rerank the remaining pool at N=3.
+37,Paired uncertainty in positive capture,figures/37_paired_uncertainty_in_positive_capture.png,tables/figure_37.csv,"Paired seven-day block bootstrap, 10,000 draws; conditional on fitted policies and cohort; no multiple-comparison adjustment."
+38,Paired uncertainty in value capture,figures/38_paired_uncertainty_in_value_capture.png,tables/figure_38.csv,"Paired seven-day block bootstrap, 10,000 draws; conditional on fitted policies and cohort; no multiple-comparison adjustment."
+39,Simulated PnL at N3,figures/39_simulated_pnl_at_n3.png,tables/figure_39.csv,"100 ms, uncapped capital/shares; unknown P&L excluded and counted. Dollars, not ROI."
+40,Simulated PnL at N5,figures/40_simulated_pnl_at_n5.png,tables/figure_40.csv,"100 ms, uncapped capital/shares; unknown P&L excluded and counted. Dollars, not ROI."
+41,Latency sensitivity at N3,figures/41_latency_sensitivity_at_n3.png,tables/figure_41.csv,Fixed first-layer selections; separate persistent ledgers for 0/50/100/250/500 ms. Dollars.
+42,Latency sensitivity at N5,figures/42_latency_sensitivity_at_n5.png,tables/figure_42.csv,Fixed first-layer selections; separate persistent ledgers for 0/50/100/250/500 ms. Dollars.
+43,Cumulative PnL comparisons,figures/43_cumulative_pnl_comparisons.png,tables/figure_43.csv,"N=3, 100 ms; separate panels and a common quoted-gap reference avoid crowded lines."
+44,Completed and partial basket contributions,figures/44_completed_and_partial_basket_contributions.png,tables/figure_44.csv,"Selected forest, N=3, 100 ms; observed partial fills are unwound after one second."
+45,Execution outcomes by policy,figures/45_execution_outcomes_by_policy.png,tables/figure_45.csv,"N=3, 100 ms; attempts only. Zero imposed random failures."
+46,Selected forest order quantities,figures/46_selected_forest_order_quantities.png,tables/figure_46.csv,"Selected forest, N=3, 100 ms. Available depth bounds quantity despite uncapped capital."
+47,Selected forest per attempt PnL,figures/47_selected_forest_per_attempt_pnl.png,tables/figure_47.csv,"Selected forest, N=3, 100 ms. Available depth bounds quantity despite uncapped capital."
+48,Drawdown under primary execution,figures/48_drawdown_under_primary_execution.png,tables/figure_48.csv,"Known-P&L accounting, starting at zero. Does not include unresolved unknown losses."
+49,Economic concentration and event exclusion,figures/49_economic_concentration_and_event_exclusion.png,tables/figure_49.csv,Exclusion reranks the pool. The leading event materially changes the economic interpretation.
+50,Funding and simulated performance,figures/50_funding_and_simulated_performance.png,tables/figure_50.csv,"No settlement cash is released during the experiment; funding is a scenario, not measured deployed capital or an ROI denominator."

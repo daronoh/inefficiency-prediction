@@ -1,0 +1,24 @@
+{
+  "models_completion_sha256": "b8e2601bb6a3227827742dd10b6fedeb5b46292eee7a267324d0d85189375487",
+  "replay_completion_sha256": "b6d82c5da5ad3655e13210a091a68a81400f82f3d726b9f6644bf78d1fd644ef",
+  "reporter_sha256": "1adeba85bc4f31f2141be98ce4217250414942b2cfb107a3719001265ba1c5f9",
+  "files_sha256": {
+    "event_capture.csv": "b0280f34f19db4a38c795549b9bf1ad1a6e4e13071d00ee219ef7078175b5445",
+    "event_pnl.csv": "6a502f53530e01ee11a207a199957a6daece345a8279191d8a46114df1f710c2",
+    "latency_economics.png": "7a9a11d57e386f00aed9773078e36f26c1fe7d2d3173a8ae0399e9caacaff553",
+    "metadata_comparison.csv": "09fb7fed0f27eff2d286625db9d51aac682ed1e57319aebd7107eb94194c2883",
+    "paired_capture_intervals.csv": "ef80db7973e0d3a5ce4fcbc130e8a7bddf10178b81d63b45e17b6d383ce54317",
+    "paired_pnl_intervals.csv": "f2d615fff6738e20c416a72d2c2e6a738273313b63f7f5fdfd04e79e8b6fb749",
+    "pnl_curves.parquet": "e7a0e47f67d4a72e34b31b6575b26c6ec1b2822dc399ed9c1eb6a93489c0cde4",
+    "pnl_small_multiples.png": "f082d43631bf4a70ce561a171df6df9a39f3ab64a4cf5032c01f72c4d3a669e2",
+    "population.json": "1f358bd89d17fe1f90c01482580ef7ed528c25494764d18b5aba2a3e4c66445d",
+    "prediction_and_economics.csv": "b84e34c34d3a98d278f0a83ef645fed9afbd0a52d385065a20c963d13062ec0e",
+    "primary_capture.png": "35674da54365370323d7f179fb94302e1ad6fc2ab100eaada05761870e13b1cb",
+    "primary_prediction.csv": "47d372165773892a1ca0c84b9b0dbcdb83056f3d4cb11fe0b84afd37f15af5d2",
+    "random_economics.json": "97e53d9397ed6921c5aab8b2b1ce1c91b2e0e9bd07fddc2e8a599f6d0feece53",
+    "research_selection.json": "57184187b58dff74c975f88792d9e83a252cdd0db8e2dd4e57f42a5fc0ae7092",
+    "verification.json": "34ed5c32fea8f08a349083ce55ae7a263a8eba4fe539416a9180de9adde02026",
+    "weekly_capture.png": "c8c6aeb0db09065d93ee6f166ab116464be4eb322163aad79ab2f0ad977f2a7b",
+    "weekly_metrics.csv": "a4b1034adcfed1f5d04181cdcf103229799340aa7ab9a11399679d4dce7b9f41"
+  }
+}

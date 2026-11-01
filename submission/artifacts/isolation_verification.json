@@ -1,0 +1,16 @@
+{
+  "weekly_fits_checked": 199,
+  "scores_reproduced": true,
+  "folds": 13,
+  "token_mappings": 994,
+  "ladder_contracts": 68,
+  "ladder_pairs": 302,
+  "events": 51,
+  "frozen_metadata_verified": true,
+  "wheel_import_verified": true,
+  "wheel_file": "dist/fyp-1.0.0-py3-none-any.whl",
+  "wheel_sha256": "0adad20ad1079fdbe0d040fa8f0ee6bfe3e553487a2fdef47d001183cfb4c86c",
+  "wheel_matches_source": true,
+  "parent_src_importable": false,
+  "math_renderer_verified_from_wheel": true
+}

@@ -1,0 +1,14 @@
+{
+  "origin": "week_07",
+  "start": "2025-12-30 00:00:00+00:00",
+  "end": "2026-01-06 00:00:00+00:00",
+  "training_rows": 20883,
+  "training_positive": 453,
+  "training_events": 45,
+  "training_last": "2025-12-29 22:00:00+00:00",
+  "evaluation_rows": 746,
+  "evaluation_known": 714,
+  "evaluation_positive": 1,
+  "evaluation_events": 8,
+  "scheduled_hours": 168
+}

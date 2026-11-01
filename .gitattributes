@@ -1,0 +1,6 @@
+# Frozen submission checksums require byte-identical files on every platform.
+/submission/** -text whitespace=cr-at-eol
+/submission.zip.sha256 -text
+# Resolution text in the frozen CSV metadata is preserved verbatim.
+/submission/inputs/*.csv -whitespace
+*.pdf binary

@@ -1,0 +1,12 @@
+{
+  "files_sha256": {
+    "design.json": "a3d38a6a55f99120dbafdb5af287df0c389d115e59c7059f22f1bfd82e3b45b2",
+    "group_capture.csv": "973891ab5081cffe44dc27b190980c609b652d46b37c882dc406dd4775189023",
+    "metrics.csv": "092b2771b9f26b05713cd6c4b971de2f77e61471cbc2d59f33f30ec97ba4b6eb",
+    "predictions.parquet": "354b34a1782f5b37ddd685228d641d6c923b1a44fc11220acb1aebdb648e0623",
+    "reference_scores.parquet": "b162a0e46b8268c5389dd1fe429550d14a9da2b350289af372e7658ec76e0ea6",
+    "selections.parquet": "26b61903e4f7205fdfe156ccb8afe6dc32080e2cab9c0305713035941c8a4080"
+  },
+  "models_retrained": false,
+  "final_outcomes_opened": true
+}

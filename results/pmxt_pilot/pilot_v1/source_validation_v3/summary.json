@@ -1,0 +1,124 @@
+{
+  "version": 3,
+  "source_start": "2026-05-04 01:00:00+00:00",
+  "source_end": "2026-05-04 04:00:00+00:00",
+  "receipt_end": "2026-05-04 06:00:00+00:00",
+  "archive_hours": 6,
+  "events": 15,
+  "tokens": 200,
+  "source_records": 1188769,
+  "event_hours": 45,
+  "raw_counters": {
+    "price_change": 1153506,
+    "identical_level_replays": 48731,
+    "book": 33780,
+    "identical_snapshot_replays": 10049,
+    "snapshot_side_recoveries": 1024,
+    "compatible_snapshot_close_groups": 16443,
+    "best_price_contradiction": 123012,
+    "last_trade_price": 1478,
+    "unresolved_level_conflicts": 1550,
+    "best_price_compatible_with_bounded_depth": 7500,
+    "level_conflicts_resolved_by_later_update": 1427,
+    "unresolved_snapshot_level_ties": 12,
+    "level_conflicts_resolved_by_snapshot": 2,
+    "tick_size_change": 5
+  },
+  "full_book_event_hours": 7,
+  "full_ask_event_hours": 8,
+  "occurrence_known_hours": 24,
+  "occurrence_positive_hours": 0,
+  "occurrence_negative_hours": 24,
+  "occurrence_unknown_hours": 21,
+  "exact_value_hours": 24,
+  "value_lower_bound_hours": 0,
+  "full_book_time_fraction": 0.45732648148152666,
+  "full_ask_time_fraction": 0.5541943209877189,
+  "occurrence_determined_time_fraction": 0.736563111111257,
+  "blocked_with_incomplete_books_seconds": 45236.33399999914,
+  "maximum_observed_value_lower_usd": 0.0,
+  "arrival_checks": 0,
+  "arrival_status_counts": {},
+  "ask_complete_events_per_scan": {
+    "2026-05-04 01:00:00+00:00": 9,
+    "2026-05-04 02:00:00+00:00": 10,
+    "2026-05-04 03:00:00+00:00": 11
+  },
+  "recorded_transfer_bytes": 2078388726,
+  "raw_cache_bytes": 13580838,
+  "historical_parameters_verified": false,
+  "models_trained": false,
+  "new_final_test_accessed": false,
+  "net_pnl_estimated": false,
+  "inputs": [
+    {
+      "path": "raw\\2026-05-04T00.parquet",
+      "sha256": "06aec5ec5fbd0b32548d068f5007631bf68764ff883909ba0b63c39770a4efd2",
+      "transfer_bytes": 357547818,
+      "cache_bytes": 2276685
+    },
+    {
+      "path": "raw\\2026-05-04T01.parquet",
+      "sha256": "1cda22b3c96399fe5517430fb2d1843cbcea82e1737d11b462ebbd0d116c8ff1",
+      "transfer_bytes": 361062550,
+      "cache_bytes": 2608828
+    },
+    {
+      "path": "raw\\2026-05-04T02.parquet",
+      "sha256": "014bccc9820637d8925e3cf7fd68050c6d54082078b14f926520a19ca610f3d5",
+      "transfer_bytes": 350360647,
+      "cache_bytes": 2572430
+    },
+    {
+      "path": "raw\\2026-05-04T03.parquet",
+      "sha256": "b263c8f61b1e928d203d9f63b81acda3a511d3ee30652c3aab37fab535cb2522",
+      "transfer_bytes": 323259050,
+      "cache_bytes": 2194908
+    },
+    {
+      "path": "raw\\2026-05-04T04.parquet",
+      "sha256": "5556ffd94dd609d26f0baaf81061c0d8962dd63dee44fee97def184be878709b",
+      "transfer_bytes": 331151245,
+      "cache_bytes": 1923899
+    },
+    {
+      "path": "raw\\2026-05-04T05.parquet",
+      "sha256": "0a717f830b7547de273f8ab0fe79a018538bb0a54624c9b3566e351a79f0dd9d",
+      "transfer_bytes": 355007416,
+      "cache_bytes": 2004088
+    }
+  ],
+  "feature_availability": "Causal source-time states before scan; later retrospective masks excluded from model inputs.",
+  "design_sha256": "7d8d8f9f166d33b75e9c71b105f018e8764cd19033aa6342adf1b3cf0a2d770d",
+  "implementation_sha256": {
+    "src/data/pmxt_revalidation.py": "7d8956b385412d42f2ef32f428072dccf75a3304242d8816d0df28b91deb92e2",
+    "src/data/pmxt_uncertainty.py": "c5cb7784726e1ebb9b4c34d81123d9a9705a7a1efbf828681af271fcbd76cac2",
+    "src/data/pmxt_validation.py": "1a1f7c55e3c41997e9eb7a27cf49360d5b171cee4b30bd0d3d3cc49b7b1afeab",
+    "src/data/pmxt_source.py": "2ab3ecd253d72ecd6e4fc1903ca3ec8bd629439f9cfef4621ed91c0d8b9c0489",
+    "src/data/pmxt_books.py": "e0a56e00df0f41ea45417150e517ec445430954168b6da6f596492428f68e969",
+    "src/data/pmxt_archive.py": "0b600658eb94a7a7d65436ba4ca8cbd005b94cff9e60dbeaa950a4ddaf5db02d",
+    "src/data/pmxt_pilot.py": "6d087e49c5bbc164a0bd0d9480015e02bcdebe5fb249c1ab55a31be9796b25bd",
+    "src/data/books.py": "76c57050f1b3725cca02e61d4e0d34017edbba39606dc48967bca2e2a4c6ea91",
+    "src/simulator/sizing.py": "71afbfd82df8bb519c652dee9b05d18301346d7138102138fbc19777c8869581"
+  },
+  "derived_sha256": {
+    "hourly_features.parquet": "9d721afc6165fc668ea498f1a2b175a15ea1859ad2389a175299746eb0d93986",
+    "hourly_label_bounds.parquet": "f878c1e735f6b813b7141e0c4494a92e142d6ba899253f349137318620722cb9",
+    "side_drift_intervals.json": "90a8650cecd899cbabdf6539a0fbf46c809af0803e7edd824458d0dba04a783c"
+  },
+  "results_sha256": {
+    "arrival_checks.csv": "72bfedb9ca2a222f4eb55895b99e681cb25daaf14ead26631f1b809abb04677e",
+    "comparison_v2.csv": "2b2fe4f46f801633c012f9d1a839816e7abf8e65ceefd2a7e52d0bce1f18183a",
+    "event_hours.csv": "c1229bc5095fca11928e67aba511f64a2bd2dd18135fa3c3582fb58d171c1677",
+    "issue_examples.json": "e68a8e87846d59441b1cb37d1b5f054939b82d9c287b33047915f3cdb981055a",
+    "token_quality.csv": "c78ded313af0fea89e664c6bf6b4a92906d1710266765f76e1cd76a9ec1cf206"
+  },
+  "limitations": [
+    "Source-ms batch completion and compatible closing snapshot are explicit timestamp-semantics assumptions.",
+    "No exchange sequence or original message hash in this archive schema; matching best quotes do not prove full integrity.",
+    "Finite receipt buffer; missing deep-level updates can remain undetected.",
+    "Level alternatives yield outer bounds; their joint combinations need not all be real states.",
+    "Current metadata used retrospectively; historical fees/minima/ticks unverified.",
+    "Arrival checks are conditional displayed support, not fills or P&L; no reservations/unwinding."
+  ]
+}

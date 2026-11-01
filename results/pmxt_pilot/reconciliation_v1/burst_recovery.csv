@@ -1,0 +1,13 @@
+side,buffer_ms,analysis_started_episodes,original_quote_depth_repairs,unresolved_or_not_depth_repair,repaired_fraction
+BUY,0,2,0,2,0.0
+BUY,10,2,0,2,0.0
+BUY,50,2,0,2,0.0
+BUY,100,2,0,2,0.0
+BUY,250,2,0,2,0.0
+BUY,1000,2,0,2,0.0
+SELL,0,2,0,2,0.0
+SELL,10,2,0,2,0.0
+SELL,50,2,0,2,0.0
+SELL,100,2,0,2,0.0
+SELL,250,2,0,2,0.0
+SELL,1000,2,0,2,0.0

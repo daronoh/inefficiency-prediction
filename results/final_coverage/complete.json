@@ -1,0 +1,15 @@
+{
+  "files_sha256": {
+    "design.json": "90cbc4aaff53961bb8f6d890681857c798bed55944cafafe8805a2e45d8e6ae8",
+    "event_inventory.csv": "9412c164198f4fe807deb52d492c1284acbdcb5e4668fb54118a05132e66d3d7",
+    "event_windows.parquet": "a6d4f95e1043e986709331d2cb83cfb79129a3d17590d8501e195584caf1ddbf",
+    "excluded_events.csv": "2652cb81ec995112ea0b9874e74dafb3e81ff71d2a64b6be4a309df7b85e81f0",
+    "hourly_pool.csv": "a067795e2d8c2b02e7c5e17d31203c1cffa475f3db215f1de54cd90ad7b29d11",
+    "membership.csv": "d24c15b05218d75bf959160d7edadf65c925190547b33c07aeb711922a05f768",
+    "summary.json": "8ed79b148f020fa20abcf1f9080b2a6b38ac0e32140ef234487ea6e78954bce8",
+    "token_inventory.csv": "6e625fdd1b55ffb2abaa3c52917c87f73fd9389aefde7dd375960cc1ec090420"
+  },
+  "final_timestamp_access": true,
+  "final_outcomes_opened": false,
+  "opportunity_labels_built": false
+}

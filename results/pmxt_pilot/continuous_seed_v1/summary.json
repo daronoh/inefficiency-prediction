@@ -1,0 +1,43 @@
+{
+  "scope": "One complete negRisk basket and ONE pair from a ladder event; not the complete ladder event.",
+  "package_ids": [
+    "negrisk:106981",
+    "2132834_2132836"
+  ],
+  "tokens": 5,
+  "paired_event_hours": 12,
+  "historical_parameters_verified": false,
+  "models_trained": false,
+  "new_final_test_accessed": false,
+  "net_pnl_estimated": false,
+  "evidence_sha256": {
+    "data\\pmxt\\continuous_seed_v1\\study_design.json": "c1b9a72a74ec538639e8dcfce9285498f796b84471ad1eef2e280433f744c947",
+    "data\\pmxt\\continuous_seed_v1\\seed_search.json": "8fa76d0e1d6d56454c5d7d20b5fee0cf372d4a93ef1ad064bb37e36098d770b2",
+    "data\\pmxt\\continuous_seed_v1\\download_ledger.json": "e694b1e9d41cd1523b631e68bbc6f092e44793da5f35dca02670448c8b79fd27",
+    "results\\pmxt_pilot\\seed_v1_isolated\\source_validation_v3\\summary.json": "0b2a6a930ef1274626bd0ccc766f603dcec81c732263941278e5c94636ca0c12",
+    "results\\pmxt_pilot\\seed_v1_isolated\\unknown_audit_v1\\summary.json": "a308390c7409f1a74d0e1c945624755be97f3735414008e3f2f3b1b478cf41a7",
+    "results\\pmxt_pilot\\seed_v1_continuous\\source_validation_v3\\summary.json": "b3d96e3564288f075d308a8a6a498dc9dd6d8cb0948e310bd0d63807c3a90859",
+    "results\\pmxt_pilot\\seed_v1_continuous\\unknown_audit_v1\\summary.json": "ee3ce37b82305f44f2a356305bb593b4a2c55aa556c56925d3e541b0ec77a93e",
+    "data\\pmxt\\continuous_seed_v1\\forensic\\raw\\2026-05-06T12.json": "6cf515067350805898b0174e8c03a292be139839765bda7a7392b2de8e187112",
+    "data\\pmxt\\continuous_seed_v1\\forensic\\raw\\2026-05-06T12.parquet": "fe16a844d81e878116a13b69125a3361a3518aa10f82b0922228ef39b32a680d"
+  },
+  "implementation_sha256": {
+    "src/data/pmxt_continuous.py": "30f4f21307dde36c5c5b112e9c30796e6879be4a6cd5ae021f93f7a665aa11bf",
+    "src/reporting/pmxt_continuous.py": "766e598944b9014f1e2d4395405ca6522d5fde41c78eda597cdba54f239fa589"
+  },
+  "results_sha256": {
+    "contradiction_examples.json": "fb640ae0f8f95d2bdbea0fad79344e2efa2ee94b69232470e1a3214625336b8f",
+    "event_hours.csv": "cd606554999340e729bc8fd137e154a79c11c1ce058dae81086d00ad1427731f",
+    "independent_ask_check.json": "e79eb26ea6e273a451f56bdb322743aa13dd358d37487f9cc51086f244a51c6c",
+    "overview.csv": "1561384b3a4320ad599179efac5d99acd87513469f729ad23a81fa56e9c5a812",
+    "paired_labels.csv": "b98d138ebab2cef1925ac5b84efdba8a3fd44624efbeb1e185a569d913426c52",
+    "token_start.csv": "2a3b587cc2bf5af63049da66b384e1e4c010db11cb161250d404eb377930d63f",
+    "unknown_reasons.csv": "33a5e1333d1261ac90c172fc460d20b79d9c062a1324141c0c864bf64d24608d"
+  },
+  "caveats": [
+    "Source-clock and snapshot semantics remain assumptions. Finite receipt padding is not proof of complete capture.",
+    "Analysis contradictions count repeated side-groups, not independent losses. Different initial state can change this diagnostic.",
+    "A single ladder pair does not certify its entire parent event. The subset was deliberately selected for missing initial books.",
+    "Observed displayed margins are conditional gross values, not fees-verified executable profit."
+  ]
+}

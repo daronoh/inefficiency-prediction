@@ -1,0 +1,14 @@
+{
+  "files_sha256": {
+    "attempts.parquet": "727ef190f0b7a2eea099aec8a8ba4e05f46a3e2dbebc1cb1a59d6c5f4aeda88b",
+    "cache_audit.csv": "9ee574b27093f998a6698bc223c83da1b5aee210bdecd72209ffab1ede097674",
+    "consistency.csv": "7d2e9589c16cd825575c0fc485f650a7e5db9fb2c2edcf3a3bc8f48b5be84823",
+    "design.json": "137c405085c6f9ad1e5d4053ec461fd6d1f3b42cc37c023e6aa10ea56b365b6b",
+    "scheduler_audit.parquet": "73e26bd3fb0f4c75e41dd5a726d0b97d7ff916c2d7cbd2ab418a25cb00d3894a",
+    "summary.csv": "25eb399e74cbd1417c4fcca63e9739bd9e019e143841d9473efacc3bb07ca832",
+    "events/fed-decision-in-january.parquet": "29d571c76b9c961129aa19f4e1dc8ace13a1bb637ed8b3229f2529048b669d5f",
+    "events/next-country-us-strikes-918.parquet": "9abd5885321c05ea29916d1c245afec91ca7e83cec0face7b85b139abf6c38a3"
+  },
+  "models_retrained": false,
+  "final_outcomes_opened": true
+}

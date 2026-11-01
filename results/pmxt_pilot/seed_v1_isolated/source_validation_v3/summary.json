@@ -1,0 +1,137 @@
+{
+  "version": 3,
+  "source_start": "2026-05-06 09:00:00+00:00",
+  "source_end": "2026-05-06 15:00:00+00:00",
+  "receipt_end": "2026-05-06 17:00:00+00:00",
+  "archive_hours": 9,
+  "events": 2,
+  "tokens": 5,
+  "source_records": 11590,
+  "event_hours": 12,
+  "raw_counters": {
+    "price_change": 11556,
+    "last_trade_price": 24,
+    "book": 10,
+    "identical_snapshot_replays": 0,
+    "snapshot_side_recoveries": 1,
+    "compatible_snapshot_close_groups": 10,
+    "best_price_contradiction": 357
+  },
+  "full_book_event_hours": 0,
+  "full_ask_event_hours": 0,
+  "occurrence_known_hours": 0,
+  "occurrence_positive_hours": 0,
+  "occurrence_negative_hours": 0,
+  "occurrence_unknown_hours": 12,
+  "exact_value_hours": 0,
+  "value_lower_bound_hours": 0,
+  "full_book_time_fraction": 0.0,
+  "full_ask_time_fraction": 0.0,
+  "occurrence_determined_time_fraction": 0.0,
+  "blocked_with_incomplete_books_seconds": 0.0,
+  "maximum_observed_value_lower_usd": 0.0,
+  "arrival_checks": 0,
+  "arrival_status_counts": {},
+  "ask_complete_events_per_scan": {
+    "2026-05-06 09:00:00+00:00": 0,
+    "2026-05-06 10:00:00+00:00": 0,
+    "2026-05-06 11:00:00+00:00": 0,
+    "2026-05-06 12:00:00+00:00": 0,
+    "2026-05-06 13:00:00+00:00": 0,
+    "2026-05-06 14:00:00+00:00": 1
+  },
+  "recorded_transfer_bytes": 0,
+  "raw_cache_bytes": 206621,
+  "historical_parameters_verified": false,
+  "models_trained": false,
+  "new_final_test_accessed": false,
+  "net_pnl_estimated": false,
+  "inputs": [
+    {
+      "path": "raw\\2026-05-06T08.parquet",
+      "sha256": "2f58d41bf658bd6e8c75ff2412be5c9414f99a5d1fda987fc6fa96bc36951fe4",
+      "transfer_bytes": 0,
+      "cache_bytes": 18679
+    },
+    {
+      "path": "raw\\2026-05-06T09.parquet",
+      "sha256": "a644115f2f31b5f85f8a08a489878f7eff40141059206145214ae3edf9dea18d",
+      "transfer_bytes": 0,
+      "cache_bytes": 20421
+    },
+    {
+      "path": "raw\\2026-05-06T10.parquet",
+      "sha256": "45ca57354144fe8df91d259c8a5a945f7bcfc79c0bd5e64a3cc08b5532d01b4a",
+      "transfer_bytes": 0,
+      "cache_bytes": 14056
+    },
+    {
+      "path": "raw\\2026-05-06T11.parquet",
+      "sha256": "9f831c1c4cf95a12ac438782239dc43b1fc1e4253abc0608843b9edc2ce3ff58",
+      "transfer_bytes": 0,
+      "cache_bytes": 13922
+    },
+    {
+      "path": "raw\\2026-05-06T12.parquet",
+      "sha256": "f2f8eecb79e67e356dc96f58fd816a1254f75c52695237712c2276a95f95f0c7",
+      "transfer_bytes": 0,
+      "cache_bytes": 16853
+    },
+    {
+      "path": "raw\\2026-05-06T13.parquet",
+      "sha256": "4cf2706174308af99507b2f9870b7adda5937de39dfd4507abba2f2392d2448a",
+      "transfer_bytes": 0,
+      "cache_bytes": 58565
+    },
+    {
+      "path": "raw\\2026-05-06T14.parquet",
+      "sha256": "69ce3b25cc6c06d8cbb378cfc1ef0d6b9eae5bf41a7fe3330e41ffaea41f288a",
+      "transfer_bytes": 0,
+      "cache_bytes": 30276
+    },
+    {
+      "path": "raw\\2026-05-06T15.parquet",
+      "sha256": "304f591b4fc61db106e07a8f5699355e820edabfb83cfc67aab3b7dffe9cde28",
+      "transfer_bytes": 0,
+      "cache_bytes": 17144
+    },
+    {
+      "path": "raw\\2026-05-06T16.parquet",
+      "sha256": "f06c48a89298e663db4ea02698100138811bcb0379f0b50e6acc6f65208a4600",
+      "transfer_bytes": 0,
+      "cache_bytes": 16705
+    }
+  ],
+  "feature_availability": "Causal source-time states before scan; later retrospective masks excluded from model inputs.",
+  "design_sha256": "51a64fba488180e02283bd856eec1a2e79942ba78c977de04379e924366d6b91",
+  "implementation_sha256": {
+    "src/data/pmxt_revalidation.py": "7d8956b385412d42f2ef32f428072dccf75a3304242d8816d0df28b91deb92e2",
+    "src/data/pmxt_uncertainty.py": "c5cb7784726e1ebb9b4c34d81123d9a9705a7a1efbf828681af271fcbd76cac2",
+    "src/data/pmxt_validation.py": "1a1f7c55e3c41997e9eb7a27cf49360d5b171cee4b30bd0d3d3cc49b7b1afeab",
+    "src/data/pmxt_source.py": "2ab3ecd253d72ecd6e4fc1903ca3ec8bd629439f9cfef4621ed91c0d8b9c0489",
+    "src/data/pmxt_books.py": "e0a56e00df0f41ea45417150e517ec445430954168b6da6f596492428f68e969",
+    "src/data/pmxt_archive.py": "0b600658eb94a7a7d65436ba4ca8cbd005b94cff9e60dbeaa950a4ddaf5db02d",
+    "src/data/pmxt_pilot.py": "6d087e49c5bbc164a0bd0d9480015e02bcdebe5fb249c1ab55a31be9796b25bd",
+    "src/data/books.py": "76c57050f1b3725cca02e61d4e0d34017edbba39606dc48967bca2e2a4c6ea91",
+    "src/simulator/sizing.py": "71afbfd82df8bb519c652dee9b05d18301346d7138102138fbc19777c8869581"
+  },
+  "derived_sha256": {
+    "hourly_features.parquet": "c17fbd5df4d54601b17627634bcba6f8fb2751cf975324b8d54c2b9a4456d8ef",
+    "hourly_label_bounds.parquet": "630d166fd2b06f8152ee755116eea38c25958977153c822c2de7203d7d4aba75",
+    "side_drift_intervals.json": "ab6c7585067317ce5122d53b6efcba02fde6236bba66260a572ced4525a243b4"
+  },
+  "results_sha256": {
+    "arrival_checks.csv": "72bfedb9ca2a222f4eb55895b99e681cb25daaf14ead26631f1b809abb04677e",
+    "event_hours.csv": "8670c90ae09c4f0d7629b8966ef8ab3e505994fa755b50c6fb7f2b18840448c8",
+    "issue_examples.json": "a54c2a67fd2d70ddc8bb9805175be72a972363d860a75dc1711cb717f4a46c05",
+    "token_quality.csv": "458009d769d5842fcd6b5f11064034cf947e492c2aba6788b88c7c2d1422e7c0"
+  },
+  "limitations": [
+    "Source-ms batch completion and compatible closing snapshot are explicit timestamp-semantics assumptions.",
+    "No exchange sequence or original message hash in this archive schema; matching best quotes do not prove full integrity.",
+    "Finite receipt buffer; missing deep-level updates can remain undetected.",
+    "Level alternatives yield outer bounds; their joint combinations need not all be real states.",
+    "Current metadata used retrospectively; historical fees/minima/ticks unverified.",
+    "Arrival checks are conditional displayed support, not fills or P&L; no reservations/unwinding."
+  ]
+}

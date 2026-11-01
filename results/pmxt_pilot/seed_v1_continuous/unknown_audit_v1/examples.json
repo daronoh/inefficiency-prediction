@@ -1,0 +1,552 @@
+{
+  "108251591904413063139495882252154135107497878738832930637657538583440424739851": [
+    {
+      "source_ms": 1777961491216,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777947896849,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          2900
+        ],
+        "SELL": [
+          3100
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          2800
+        ],
+        "SELL": [
+          3100
+        ]
+      }
+    },
+    {
+      "source_ms": 1777967894335,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777947896849,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          2800
+        ],
+        "SELL": [
+          3300
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          2700
+        ],
+        "SELL": [
+          3300
+        ]
+      }
+    },
+    {
+      "source_ms": 1777975032012,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777947896849,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          2800
+        ],
+        "SELL": [
+          2800
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          2700
+        ],
+        "SELL": [
+          3200
+        ]
+      }
+    },
+    {
+      "source_ms": 1777975032051,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777947896849,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          2800
+        ],
+        "SELL": [
+          2800
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          2700
+        ],
+        "SELL": [
+          3200
+        ]
+      }
+    }
+  ],
+  "110278798232273153409473285242656277846127034405056021257247586947529803753453": [
+    {
+      "source_ms": 1777957482798,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777948039887,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          9710
+        ],
+        "SELL": [
+          9850
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          9670
+        ],
+        "SELL": [
+          9850
+        ]
+      }
+    },
+    {
+      "source_ms": 1777957483702,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777948039887,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          9710
+        ],
+        "SELL": [
+          9850
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          9670
+        ],
+        "SELL": [
+          9850
+        ]
+      }
+    },
+    {
+      "source_ms": 1777970435740,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777948039887,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          9710
+        ],
+        "SELL": [
+          9760
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          9550
+        ],
+        "SELL": [
+          9770
+        ]
+      }
+    },
+    {
+      "source_ms": 1777970440632,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777948039887,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          9710
+        ],
+        "SELL": [
+          9760
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          9540
+        ],
+        "SELL": [
+          9770
+        ]
+      }
+    }
+  ],
+  "32825140231045567473519733823753658145488577746690815504132235066565756510499": [
+    {
+      "source_ms": 1777944832039,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777943022378,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2500
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2900
+        ]
+      }
+    },
+    {
+      "source_ms": 1777944832712,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777943022378,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2500
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2900
+        ]
+      }
+    },
+    {
+      "source_ms": 1777949920735,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777943022378,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          2300
+        ],
+        "SELL": [
+          2500
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2800
+        ]
+      }
+    },
+    {
+      "source_ms": 1777949920911,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777943022378,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          2300
+        ],
+        "SELL": [
+          2500
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2800
+        ]
+      }
+    }
+  ],
+  "4655209727295513535859117642120184432334179761721646415109648555849060899062": [
+    {
+      "source_ms": 1777967894355,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777942638331,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          3700
+        ],
+        "SELL": [
+          4500
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          3500
+        ],
+        "SELL": [
+          4500
+        ]
+      }
+    },
+    {
+      "source_ms": 1777967894361,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777942638331,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          3700
+        ],
+        "SELL": [
+          4500
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          3500
+        ],
+        "SELL": [
+          4500
+        ]
+      }
+    },
+    {
+      "source_ms": 1777988431813,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777942638331,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          3700
+        ],
+        "SELL": [
+          3800
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          2900
+        ],
+        "SELL": [
+          3900
+        ]
+      }
+    },
+    {
+      "source_ms": 1777988431934,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777942638331,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          3700
+        ],
+        "SELL": [
+          3800
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          2800
+        ],
+        "SELL": [
+          3900
+        ]
+      }
+    }
+  ],
+  "93207994086385268568874006716717433393966352959932150015626953142806317186909": [
+    {
+      "source_ms": 1777948330143,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777942363261,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2600
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          1800
+        ],
+        "SELL": [
+          2600
+        ]
+      }
+    },
+    {
+      "source_ms": 1777948330887,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777942363261,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2600
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          1800
+        ],
+        "SELL": [
+          2600
+        ]
+      }
+    },
+    {
+      "source_ms": 1777992084214,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777942363261,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2200
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2300
+        ]
+      }
+    },
+    {
+      "source_ms": 1777992086498,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1777942363261,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2200
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          1900
+        ],
+        "SELL": [
+          2300
+        ]
+      }
+    }
+  ]
+}

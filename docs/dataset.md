@@ -1,9 +1,12 @@
 # Dataset
 
 The source is saved Dome order-book history with frozen Polymarket metadata.
-All analytical reads use the development interval
+Training and development analyses use the interval
 `2025-10-14T00:00:00Z <= time < 2026-01-08T00:00:00Z`.
-No final-test rows are used to construct examples or inspect opportunities.
+Final-test examples are constructed separately by an explicit final-only reader
+for `2026-01-08T00:00:00Z <= time < 2026-02-03T08:00:00Z`, after model and protocol
+freezing. They never enter fitting or tuning. Existing development readers retain
+their cutoff guards.
 
 ## Discovering negRisk and ladder groups from metadata
 
@@ -311,7 +314,8 @@ contains **4,859 / 11,191 / 17,690** known earlier event-hours with
 strictly before the next evaluation begins; this purging depends on W, not
 execution latency. Two inner chronological validation blocks tune each method
 before it is fitted on all eligible earlier training rows. The final test from
-8 January 2026 remains closed. Changing W requires matching rebuilt scheduled
+8 January 2026 was subsequently evaluated separately with frozen models.
+Changing W requires matching rebuilt scheduled
 features, opportunity labels and model splits.
 
 ## Earlier execution-dependent targets
@@ -370,6 +374,28 @@ fit the binary activity target without class weighting. Their conditional
 regressors fit only known hours containing attempts, including negative and zero
 net outcomes. Feature imputation and encoding for each stage use that stage's
 training rows. Targets are fitted in dollars; no log-target inversion is used.
+
+## Final held-out tables
+
+`processed/final_evaluation/features.parquet` contains 2,473 eligible event-hours
+with the same 33 book/history features and three metadata fields. The previous
+scheduled snapshot supplies feature history across the test boundary. No future
+update supplies a missing earlier state. The file contains predictors only.
+
+`examples.parquet` adds opportunity coverage/labels and peak-value targets:
+1,625 known labels (16 positives and 1,609 negatives), plus 848 unknowns across
+eight negRisk events. `package_peaks.parquet` and per-event `signals.parquet`
+retain the underlying quote evidence. No audited ladder entry window extends
+into this final interval.
+
+The final reader projects one pre-window seed per token and recorded updates
+through endpoint + 1.1 seconds. Audited timestamp endpoints bound carry-forward
+evidence separately from that price projection. A terminal state marker is used
+only for coverage intervals; it is not an observed book update or new liquidity.
+Raw file digests, fee evidence and source hashes are saved with the dataset.
+Final labels do not enter model inference. See [the final findings](reports/final_evaluation.md)
+and notebook 11. Final outcomes have now been examined and must not be reused to
+tune models while preserving the same held-out claim.
 
 ## TabM preprocessing extension
 

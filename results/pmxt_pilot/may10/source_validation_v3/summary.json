@@ -1,0 +1,140 @@
+{
+  "version": 3,
+  "source_start": "2026-05-10 09:00:00+00:00",
+  "source_end": "2026-05-10 15:00:00+00:00",
+  "receipt_end": "2026-05-10 17:00:00+00:00",
+  "archive_hours": 9,
+  "events": 15,
+  "tokens": 200,
+  "source_records": 921639,
+  "event_hours": 90,
+  "raw_counters": {
+    "price_change": 919569,
+    "unresolved_level_conflicts": 53,
+    "best_price_compatible_with_bounded_depth": 5314,
+    "level_conflicts_resolved_by_later_update": 53,
+    "book": 31,
+    "identical_snapshot_replays": 0,
+    "snapshot_side_recoveries": 0,
+    "compatible_snapshot_close_groups": 29,
+    "last_trade_price": 2039,
+    "best_price_contradiction": 21639
+  },
+  "full_book_event_hours": 0,
+  "full_ask_event_hours": 0,
+  "occurrence_known_hours": 0,
+  "occurrence_positive_hours": 0,
+  "occurrence_negative_hours": 0,
+  "occurrence_unknown_hours": 90,
+  "exact_value_hours": 0,
+  "value_lower_bound_hours": 0,
+  "full_book_time_fraction": 0.0,
+  "full_ask_time_fraction": 0.0,
+  "occurrence_determined_time_fraction": 0.0,
+  "blocked_with_incomplete_books_seconds": 0.0,
+  "maximum_observed_value_lower_usd": 0.0,
+  "arrival_checks": 0,
+  "arrival_status_counts": {},
+  "ask_complete_events_per_scan": {
+    "2026-05-10 09:00:00+00:00": 0,
+    "2026-05-10 10:00:00+00:00": 0,
+    "2026-05-10 11:00:00+00:00": 0,
+    "2026-05-10 12:00:00+00:00": 0,
+    "2026-05-10 13:00:00+00:00": 0,
+    "2026-05-10 14:00:00+00:00": 0
+  },
+  "recorded_transfer_bytes": 3753971209,
+  "raw_cache_bytes": 10779195,
+  "historical_parameters_verified": false,
+  "models_trained": false,
+  "new_final_test_accessed": false,
+  "net_pnl_estimated": false,
+  "inputs": [
+    {
+      "path": "raw\\2026-05-10T08.parquet",
+      "sha256": "5867756c948d3b9f4a71413ea154eb65f91a333eb3717d7479c891373ad93e13",
+      "transfer_bytes": 407835192,
+      "cache_bytes": 1165705
+    },
+    {
+      "path": "raw\\2026-05-10T09.parquet",
+      "sha256": "9f09e92491e8c62b0641afb124ae6173661ef025893c6236440ed9c6ebd00db4",
+      "transfer_bytes": 405424579,
+      "cache_bytes": 1225681
+    },
+    {
+      "path": "raw\\2026-05-10T10.parquet",
+      "sha256": "b0fd55d5167a6298893c7b9f209413ca1f8f8580d26766d64fce0c5ee6a8f538",
+      "transfer_bytes": 412387421,
+      "cache_bytes": 1168784
+    },
+    {
+      "path": "raw\\2026-05-10T11.parquet",
+      "sha256": "3fe0980c67de60e8ec967e6484fa131246dee88b52ac096b88dbeaa08eb004ca",
+      "transfer_bytes": 417778435,
+      "cache_bytes": 1254610
+    },
+    {
+      "path": "raw\\2026-05-10T12.parquet",
+      "sha256": "118b364a4097560e42f7de67b0ff6f7eb0e842f669491dfb59259474f17a8ec5",
+      "transfer_bytes": 410271480,
+      "cache_bytes": 1185301
+    },
+    {
+      "path": "raw\\2026-05-10T13.parquet",
+      "sha256": "ba6266ce1e0190c6dc00631e544f28f04282f7c3dea14d9d2d9dbf0c9e427352",
+      "transfer_bytes": 436689053,
+      "cache_bytes": 1065289
+    },
+    {
+      "path": "raw\\2026-05-10T14.parquet",
+      "sha256": "dc94a750fa650901911307b91cf85fba3d9c15f48fad077e9889c9a47122aabd",
+      "transfer_bytes": 425599947,
+      "cache_bytes": 1144077
+    },
+    {
+      "path": "raw\\2026-05-10T15.parquet",
+      "sha256": "e1edd1e320dff01d2530434d4aba59e522811308af7d6282b088f0aa1bb3e2de",
+      "transfer_bytes": 408791620,
+      "cache_bytes": 1316812
+    },
+    {
+      "path": "raw\\2026-05-10T16.parquet",
+      "sha256": "e5576317891cac3d857188db150d2e2687bbd67bdaa4ca489c8944309fb56cdf",
+      "transfer_bytes": 429193482,
+      "cache_bytes": 1252936
+    }
+  ],
+  "feature_availability": "Causal source-time states before scan; later retrospective masks excluded from model inputs.",
+  "design_sha256": "12f6310962f20bbeed0c36fd08c337d11e34e9e3eea089517b51869b11afff10",
+  "implementation_sha256": {
+    "src/data/pmxt_revalidation.py": "7d8956b385412d42f2ef32f428072dccf75a3304242d8816d0df28b91deb92e2",
+    "src/data/pmxt_uncertainty.py": "c5cb7784726e1ebb9b4c34d81123d9a9705a7a1efbf828681af271fcbd76cac2",
+    "src/data/pmxt_validation.py": "1a1f7c55e3c41997e9eb7a27cf49360d5b171cee4b30bd0d3d3cc49b7b1afeab",
+    "src/data/pmxt_source.py": "2ab3ecd253d72ecd6e4fc1903ca3ec8bd629439f9cfef4621ed91c0d8b9c0489",
+    "src/data/pmxt_books.py": "e0a56e00df0f41ea45417150e517ec445430954168b6da6f596492428f68e969",
+    "src/data/pmxt_archive.py": "0b600658eb94a7a7d65436ba4ca8cbd005b94cff9e60dbeaa950a4ddaf5db02d",
+    "src/data/pmxt_pilot.py": "6d087e49c5bbc164a0bd0d9480015e02bcdebe5fb249c1ab55a31be9796b25bd",
+    "src/data/books.py": "76c57050f1b3725cca02e61d4e0d34017edbba39606dc48967bca2e2a4c6ea91",
+    "src/simulator/sizing.py": "71afbfd82df8bb519c652dee9b05d18301346d7138102138fbc19777c8869581"
+  },
+  "derived_sha256": {
+    "hourly_features.parquet": "5161d393aac0b75e35a8516f9f8a9394c88f65c548e34d4251b94c7012b636f8",
+    "hourly_label_bounds.parquet": "d0023dd40d55c53c1c57493e2ea221d33ff98f854102a228f5fb167b89ea61c1",
+    "side_drift_intervals.json": "4cd4bae25487969c2db4f8cf0c8a6ac47243ca2eadbef0f70bc7b4cc08c21128"
+  },
+  "results_sha256": {
+    "arrival_checks.csv": "72bfedb9ca2a222f4eb55895b99e681cb25daaf14ead26631f1b809abb04677e",
+    "event_hours.csv": "85398c4cf6890e406a9771d2a3a3ead64f2ed64bc47d138e04ce734d72d8d28d",
+    "issue_examples.json": "c705d76aeb6757757257a2c7fee3b2fd97befa9c678b61bf91a9cfeb28e0fa6d",
+    "token_quality.csv": "863d9c774dcf55c1a1e4b949c06e0fb0cd42bf433f5bb034ec4c772556e82fb5"
+  },
+  "limitations": [
+    "Source-ms batch completion and compatible closing snapshot are explicit timestamp-semantics assumptions.",
+    "No exchange sequence or original message hash in this archive schema; matching best quotes do not prove full integrity.",
+    "Finite receipt buffer; missing deep-level updates can remain undetected.",
+    "Level alternatives yield outer bounds; their joint combinations need not all be real states.",
+    "Current metadata used retrospectively; historical fees/minima/ticks unverified.",
+    "Arrival checks are conditional displayed support, not fills or P&L; no reservations/unwinding."
+  ]
+}

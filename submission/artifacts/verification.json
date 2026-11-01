@@ -1,0 +1,20 @@
+{
+  "weekly_fits_checked": 199,
+  "scores_reproduced": true,
+  "folds": 13,
+  "summary_rows": 3612,
+  "attempt_rows": 94237,
+  "economic_accounting_reconciled": true,
+  "tests_run": 28,
+  "failures": 0,
+  "errors": 0,
+  "token_mappings": 994,
+  "ladder_contracts": 68,
+  "ladder_pairs": 302,
+  "events": 51,
+  "frozen_metadata_verified": true,
+  "mode": "verified cached study; regenerated analyses",
+  "figures": 50,
+  "raw_files": 994,
+  "execution_target_used": false
+}

@@ -1,0 +1,340 @@
+{
+  "isolated": {
+    "108251591904413063139495882252154135107497878738832930637657538583440424739851": [
+      {
+        "source_ms": 1778071487912,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.42
+        ],
+        "snapshot_anchor_ms": 1778070693883,
+        "already_faulty": false
+      },
+      {
+        "source_ms": 1778071488010,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.42
+        ],
+        "snapshot_anchor_ms": 1778070693883,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778071488565,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.42
+        ],
+        "snapshot_anchor_ms": 1778070693883,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778078494856,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.4
+        ],
+        "reported_best": [
+          0.39
+        ],
+        "snapshot_anchor_ms": 1778075043901,
+        "already_faulty": false
+      },
+      {
+        "source_ms": 1778078525419,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.4
+        ],
+        "reported_best": [
+          0.39
+        ],
+        "snapshot_anchor_ms": 1778075043901,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778078526719,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.4
+        ],
+        "reported_best": [
+          0.39
+        ],
+        "snapshot_anchor_ms": 1778075043901,
+        "already_faulty": true
+      }
+    ]
+  },
+  "continuous": {
+    "108251591904413063139495882252154135107497878738832930637657538583440424739851": [
+      {
+        "source_ms": 1778058175188,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.38
+        ],
+        "snapshot_anchor_ms": 1778025838503,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058758464,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.38
+        ],
+        "snapshot_anchor_ms": 1778025838503,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058992449,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.38
+        ],
+        "snapshot_anchor_ms": 1778025838503,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778071487912,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.42
+        ],
+        "snapshot_anchor_ms": 1778070693883,
+        "already_faulty": false
+      },
+      {
+        "source_ms": 1778071488010,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.42
+        ],
+        "snapshot_anchor_ms": 1778070693883,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778071488565,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.39
+        ],
+        "reported_best": [
+          0.42
+        ],
+        "snapshot_anchor_ms": 1778070693883,
+        "already_faulty": true
+      }
+    ],
+    "110278798232273153409473285242656277846127034405056021257247586947529803753453": [
+      {
+        "source_ms": 1778058007518,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.983
+        ],
+        "reported_best": [
+          0.98
+        ],
+        "snapshot_anchor_ms": 1778024866547,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058007518,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.984
+        ],
+        "reported_best": [
+          0.985
+        ],
+        "snapshot_anchor_ms": 1778024866547,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058008032,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.983
+        ],
+        "reported_best": [
+          0.98
+        ],
+        "snapshot_anchor_ms": 1778024866547,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058008032,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.984
+        ],
+        "reported_best": [
+          0.985
+        ],
+        "snapshot_anchor_ms": 1778024866547,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058008038,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.983
+        ],
+        "reported_best": [
+          0.98
+        ],
+        "snapshot_anchor_ms": 1778024866547,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058008038,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.984
+        ],
+        "reported_best": [
+          0.985
+        ],
+        "snapshot_anchor_ms": 1778024866547,
+        "already_faulty": true
+      }
+    ],
+    "32825140231045567473519733823753658145488577746690815504132235066565756510499": [
+      {
+        "source_ms": 1778058175070,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.29
+        ],
+        "reported_best": [
+          0.36
+        ],
+        "snapshot_anchor_ms": 1778025447405,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058191124,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.29
+        ],
+        "reported_best": [
+          0.36
+        ],
+        "snapshot_anchor_ms": 1778025447405,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058758450,
+        "side": "SELL",
+        "reconstructed_possible_best": [
+          0.29
+        ],
+        "reported_best": [
+          0.34
+        ],
+        "snapshot_anchor_ms": 1778025447405,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778070821617,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.25
+        ],
+        "reported_best": [
+          0.24
+        ],
+        "snapshot_anchor_ms": 1778025447405,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778070821660,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.25
+        ],
+        "reported_best": [
+          0.24
+        ],
+        "snapshot_anchor_ms": 1778025447405,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778070822300,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.25
+        ],
+        "reported_best": [
+          0.24
+        ],
+        "snapshot_anchor_ms": 1778025447405,
+        "already_faulty": true
+      }
+    ],
+    "93207994086385268568874006716717433393966352959932150015626953142806317186909": [
+      {
+        "source_ms": 1778058060477,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.18
+        ],
+        "reported_best": [
+          0.12
+        ],
+        "snapshot_anchor_ms": 1777942363261,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058060481,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.18
+        ],
+        "reported_best": [
+          0.12
+        ],
+        "snapshot_anchor_ms": 1777942363261,
+        "already_faulty": true
+      },
+      {
+        "source_ms": 1778058060842,
+        "side": "BUY",
+        "reconstructed_possible_best": [
+          0.18
+        ],
+        "reported_best": [
+          0.12
+        ],
+        "snapshot_anchor_ms": 1777942363261,
+        "already_faulty": true
+      }
+    ]
+  }
+}

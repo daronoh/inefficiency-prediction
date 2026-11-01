@@ -1,0 +1,4949 @@
+{
+  "101330323277261307808936476928247936484271918824361623408369764752628816629207": [
+    {
+      "source_ms": 1777853456124,
+      "baseline_ms": 1777853249754,
+      "actual_best_bid": 0.029,
+      "actual_best_ask": 0.03,
+      "reported_bids": [
+        0.029
+      ],
+      "reported_asks": [
+        0.031
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853456144,
+      "baseline_ms": 1777853249754,
+      "actual_best_bid": 0.029,
+      "actual_best_ask": 0.03,
+      "reported_bids": [
+        0.029
+      ],
+      "reported_asks": [
+        0.031
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777853456410,
+      "baseline_ms": 1777853249754,
+      "actual_best_bid": 0.029,
+      "actual_best_ask": 0.03,
+      "reported_bids": [
+        0.029
+      ],
+      "reported_asks": [
+        0.031
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "102520515728698503164686784674797804432879226089837592080080485199415781067478": [
+    {
+      "source_ms": 1777859758319,
+      "baseline_ms": 1777859512061,
+      "actual_best_bid": 0.83,
+      "actual_best_ask": 0.83,
+      "reported_bids": [
+        0.82
+      ],
+      "reported_asks": [
+        0.83
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859758340,
+      "baseline_ms": 1777859512061,
+      "actual_best_bid": 0.83,
+      "actual_best_ask": 0.83,
+      "reported_bids": [
+        0.82
+      ],
+      "reported_asks": [
+        0.83
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859758361,
+      "baseline_ms": 1777859512061,
+      "actual_best_bid": 0.83,
+      "actual_best_ask": 0.83,
+      "reported_bids": [
+        0.82
+      ],
+      "reported_asks": [
+        0.83
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "102843189532968658484124724384169145431096843522820249214951840934115898522013": [
+    {
+      "source_ms": 1777861487519,
+      "baseline_ms": 1777861468274,
+      "actual_best_bid": 0.21,
+      "actual_best_ask": 0.3,
+      "reported_bids": [
+        0.21
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777867301312,
+      "baseline_ms": 1777865995439,
+      "actual_best_bid": 0.21,
+      "actual_best_ask": 0.29,
+      "reported_bids": [
+        0.21
+      ],
+      "reported_asks": [
+        0.33
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777867305590,
+      "baseline_ms": 1777865995439,
+      "actual_best_bid": 0.21,
+      "actual_best_ask": 0.29,
+      "reported_bids": [
+        0.21
+      ],
+      "reported_asks": [
+        0.33
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "103085767364642859759956811298335145958334474896923877012320480028992884912334": [
+    {
+      "source_ms": 1777858293559,
+      "baseline_ms": 1777858281827,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.31,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858293620,
+      "baseline_ms": 1777858281827,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.31,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777858357463,
+      "baseline_ms": 1777858353503,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.31,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    }
+  ],
+  "105510893699938563032975287440490588266560472132750727198413130278660271451410": [
+    {
+      "source_ms": 1777854109118,
+      "baseline_ms": 1777854105350,
+      "actual_best_bid": 0.4,
+      "actual_best_ask": 0.41,
+      "reported_bids": [
+        0.39
+      ],
+      "reported_asks": [
+        0.41
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854109406,
+      "baseline_ms": 1777854105350,
+      "actual_best_bid": 0.4,
+      "actual_best_ask": 0.41,
+      "reported_bids": [
+        0.39
+      ],
+      "reported_asks": [
+        0.41
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854109488,
+      "baseline_ms": 1777854105350,
+      "actual_best_bid": 0.4,
+      "actual_best_ask": 0.41,
+      "reported_bids": [
+        0.39
+      ],
+      "reported_asks": [
+        0.41
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "106954541463172441153958311986648134847708254123222442997405232679090482865750": [
+    {
+      "source_ms": 1777854310565,
+      "baseline_ms": 1777854290776,
+      "actual_best_bid": 0.08,
+      "actual_best_ask": 0.53,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.53
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854328466,
+      "baseline_ms": 1777854290776,
+      "actual_best_bid": 0.08,
+      "actual_best_ask": 0.51,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.51
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854328526,
+      "baseline_ms": 1777854290776,
+      "actual_best_bid": 0.08,
+      "actual_best_ask": 0.53,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.53
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "107122320293339848670577334623423738202167020141542852763099349779446041406058": [
+    {
+      "source_ms": 1777857572838,
+      "baseline_ms": 1777857354465,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.13,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.13
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857575320,
+      "baseline_ms": 1777857354465,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.13,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.13
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857575475,
+      "baseline_ms": 1777857354465,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.13,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.13
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "107831118250596265751149383298683486443574789163802267070638064935050406870128": [
+    {
+      "source_ms": 1777860093769,
+      "baseline_ms": 1777860088585,
+      "actual_best_bid": 0.55,
+      "actual_best_ask": 0.69,
+      "reported_bids": [
+        0.55
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860093771,
+      "baseline_ms": 1777860088585,
+      "actual_best_bid": 0.57,
+      "actual_best_ask": 0.69,
+      "reported_bids": [
+        0.57
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860109369,
+      "baseline_ms": 1777860088585,
+      "actual_best_bid": 0.61,
+      "actual_best_ask": 0.69,
+      "reported_bids": [
+        0.61
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "108251591904413063139495882252154135107497878738832930637657538583440424739851": [
+    {
+      "source_ms": 1777871065517,
+      "baseline_ms": 1777870510975,
+      "actual_best_bid": 0.32,
+      "actual_best_ask": 0.34,
+      "reported_bids": [
+        0.32
+      ],
+      "reported_asks": [
+        0.39
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777871066019,
+      "baseline_ms": 1777870510975,
+      "actual_best_bid": 0.33,
+      "actual_best_ask": 0.34,
+      "reported_bids": [
+        0.33
+      ],
+      "reported_asks": [
+        0.39
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777871066311,
+      "baseline_ms": 1777870510975,
+      "actual_best_bid": 0.33,
+      "actual_best_ask": 0.34,
+      "reported_bids": [
+        0.33
+      ],
+      "reported_asks": [
+        0.42
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "108958586294096091440356675924838361812977410859191227747103220847997555987109": [
+    {
+      "source_ms": 1777863894309,
+      "baseline_ms": 1777863463217,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.27,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.28
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777863894350,
+      "baseline_ms": 1777863463217,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.27,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.28
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777863910851,
+      "baseline_ms": 1777863463217,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.27,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.28
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "110278798232273153409473285242656277846127034405056021257247586947529803753453": [
+    {
+      "source_ms": 1777859600656,
+      "baseline_ms": 1777858473079,
+      "actual_best_bid": 0.979,
+      "actual_best_ask": 0.988,
+      "reported_bids": [
+        0.979
+      ],
+      "reported_asks": [
+        0.989
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777859621073,
+      "baseline_ms": 1777858473079,
+      "actual_best_bid": 0.975,
+      "actual_best_ask": 0.988,
+      "reported_bids": [
+        0.975
+      ],
+      "reported_asks": [
+        0.989
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860229144,
+      "baseline_ms": 1777860183544,
+      "actual_best_bid": 0.975,
+      "actual_best_ask": 0.988,
+      "reported_bids": [
+        0.975
+      ],
+      "reported_asks": [
+        0.989
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "110551671802332537286962724572047367794961036956162182438993018805105734211431": [
+    {
+      "source_ms": 1777852861856,
+      "baseline_ms": 1777852838379,
+      "actual_best_bid": 0.97,
+      "actual_best_ask": 0.971,
+      "reported_bids": [
+        0.969
+      ],
+      "reported_asks": [
+        0.971
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852862089,
+      "baseline_ms": 1777852838379,
+      "actual_best_bid": 0.97,
+      "actual_best_ask": 0.971,
+      "reported_bids": [
+        0.969
+      ],
+      "reported_asks": [
+        0.971
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852862636,
+      "baseline_ms": 1777852838379,
+      "actual_best_bid": 0.97,
+      "actual_best_ask": 0.971,
+      "reported_bids": [
+        0.969
+      ],
+      "reported_asks": [
+        0.971
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "112745093572702813088768279115684523326275273644860905628411742797573475672885": [
+    {
+      "source_ms": 1777864192097,
+      "baseline_ms": 1777863383279,
+      "actual_best_bid": 0.035,
+      "actual_best_ask": 0.058,
+      "reported_bids": [
+        0.034
+      ],
+      "reported_asks": [
+        0.058
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864192126,
+      "baseline_ms": 1777863383279,
+      "actual_best_bid": 0.035,
+      "actual_best_ask": 0.057,
+      "reported_bids": [
+        0.034
+      ],
+      "reported_asks": [
+        0.057
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864192130,
+      "baseline_ms": 1777863383279,
+      "actual_best_bid": 0.035,
+      "actual_best_ask": 0.057,
+      "reported_bids": [
+        0.034
+      ],
+      "reported_asks": [
+        0.057
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "113689301637857944366897670123411836941723950347068067954065277357033315086753": [
+    {
+      "source_ms": 1777853748062,
+      "baseline_ms": 1777853628721,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.3,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.37
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853750477,
+      "baseline_ms": 1777853628721,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.3,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.37
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864104185,
+      "baseline_ms": 1777863963791,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.3,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.37
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "114601374514602363994953134090498854694942144165145373434165375925420011593489": [
+    {
+      "source_ms": 1777863592253,
+      "baseline_ms": 1777863249961,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.23,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.23
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777863592345,
+      "baseline_ms": 1777863249961,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.23,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.23
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777863592498,
+      "baseline_ms": 1777863249961,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.23,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.23
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "12809316793385323505671996648504957690145596094810382047565533280940898921100": [
+    {
+      "source_ms": 1777853156398,
+      "baseline_ms": 1777852990492,
+      "actual_best_bid": 0.015,
+      "actual_best_ask": 0.018,
+      "reported_bids": [
+        0.014
+      ],
+      "reported_asks": [
+        0.018
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853157480,
+      "baseline_ms": 1777852990492,
+      "actual_best_bid": 0.015,
+      "actual_best_ask": 0.018,
+      "reported_bids": [
+        0.014
+      ],
+      "reported_asks": [
+        0.018
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853157481,
+      "baseline_ms": 1777852990492,
+      "actual_best_bid": 0.015,
+      "actual_best_ask": 0.018,
+      "reported_bids": [
+        0.014
+      ],
+      "reported_asks": [
+        0.018
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "13137897001168854240861487558531363052785050630131503141775874136018414946116": [
+    {
+      "source_ms": 1777852996444,
+      "baseline_ms": 1777852907425,
+      "actual_best_bid": 0.71,
+      "actual_best_ask": 0.75,
+      "reported_bids": [
+        0.71
+      ],
+      "reported_asks": [
+        0.76
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852996458,
+      "baseline_ms": 1777852907425,
+      "actual_best_bid": 0.72,
+      "actual_best_ask": 0.75,
+      "reported_bids": [
+        0.72
+      ],
+      "reported_asks": [
+        0.76
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852996464,
+      "baseline_ms": 1777852907425,
+      "actual_best_bid": 0.72,
+      "actual_best_ask": 0.75,
+      "reported_bids": [
+        0.72
+      ],
+      "reported_asks": [
+        0.76
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "13438256428848407902885732867730256486279783908844908707234404242491228438302": [
+    {
+      "source_ms": 1777859781265,
+      "baseline_ms": 1777859701832,
+      "actual_best_bid": 0.021,
+      "actual_best_ask": 0.023,
+      "reported_bids": [
+        0.019
+      ],
+      "reported_asks": [
+        0.023
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859781289,
+      "baseline_ms": 1777859701832,
+      "actual_best_bid": 0.021,
+      "actual_best_ask": 0.023,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.023
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859781549,
+      "baseline_ms": 1777859701832,
+      "actual_best_bid": 0.021,
+      "actual_best_ask": 0.023,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.023
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "14034328517721465307950191971432772890341906359782239431831308659471449161873": [
+    {
+      "source_ms": 1777860024398,
+      "baseline_ms": 1777859729836,
+      "actual_best_bid": 0.91,
+      "actual_best_ask": 0.91,
+      "reported_bids": [
+        0.91
+      ],
+      "reported_asks": [
+        0.92
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860024430,
+      "baseline_ms": 1777859729836,
+      "actual_best_bid": 0.91,
+      "actual_best_ask": 0.91,
+      "reported_bids": [
+        0.91
+      ],
+      "reported_asks": [
+        0.92
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860024431,
+      "baseline_ms": 1777859729836,
+      "actual_best_bid": 0.91,
+      "actual_best_ask": 0.91,
+      "reported_bids": [
+        0.91
+      ],
+      "reported_asks": [
+        0.92
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "1455516093280115266726125015118886836497350270272083258816253748264172151708": [
+    {
+      "source_ms": 1777859470143,
+      "baseline_ms": 1777859452375,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.31,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859470144,
+      "baseline_ms": 1777859452375,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.31,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859470147,
+      "baseline_ms": 1777859452375,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.31,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "14940317161361229708268691951997296118184024228350728788231654392907349385803": [
+    {
+      "source_ms": 1777853876706,
+      "baseline_ms": 1777853269962,
+      "actual_best_bid": 0.002,
+      "actual_best_ask": 0.021,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.022
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853904824,
+      "baseline_ms": 1777853269962,
+      "actual_best_bid": 0.002,
+      "actual_best_ask": 0.012,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.013
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853916680,
+      "baseline_ms": 1777853269962,
+      "actual_best_bid": 0.002,
+      "actual_best_ask": 0.012,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.021
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "1562413680068161706921879138442188491822878858221620716943371462105413802496": [
+    {
+      "source_ms": 1777856019879,
+      "baseline_ms": 1777855940573,
+      "actual_best_bid": 0.003,
+      "actual_best_ask": 0.025,
+      "reported_bids": [
+        0.001
+      ],
+      "reported_asks": [
+        0.025
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777856021202,
+      "baseline_ms": 1777855940573,
+      "actual_best_bid": 0.003,
+      "actual_best_ask": 0.025,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.025
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777856035184,
+      "baseline_ms": 1777855940573,
+      "actual_best_bid": 0.003,
+      "actual_best_ask": 0.025,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.025
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "1579022334841215878922449655251625683318078992300849957274853928789036692733": [
+    {
+      "source_ms": 1777864341007,
+      "baseline_ms": 1777864260908,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.24,
+      "reported_bids": [
+        0.18
+      ],
+      "reported_asks": [
+        0.26
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864341362,
+      "baseline_ms": 1777864260908,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.24,
+      "reported_bids": [
+        0.18
+      ],
+      "reported_asks": [
+        0.26
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864341379,
+      "baseline_ms": 1777864260908,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.24,
+      "reported_bids": [
+        0.18
+      ],
+      "reported_asks": [
+        0.26
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "16266290509881747304822959201606869113217263659232193632191514956503118927665": [
+    {
+      "source_ms": 1777860130101,
+      "baseline_ms": 1777859849461,
+      "actual_best_bid": 0.08,
+      "actual_best_ask": 0.1,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.1
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860130357,
+      "baseline_ms": 1777859849461,
+      "actual_best_bid": 0.08,
+      "actual_best_ask": 0.1,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.1
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860130361,
+      "baseline_ms": 1777859849461,
+      "actual_best_bid": 0.08,
+      "actual_best_ask": 0.1,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.1
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "16323608446634957353763699273148194531835848362695789166400803437685275715197": [
+    {
+      "source_ms": 1777856882457,
+      "baseline_ms": 1777856833246,
+      "actual_best_bid": 0.007,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.004
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777856882861,
+      "baseline_ms": 1777856833246,
+      "actual_best_bid": 0.007,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.004
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777856882864,
+      "baseline_ms": 1777856833246,
+      "actual_best_bid": 0.007,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.004
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "16431849415858885456221049616384331828049053247914187859344012689995986679551": [
+    {
+      "source_ms": 1777854536844,
+      "baseline_ms": 1777854383002,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.29,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.34
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854537010,
+      "baseline_ms": 1777854383002,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.29,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.33
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859766725,
+      "baseline_ms": 1777859414991,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.26,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.3
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "16860625162494210689460390678673570106526806365249676317752175720098998598727": [
+    {
+      "source_ms": 1777859627963,
+      "baseline_ms": 1777859477898,
+      "actual_best_bid": 0.94,
+      "actual_best_ask": 0.95,
+      "reported_bids": [
+        0.93
+      ],
+      "reported_asks": [
+        0.95
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859627989,
+      "baseline_ms": 1777859477898,
+      "actual_best_bid": 0.94,
+      "actual_best_ask": 0.95,
+      "reported_bids": [
+        0.93
+      ],
+      "reported_asks": [
+        0.95
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859627990,
+      "baseline_ms": 1777859477898,
+      "actual_best_bid": 0.94,
+      "actual_best_ask": 0.95,
+      "reported_bids": [
+        0.93
+      ],
+      "reported_asks": [
+        0.95
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "19285045573851218620087234935694312109669994304993317129849890931097962240777": [
+    {
+      "source_ms": 1777854462772,
+      "baseline_ms": 1777854355342,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.16,
+      "reported_bids": [
+        0.0
+      ],
+      "reported_asks": [
+        0.16
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854462776,
+      "baseline_ms": 1777854355342,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.16,
+      "reported_bids": [
+        0.0
+      ],
+      "reported_asks": [
+        0.16
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777855782790,
+      "baseline_ms": 1777855750311,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.16,
+      "reported_bids": [
+        0.0
+      ],
+      "reported_asks": [
+        0.16
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "19918272897997734048549995417639125290789670348051059558672929291440356716988": [
+    {
+      "source_ms": 1777865624819,
+      "baseline_ms": 1777864885197,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.104,
+      "reported_bids": [
+        0.003
+      ],
+      "reported_asks": [
+        0.104
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777865626000,
+      "baseline_ms": 1777864885197,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.104,
+      "reported_bids": [
+        0.003
+      ],
+      "reported_asks": [
+        0.104
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777865626030,
+      "baseline_ms": 1777864885197,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.104,
+      "reported_bids": [
+        0.003
+      ],
+      "reported_asks": [
+        0.104
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "20808111107167833741575177460160141218793690189972392355009364555511054786618": [
+    {
+      "source_ms": 1777864192097,
+      "baseline_ms": 1777864036264,
+      "actual_best_bid": 0.942,
+      "actual_best_ask": 0.965,
+      "reported_bids": [
+        0.942
+      ],
+      "reported_asks": [
+        0.966
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777864192126,
+      "baseline_ms": 1777864036264,
+      "actual_best_bid": 0.943,
+      "actual_best_ask": 0.965,
+      "reported_bids": [
+        0.943
+      ],
+      "reported_asks": [
+        0.966
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777864192130,
+      "baseline_ms": 1777864036264,
+      "actual_best_bid": 0.943,
+      "actual_best_ask": 0.965,
+      "reported_bids": [
+        0.943
+      ],
+      "reported_asks": [
+        0.966
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    }
+  ],
+  "20970486708225968446432942645112973151689471027935743232114605753310238562505": [
+    {
+      "source_ms": 1777856259361,
+      "baseline_ms": 1777856198513,
+      "actual_best_bid": 0.58,
+      "actual_best_ask": 0.59,
+      "reported_bids": [
+        0.57
+      ],
+      "reported_asks": [
+        0.59
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777856259384,
+      "baseline_ms": 1777856198513,
+      "actual_best_bid": 0.58,
+      "actual_best_ask": 0.59,
+      "reported_bids": [
+        0.57
+      ],
+      "reported_asks": [
+        0.59
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777856259386,
+      "baseline_ms": 1777856198513,
+      "actual_best_bid": 0.58,
+      "actual_best_ask": 0.59,
+      "reported_bids": [
+        0.57
+      ],
+      "reported_asks": [
+        0.59
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "21273644826385484402840408870367034073054225573929961948304115241321237580370": [
+    {
+      "source_ms": 1777852953251,
+      "baseline_ms": 1777852816118,
+      "actual_best_bid": 0.96,
+      "actual_best_ask": 0.982,
+      "reported_bids": [
+        0.96
+      ],
+      "reported_asks": [
+        0.985
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852953321,
+      "baseline_ms": 1777852816118,
+      "actual_best_bid": 0.96,
+      "actual_best_ask": 0.982,
+      "reported_bids": [
+        0.96
+      ],
+      "reported_asks": [
+        0.985
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852953325,
+      "baseline_ms": 1777852816118,
+      "actual_best_bid": 0.96,
+      "actual_best_ask": 0.982,
+      "reported_bids": [
+        0.96
+      ],
+      "reported_asks": [
+        0.985
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "22772170250149012024289455323316127507234934436584846521450999860327227628056": [
+    {
+      "source_ms": 1777853589674,
+      "baseline_ms": 1777853274574,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.029,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.03
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853590536,
+      "baseline_ms": 1777853274574,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.029,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.03
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853590566,
+      "baseline_ms": 1777853274574,
+      "actual_best_bid": 0.011,
+      "actual_best_ask": 0.029,
+      "reported_bids": [
+        0.011
+      ],
+      "reported_asks": [
+        0.03
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "243865481519295544323722350350160398241358532129920344054725493824429214377": [
+    {
+      "source_ms": 1777862172383,
+      "baseline_ms": 1777862031060,
+      "actual_best_bid": 0.996,
+      "actual_best_ask": 0.997,
+      "reported_bids": [
+        0.996
+      ],
+      "reported_asks": [
+        0.998
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777862172898,
+      "baseline_ms": 1777862031060,
+      "actual_best_bid": 0.996,
+      "actual_best_ask": 0.997,
+      "reported_bids": [
+        0.996
+      ],
+      "reported_asks": [
+        0.998
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777862173429,
+      "baseline_ms": 1777862031060,
+      "actual_best_bid": 0.996,
+      "actual_best_ask": 0.997,
+      "reported_bids": [
+        0.996
+      ],
+      "reported_asks": [
+        0.998
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "26395103237779454600605455242159578798818006529444534803882227088822254079013": [
+    {
+      "source_ms": 1777858399566,
+      "baseline_ms": 1777858232949,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.022,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.023
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858399599,
+      "baseline_ms": 1777858232949,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.022,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.023
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858399606,
+      "baseline_ms": 1777858232949,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.022,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.023
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "26553531074963172435854421374327224528641451330453925097022737708076261558968": [
+    {
+      "source_ms": 1777860597112,
+      "baseline_ms": 1777860204636,
+      "actual_best_bid": 0.013,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.021
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860597145,
+      "baseline_ms": 1777860204636,
+      "actual_best_bid": 0.013,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.021
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860597153,
+      "baseline_ms": 1777860204636,
+      "actual_best_bid": 0.013,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.02
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "2698132202523046105895273957487517035365516188497009298272290654752373470514": [
+    {
+      "source_ms": 1777852953251,
+      "baseline_ms": 1777852889491,
+      "actual_best_bid": 0.018,
+      "actual_best_ask": 0.04,
+      "reported_bids": [
+        0.015
+      ],
+      "reported_asks": [
+        0.04
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852953321,
+      "baseline_ms": 1777852889491,
+      "actual_best_bid": 0.018,
+      "actual_best_ask": 0.04,
+      "reported_bids": [
+        0.015
+      ],
+      "reported_asks": [
+        0.04
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852953325,
+      "baseline_ms": 1777852889491,
+      "actual_best_bid": 0.018,
+      "actual_best_ask": 0.04,
+      "reported_bids": [
+        0.015
+      ],
+      "reported_asks": [
+        0.04
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "27263818818572382308786837280052567231404272927433091805576135922512093801450": [
+    {
+      "source_ms": 1777858264202,
+      "baseline_ms": 1777858133302,
+      "actual_best_bid": 0.42,
+      "actual_best_ask": 0.44,
+      "reported_bids": [
+        0.43
+      ],
+      "reported_asks": [
+        0.44
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777858348166,
+      "baseline_ms": 1777858133302,
+      "actual_best_bid": 0.43,
+      "actual_best_ask": 0.45,
+      "reported_bids": [
+        0.44
+      ],
+      "reported_asks": [
+        0.45
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777858348167,
+      "baseline_ms": 1777858133302,
+      "actual_best_bid": 0.43,
+      "actual_best_ask": 0.45,
+      "reported_bids": [
+        0.44
+      ],
+      "reported_asks": [
+        0.45
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "27353651317028312447717540870836599281067473146843980665377105437960026269299": [
+    {
+      "source_ms": 1777855836215,
+      "baseline_ms": 1777855795325,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.26,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.27
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857521513,
+      "baseline_ms": 1777857400556,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.19,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.19
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857523076,
+      "baseline_ms": 1777857400556,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.25,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.25
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "27725940653624584419402352523079290062969537031166811897465708046373420997774": [
+    {
+      "source_ms": 1777872263154,
+      "baseline_ms": 1777872214010,
+      "actual_best_bid": 0.1,
+      "actual_best_ask": 0.1,
+      "reported_bids": [
+        0.1
+      ],
+      "reported_asks": [
+        0.11
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777872263166,
+      "baseline_ms": 1777872214010,
+      "actual_best_bid": 0.1,
+      "actual_best_ask": 0.1,
+      "reported_bids": [
+        0.1
+      ],
+      "reported_asks": [
+        0.11
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777872263192,
+      "baseline_ms": 1777872214010,
+      "actual_best_bid": 0.1,
+      "actual_best_ask": 0.1,
+      "reported_bids": [
+        0.1
+      ],
+      "reported_asks": [
+        0.11
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "29207806554965548143665718695562011814087548331828568626308065424903502456938": [
+    {
+      "source_ms": 1777861015248,
+      "baseline_ms": 1777860909753,
+      "actual_best_bid": 0.8,
+      "actual_best_ask": 0.84,
+      "reported_bids": [
+        0.79
+      ],
+      "reported_asks": [
+        0.84
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861015281,
+      "baseline_ms": 1777860909753,
+      "actual_best_bid": 0.8,
+      "actual_best_ask": 0.84,
+      "reported_bids": [
+        0.79
+      ],
+      "reported_asks": [
+        0.84
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861015284,
+      "baseline_ms": 1777860909753,
+      "actual_best_bid": 0.8,
+      "actual_best_ask": 0.84,
+      "reported_bids": [
+        0.79
+      ],
+      "reported_asks": [
+        0.84
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "29537137916953233418294102065329527671661741684360169289547234666267709466300": [
+    {
+      "source_ms": 1777859600656,
+      "baseline_ms": 1777859467658,
+      "actual_best_bid": 0.012,
+      "actual_best_ask": 0.021,
+      "reported_bids": [
+        0.011
+      ],
+      "reported_asks": [
+        0.021
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859621073,
+      "baseline_ms": 1777859467658,
+      "actual_best_bid": 0.012,
+      "actual_best_ask": 0.025,
+      "reported_bids": [
+        0.011
+      ],
+      "reported_asks": [
+        0.025
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860229144,
+      "baseline_ms": 1777860220878,
+      "actual_best_bid": 0.012,
+      "actual_best_ask": 0.025,
+      "reported_bids": [
+        0.011
+      ],
+      "reported_asks": [
+        0.025
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "32825140231045567473519733823753658145488577746690815504132235066565756510499": [
+    {
+      "source_ms": 1777871065620,
+      "baseline_ms": 1777869913260,
+      "actual_best_bid": 0.19,
+      "actual_best_ask": 0.21,
+      "reported_bids": [
+        0.16
+      ],
+      "reported_asks": [
+        0.21
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777871065656,
+      "baseline_ms": 1777869913260,
+      "actual_best_bid": 0.19,
+      "actual_best_ask": 0.21,
+      "reported_bids": [
+        0.16
+      ],
+      "reported_asks": [
+        0.21
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777871066016,
+      "baseline_ms": 1777869913260,
+      "actual_best_bid": 0.19,
+      "actual_best_ask": 0.21,
+      "reported_bids": [
+        0.17
+      ],
+      "reported_asks": [
+        0.21
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "33645963200124669383365942835136033944329465079042511264815714490065046948839": [
+    {
+      "source_ms": 1777852907734,
+      "baseline_ms": 1777852837527,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.37,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.38
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852915322,
+      "baseline_ms": 1777852837527,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.37,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.38
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853037451,
+      "baseline_ms": 1777852837527,
+      "actual_best_bid": 0.0,
+      "actual_best_ask": 0.37,
+      "reported_bids": [
+        0.0
+      ],
+      "reported_asks": [
+        0.38
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "35116819527590618734010439494403110939762037628469290747373089656495868362182": [
+    {
+      "source_ms": 1777871384886,
+      "baseline_ms": 1777871071072,
+      "actual_best_bid": 0.09,
+      "actual_best_ask": 0.48,
+      "reported_bids": [
+        0.09
+      ],
+      "reported_asks": [
+        0.49
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777871384955,
+      "baseline_ms": 1777871071072,
+      "actual_best_bid": 0.09,
+      "actual_best_ask": 0.48,
+      "reported_bids": [
+        0.09
+      ],
+      "reported_asks": [
+        0.49
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777871385029,
+      "baseline_ms": 1777871071072,
+      "actual_best_bid": 0.09,
+      "actual_best_ask": 0.48,
+      "reported_bids": [
+        0.09
+      ],
+      "reported_asks": [
+        0.49
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "35117054271043000202360638963260089808833299915975988635874585889259311745974": [
+    {
+      "source_ms": 1777862771598,
+      "baseline_ms": 1777862750408,
+      "actual_best_bid": 0.005,
+      "actual_best_ask": 0.013,
+      "reported_bids": [
+        0.005
+      ],
+      "reported_asks": [
+        0.016
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777862771913,
+      "baseline_ms": 1777862750408,
+      "actual_best_bid": 0.005,
+      "actual_best_ask": 0.013,
+      "reported_bids": [
+        0.005
+      ],
+      "reported_asks": [
+        0.015
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777862771915,
+      "baseline_ms": 1777862750408,
+      "actual_best_bid": 0.005,
+      "actual_best_ask": 0.013,
+      "reported_bids": [
+        0.005
+      ],
+      "reported_asks": [
+        0.015
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "35400870094926910350494623066652965937979705947201136654871500066876368014129": [
+    {
+      "source_ms": 1777861620414,
+      "baseline_ms": 1777861544190,
+      "actual_best_bid": 0.037,
+      "actual_best_ask": 0.043,
+      "reported_bids": [
+        0.037
+      ],
+      "reported_asks": [
+        0.049
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861620452,
+      "baseline_ms": 1777861544190,
+      "actual_best_bid": 0.037,
+      "actual_best_ask": 0.043,
+      "reported_bids": [
+        0.037
+      ],
+      "reported_asks": [
+        0.048
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861620523,
+      "baseline_ms": 1777861544190,
+      "actual_best_bid": 0.037,
+      "actual_best_ask": 0.043,
+      "reported_bids": [
+        0.037
+      ],
+      "reported_asks": [
+        0.048
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "35649977800710894046432502665037882744019424129132273940304644611378552985706": [
+    {
+      "source_ms": 1777864341007,
+      "baseline_ms": 1777864260908,
+      "actual_best_bid": 0.76,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.74
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864341362,
+      "baseline_ms": 1777864260908,
+      "actual_best_bid": 0.76,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.74
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864341379,
+      "baseline_ms": 1777864260908,
+      "actual_best_bid": 0.76,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.74
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "35960072576356449313793955038058937258726426681273039170567124521211191270564": [
+    {
+      "source_ms": 1777860024398,
+      "baseline_ms": 1777859850639,
+      "actual_best_bid": 0.09,
+      "actual_best_ask": 0.09,
+      "reported_bids": [
+        0.08
+      ],
+      "reported_asks": [
+        0.09
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860024430,
+      "baseline_ms": 1777859850639,
+      "actual_best_bid": 0.09,
+      "actual_best_ask": 0.09,
+      "reported_bids": [
+        0.08
+      ],
+      "reported_asks": [
+        0.09
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860024431,
+      "baseline_ms": 1777859850639,
+      "actual_best_bid": 0.09,
+      "actual_best_ask": 0.09,
+      "reported_bids": [
+        0.08
+      ],
+      "reported_asks": [
+        0.09
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "36122791269159942800699544223561076749925357270713342619637895704805310136481": [
+    {
+      "source_ms": 1777853561383,
+      "baseline_ms": 1777853394267,
+      "actual_best_bid": 0.989,
+      "actual_best_ask": 0.995,
+      "reported_bids": [
+        0.989
+      ],
+      "reported_asks": [
+        0.996
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853561423,
+      "baseline_ms": 1777853394267,
+      "actual_best_bid": 0.989,
+      "actual_best_ask": 0.995,
+      "reported_bids": [
+        0.989
+      ],
+      "reported_asks": [
+        0.996
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853561429,
+      "baseline_ms": 1777853394267,
+      "actual_best_bid": 0.989,
+      "actual_best_ask": 0.995,
+      "reported_bids": [
+        0.989
+      ],
+      "reported_asks": [
+        0.996
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "39646594781601295410815376781680128471128399688560144152466302146550903734014": [
+    {
+      "source_ms": 1777853156398,
+      "baseline_ms": 1777853014235,
+      "actual_best_bid": 0.982,
+      "actual_best_ask": 0.985,
+      "reported_bids": [
+        0.982
+      ],
+      "reported_asks": [
+        0.986
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853157480,
+      "baseline_ms": 1777853014235,
+      "actual_best_bid": 0.982,
+      "actual_best_ask": 0.985,
+      "reported_bids": [
+        0.982
+      ],
+      "reported_asks": [
+        0.986
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853157481,
+      "baseline_ms": 1777853014235,
+      "actual_best_bid": 0.982,
+      "actual_best_ask": 0.985,
+      "reported_bids": [
+        0.982
+      ],
+      "reported_asks": [
+        0.986
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "41027734145282346251982764624086079128946657467706913121187199188835156922021": [
+    {
+      "source_ms": 1777858341261,
+      "baseline_ms": 1777858294048,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.026,
+      "reported_bids": [
+        0.018
+      ],
+      "reported_asks": [
+        0.026
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858341295,
+      "baseline_ms": 1777858294048,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.026,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.026
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858341330,
+      "baseline_ms": 1777858294048,
+      "actual_best_bid": 0.02,
+      "actual_best_ask": 0.026,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.026
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "42881332428457315258510097252122224099060650760018469346499034971195292051197": [
+    {
+      "source_ms": 1777853589674,
+      "baseline_ms": 1777853510009,
+      "actual_best_bid": 0.971,
+      "actual_best_ask": 0.99,
+      "reported_bids": [
+        0.97
+      ],
+      "reported_asks": [
+        0.99
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853590536,
+      "baseline_ms": 1777853510009,
+      "actual_best_bid": 0.971,
+      "actual_best_ask": 0.99,
+      "reported_bids": [
+        0.97
+      ],
+      "reported_asks": [
+        0.99
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853590566,
+      "baseline_ms": 1777853510009,
+      "actual_best_bid": 0.971,
+      "actual_best_ask": 0.989,
+      "reported_bids": [
+        0.97
+      ],
+      "reported_asks": [
+        0.989
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "4378200790184397978260615400066508901280326985125697515349987375022226111187": [
+    {
+      "source_ms": 1777852979072,
+      "baseline_ms": 1777852925936,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.15,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.15
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852980612,
+      "baseline_ms": 1777852925936,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.15,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.15
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852984950,
+      "baseline_ms": 1777852925936,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.15,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.15
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "44017019315782922634457300618919482744803730196875933928315824275516729043334": [
+    {
+      "source_ms": 1777853342492,
+      "baseline_ms": 1777853252193,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.73,
+      "reported_bids": [
+        0.3
+      ],
+      "reported_asks": [
+        0.74
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853500520,
+      "baseline_ms": 1777853252193,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.3
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853506567,
+      "baseline_ms": 1777853252193,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.3
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "447742526853903327004378907395568674393478051647851890686656998371060703199": [
+    {
+      "source_ms": 1777857489765,
+      "baseline_ms": 1777857445601,
+      "actual_best_bid": 0.23,
+      "actual_best_ask": 0.52,
+      "reported_bids": [
+        0.23
+      ],
+      "reported_asks": [
+        0.55
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857493076,
+      "baseline_ms": 1777857445601,
+      "actual_best_bid": 0.23,
+      "actual_best_ask": 0.52,
+      "reported_bids": [
+        0.23
+      ],
+      "reported_asks": [
+        0.55
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857493460,
+      "baseline_ms": 1777857445601,
+      "actual_best_bid": 0.23,
+      "actual_best_ask": 0.52,
+      "reported_bids": [
+        0.23
+      ],
+      "reported_asks": [
+        0.55
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "44837352576386718440190165117570245172625565353142309731412742684480956410282": [
+    {
+      "source_ms": 1777860597112,
+      "baseline_ms": 1777859841750,
+      "actual_best_bid": 0.986,
+      "actual_best_ask": 0.987,
+      "reported_bids": [
+        0.979
+      ],
+      "reported_asks": [
+        0.987
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860597145,
+      "baseline_ms": 1777859841750,
+      "actual_best_bid": 0.986,
+      "actual_best_ask": 0.987,
+      "reported_bids": [
+        0.979
+      ],
+      "reported_asks": [
+        0.987
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860597153,
+      "baseline_ms": 1777859841750,
+      "actual_best_bid": 0.986,
+      "actual_best_ask": 0.987,
+      "reported_bids": [
+        0.98
+      ],
+      "reported_asks": [
+        0.987
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "45181074962690500861241928770213494323205639608025653418056201837727593064543": [
+    {
+      "source_ms": 1777866876732,
+      "baseline_ms": 1777866351244,
+      "actual_best_bid": 0.006,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.005
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777866876763,
+      "baseline_ms": 1777866351244,
+      "actual_best_bid": 0.006,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.005
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777866877197,
+      "baseline_ms": 1777866351244,
+      "actual_best_bid": 0.006,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.005
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "46135223769901356578827095455459269680886487970089859190414287977008142196199": [
+    {
+      "source_ms": 1777853081535,
+      "baseline_ms": 1777852979458,
+      "actual_best_bid": 0.4,
+      "actual_best_ask": 0.64,
+      "reported_bids": [
+        0.4
+      ],
+      "reported_asks": [
+        0.66
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853081564,
+      "baseline_ms": 1777852979458,
+      "actual_best_bid": 0.4,
+      "actual_best_ask": 0.64,
+      "reported_bids": [
+        0.4
+      ],
+      "reported_asks": [
+        0.66
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853678752,
+      "baseline_ms": 1777853656746,
+      "actual_best_bid": 0.36,
+      "actual_best_ask": 0.65,
+      "reported_bids": [
+        0.35,
+        0.45
+      ],
+      "reported_asks": [
+        0.65
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    }
+  ],
+  "46589052366421268235135550612181576576684028607302160018128255186247938778071": [
+    {
+      "source_ms": 1777861015248,
+      "baseline_ms": 1777860799873,
+      "actual_best_bid": 0.16,
+      "actual_best_ask": 0.2,
+      "reported_bids": [
+        0.16
+      ],
+      "reported_asks": [
+        0.21
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861015281,
+      "baseline_ms": 1777860799873,
+      "actual_best_bid": 0.16,
+      "actual_best_ask": 0.2,
+      "reported_bids": [
+        0.16
+      ],
+      "reported_asks": [
+        0.21
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861015284,
+      "baseline_ms": 1777860799873,
+      "actual_best_bid": 0.16,
+      "actual_best_ask": 0.2,
+      "reported_bids": [
+        0.16
+      ],
+      "reported_asks": [
+        0.21
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "47678693104351739661291643656210043204651297459836784679988615795740671761429": [
+    {
+      "source_ms": 1777862090891,
+      "baseline_ms": 1777862000571,
+      "actual_best_bid": 0.006,
+      "actual_best_ask": 0.006,
+      "reported_bids": [
+        0.006
+      ],
+      "reported_asks": [
+        0.007
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    }
+  ],
+  "47682330932193608266403076741565401026146791783206345091162474293216884575938": [
+    {
+      "source_ms": 1777858341261,
+      "baseline_ms": 1777858200329,
+      "actual_best_bid": 0.974,
+      "actual_best_ask": 0.98,
+      "reported_bids": [
+        0.974
+      ],
+      "reported_asks": [
+        0.982
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858341295,
+      "baseline_ms": 1777858200329,
+      "actual_best_bid": 0.974,
+      "actual_best_ask": 0.98,
+      "reported_bids": [
+        0.974
+      ],
+      "reported_asks": [
+        0.987
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858341330,
+      "baseline_ms": 1777858200329,
+      "actual_best_bid": 0.974,
+      "actual_best_ask": 0.98,
+      "reported_bids": [
+        0.974
+      ],
+      "reported_asks": [
+        0.987
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "48485380235708168877834566799436710818818886041838286669563001517363954379152": [
+    {
+      "source_ms": 1777859183273,
+      "baseline_ms": 1777858717501,
+      "actual_best_bid": 0.003,
+      "actual_best_ask": 0.005,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.005
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859183992,
+      "baseline_ms": 1777858717501,
+      "actual_best_bid": 0.003,
+      "actual_best_ask": 0.005,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.005
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "49850031165365421167364276653679003636661014187149064940208350023902591790892": [
+    {
+      "source_ms": 1777854689760,
+      "baseline_ms": 1777854627290,
+      "actual_best_bid": 0.011,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854689762,
+      "baseline_ms": 1777854627290,
+      "actual_best_bid": 0.011,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854689771,
+      "baseline_ms": 1777854627290,
+      "actual_best_bid": 0.011,
+      "actual_best_ask": 0.014,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.014
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "50001380583940619241541457395440708116185855229889280481239090777040195283554": [
+    {
+      "source_ms": 1777853036551,
+      "baseline_ms": 1777852816722,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.12,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.13
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854114939,
+      "baseline_ms": 1777854021861,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.12,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.13
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854946550,
+      "baseline_ms": 1777854904806,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.12,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.13
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "50670608556152515740174946767242371173055523888007195528968208278716707193320": [
+    {
+      "source_ms": 1777859758319,
+      "baseline_ms": 1777859696452,
+      "actual_best_bid": 0.17,
+      "actual_best_ask": 0.17,
+      "reported_bids": [
+        0.17
+      ],
+      "reported_asks": [
+        0.18
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859758340,
+      "baseline_ms": 1777859696452,
+      "actual_best_bid": 0.17,
+      "actual_best_ask": 0.17,
+      "reported_bids": [
+        0.17
+      ],
+      "reported_asks": [
+        0.18
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859758361,
+      "baseline_ms": 1777859696452,
+      "actual_best_bid": 0.17,
+      "actual_best_ask": 0.17,
+      "reported_bids": [
+        0.17
+      ],
+      "reported_asks": [
+        0.18
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "51135617110612674809654747655545123153069170076581834784594349303267399625566": [
+    {
+      "source_ms": 1777862090891,
+      "baseline_ms": 1777862000571,
+      "actual_best_bid": 0.994,
+      "actual_best_ask": 0.994,
+      "reported_bids": [
+        0.993
+      ],
+      "reported_asks": [
+        0.994
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777862094201,
+      "baseline_ms": 1777862000571,
+      "actual_best_bid": 0.994,
+      "actual_best_ask": 0.996,
+      "reported_bids": [
+        0.993
+      ],
+      "reported_asks": [
+        0.996
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777862120343,
+      "baseline_ms": 1777862000571,
+      "actual_best_bid": 0.994,
+      "actual_best_ask": 0.996,
+      "reported_bids": [
+        0.993
+      ],
+      "reported_asks": [
+        0.996
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "52275706593137793319318925926177756496204385627147209958254016456013188034724": [
+    {
+      "source_ms": 1777855101484,
+      "baseline_ms": 1777854881655,
+      "actual_best_bid": 0.1,
+      "actual_best_ask": 0.32,
+      "reported_bids": [
+        0.1
+      ],
+      "reported_asks": [
+        0.4
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777855102451,
+      "baseline_ms": 1777854881655,
+      "actual_best_bid": 0.1,
+      "actual_best_ask": 0.32,
+      "reported_bids": [
+        0.1
+      ],
+      "reported_asks": [
+        0.4
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777855102583,
+      "baseline_ms": 1777854881655,
+      "actual_best_bid": 0.1,
+      "actual_best_ask": 0.32,
+      "reported_bids": [
+        0.1
+      ],
+      "reported_asks": [
+        0.4
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "52968913737760628879053145351284282833173111345753718767782617707864897017508": [
+    {
+      "source_ms": 1777860023676,
+      "baseline_ms": 1777859793532,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.07,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.08
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860023688,
+      "baseline_ms": 1777859793532,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.07,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.08
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860023689,
+      "baseline_ms": 1777859793532,
+      "actual_best_bid": 0.07,
+      "actual_best_ask": 0.07,
+      "reported_bids": [
+        0.07
+      ],
+      "reported_asks": [
+        0.08
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "56855127612795632226511371067529679879998059207589752390111439814826818500281": [
+    {
+      "source_ms": 1777859768021,
+      "baseline_ms": 1777859722070,
+      "actual_best_bid": 0.62,
+      "actual_best_ask": 0.66,
+      "reported_bids": [
+        0.61
+      ],
+      "reported_asks": [
+        0.66
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859768043,
+      "baseline_ms": 1777859722070,
+      "actual_best_bid": 0.62,
+      "actual_best_ask": 0.66,
+      "reported_bids": [
+        0.61
+      ],
+      "reported_asks": [
+        0.66
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859768063,
+      "baseline_ms": 1777859722070,
+      "actual_best_bid": 0.62,
+      "actual_best_ask": 0.66,
+      "reported_bids": [
+        0.61
+      ],
+      "reported_asks": [
+        0.66
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "57676524718432499758678361726511146538603748179427464446882608213522659174212": [
+    {
+      "source_ms": 1777854917649,
+      "baseline_ms": 1777854874114,
+      "actual_best_bid": 0.35,
+      "actual_best_ask": 0.43,
+      "reported_bids": [
+        0.35
+      ],
+      "reported_asks": [
+        0.45
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854923643,
+      "baseline_ms": 1777854874114,
+      "actual_best_bid": 0.35,
+      "actual_best_ask": 0.43,
+      "reported_bids": [
+        0.35
+      ],
+      "reported_asks": [
+        0.45
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854929557,
+      "baseline_ms": 1777854874114,
+      "actual_best_bid": 0.35,
+      "actual_best_ask": 0.43,
+      "reported_bids": [
+        0.35
+      ],
+      "reported_asks": [
+        0.45
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "58120280899343580595994493848718454232843816833241335570603570984156861197309": [
+    {
+      "source_ms": 1777862172383,
+      "baseline_ms": 1777862031060,
+      "actual_best_bid": 0.003,
+      "actual_best_ask": 0.004,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.004
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777862172898,
+      "baseline_ms": 1777862031060,
+      "actual_best_bid": 0.003,
+      "actual_best_ask": 0.004,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.004
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777862173429,
+      "baseline_ms": 1777862031060,
+      "actual_best_bid": 0.003,
+      "actual_best_ask": 0.004,
+      "reported_bids": [
+        0.002
+      ],
+      "reported_asks": [
+        0.004
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "61826825169021299270580162348862390973803638624194664333463388035050302212234": [
+    {
+      "source_ms": 1777852865238,
+      "baseline_ms": 1777852845717,
+      "actual_best_bid": 0.021,
+      "actual_best_ask": 0.039,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.039
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852865245,
+      "baseline_ms": 1777852845717,
+      "actual_best_bid": 0.021,
+      "actual_best_ask": 0.039,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.039
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852865272,
+      "baseline_ms": 1777852845717,
+      "actual_best_bid": 0.021,
+      "actual_best_ask": 0.038,
+      "reported_bids": [
+        0.02
+      ],
+      "reported_asks": [
+        0.038
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "63793996707762588429087893110546889766612541662978180322747690538629665518484": [
+    {
+      "source_ms": 1777863592158,
+      "baseline_ms": 1777863295801,
+      "actual_best_bid": 0.291,
+      "actual_best_ask": 0.533,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.533
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777863592188,
+      "baseline_ms": 1777863295801,
+      "actual_best_bid": 0.291,
+      "actual_best_ask": 0.534,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.534
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777863592326,
+      "baseline_ms": 1777863295801,
+      "actual_best_bid": 0.291,
+      "actual_best_ask": 0.743,
+      "reported_bids": [
+        0.29
+      ],
+      "reported_asks": [
+        0.743
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "63895456965525144830326742075743159063127719824716741903186424546467722602638": [
+    {
+      "source_ms": 1777853408731,
+      "baseline_ms": 1777852915338,
+      "actual_best_bid": 0.28,
+      "actual_best_ask": 0.48,
+      "reported_bids": [
+        0.28
+      ],
+      "reported_asks": [
+        0.59
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853408747,
+      "baseline_ms": 1777852915338,
+      "actual_best_bid": 0.27,
+      "actual_best_ask": 0.48,
+      "reported_bids": [
+        0.27
+      ],
+      "reported_asks": [
+        0.59
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853411891,
+      "baseline_ms": 1777852915338,
+      "actual_best_bid": 0.27,
+      "actual_best_ask": 0.48,
+      "reported_bids": [
+        0.27
+      ],
+      "reported_asks": [
+        0.56
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "64082079374475041543005057642659359748943997515033238278916899815202850271562": [
+    {
+      "source_ms": 1777859781265,
+      "baseline_ms": 1777859419346,
+      "actual_best_bid": 0.977,
+      "actual_best_ask": 0.979,
+      "reported_bids": [
+        0.977
+      ],
+      "reported_asks": [
+        0.981
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859781289,
+      "baseline_ms": 1777859419346,
+      "actual_best_bid": 0.977,
+      "actual_best_ask": 0.979,
+      "reported_bids": [
+        0.977
+      ],
+      "reported_asks": [
+        0.98
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859781549,
+      "baseline_ms": 1777859419346,
+      "actual_best_bid": 0.977,
+      "actual_best_ask": 0.979,
+      "reported_bids": [
+        0.977
+      ],
+      "reported_asks": [
+        0.98
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "64325148397612805870475370983252689838504788635323265188217966132251398198172": [
+    {
+      "source_ms": 1777857160667,
+      "baseline_ms": 1777857070643,
+      "actual_best_bid": 0.013,
+      "actual_best_ask": 0.106,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.109
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857160741,
+      "baseline_ms": 1777857070643,
+      "actual_best_bid": 0.013,
+      "actual_best_ask": 0.106,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.107
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857160744,
+      "baseline_ms": 1777857070643,
+      "actual_best_bid": 0.013,
+      "actual_best_ask": 0.106,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.107
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "65358559479619632690055959333044473452303412483016001023035774148763874619559": [
+    {
+      "source_ms": 1777859479026,
+      "baseline_ms": 1777859226091,
+      "actual_best_bid": 0.82,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.81
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859479048,
+      "baseline_ms": 1777859226091,
+      "actual_best_bid": 0.82,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.81
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777859479049,
+      "baseline_ms": 1777859226091,
+      "actual_best_bid": 0.82,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.81
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "65635846672230517938250725434521085140827228441803710554357924247471745513898": [
+    {
+      "source_ms": 1777863591945,
+      "baseline_ms": 1777863561895,
+      "actual_best_bid": 0.15,
+      "actual_best_ask": 0.3,
+      "reported_bids": [
+        0.15
+      ],
+      "reported_asks": [
+        0.5
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777863592008,
+      "baseline_ms": 1777863561895,
+      "actual_best_bid": 0.15,
+      "actual_best_ask": 0.3,
+      "reported_bids": [
+        0.15
+      ],
+      "reported_asks": [
+        0.5
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777863592026,
+      "baseline_ms": 1777863561895,
+      "actual_best_bid": 0.15,
+      "actual_best_ask": 0.3,
+      "reported_bids": [
+        0.15
+      ],
+      "reported_asks": [
+        0.51
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "66640593927806775487523582810913028280345995994966983347515284228539247720113": [
+    {
+      "source_ms": 1777858399566,
+      "baseline_ms": 1777858339835,
+      "actual_best_bid": 0.978,
+      "actual_best_ask": 0.98,
+      "reported_bids": [
+        0.977
+      ],
+      "reported_asks": [
+        0.98
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858399599,
+      "baseline_ms": 1777858339835,
+      "actual_best_bid": 0.978,
+      "actual_best_ask": 0.98,
+      "reported_bids": [
+        0.977
+      ],
+      "reported_asks": [
+        0.98
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858399606,
+      "baseline_ms": 1777858339835,
+      "actual_best_bid": 0.978,
+      "actual_best_ask": 0.98,
+      "reported_bids": [
+        0.977
+      ],
+      "reported_asks": [
+        0.98
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "67182962899333713242544917790238731772836945334901725446394754117425501601715": [
+    {
+      "source_ms": 1777854689760,
+      "baseline_ms": 1777854674186,
+      "actual_best_bid": 0.986,
+      "actual_best_ask": 0.989,
+      "reported_bids": [
+        0.986
+      ],
+      "reported_asks": [
+        0.99
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854689762,
+      "baseline_ms": 1777854674186,
+      "actual_best_bid": 0.986,
+      "actual_best_ask": 0.989,
+      "reported_bids": [
+        0.986
+      ],
+      "reported_asks": [
+        0.99
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854689771,
+      "baseline_ms": 1777854674186,
+      "actual_best_bid": 0.986,
+      "actual_best_ask": 0.989,
+      "reported_bids": [
+        0.986
+      ],
+      "reported_asks": [
+        0.99
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "67426230649636781320610068344912319215492682465809946560988358274379179227663": [
+    {
+      "source_ms": 1777854109118,
+      "baseline_ms": 1777854015865,
+      "actual_best_bid": 0.59,
+      "actual_best_ask": 0.6,
+      "reported_bids": [
+        0.59
+      ],
+      "reported_asks": [
+        0.61
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854109406,
+      "baseline_ms": 1777854015865,
+      "actual_best_bid": 0.59,
+      "actual_best_ask": 0.6,
+      "reported_bids": [
+        0.59
+      ],
+      "reported_asks": [
+        0.61
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777854109488,
+      "baseline_ms": 1777854015865,
+      "actual_best_bid": 0.59,
+      "actual_best_ask": 0.6,
+      "reported_bids": [
+        0.59
+      ],
+      "reported_asks": [
+        0.61
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "69215834843734439621347796447981538979935134038339162972731997701780666832814": [
+    {
+      "source_ms": 1777853000040,
+      "baseline_ms": 1777852921420,
+      "actual_best_bid": 0.85,
+      "actual_best_ask": 0.86,
+      "reported_bids": [
+        0.84
+      ],
+      "reported_asks": [
+        0.86
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853000080,
+      "baseline_ms": 1777852921420,
+      "actual_best_bid": 0.85,
+      "actual_best_ask": 0.86,
+      "reported_bids": [
+        0.84
+      ],
+      "reported_asks": [
+        0.86
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853000083,
+      "baseline_ms": 1777852921420,
+      "actual_best_bid": 0.85,
+      "actual_best_ask": 0.85,
+      "reported_bids": [
+        0.84
+      ],
+      "reported_asks": [
+        0.85
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "70599542532871511059574704954153700290799668003780454021485405353625366389155": [
+    {
+      "source_ms": 1777872263154,
+      "baseline_ms": 1777872214010,
+      "actual_best_bid": 0.9,
+      "actual_best_ask": 0.9,
+      "reported_bids": [
+        0.89
+      ],
+      "reported_asks": [
+        0.9
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777872263166,
+      "baseline_ms": 1777872214010,
+      "actual_best_bid": 0.9,
+      "actual_best_ask": 0.9,
+      "reported_bids": [
+        0.89
+      ],
+      "reported_asks": [
+        0.9
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777872263192,
+      "baseline_ms": 1777872214010,
+      "actual_best_bid": 0.9,
+      "actual_best_ask": 0.9,
+      "reported_bids": [
+        0.89
+      ],
+      "reported_asks": [
+        0.9
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "71283132372570766058472897902860699485438035159887710472647871219774293686075": [
+    {
+      "source_ms": 1777861015725,
+      "baseline_ms": 1777860749855,
+      "actual_best_bid": 0.34,
+      "actual_best_ask": 0.5,
+      "reported_bids": [
+        0.33
+      ],
+      "reported_asks": [
+        0.5
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861015937,
+      "baseline_ms": 1777860749855,
+      "actual_best_bid": 0.34,
+      "actual_best_ask": 0.5,
+      "reported_bids": [
+        0.33
+      ],
+      "reported_asks": [
+        0.5
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861015939,
+      "baseline_ms": 1777860749855,
+      "actual_best_bid": 0.34,
+      "actual_best_ask": 0.5,
+      "reported_bids": [
+        0.33
+      ],
+      "reported_asks": [
+        0.5
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "71303623632029515181354276809222039562821444106606211512380907216622852730173": [
+    {
+      "source_ms": 1777853484518,
+      "baseline_ms": 1777853455983,
+      "actual_best_bid": 0.11,
+      "actual_best_ask": 0.33,
+      "reported_bids": [
+        0.11
+      ],
+      "reported_asks": [
+        0.34
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777855806153,
+      "baseline_ms": 1777855419671,
+      "actual_best_bid": 0.11,
+      "actual_best_ask": 0.33,
+      "reported_bids": [
+        0.11
+      ],
+      "reported_asks": [
+        0.34
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777855806202,
+      "baseline_ms": 1777855419671,
+      "actual_best_bid": 0.11,
+      "actual_best_ask": 0.33,
+      "reported_bids": [
+        0.11
+      ],
+      "reported_asks": [
+        0.34
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    }
+  ],
+  "72615506282586148745738175908634505551936585768671015055159580643179888631319": [
+    {
+      "source_ms": 1777860109040,
+      "baseline_ms": 1777860066679,
+      "actual_best_bid": 0.63,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.61
+      ],
+      "reported_asks": [
+        0.7
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864313562,
+      "baseline_ms": 1777864208116,
+      "actual_best_bid": 0.65,
+      "actual_best_ask": 0.69,
+      "reported_bids": [
+        0.64
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777864333772,
+      "baseline_ms": 1777864208116,
+      "actual_best_bid": 0.65,
+      "actual_best_ask": 0.69,
+      "reported_bids": [
+        0.64
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "75068694519235284923554014292149365814905672168186840117079081703620417733601": [
+    {
+      "source_ms": 1777859627963,
+      "baseline_ms": 1777859538239,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.06,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.07
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859627989,
+      "baseline_ms": 1777859538239,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.06,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.07
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859627990,
+      "baseline_ms": 1777859538239,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.06,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.07
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "77090929755862891772446562222329009314432620828835941913952376986573534233493": [
+    {
+      "source_ms": 1777873364098,
+      "baseline_ms": 1777873264074,
+      "actual_best_bid": 0.061,
+      "actual_best_ask": 0.097,
+      "reported_bids": [
+        0.061
+      ],
+      "reported_asks": [
+        0.112
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777873380665,
+      "baseline_ms": 1777873264074,
+      "actual_best_bid": 0.061,
+      "actual_best_ask": 0.097,
+      "reported_bids": [
+        0.061
+      ],
+      "reported_asks": [
+        0.112
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777873389359,
+      "baseline_ms": 1777873264074,
+      "actual_best_bid": 0.061,
+      "actual_best_ask": 0.097,
+      "reported_bids": [
+        0.061
+      ],
+      "reported_asks": [
+        0.112
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "77891346506543335887672923565520063847903769416478632368091760640251867727970": [
+    {
+      "source_ms": 1777866126780,
+      "baseline_ms": 1777865508773,
+      "actual_best_bid": 0.971,
+      "actual_best_ask": 0.989,
+      "reported_bids": [
+        0.971
+      ],
+      "reported_asks": [
+        0.994
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777866126783,
+      "baseline_ms": 1777865508773,
+      "actual_best_bid": 0.971,
+      "actual_best_ask": 0.989,
+      "reported_bids": [
+        0.971
+      ],
+      "reported_asks": [
+        0.994
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777866128397,
+      "baseline_ms": 1777865508773,
+      "actual_best_bid": 0.971,
+      "actual_best_ask": 0.989,
+      "reported_bids": [
+        0.971
+      ],
+      "reported_asks": [
+        0.994
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "78849497444444188157350698961362879013549528532372718983538139639352715072954": [
+    {
+      "source_ms": 1777852967293,
+      "baseline_ms": 1777852830027,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.19,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.2
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853036325,
+      "baseline_ms": 1777852830027,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.19,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.2
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853042724,
+      "baseline_ms": 1777852830027,
+      "actual_best_bid": 0.05,
+      "actual_best_ask": 0.19,
+      "reported_bids": [
+        0.05
+      ],
+      "reported_asks": [
+        0.2
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "79312659914124635145099707479208276938081682617899224562906584326849706886098": [
+    {
+      "source_ms": 1777855862816,
+      "baseline_ms": 1777855824280,
+      "actual_best_bid": 0.11,
+      "actual_best_ask": 0.34,
+      "reported_bids": [
+        0.11
+      ],
+      "reported_asks": [
+        0.37
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777855862841,
+      "baseline_ms": 1777855824280,
+      "actual_best_bid": 0.11,
+      "actual_best_ask": 0.34,
+      "reported_bids": [
+        0.11
+      ],
+      "reported_asks": [
+        0.37
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861899398,
+      "baseline_ms": 1777861766435,
+      "actual_best_bid": 0.11,
+      "actual_best_ask": 0.33,
+      "reported_bids": [
+        0.11
+      ],
+      "reported_asks": [
+        0.39
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "82333550650994719016339808110389313847426073918923886033931546451300666500527": [
+    {
+      "source_ms": 1777859479026,
+      "baseline_ms": 1777859019562,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.18,
+      "reported_bids": [
+        0.18
+      ],
+      "reported_asks": [
+        0.19
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859479048,
+      "baseline_ms": 1777859019562,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.18,
+      "reported_bids": [
+        0.18
+      ],
+      "reported_asks": [
+        0.19
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777859479049,
+      "baseline_ms": 1777859019562,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.18,
+      "reported_bids": [
+        0.18
+      ],
+      "reported_asks": [
+        0.19
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "82679812764766588409478660412122965314066580224795126992422857354892975395496": [
+    {
+      "source_ms": 1777860130101,
+      "baseline_ms": 1777859849461,
+      "actual_best_bid": 0.9,
+      "actual_best_ask": 0.92,
+      "reported_bids": [
+        0.9
+      ],
+      "reported_asks": [
+        0.93
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860130357,
+      "baseline_ms": 1777859849461,
+      "actual_best_bid": 0.9,
+      "actual_best_ask": 0.92,
+      "reported_bids": [
+        0.9
+      ],
+      "reported_asks": [
+        0.93
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860130361,
+      "baseline_ms": 1777859849461,
+      "actual_best_bid": 0.9,
+      "actual_best_ask": 0.92,
+      "reported_bids": [
+        0.9
+      ],
+      "reported_asks": [
+        0.93
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "82712470265251700739331694672360544122893066934757473974734613171971970115364": [
+    {
+      "source_ms": 1777868843374,
+      "baseline_ms": 1777868296489,
+      "actual_best_bid": 0.014,
+      "actual_best_ask": 0.045,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.045
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777868843559,
+      "baseline_ms": 1777868296489,
+      "actual_best_bid": 0.014,
+      "actual_best_ask": 0.045,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.045
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777868859505,
+      "baseline_ms": 1777868296489,
+      "actual_best_bid": 0.014,
+      "actual_best_ask": 0.045,
+      "reported_bids": [
+        0.013
+      ],
+      "reported_asks": [
+        0.045
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "85102784999790907304571712423373598396209782439559660257930698864056170947561": [
+    {
+      "source_ms": 1777860023676,
+      "baseline_ms": 1777859883300,
+      "actual_best_bid": 0.93,
+      "actual_best_ask": 0.93,
+      "reported_bids": [
+        0.92
+      ],
+      "reported_asks": [
+        0.93
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860023688,
+      "baseline_ms": 1777859883300,
+      "actual_best_bid": 0.93,
+      "actual_best_ask": 0.93,
+      "reported_bids": [
+        0.92
+      ],
+      "reported_asks": [
+        0.93
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860023689,
+      "baseline_ms": 1777859883300,
+      "actual_best_bid": 0.93,
+      "actual_best_ask": 0.93,
+      "reported_bids": [
+        0.92
+      ],
+      "reported_asks": [
+        0.93
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "85255397873237558858447685287854751130109864480350032224451058169602594241557": [
+    {
+      "source_ms": 1777853955282,
+      "baseline_ms": 1777853882680,
+      "actual_best_bid": 0.65,
+      "actual_best_ask": 0.66,
+      "reported_bids": [
+        0.65
+      ],
+      "reported_asks": [
+        0.67
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853955306,
+      "baseline_ms": 1777853882680,
+      "actual_best_bid": 0.65,
+      "actual_best_ask": 0.66,
+      "reported_bids": [
+        0.65
+      ],
+      "reported_asks": [
+        0.68
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853955310,
+      "baseline_ms": 1777853882680,
+      "actual_best_bid": 0.66,
+      "actual_best_ask": 0.66,
+      "reported_bids": [
+        0.66
+      ],
+      "reported_asks": [
+        0.68
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    }
+  ],
+  "85364429959094662016454035814281795392557636551057649203143475612858777781570": [
+    {
+      "source_ms": 1777853338306,
+      "baseline_ms": 1777853216802,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.38,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.42
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777856293532,
+      "baseline_ms": 1777855935323,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.4,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.42
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777856294514,
+      "baseline_ms": 1777855935323,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.4,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.42
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "86489390395289359558613323877663292913780330098362124791393340809410168632241": [
+    {
+      "source_ms": 1777859354981,
+      "baseline_ms": 1777859306023,
+      "actual_best_bid": 0.004,
+      "actual_best_ask": 0.011,
+      "reported_bids": [
+        0.003
+      ],
+      "reported_asks": [
+        0.011
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860565795,
+      "baseline_ms": 1777860099807,
+      "actual_best_bid": 0.004,
+      "actual_best_ask": 0.011,
+      "reported_bids": [
+        0.003
+      ],
+      "reported_asks": [
+        0.011
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860566008,
+      "baseline_ms": 1777860099807,
+      "actual_best_bid": 0.004,
+      "actual_best_ask": 0.011,
+      "reported_bids": [
+        0.003
+      ],
+      "reported_asks": [
+        0.011
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "86901640170488441461039486375209273801637244131459161912800989458184462290377": [
+    {
+      "source_ms": 1777856474591,
+      "baseline_ms": 1777856219465,
+      "actual_best_bid": 0.032,
+      "actual_best_ask": 0.072,
+      "reported_bids": [
+        0.031
+      ],
+      "reported_asks": [
+        0.072
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777857391311,
+      "baseline_ms": 1777857383807,
+      "actual_best_bid": 0.042,
+      "actual_best_ask": 0.07,
+      "reported_bids": [
+        0.041
+      ],
+      "reported_asks": [
+        0.07
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858141923,
+      "baseline_ms": 1777858141137,
+      "actual_best_bid": 0.042,
+      "actual_best_ask": 0.069,
+      "reported_bids": [
+        0.042
+      ],
+      "reported_asks": [
+        0.07
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    }
+  ],
+  "87553250177764900515672081536644272068212302388653464050223774569601125732617": [
+    {
+      "source_ms": 1777852865238,
+      "baseline_ms": 1777852837587,
+      "actual_best_bid": 0.961,
+      "actual_best_ask": 0.979,
+      "reported_bids": [
+        0.961
+      ],
+      "reported_asks": [
+        0.98
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852865245,
+      "baseline_ms": 1777852837587,
+      "actual_best_bid": 0.961,
+      "actual_best_ask": 0.979,
+      "reported_bids": [
+        0.961
+      ],
+      "reported_asks": [
+        0.98
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777852865272,
+      "baseline_ms": 1777852837587,
+      "actual_best_bid": 0.962,
+      "actual_best_ask": 0.979,
+      "reported_bids": [
+        0.962
+      ],
+      "reported_asks": [
+        0.98
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "88722005225584003799002204502808969846973816755809732420739129855507470545500": [
+    {
+      "source_ms": 1777858293559,
+      "baseline_ms": 1777858280702,
+      "actual_best_bid": 0.69,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.69
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777858293620,
+      "baseline_ms": 1777858280702,
+      "actual_best_bid": 0.69,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.69
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777859483395,
+      "baseline_ms": 1777859224826,
+      "actual_best_bid": 0.69,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.69
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "88917568612774539217144914924255697346050145484024820245675466470965610063405": [
+    {
+      "source_ms": 1777854921388,
+      "baseline_ms": 1777854838699,
+      "actual_best_bid": 0.833,
+      "actual_best_ask": 0.914,
+      "reported_bids": [
+        0.833
+      ],
+      "reported_asks": [
+        0.915
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777868468727,
+      "baseline_ms": 1777867925348,
+      "actual_best_bid": 0.833,
+      "actual_best_ask": 0.891,
+      "reported_bids": [
+        0.831
+      ],
+      "reported_asks": [
+        0.891
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777868470389,
+      "baseline_ms": 1777867925348,
+      "actual_best_bid": 0.833,
+      "actual_best_ask": 0.892,
+      "reported_bids": [
+        0.831
+      ],
+      "reported_asks": [
+        0.906
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "90618017710217583044565908105020951169032095851427940329796469348462752199709": [
+    {
+      "source_ms": 1777860834611,
+      "baseline_ms": 1777860801034,
+      "actual_best_bid": 0.009,
+      "actual_best_ask": 0.016,
+      "reported_bids": [
+        0.008
+      ],
+      "reported_asks": [
+        0.016
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860834644,
+      "baseline_ms": 1777860801034,
+      "actual_best_bid": 0.009,
+      "actual_best_ask": 0.016,
+      "reported_bids": [
+        0.008
+      ],
+      "reported_asks": [
+        0.016
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860835265,
+      "baseline_ms": 1777860801034,
+      "actual_best_bid": 0.009,
+      "actual_best_ask": 0.016,
+      "reported_bids": [
+        0.008
+      ],
+      "reported_asks": [
+        0.016
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "9093696245212100371132031223288038049489320107926005813012285736917340443187": [
+    {
+      "source_ms": 1777861620414,
+      "baseline_ms": 1777861519066,
+      "actual_best_bid": 0.957,
+      "actual_best_ask": 0.963,
+      "reported_bids": [
+        0.951
+      ],
+      "reported_asks": [
+        0.963
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861620452,
+      "baseline_ms": 1777861519066,
+      "actual_best_bid": 0.957,
+      "actual_best_ask": 0.963,
+      "reported_bids": [
+        0.952
+      ],
+      "reported_asks": [
+        0.963
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777861620523,
+      "baseline_ms": 1777861519066,
+      "actual_best_bid": 0.957,
+      "actual_best_ask": 0.963,
+      "reported_bids": [
+        0.952
+      ],
+      "reported_asks": [
+        0.963
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "91194456618375832505013359641999319752109058837271711241530587497890851035676": [
+    {
+      "source_ms": 1777859183273,
+      "baseline_ms": 1777858717501,
+      "actual_best_bid": 0.995,
+      "actual_best_ask": 0.997,
+      "reported_bids": [
+        0.995
+      ],
+      "reported_asks": [
+        0.998
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859183992,
+      "baseline_ms": 1777858717501,
+      "actual_best_bid": 0.995,
+      "actual_best_ask": 0.997,
+      "reported_bids": [
+        0.995
+      ],
+      "reported_asks": [
+        0.998
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859184536,
+      "baseline_ms": 1777858717501,
+      "actual_best_bid": 0.995,
+      "actual_best_ask": 0.997,
+      "reported_bids": [
+        0.995
+      ],
+      "reported_asks": [
+        0.998
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "93207994086385268568874006716717433393966352959932150015626953142806317186909": [
+    {
+      "source_ms": 1777859768251,
+      "baseline_ms": 1777859266533,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.27,
+      "reported_bids": [
+        0.17
+      ],
+      "reported_asks": [
+        0.27
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859768286,
+      "baseline_ms": 1777859266533,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.27,
+      "reported_bids": [
+        0.17
+      ],
+      "reported_asks": [
+        0.27
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859768307,
+      "baseline_ms": 1777859266533,
+      "actual_best_bid": 0.18,
+      "actual_best_ask": 0.27,
+      "reported_bids": [
+        0.17
+      ],
+      "reported_asks": [
+        0.27
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "9526007795082902399258386938460641599054284632702846609175989239215244504833": [
+    {
+      "source_ms": 1777857335052,
+      "baseline_ms": 1777857203683,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.28,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.3
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860489670,
+      "baseline_ms": 1777860191231,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.31,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.32
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777860489698,
+      "baseline_ms": 1777860191231,
+      "actual_best_bid": 0.06,
+      "actual_best_ask": 0.31,
+      "reported_bids": [
+        0.06
+      ],
+      "reported_asks": [
+        0.32
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "95410915809863015623392271148464834667051157973204311073120430339157633425721": [
+    {
+      "source_ms": 1777853103528,
+      "baseline_ms": 1777853002940,
+      "actual_best_bid": 0.981,
+      "actual_best_ask": 0.988,
+      "reported_bids": [
+        0.981
+      ],
+      "reported_asks": [
+        0.989
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853103589,
+      "baseline_ms": 1777853002940,
+      "actual_best_bid": 0.981,
+      "actual_best_ask": 0.988,
+      "reported_bids": [
+        0.981
+      ],
+      "reported_asks": [
+        0.989
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853103612,
+      "baseline_ms": 1777853002940,
+      "actual_best_bid": 0.982,
+      "actual_best_ask": 0.988,
+      "reported_bids": [
+        0.982
+      ],
+      "reported_asks": [
+        0.989
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "95485861341380608519980927436620979639471363690968268890982766249775308601106": [
+    {
+      "source_ms": 1777859470143,
+      "baseline_ms": 1777858874944,
+      "actual_best_bid": 0.69,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.69
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859470144,
+      "baseline_ms": 1777858874944,
+      "actual_best_bid": 0.69,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.69
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777859470147,
+      "baseline_ms": 1777858874944,
+      "actual_best_bid": 0.69,
+      "actual_best_ask": 0.7,
+      "reported_bids": [
+        0.69
+      ],
+      "reported_asks": [
+        0.71
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "95797473706099754752761479528836355659530984191851648067089924998647893022396": [
+    {
+      "source_ms": 1777871271258,
+      "baseline_ms": 1777871063525,
+      "actual_best_bid": 0.08,
+      "actual_best_ask": 0.27,
+      "reported_bids": [
+        0.08
+      ],
+      "reported_asks": [
+        0.32
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "98410711280138014263433049577943203066071847880137426041969643270859579749975": [
+    {
+      "source_ms": 1777853301157,
+      "baseline_ms": 1777853194885,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.117,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.119
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853301500,
+      "baseline_ms": 1777853194885,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.117,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.118
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853302091,
+      "baseline_ms": 1777853194885,
+      "actual_best_bid": 0.01,
+      "actual_best_ask": 0.117,
+      "reported_bids": [
+        0.01
+      ],
+      "reported_asks": [
+        0.118
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "99437340386489941210750626368419141986818477731037924422576657547461462885686": [
+    {
+      "source_ms": 1777856908785,
+      "baseline_ms": 1777856724553,
+      "actual_best_bid": 0.28,
+      "actual_best_ask": 0.32,
+      "reported_bids": [
+        0.28
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 2
+    },
+    {
+      "source_ms": 1777856912224,
+      "baseline_ms": 1777856724553,
+      "actual_best_bid": 0.28,
+      "actual_best_ask": 0.32,
+      "reported_bids": [
+        0.28
+      ],
+      "reported_asks": [
+        0.31
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777867266486,
+      "baseline_ms": 1777866727044,
+      "actual_best_bid": 0.3,
+      "actual_best_ask": 0.35,
+      "reported_bids": [
+        0.3
+      ],
+      "reported_asks": [
+        0.36
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ],
+  "99624124922226999473505807431286281562806121084870429956358397404796282523224": [
+    {
+      "source_ms": 1777853854641,
+      "baseline_ms": 1777853735229,
+      "actual_best_bid": 0.82,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.81
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853854671,
+      "baseline_ms": 1777853735229,
+      "actual_best_bid": 0.82,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.81
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    },
+    {
+      "source_ms": 1777853854699,
+      "baseline_ms": 1777853735229,
+      "actual_best_bid": 0.82,
+      "actual_best_ask": 0.82,
+      "reported_bids": [
+        0.81
+      ],
+      "reported_asks": [
+        0.82
+      ],
+      "same_time_full_snapshots": 0,
+      "source_group_rows": 1
+    }
+  ]
+}

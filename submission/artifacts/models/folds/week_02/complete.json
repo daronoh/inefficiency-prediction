@@ -1,0 +1,24 @@
+{
+  "files_sha256": {
+    "bundle.json": "10d966e2a7a6407cd410ef22f626815d1ca02fd1c1afda5e2955145c87372612",
+    "fit_audit.csv": "bf001aff8f216cd2fcde55b2f68e4310c96ed4bc9e4201f29c2d89bb505f5624",
+    "population.json": "60bbf285828f150445d1dbaf7a8ca1529597a83f7b4c27a086acbd576c05a59f",
+    "predictions.parquet": "91908e47581b4da15cf2b1edbf0cbead4d4ba2034738fc7eb2670613110dc1d2",
+    "models/fixed_book_logistic.joblib": "3a3c831e88dd57216836b292e2d6c8c2c3573bce864ace932e4ad715d1d75703",
+    "models/fixed_book_random_forest.joblib": "f608b968fdbd7fd133e8cdf625e34b401318ec4ae866a645067501ec7daf0195",
+    "models/fixed_book_xgboost.joblib": "7033c35e4afd04d18258af430bb0670633fe3d732742d7b6ba4b3a2ee5bb90d1",
+    "models/fixed_combined_logistic.joblib": "33af1852debaf2e1a56ddbe45a5769870cdfd33582ca2e17548e825c6eb8a7f9",
+    "models/fixed_combined_random_forest.joblib": "3f2cd4f548fa8a9b97f822622d1346b9bbb32d864f4fd48e20aae8e999b051b5",
+    "models/fixed_combined_xgboost.joblib": "5be094a6bb43a88ea02e32649987d5f0ca7824e1d9ef4e3478269f1be5a70d9d",
+    "models/forest_two_stage.joblib": "14388f8ad1aaacc8df266ec8fda2e5788b5cf7eaefeb75e1ad33afa72a07bf9d",
+    "models/tabm_amount_20261001.joblib": "60f87e3b3ad9124ae7acdb6a96552f976e2c94a823b55d82496d82c13a927af3",
+    "models/tabm_amount_20261002.joblib": "f81c47c3f419fff0c3bc9fb15321d1fd0f6e69c951db10249f9c9769f29e06da",
+    "models/tabm_amount_20261003.joblib": "78aa7cfe4921cb1226280659e402499a079d63f6c09ee771429b1571f9c4cac5",
+    "models/tabm_classifier_20261001.joblib": "2a64bc9af0ed60877d4b79f51ddba83ffe38eeecaf7f52d91cb24165ee28b8b4",
+    "models/tabm_classifier_20261002.joblib": "c6d4813fcad3d1c3cf03f9867a5d54e296c455ea984f5ee0a7d529cb8e21dc2f",
+    "models/tabm_classifier_20261003.joblib": "70fc14a81f8f0111ce9433550607262b35925e1156c9554723e44e9b03a28c0c",
+    "models/tuned_combined_logistic.joblib": "9ec539f9b8fc46da6c70d4b78dfc0768ee39297f0ee76314dd738e6bfb2768c6",
+    "models/tuned_combined_random_forest.joblib": "8fe9227e5926f29467477196b99d10ad4d967b92431b733de80e9f4fdc9369b8",
+    "models/tuned_combined_xgboost.joblib": "1d3dadb1af98bb719c3368123356c11b3ea4ca0416dd2d90efee750499dec749"
+  }
+}

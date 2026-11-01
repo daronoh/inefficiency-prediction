@@ -1,0 +1,5 @@
+block,raw_book_messages,unique_book_source_groups,books_before_source_capture,assets_with_any_book,assets_seeded_before_first_scan,assets_seeded_before_analysis_end,assets_without_any_qualifying_book,price_updates_before_seed,price_updates_in_capture_analysis,unseeded_update_fraction,median_book_receipt_lag_seconds,p99_book_receipt_lag_seconds
+may04,39415,27565,79,200,200,200,0,13267,1306357,0.010155723129282423,26.866,1049.592220000003
+may06,401,393,0,172,2,172,28,786579,1091526,0.7206232375591602,37.341,727.989
+may08,84,83,0,68,3,58,132,724536,820940,0.8825687626379516,29.3045,957.5895600000033
+may10,31,31,0,28,4,18,172,681707,701069,0.9723821763620984,39.42,422.4728999999999

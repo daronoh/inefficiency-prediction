@@ -1,0 +1,13 @@
+{
+  "scheduled_hours": 2024,
+  "event_hours": 19766,
+  "events": 44,
+  "known": 15787,
+  "positive": 359,
+  "unknown": 3979,
+  "positive_events": 12,
+  "competitive_hours_n3": 1887,
+  "median_candidates": 9.0,
+  "maximum_candidates": 19,
+  "total_peak_value": 8838.30666999995
+}

@@ -1,5 +1,8 @@
 # Local data, credentials and environment
 /data/
+/submission/data/
+/submission/runs/
+/submission.zip
 .env
 .envrc
 .venv/

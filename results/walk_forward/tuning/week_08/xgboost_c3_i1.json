@@ -1,0 +1,29 @@
+{
+  "method": "xgboost",
+  "candidate": 3,
+  "inner": 1,
+  "params": {
+    "n_estimators": 200,
+    "learning_rate": 0.05,
+    "max_depth": 4,
+    "min_child_weight": 20,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 10.0,
+    "reg_alpha": 1.0
+  },
+  "training_rows": 18004,
+  "training_positive": 412,
+  "train_last": "2025-12-16 02:00:00+00:00",
+  "validation_start": "2025-12-16 04:00:00+00:00",
+  "validation_end": "2026-01-05 23:00:00+00:00",
+  "fitting_cutoff": "2026-01-06 00:00:00+00:00",
+  "seconds": 0.3657322000071872,
+  "total_peak_value": 472.7039599999953,
+  "captured_peak_value": 449.68385999999515,
+  "positive_windows": 41,
+  "captured_positive_windows": 35,
+  "average_precision": 0.26891356295825936,
+  "selected_unknown": 86,
+  "predictions_sha256": "5eaae6ba8ef9958212329f0bc6e378d3b86f65665a4858ffe4e315bff732ca35"
+}

@@ -1,0 +1,142 @@
+{
+  "version": 3,
+  "source_start": "2026-05-08 17:00:00+00:00",
+  "source_end": "2026-05-08 23:00:00+00:00",
+  "receipt_end": "2026-05-09 01:00:00+00:00",
+  "archive_hours": 9,
+  "events": 15,
+  "tokens": 200,
+  "source_records": 1046655,
+  "event_hours": 90,
+  "raw_counters": {
+    "price_change": 1045435,
+    "last_trade_price": 1132,
+    "unresolved_level_conflicts": 133,
+    "best_price_compatible_with_bounded_depth": 4782,
+    "level_conflicts_resolved_by_later_update": 128,
+    "book": 84,
+    "identical_snapshot_replays": 1,
+    "snapshot_side_recoveries": 3,
+    "compatible_snapshot_close_groups": 81,
+    "best_price_contradiction": 23427,
+    "identical_level_replays": 1,
+    "tick_size_change": 4
+  },
+  "full_book_event_hours": 0,
+  "full_ask_event_hours": 0,
+  "occurrence_known_hours": 0,
+  "occurrence_positive_hours": 0,
+  "occurrence_negative_hours": 0,
+  "occurrence_unknown_hours": 90,
+  "exact_value_hours": 0,
+  "value_lower_bound_hours": 0,
+  "full_book_time_fraction": 0.0,
+  "full_ask_time_fraction": 0.0,
+  "occurrence_determined_time_fraction": 0.0,
+  "blocked_with_incomplete_books_seconds": 0.0,
+  "maximum_observed_value_lower_usd": 0.0,
+  "arrival_checks": 0,
+  "arrival_status_counts": {},
+  "ask_complete_events_per_scan": {
+    "2026-05-08 17:00:00+00:00": 0,
+    "2026-05-08 18:00:00+00:00": 0,
+    "2026-05-08 19:00:00+00:00": 0,
+    "2026-05-08 20:00:00+00:00": 0,
+    "2026-05-08 21:00:00+00:00": 0,
+    "2026-05-08 22:00:00+00:00": 0
+  },
+  "recorded_transfer_bytes": 3569061373,
+  "raw_cache_bytes": 11880753,
+  "historical_parameters_verified": false,
+  "models_trained": false,
+  "new_final_test_accessed": false,
+  "net_pnl_estimated": false,
+  "inputs": [
+    {
+      "path": "raw\\2026-05-08T16.parquet",
+      "sha256": "e4f6b08ff24ec25a60691ceaaeb568831bafa0c0e936685ed1a385983d0c65e3",
+      "transfer_bytes": 366365459,
+      "cache_bytes": 1359820
+    },
+    {
+      "path": "raw\\2026-05-08T17.parquet",
+      "sha256": "b79fa360b796ba65a658e7d275e0e249cc6ce40051d58b9c2cba8ac8bc0c7a19",
+      "transfer_bytes": 367587757,
+      "cache_bytes": 1395521
+    },
+    {
+      "path": "raw\\2026-05-08T18.parquet",
+      "sha256": "423e4e961a1f63101336c61bad417641d6285bbfd92586e32205a5c3d16c4803",
+      "transfer_bytes": 408568497,
+      "cache_bytes": 1384791
+    },
+    {
+      "path": "raw\\2026-05-08T19.parquet",
+      "sha256": "b02c74d1b95b4eab9cb3f4d02ee71a01ea20c791f41d93cc9f730daf0499bc70",
+      "transfer_bytes": 417416486,
+      "cache_bytes": 1212820
+    },
+    {
+      "path": "raw\\2026-05-08T20.parquet",
+      "sha256": "848cc24af2aba7f30716e0a22eb6b5eca30f67456d7525284323332b004ccee0",
+      "transfer_bytes": 468385544,
+      "cache_bytes": 1325970
+    },
+    {
+      "path": "raw\\2026-05-08T21.parquet",
+      "sha256": "cca1cb4f8ad6864e339da9bc26e3d7517e91b158d66ad2e26c62c544804fd356",
+      "transfer_bytes": 364159935,
+      "cache_bytes": 1287878
+    },
+    {
+      "path": "raw\\2026-05-08T22.parquet",
+      "sha256": "2bb2eda069ea695acf12b199caf41475c04f5c06470e8fb1811d1a65f2bfc63f",
+      "transfer_bytes": 377132166,
+      "cache_bytes": 1318985
+    },
+    {
+      "path": "raw\\2026-05-08T23.parquet",
+      "sha256": "7bf630772e784ca90e210112c304ea6df3ffdea966782dbefc829985aa466136",
+      "transfer_bytes": 398300688,
+      "cache_bytes": 1338854
+    },
+    {
+      "path": "raw\\2026-05-09T00.parquet",
+      "sha256": "e16c7ed14689184dc4bada5da34e59d54e0089831e968f176790d0a61d120723",
+      "transfer_bytes": 401144841,
+      "cache_bytes": 1256114
+    }
+  ],
+  "feature_availability": "Causal source-time states before scan; later retrospective masks excluded from model inputs.",
+  "design_sha256": "4a2e462c142306691710984a4c7d909f5a1b6b56ec03e5980fc89b3261248e36",
+  "implementation_sha256": {
+    "src/data/pmxt_revalidation.py": "7d8956b385412d42f2ef32f428072dccf75a3304242d8816d0df28b91deb92e2",
+    "src/data/pmxt_uncertainty.py": "c5cb7784726e1ebb9b4c34d81123d9a9705a7a1efbf828681af271fcbd76cac2",
+    "src/data/pmxt_validation.py": "1a1f7c55e3c41997e9eb7a27cf49360d5b171cee4b30bd0d3d3cc49b7b1afeab",
+    "src/data/pmxt_source.py": "2ab3ecd253d72ecd6e4fc1903ca3ec8bd629439f9cfef4621ed91c0d8b9c0489",
+    "src/data/pmxt_books.py": "e0a56e00df0f41ea45417150e517ec445430954168b6da6f596492428f68e969",
+    "src/data/pmxt_archive.py": "0b600658eb94a7a7d65436ba4ca8cbd005b94cff9e60dbeaa950a4ddaf5db02d",
+    "src/data/pmxt_pilot.py": "6d087e49c5bbc164a0bd0d9480015e02bcdebe5fb249c1ab55a31be9796b25bd",
+    "src/data/books.py": "76c57050f1b3725cca02e61d4e0d34017edbba39606dc48967bca2e2a4c6ea91",
+    "src/simulator/sizing.py": "71afbfd82df8bb519c652dee9b05d18301346d7138102138fbc19777c8869581"
+  },
+  "derived_sha256": {
+    "hourly_features.parquet": "b8ed5a4c2be5bcf0b3d95f726151e8250b9f15419230b3f4a5cc8e157353c176",
+    "hourly_label_bounds.parquet": "fce8a910dca722dd1b7a8a0a4c67403ff4307939cff8355bc5a4c5a50422032d",
+    "side_drift_intervals.json": "8dcabae11c0d189d17b88cfeb83fefbd9775d424dfb354525fb12dbcd6d861e1"
+  },
+  "results_sha256": {
+    "arrival_checks.csv": "72bfedb9ca2a222f4eb55895b99e681cb25daaf14ead26631f1b809abb04677e",
+    "event_hours.csv": "ec1a5c1808c2bb6fffdcf6fd265d498ec39e77e89abb48013306a69135255a1a",
+    "issue_examples.json": "96af01a0f9ea0e78e3bc9d3297d440f3e6b0e0b60eb91ee3d01624b024faf6c1",
+    "token_quality.csv": "e2a3882b75d0c5ee3c13a79471cf78d7ccb47cf52942ea98a738e5b52781fe26"
+  },
+  "limitations": [
+    "Source-ms batch completion and compatible closing snapshot are explicit timestamp-semantics assumptions.",
+    "No exchange sequence or original message hash in this archive schema; matching best quotes do not prove full integrity.",
+    "Finite receipt buffer; missing deep-level updates can remain undetected.",
+    "Level alternatives yield outer bounds; their joint combinations need not all be real states.",
+    "Current metadata used retrospectively; historical fees/minima/ticks unverified.",
+    "Arrival checks are conditional displayed support, not fills or P&L; no reservations/unwinding."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "asset_id": "108251591904413063139495882252154135107497878738832930637657538583440424739851",
+  "anchor_source_time": "2026-05-06 12:31:33.883000+00:00",
+  "decision_source_time": "2026-05-06 12:44:47.912000+00:00",
+  "snapshot_best_ask": "0.39",
+  "snapshot_best_ask_quantity": "16.68",
+  "independently_reconstructed_best_ask": "0.39",
+  "remaining_quantity": "16.68",
+  "reported_best_asks": [
+    "0.4200"
+  ],
+  "intervening_ask_updates": 19,
+  "updates_at_original_best": 0,
+  "decision_rows": [
+    {
+      "timestamp": "2026-05-06 12:44:47.912000+00:00",
+      "event_type": "price_change",
+      "side": "BUY",
+      "price": "0.3900",
+      "size": "483.320000",
+      "best_bid": "0.3900",
+      "best_ask": "0.4200"
+    }
+  ],
+  "nearby_buy_trades": [
+    {
+      "source_time": "2026-05-06 12:44:47.931000+00:00",
+      "delay_ms": 19.0,
+      "price": "0.3900",
+      "size": "16.680000"
+    }
+  ],
+  "note": "Independent price-level-only trace. Trade handling, incomplete capture and timestamp semantics remain hypotheses; no depth repair or label change."
+}

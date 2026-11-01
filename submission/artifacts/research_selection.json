@@ -1,0 +1,6 @@
+{
+  "policy": "fixed_book_random_forest",
+  "objective": "Pooled peak quoted value capture at N=3",
+  "selection": "Retrospective chronological policy comparison; no execution P&L used for fitting or tuning.",
+  "latest_bundle": "artifacts/models/folds/week_12/bundle.json"
+}

@@ -1,0 +1,3 @@
+classification,event_hours,known_hours,positive_hours,negative_hours,unknown_hours,known_fraction,full_ask_hours,full_book_hours,full_ask_time_fraction,full_book_time_fraction,determined_time_fraction,exact_value_hours,maximum_hourly_value_lower_usd,positive_seconds
+ladder,120,5,2,3,115,0.041666666666666664,3,3,0.08878574768518509,0.06954739583333484,0.09401404166666587,3,0.7999999999999545,1977.4959999997336
+negrisk,240,38,0,38,202,0.15833333333333333,12,11,0.17223449537038177,0.14245560300926627,0.24395613310188766,38,0.0,0.0

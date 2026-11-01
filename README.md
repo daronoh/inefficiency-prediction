@@ -1,9 +1,26 @@
 # Predicting arbitrage opportunities in event markets
 
+The final submission is in [`submission/`](submission/README.md), including the
+[report PDF](submission/report/dissertation.pdf), the `FYP` package, the research
+notebook, and saved study results. The root-level workflow below retains the
+development workspace; it is separate from the standalone submission.
+
+Git excludes `submission/data/`, fresh `submission/runs/` outputs and the large
+`submission.zip` distribution archive. These remain available locally. To
+reproduce the submission from a clone, restore the complete `submission/data/`
+directory from the separately supplied submission bundle before running its
+notebook or command-line workflow. The cached workflow needs the prepared data;
+a full reconstruction also needs the raw token books. Frozen metadata and the
+[raw-file inventory](submission/inputs/raw_inventory.csv) remain versioned, and
+[the submission manifest](submission/MANIFEST.sha256) records the distribution's
+file hashes. The ZIP checksum is in `submission.zip.sha256`; the archive itself
+must be shared separately. The retired Dome API cannot be used to download the
+missing raw files again.
+
 This dissertation tests whether scheduled order-book snapshots can identify which
 Polymarket events are worth monitoring for executable pricing inconsistencies.
 Every **W minutes**, rank all eligible events, select **N**, and monitor their
-updates until the next scan. The planned final evaluation uses **W = 60 minutes,
+updates until the next scan. The completed final evaluation uses **W = 60 minutes,
 N = 3 as primary and N = 5 as secondary**. Earlier development runs used N=5
 for tuning and reported both budgets; their saved designs and results are unchanged.
 Notebook 09 adds separate N=3 retuning and full-development final-model preparation.
@@ -19,7 +36,7 @@ Event outcomes themselves are not predicted.
 Historical token order books were collected through the Dome API; frozen
 Polymarket metadata supplies market descriptions, outcome tokens and fee flags.
 Dome's API is retired, so the workflow uses the saved files and makes no network
-requests. Raw data is excluded from Git and must be supplied separately under
+requests. A separate, opt-in PMXT data-source pilot is described below. Raw data is excluded from Git and must be supplied separately under
 `data/` or an equivalent `DATA_ROOT` directory.
 
 The original cohort contains 50 negRisk and 30 ladder events. Membership,
@@ -31,9 +48,11 @@ The dataset has **26,835 eligible event-windows**, **21,827 usable labels** and
 and **21,373 negative** event-hours. These describe displayed opportunities,
 not successfully executed trades.
 
-Development uses **14 October 2025 to 7 January 2026 (UTC)**. Data from
-**8 January 2026 onward remains an unopened final test**; active loaders reject
-final-test analysis. The original universe was selected retrospectively using
+Development uses **14 October 2025 to 7 January 2026 (UTC)**.
+The final test covers **8 January 2026 to 3 February 2026, 08:00 UTC**, with the
+endpoint excluded. It has now been evaluated using the previously frozen models
+and protocol; it is unavailable for further model tuning under the held-out claim.
+Existing development loaders retain their split guards. The original universe was selected retrospectively using
 resolved-market and volume information, which limits claims about live markets.
 
 ## What counts as an opportunity?
@@ -102,15 +121,18 @@ training histories are refitted for the median selected epoch count. Its numeric
 quantile transformation and target scaling are fitted on training rows only.
 
 The first layer reports **opportunity recall and quoted-value capture at N=3 and
-N=5**. N=3 is now the primary budget for the planned final evaluation. This choice
+N=5**. N=3 is the primary budget for final evaluation. This choice
 was made after inspecting development results, where the smaller budget imposed
 a more selective monitoring constraint; it was not prespecified before those
 results. The separate N=3 preparation retunes book-only logistic/forest occurrence
 models and the combined-feature two-stage TabM model using development data only.
 It retains the fixed classical controls and refits final models on all permitted
 known development windows. These full-development fits are not evaluated on their
-own training history. The final-test coverage/end-date audit and evaluation runner
-remain separate work; the test is unopened. See [the preparation report](docs/reports/final_preparation.md).
+own training history. A timestamp-only audit and the
+[fixed final-test protocol](docs/reports/final_test_protocol.md) now define the
+evaluation interval and comparisons. The separate final-only runner has completed
+the evaluation without refitting models.
+See [the preparation report](docs/reports/final_preparation.md).
 Value capture weights each known
 event-hour by its peak quoted dollar margin; its summed denominator is not
 tradable profit. Precision, average precision, new-onset capture, feature-group
@@ -118,6 +140,13 @@ permutation, paired family resampling and removal of the December Fed event
 provide additional diagnostics. Unknown labels consume monitoring slots but
 never become zero-value training examples. These are exploratory development
 results, not evidence of market-wide generalisation or a final winning model.
+
+The held-out test contains eight negRisk events, 1,625 known labels and only
+16 positive event-hours. At N=3, every saved model and quoted-gap captures all
+known positives and quoted value, with identical **$32.31 simulated P&L at
+100 ms**. N=5 monitors the entire pool. These results show no final-test ML
+advantage over quoted-gap and remain concentrated in January Fed.
+See [the final findings](docs/reports/final_evaluation.md).
 
 ## Execution assumptions and constraints
 
@@ -186,6 +215,14 @@ comparisons. The earlier notebooks preserve the data and economic studies:
    development predictions and replay with the frozen controls, and fits final
    models on all known earlier history. Default execution verifies saved results;
    rebuilding requires fresh paths. It does not open or evaluate the final test.
+10. **10_final_coverage.ipynb** verifies timestamp-only final coverage and the
+    fixed evaluation protocol. Eight negRisk events have later recordings,
+    there are no final-period audited ladders, and N=5 monitors the whole pool.
+    It does not calculate final labels, predictions or trading returns.
+11. **11_final_evaluation.ipynb** displays the completed fixed-model held-out
+    prediction and economic comparisons, random references, event contributions
+    and latency sensitivity. Default execution verifies saved results; rebuilding
+    requires fresh directories and does not refit models.
 
 Rebuilding data may take tens of minutes; fitting and replay are shorter.
 Successful runs are selected through small path manifests. Repeated runs create
@@ -215,6 +252,10 @@ results/tabm/           TabM fits, predictions and comparative analysis
 results/tabm_replay/    Fixed TabM rankings under the same execution scenarios
 results/final_preparation/ N=3 development comparison and separate final model bundles
 results/final_preparation_replay/ Development-only replay of the N=3-retuned policies
+results/final_coverage/ Timestamp-only final-period recording audit
+results/final_protocol/ Fixed final comparison and coverage figure
+results/final_evaluation/ Frozen final predictions, selections and capture metrics
+results/final_replay/   Final economics, concentration checks and readable figures
 results/profitability/  Earlier P&L-target comparisons and policy executions
 results/baseline/       Historical classifier and fixed-ranking execution references
 results/runs/           Additional reproducible runs, when created
@@ -228,6 +269,9 @@ and [the opportunity-prediction findings](docs/reports/opportunity_prediction.md
 The [economic replay findings](docs/reports/opportunity_economic_replay.md)
 evaluate those fixed rankings under explicit execution assumptions.
 The [TabM findings](docs/reports/tabm.md) add a recent conference baseline to both layers.
+The [final-test protocol](docs/reports/final_test_protocol.md) records choices fixed
+before final outcomes were opened. The [final findings](docs/reports/final_evaluation.md)
+report the completed evaluation and its coverage limitations.
 The [earlier economic findings](docs/reports/current_results.md) use P&L-dependent targets.
 The [selection diagnostic report](docs/reports/selection_diagnostics.md) examines
 why quoted-gap leads the development P&L comparison and how fragile that lead is.
@@ -252,3 +296,59 @@ detector before requesting FinData books. The proposed March–August 2026 catal
 reserves August for final evaluation; it is separate from the current Dome
 baseline. Discovery produces candidate/token inventories, not coverage or
 profitability claims. Commands and limitations are in the dataset guide.
+
+## Weekly expanding-window Dome study
+
+[Notebook 18](notebooks/18_dome_walk_forward.ipynb) compares weekly expanding-history
+fits over the full recorded research period. Initial training uses 28 days;
+evaluation runs from 11 November 2025 to 3 February 2026 at 08:00 UTC. Settings
+retune every four weeks using earlier chronological validation. N=3 is primary
+and N=5 secondary. The [report](docs/reports/dome_walk_forward.md) compares
+17 policies, feature views, tuning, ensembles and persistent economic replay
+at 100 ms with uncapped capital/shares, plus latency sensitivities.
+
+This retrospective study explicitly includes the original later segment without
+replacing the completed final experiment. Data is under
+`data/processed/walk_forward_v1/`, fitted models and prediction analysis under
+`results/walk_forward/`, and economics under `results/walk_forward_replay/`.
+Helpers are `src/data/walk_forward.py`, `src/models/walk_forward.py`,
+`src/simulator/walk_forward.py` and `src/reporting/walk_forward.py`.
+
+## Separate Dome validation study
+
+[Notebook 17](notebooks/17_dome_validation_horizon.ipynb) fits on the first 14 or
+28 calendar days and evaluates longer subsequent development periods. It compares
+occurrence models, two-stage forest/TabM, a fixed rank ensemble and simple rules,
+with N=3 primary and N=5 secondary. See the
+[findings](docs/reports/dome_validation_horizon.md) for common-period comparisons,
+uncertainty and event-concentration checks. This exploratory study adds files
+under `results/validation_horizon/`; the completed final evaluation is preserved.
+Its notebook defaults to verified saved results and can optionally refit.
+
+## Separate PMXT pilot
+
+Further PMXT development is deferred. Dome remains the primary research dataset;
+the pilot and its reconstruction diagnostics are retained as reference evidence.
+
+[Notebook 12](notebooks/12_pmxt_pilot.ipynb) audits a separate PMXT v2 data adapter.
+Discovery, bounded HTTP range downloads, receive-time book reconstruction and
+hourly coverage/quote diagnostics write only to `data/pmxt/` and
+`results/pmxt_pilot/`. The Dome cohort, trained models and final evaluation remain
+unchanged. The notebook defaults to reading saved results without network access.
+This pilot does not train models or estimate execution P&L. See
+[the pilot report](docs/reports/pmxt_pilot.md) for its actual replay interval,
+coverage findings, conditional fee assumptions and resumable commands.
+The subsequent [source-time validation](docs/reports/pmxt_validation.md) and
+[notebook 13](notebooks/13_pmxt_source_validation.ipynb) add source-clock
+reconstruction, explicit quality criteria and fixed-latency arrival diagnostics.
+[Notebook 14](notebooks/14_pmxt_uncertainty.ipynb) reruns the same sample with
+side/level uncertainty, economic blockers and separate occurrence/value bounds;
+earlier results are preserved.
+The [multi-day feasibility study](docs/reports/pmxt_multiday_feasibility.md) and
+[notebook 15](notebooks/15_pmxt_multiday_feasibility.ipynb) audit unknown labels
+and test the same universe across four predeclared May dates before committing
+to a larger PMXT training dataset.
+The [continuous initialization diagnostic](docs/reports/pmxt_continuous_initialization.md)
+and [notebook 16](notebooks/16_pmxt_continuous_initialization.ipynb) test whether
+earlier starting snapshots and all intervening updates resolve the remaining
+coverage problem on a fixed small subset.

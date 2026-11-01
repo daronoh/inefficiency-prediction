@@ -1,0 +1,35 @@
+{
+  "files_sha256": {
+    "development_events_only_latency.png": "fe1cc87caf1495f946d2f5c3f50e76079c5a66fcf28c2344086925a43bbf72a4",
+    "event_label_counts.csv": "3c1a16f0064a68cae768e8efc96f18635be6f31ae12851fcb7d2569e95e64a9b",
+    "event_pnl.csv": "7904bad6b9019083f124bc7b1743f3d15f04acf340cfe9f16a6e712d5603ebfe",
+    "frozen_supported_universe_latency.png": "4006b81dabbcb566254d04302024a7562f27293fd677518226c15561a5a44aca",
+    "leave_event_out_capture.csv": "c87e7d5632c39f45db541cfbb623221a1db31a950513ae71421fd8a153205f6e",
+    "leave_event_out_economics.csv": "64224a99f74d1c7c09e54dd1c10d413f735946884fb7fe2b06c0fcdb284c4249",
+    "paired_capture_intervals.csv": "64786c81f901d1b92cbb156fe9174b15962a5f883492dbc129bae044022aea0a",
+    "paired_pnl_intervals.csv": "a0741b9759cfd61f81242b9e64b1643c725166efbeaae9a98ece4ab184981a47",
+    "pnl_curves.parquet": "5ca228fc926e4c99b6f50cb02223f4945a69813259208651960b0a086831b83f",
+    "prediction_verification.csv": "d5ce010faa8e486ac2a9a82c710c3de93d297a2c4e2424e815c505e21481fffc",
+    "primary_pnl_small_multiples.png": "728238d7a6d8ee4e60ccbbf87ad0214387732b8a8663db367ebe359b27d18196",
+    "primary_prediction_comparison.csv": "4a8b602541884ad91c1cbdb241d52cee7aa5bfac95bd75c312e3fd612955e10d",
+    "random_replay_distribution.csv": "2708f104c82842e50b0171651e8cffa01aefa615e71600f63a14bc58be82c680"
+  },
+  "source_sha256": "683baae2b070bb7a9d8151ca4984bb24398cc85eb09a3097710a7e7d9c01eb5a",
+  "data_completion_sha256": "fd2ec8b6a5a2cf2c8b9a448bf5172d67f59ba688c6d26b068b9a66d2ee7dabdb",
+  "models_completion_sha256": "72c47c87877b8fc621ed1a60c8c6274e4db3dd856827d5d5b0adb1663c0067f4",
+  "replay_completion_sha256": "1b9ed6f7f927a295203bd8175ef2059c6bcde412aba3688b01ad7ae60e6ad101",
+  "protocol_sha256": "8ee9d1c7adbd14b0806e3cfd6dfe60d13fe53359f38643c6b44da0e45ea209b0",
+  "models_retrained": false,
+  "final_outcomes_opened": true,
+  "summary": {
+    "rows": 2473,
+    "events": 8,
+    "known": 1625,
+    "positive": 16,
+    "negative": 1609,
+    "unknown": 848,
+    "witnessed_in_unknown": 0,
+    "peak_quote_value": 84.61953000000119,
+    "final_outcomes_opened": true
+  }
+}

@@ -1,0 +1,8 @@
+reason,primary_unknown_seconds,overlapping_unknown_seconds
+missing_initial_snapshot,943850.4150000536,943850.4150000536
+retrospective_best_price_drift,93428.3649999992,425124.6720000175
+best_price_contradiction,7329.054999999627,134854.97799999802
+crossed_final_group,0.0,0.0
+malformed_group,0.0,0.0
+unresolved_quantity_alternatives,0.0,1157.93099999999
+other_unbounded_basket,0.0,0.0

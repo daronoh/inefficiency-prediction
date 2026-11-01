@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "analysis_start": "2026-05-06T09:00:00+00:00",
+  "analysis_end": "2026-05-06T15:00:00+00:00",
+  "buffers_ms": [
+    0,
+    10,
+    50,
+    100,
+    250,
+    1000
+  ],
+  "scope": "One complete negRisk basket and ONE pair from a ladder event; not the complete ladder event.",
+  "purpose": "Test whether ordinary depth updates repair disagreements at their original reported quote, and compare with independent later full books.",
+  "state_policy": "Absolute level updates; no trade subtraction, quote pruning or label changes. Conflicting quantities quarantine a side until a compatible full snapshot.",
+  "checkpoint_policy": "Compare before replacement, after unambiguous same-source updates. Report ties and prior ambiguity separately.",
+  "decision": "A simple burst-only explanation fails in this subset if original-quote depth repairs within 1000ms do not explain every analysis-started disagreement, or unambiguous ask checkpoints disagree at levels not updated at that timestamp.",
+  "retrospective_audit_only": true,
+  "models_trained": false,
+  "labels_changed": false,
+  "source_sha256": {
+    "src/data/pmxt_reconciliation.py": "a23a5ac0645eb8d7914195669fd0a6c1605377d9900f66a014736e44fbd8ce54",
+    "src/data/pmxt_source.py": "2ab3ecd253d72ecd6e4fc1903ca3ec8bd629439f9cfef4621ed91c0d8b9c0489",
+    "src/data/pmxt_validation.py": "1a1f7c55e3c41997e9eb7a27cf49360d5b171cee4b30bd0d3d3cc49b7b1afeab"
+  },
+  "parent_design_sha256": "c1b9a72a74ec538639e8dcfce9285498f796b84471ad1eef2e280433f744c947",
+  "plan_sha256": "b176d7291272f2f68d4e094263c3c68c78600f64cad5ac239f297782bb06ff16"
+}

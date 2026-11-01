@@ -1,0 +1,33 @@
+{
+  "event_hours": 45,
+  "unknown_labels": 21,
+  "unknown_seconds": 42676.77600000247,
+  "primary_reason_seconds": {
+    "missing_initial_snapshot": 0.0,
+    "retrospective_best_price_drift": 39985.780999999915,
+    "best_price_contradiction": 2690.9949999998935,
+    "crossed_final_group": 0.0,
+    "malformed_group": 0.0,
+    "unresolved_quantity_alternatives": 0.0,
+    "other_unbounded_basket": 0.0
+  },
+  "overlapping_reason_seconds": {
+    "missing_initial_snapshot": 0.0,
+    "retrospective_best_price_drift": 39985.780999999915,
+    "best_price_contradiction": 15477.430999997512,
+    "crossed_final_group": 0.0,
+    "malformed_group": 0.0,
+    "unresolved_quantity_alternatives": 380.88400000000036,
+    "other_unbounded_basket": 0.0
+  },
+  "caveat": "Primary causes partition unknown time; any-cause exposure overlaps. Counters are not independent outages or proof of archive loss.",
+  "replay_summary_sha256": "7e6098deecca31b0c1ff395247b211525ee32eaaf649c706ecaca8f1166f0352",
+  "implementation_sha256": {
+    "src\\data\\pmxt_diagnostics.py": "83655bc47e4c8b6622c2823e63560338ce258553882e8b9053bc9e57fa0ce9a8"
+  },
+  "results_sha256": {
+    "event_hours.csv": "c2a867f3efce00790850e7e6522ef42bec1fbc3dfd79767d9d8be8af6146a7f1",
+    "examples.json": "eeec8c0adc950553b96a71f75040c7c7e8326d133466667b9e6dec82489c9be8",
+    "token_reasons.csv": "cedfd20f73c43a69e52bd3b24af750fec7b3497bd34e8563247a0a04e032f467"
+  }
+}

@@ -14,8 +14,9 @@ are not P&L forecasts. The second layer holds these predictions fixed while
 changing arrival latency: 0, 50, 100, 250 and 500ms. The primary arrival is 100ms;
 the one-second unwind/hold is fixed throughout. Budgets of three and five events
 are compared, with and without December Fed in the ranking pool. Twenty seeded
-random policies and monitor-all provide references. No models are refitted and
-the final test remains closed. Zero arrival is an optimistic same-book execution
+random policies and monitor-all provide references. No models are refitted in
+these development replays. Notebook 11 separately evaluates the final period
+using the frozen models and protocol. Zero arrival is an optimistic same-book execution
 reference, not an upper bound on every policy's path-dependent returns.
 
 The existing economic benchmark uses **100 ms arrival with no artificial cash or share cap**
@@ -110,7 +111,10 @@ an idealised full-or-zero order assumption. The basket itself is not atomic.
 
 Entries must arrive before the monitoring window and contract-rule deadline.
 Risk management of an already-submitted basket can continue afterward if the
-necessary development observations exist. No final-test book may price an exit.
+necessary observations within the permitted execution context exist. Development
+replays never use a final-test book to price an exit. The separate final replay
+allows recorded exit context through its endpoint + 1.1 seconds, while all entries
+must arrive before the fixed endpoint.
 The current conservative usability rule also treats empty or crossed arrival
 books as unknown rather than assuming a fill outcome.
 
@@ -228,3 +232,19 @@ The primary scenario remains **100 ms, uncapped capital and shares**, with no
 imposed random failure probability. Existing classical-policy replay artifacts
 are verified and reused for comparison. Execution outcomes do not tune TabM.
 See [the TabM findings](reports/tabm.md).
+
+## Final replay
+
+Notebook 11 and `src/simulator/final_evaluation.py` apply the fixed final protocol
+to 8 January–3 February 2026, 08:00 UTC. Explicit-boundary kernels in
+`final_execution.py` preserve the historical sizing, per-leg FOK and event-wide
+reservation rules; parity tests compare them on shared synthetic histories.
+Historical development guards remain intact.
+
+Each final policy/scenario starts with an empty ledger at the test boundary.
+Reservations persist across all final hours. No in-sample development trading
+from the final fitted model is added. No unknown exit is forced to zero or a
+profitable liquidation. At N=3 and 100 ms, all saved models and quoted-gap return
+$32.31 from 20 attempts, including two partial-basket losses. The 500 ms result
+is -$12.81. N=5 selection and replay equality are verified because the entire
+eligible pool fits that budget. See [the final findings](reports/final_evaluation.md).

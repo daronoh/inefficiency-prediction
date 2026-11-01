@@ -1,0 +1,58 @@
+{
+  "version": "final_timestamp_audit_v1",
+  "window": {
+    "version": "periodic_snapshot_screening_v5",
+    "development_start": "2025-10-14T00:00:00Z",
+    "lockbox_start": "2026-01-08T00:00:00Z",
+    "cadence_minutes": 60,
+    "horizon_minutes": 60,
+    "quantities": [
+      5,
+      10,
+      25,
+      50,
+      100,
+      250,
+      500,
+      1000
+    ],
+    "assumed_other_cost_usd": 0.0,
+    "cash_cap_usd": 1000.0,
+    "arrival_delay_s": 0.5,
+    "confirmation_s": 0.0,
+    "unwind_delay_s": 1.0,
+    "primary_clock": "snapshot_time"
+  },
+  "purpose": "Recording coverage and protocol preparation only",
+  "row_columns_read": [
+    "snapshot_time"
+  ],
+  "development_columns_read": [
+    "event_slug"
+  ],
+  "book_columns_read": [],
+  "opportunity_labels_read": false,
+  "model_predictions_computed": false,
+  "execution_run": false,
+  "final_outcomes_opened": false,
+  "final_timestamp_access": true,
+  "universe": "Original frozen supported 46 negRisk + 5 audited ladder events; no new discovery",
+  "evidence": "First/last timestamps and update-gap diagnostics only. Full-member extents are not usable-label guarantees; observed blockers may make some incomplete packages decidable.",
+  "ranking_mask": "All required tokens seen by scan, active frozen package and scan within event-level recording extent. Recording extent is an offline observation mask, not a predictor or live deactivation signal.",
+  "no_price_lookahead": true,
+  "source_sha256": {
+    "src/data/final_coverage.py": "741c9f6de9f56ca0fa90447d96d96a2ef28fc9732e92d943acffd3cba9d7a7e4",
+    "src/data/universe.py": "90bdcb96411e15c3aca6d30c300968596fe0f128709c136fab493a7882d989c7",
+    "src/data/rules.py": "6090aa36d6af228a56bd8df9b11c0668475351faa6c860d43c17fb33b695c8e2",
+    "src/config.py": "f9caab24389aac6161c75f6da9fd520930bd7ac746b301e1545eff8e53048870"
+  },
+  "metadata_sha256": {
+    "event_universe.parquet": "68c142c4437aadd3950325658612ad610671cc31fd00e4b991185210676d0a06",
+    "markets.parquet": "b7e3fe6f1334209b314f0009e4e82910d6dd0afe852e87dae4520cecbad3eb15",
+    "tokens.parquet": "df5d61261788f1b80af9f2217db767e18503ca0f66ae37d0d9d0026576fcfd11"
+  },
+  "final_model_completion_sha256": "18c90978eb1000f5be7ea679fe54b11efd95c585a28ef0dec77f592a0b8f62c9",
+  "final_bundle_sha256": "7ff93a8e5ae97f25cfd5f4cb48ccd314bafef1b341c644fd9482b6fbbc9c085d",
+  "development_keys_sha256": "740cb9ba76ff9dad7e303fa9e3cfbd71f096777d0e8d647f0fb6b8246a94aacf",
+  "input_identity": "Timestamp extent inventory and timestamp hashes for files with final observations; full price-file hashes must be verified separately before economic evaluation."
+}

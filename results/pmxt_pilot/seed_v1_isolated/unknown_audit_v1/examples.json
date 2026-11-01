@@ -1,0 +1,112 @@
+{
+  "108251591904413063139495882252154135107497878738832930637657538583440424739851": [
+    {
+      "source_ms": 1778071487912,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1778070693883,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          3900
+        ],
+        "SELL": [
+          3900
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          3900
+        ],
+        "SELL": [
+          4200
+        ]
+      }
+    },
+    {
+      "source_ms": 1778071488010,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1778070693883,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          3900
+        ],
+        "SELL": [
+          3900
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          3900
+        ],
+        "SELL": [
+          4200
+        ]
+      }
+    },
+    {
+      "source_ms": 1778078494856,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1778075043901,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          4000
+        ],
+        "SELL": [
+          4000
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          3900
+        ],
+        "SELL": [
+          4000
+        ]
+      }
+    },
+    {
+      "source_ms": 1778078525419,
+      "reason": "best_price_contradiction",
+      "side": "BUY",
+      "drift_lookback": true,
+      "snapshot_anchor_ms": 1778075043901,
+      "group_rows": 1,
+      "group_types": {
+        "price_change": 1
+      },
+      "reconstructed_possible_best": {
+        "BUY": [
+          4000
+        ],
+        "SELL": [
+          4000
+        ]
+      },
+      "reported_best": {
+        "BUY": [
+          3900
+        ],
+        "SELL": [
+          4000
+        ]
+      }
+    }
+  ]
+}

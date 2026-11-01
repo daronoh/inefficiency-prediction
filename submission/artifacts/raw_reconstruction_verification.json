@@ -1,0 +1,10 @@
+{
+  "rows": 29308,
+  "columns": 51,
+  "events": 51,
+  "known": 23452,
+  "positive": 470,
+  "all_columns_reconstructed": true,
+  "signals_reconstructed": true,
+  "comparison": "All scalar values match supplied study, with float tolerance 1e-10 relative / 1e-8 absolute; no saved feature or label table used as reconstruction input."
+}

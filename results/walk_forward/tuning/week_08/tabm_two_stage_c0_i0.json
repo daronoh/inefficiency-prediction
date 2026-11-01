@@ -1,0 +1,28 @@
+{
+  "method": "tabm_two_stage",
+  "candidate": 0,
+  "inner": 0,
+  "params": {
+    "n_blocks": 2,
+    "d_block": 128,
+    "dropout": 0.1,
+    "lr": 0.002,
+    "weight_decay": 0.0003
+  },
+  "training_rows": 12312,
+  "training_positive": 295,
+  "train_last": "2025-11-25 07:00:00+00:00",
+  "validation_start": "2025-11-25 09:00:00+00:00",
+  "validation_end": "2025-12-16 04:00:00+00:00",
+  "fitting_cutoff": "2026-01-06 00:00:00+00:00",
+  "seconds": 4.471438500011573,
+  "total_peak_value": 939.1341599999962,
+  "captured_peak_value": 938.1801599999962,
+  "positive_windows": 118,
+  "captured_positive_windows": 114,
+  "average_precision": 0.6088223218436432,
+  "selected_unknown": 11,
+  "classifier_epochs": 46,
+  "amount_epochs": 1,
+  "predictions_sha256": "74c4db62a8fcad61af046a81a9cc5975e3917bcee8be436f0f9f4cbc492e2176"
+}

@@ -1,0 +1,17 @@
+{
+  "display_equations": 3,
+  "inline_occurrences": 37,
+  "unique_math_layouts": 30,
+  "renderer": "Matplotlib mathtext / STIX vector outlines",
+  "rasterized_equations": false,
+  "main_text_pages": 24,
+  "total_pages": 34,
+  "visual_review_physical_pages": [
+    11,
+    12,
+    18
+  ],
+  "math_page_raster_images": 0,
+  "text_within_page_bounds": true,
+  "figure_count": 50
+}

@@ -1,0 +1,9 @@
+{
+  "files_sha256": {
+    "coverage.png": "19f02e407b22e1d64b8c230224939ba8e25cf46e43334fde1e2bcb5cb5035f66",
+    "protocol.json": "8ee9d1c7adbd14b0806e3cfd6dfe60d13fe53359f38643c6b44da0e45ea209b0"
+  },
+  "source_sha256": "6d5610c163a5e040a836527c01c79fa2b0f16d418d877cc27059651683d1d717",
+  "audit_completion_sha256": "29974613d4dc441d7d9af8de4899b904411831d224a5a874699401d47b832feb",
+  "final_outcomes_opened": false
+}

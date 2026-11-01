@@ -1,0 +1,76 @@
+{
+  "108251591904413063139495882252154135107497878738832930637657538583440424739851": [
+    {
+      "source_ms": 1778071487912,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071488010,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071488565,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071488690,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071488775,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071511575,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071513043,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071513753,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071513899,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071513998,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071514092,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    },
+    {
+      "source_ms": 1778071563748,
+      "reason": "best_price_contradiction",
+      "side": "SELL",
+      "baseline_ms": 1778070693883
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "planned_start": "2026-05-04 01:00:00+00:00",
+  "planned_end": "2026-05-11 01:00:00+00:00",
+  "replayed_start": "2026-05-04 01:00:00+00:00",
+  "replayed_end": "2026-05-04 02:00:00+00:00",
+  "full_week_complete": false,
+  "archive_hours": 2,
+  "analysis_hours": 1.0,
+  "events": 15,
+  "event_counts": {
+    "negrisk": 10,
+    "ladder": 5
+  },
+  "tokens": 200,
+  "baskets": 301,
+  "messages": 435971,
+  "event_hours": 15,
+  "fully_observed_event_hours": 2,
+  "observed_event_hour_fraction": 0.7346903333333311,
+  "conditional_positive_event_hours": 0,
+  "maximum_conditional_one_basket_gross_usd": 0.0,
+  "usable_tokens_at_end": 178,
+  "top_mismatch_batches": 13077,
+  "malformed_messages": 0,
+  "full_snapshot_delay_seconds": {
+    "count": 15608.0,
+    "mean": 111.03755458739109,
+    "std": 418.79201819186505,
+    "min": 0.355,
+    "50%": 26.1905,
+    "90%": 188.20400000000012,
+    "99%": 2216.43775,
+    "max": 6117.746
+  },
+  "price_change_delay_seconds": {
+    "count": 420021.0,
+    "mean": 1.7471437904295262,
+    "std": 2.793570265996951,
+    "min": 0.024,
+    "50%": 0.619,
+    "90%": 5.496,
+    "99%": 12.634,
+    "max": 20.842
+  },
+  "historical_fees_verified": false,
+  "net_profit_estimated": false,
+  "models_trained": false,
+  "semantics": "Conditional zero-fee displayed margin, NOT P&L. Max per event-hour; never sum repeated displayed depth.",
+  "transfer_bytes": 718610368,
+  "raw_cache_bytes": 4885513,
+  "assumptions": [
+    "current rules/membership retrospectively fixed",
+    "minimum 5 shares",
+    "initial tick .0001 scenario until observed change",
+    "no age/persistence cutoff",
+    "receive-time causal replay",
+    "uncapped capital/shares",
+    "no simulated fills"
+  ],
+  "quality_limits": [
+    "best-quote consistency is necessary, not proof of recording completeness",
+    "no exchange sequence numbers; missing deep-level updates cannot always be detected",
+    "equal source milliseconds use received update precedence; true exchange ordering can be ambiguous",
+    "full snapshots older than capture start remain left-censored until a fresh baseline"
+  ],
+  "files_sha256": {
+    "plan.json": "72fc97ea30496e533e10acc57db8f091f389461afebd872255a244396121562a",
+    "events.parquet": "c4c5307910ab253a79f2d048156e80df66a7a9771b4dcafdf49d38f40e28e3b2",
+    "markets.parquet": "5571c4452c40b68e9ef3cd2b1a1e63b2e7ec816cd4215d535312db1ac9050b50",
+    "packages.parquet": "4060a65a1bb1f6485a0365cd03b74e78f8786635d87d1c35f0f55df94a740bef",
+    "hourly_features.parquet": "82ee8c07cc8fca241a45364b0fcf3364a7104d0f103348d46dd01b1d5c1cb55d",
+    "hourly_quote_audit.parquet": "69deb0e01dfed8c88a48ef06fb9a239af74dc9bf01cfd406229c4685a80a2d9e"
+  },
+  "implementation_sha256": {
+    "src/data/pmxt_archive.py": "0b600658eb94a7a7d65436ba4ca8cbd005b94cff9e60dbeaa950a4ddaf5db02d",
+    "src/data/pmxt_audit.py": "19d916e7799d3652f124b2b41fb7d299db10bc234cf57f01352a0cff1304e591",
+    "src/data/pmxt_books.py": "e0a56e00df0f41ea45417150e517ec445430954168b6da6f596492428f68e969",
+    "src/data/pmxt_pilot.py": "6d087e49c5bbc164a0bd0d9480015e02bcdebe5fb249c1ab55a31be9796b25bd"
+  }
+}

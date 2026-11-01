@@ -1,0 +1,25 @@
+{
+  "method": "random_forest",
+  "candidate": 2,
+  "inner": 0,
+  "params": {
+    "n_estimators": 200,
+    "max_depth": 8,
+    "min_samples_leaf": 5,
+    "max_features": 0.5
+  },
+  "training_rows": 3869,
+  "training_positive": 39,
+  "train_last": "2025-10-28 07:00:00+00:00",
+  "validation_start": "2025-10-28 09:00:00+00:00",
+  "validation_end": "2025-11-04 04:00:00+00:00",
+  "fitting_cutoff": "2025-11-11 00:00:00+00:00",
+  "seconds": 0.571199300000444,
+  "total_peak_value": 141.55701000000096,
+  "captured_peak_value": 138.25223000000096,
+  "positive_windows": 47,
+  "captured_positive_windows": 40,
+  "average_precision": 0.5049843578682865,
+  "selected_unknown": 68,
+  "predictions_sha256": "8d6596161c49d6fea9239795e916b4a3c5f92b12fe8692c677929feb2ff5c3ca"
+}

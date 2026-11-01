@@ -1,0 +1,9 @@
+{
+  "policy": "fixed_book_random_forest",
+  "objective": "Pooled peak quoted-value capture@3, ties positive-hour capture then AP.",
+  "selection_basis": "Retrospective comparison of saved chronological predictions; no PnL-based fitting or tuning.",
+  "latest_bundle": "results\\walk_forward\\folds\\week_12\\bundle.json",
+  "latest_bundle_sha256": "75b263eed136dbd9d0dc23644f6b3be8be1491142213c200031e061e91c0cdc1",
+  "fitted_before": "2026-02-03 00:00:00+00:00",
+  "inference": "src.models.walk_forward.score_saved(folder,bundle,as_of_features)[policy]"
+}

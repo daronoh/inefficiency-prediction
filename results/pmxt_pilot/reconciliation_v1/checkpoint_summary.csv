@@ -1,0 +1,7 @@
+side,population,checkpoints,full_depth_matches,top_price_matches,top_price_and_quantity_matches,untouched_depth_matches
+BUY,all,10,3,7,7,3
+BUY,unambiguous,9,3,7,7,3
+BUY,unambiguous_no_same_time_updates,9,3,7,7,3
+SELL,all,10,2,9,9,2
+SELL,unambiguous,9,2,8,8,2
+SELL,unambiguous_no_same_time_updates,0,0,0,0,0

@@ -1,0 +1,54 @@
+{
+  "report": {
+    "pdf": "report/dissertation.pdf",
+    "editable": "report/dissertation.md",
+    "main_text_pages": 24,
+    "total_pages": 34,
+    "abstract_words": 175,
+    "status": "Author-review draft"
+  },
+  "source": {
+    "package": "FYP",
+    "tests": 28,
+    "tests_passed": true
+  },
+  "notebook": {
+    "file": "research.ipynb",
+    "executed": true,
+    "executed_code_cells": 9,
+    "default_mode": "Verify cached fits and replays; regenerate analyses and report",
+    "full_reconstruction": "Set FULL_RERUN=True or use python -m FYP --full"
+  },
+  "artifacts": {
+    "folder": "artifacts",
+    "result_csv_tables": 72,
+    "figures": 50,
+    "weekly_folds": 13,
+    "policies": 17,
+    "fitted_artifacts_checked": 199
+  },
+  "data": {
+    "raw_token_files": 994,
+    "event_cohort": 51,
+    "prepared_rows": 29308,
+    "prepared_columns": 51,
+    "raw_reconstruction_matches": true
+  },
+  "research": {
+    "primary_budget": 3,
+    "secondary_budget": 5,
+    "primary_latency_ms": 100,
+    "capital_cap": null,
+    "share_cap": null,
+    "execution_target_used": false
+  },
+  "verification_files": [
+    "artifacts/verification.json",
+    "artifacts/raw_reconstruction_verification.json",
+    "artifacts/refit_smoke_verification.json",
+    "artifacts/isolation_verification.json",
+    "report/format_check.json",
+    "report/math_check.json",
+    "artifacts/math_rendering_verification.json"
+  ]
+}

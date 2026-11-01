@@ -1,0 +1,14 @@
+{
+  "study_completion_sha256": "a3b66c53343ce98925920bad4042d5d3d0e1faf4b6817ba7237054a19b46d4da",
+  "reporter_sha256": "94a4c252a8ff7092a0941bfb3c61e71f7ad676a1aee7422c224af6f8d0bb8654",
+  "scores_reproduced_from_saved_models": true,
+  "files_sha256": {
+    "candidate_pool.png": "6f1e33febbf73ae56363f1e4d2e5457d6daed2f7141ec7c6b2e46171df4fc2ef",
+    "common_population.csv": "88bb2966b1ba02ade139d89f303c9df232e7ff55a791b5358efc776743609e9e",
+    "event_capture.csv": "5c6849ee063b34f03db5cfe292136f34db76ac2cae30a5cc21ee5398ebe51e5b",
+    "exclude_december_fed.csv": "92e9c40127bdf2e07ae56e50cee218cd98dc813ad3bc0bf3a1ef90feca6f5993",
+    "preservation.json": "32237ce3fc52cfaef43bce46057c382a2b1614339b35fde2e836eb803e383a2a",
+    "primary_capture.png": "945da5690f037af0391c58123c55f3fe8800ae5761b86a8fe272f150e8aa6c90",
+    "primary_comparison.csv": "85e02f3c2d6b7322292948dceb8beec747defdaca4574df6aa6dda612f4c60f2"
+  }
+}

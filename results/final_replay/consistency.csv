@@ -1,0 +1,11 @@
+scope,arrival_delay_s,n5_economic_equality
+development_events_only,0.0,True
+development_events_only,0.05,True
+development_events_only,0.1,True
+development_events_only,0.25,True
+development_events_only,0.5,True
+frozen_supported_universe,0.0,True
+frozen_supported_universe,0.05,True
+frozen_supported_universe,0.1,True
+frozen_supported_universe,0.25,True
+frozen_supported_universe,0.5,True
