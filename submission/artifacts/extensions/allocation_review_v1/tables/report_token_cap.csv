@@ -1,0 +1,6 @@
+Policy,Tokens / scan,Captured / 359,Recall (%),Value (%)
+Forest: book,45.60,354,98.61,99.9975
+Logistic: book,44.30,357,99.44,99.9997
+Past event mean value,45.91,347,96.66,99.9520
+Quoted gap,46.19,343,95.54,98.5855
+Freshness,44.87,349,97.21,99.8631

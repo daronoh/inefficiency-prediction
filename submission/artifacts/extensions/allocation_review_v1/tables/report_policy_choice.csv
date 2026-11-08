@@ -1,0 +1,7 @@
+Policy,Captured / 77,Recall (%),Value (%)
+Earlier-only chooser,75,97.40,99.63
+Forest: book,75,97.40,99.63
+Logistic: book,72,93.51,99.79
+Past event mean value,46,59.74,91.59
+Quoted gap,67,87.01,96.99
+Freshness,57,74.03,86.30

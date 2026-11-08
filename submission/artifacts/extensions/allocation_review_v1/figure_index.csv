@@ -1,0 +1,2 @@
+number,title,file,source_table,caption
+301,Capture under common monitoring-resource caps,extensions/allocation_review_v1/figures/token_budget_capture.png,extensions/allocation_review_v1/tables/token_budget_metrics.csv,Full period; no three-event cap. Whole events are packed in score order. Shared tokens across events are counted separately. Greedy allocations need not be nested as the cap rises; scanning and inference costs are excluded.

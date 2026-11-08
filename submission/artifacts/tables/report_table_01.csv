@@ -1,12 +1,6 @@
-Measure,Value
-Scheduled hours,"2,024"
-Event hours,"19,766"
-Events,44
-Known,"15,787"
-Unknown,"3,979"
-Positive,359
-Positive events,12
-Median candidates,9.00
-Maximum candidates,19
-Competitive hours n3,"1,887"
-Total peak value,"8,838.31"
+Research,Question addressed,Implication for this study
+Saguillo et al. (2025),Identify structural mispricing and reduce relationship-search work.,"Future monitoring allocation, historical depth coverage and executable fills require separate evaluation."
+Trapeznikov and Saligrama (2013),Choose additional measurements under acquisition costs.,Here the choice is which events to monitor next; event and token counts only approximate acquisition cost.
+"Chen, Wang and Yuan (2013)",Learn subset choices from the outcomes of played arms.,The historical controls here assume full past feedback; selective-feedback learning and regret are not evaluated.
+Grinsztajn et al. (2022); Gorishniy et al. (2025),Compare tree and neural inductive biases on tabular tasks.,"Temporal availability, rare baskets and budgeted capture must be tested in the present domain."
+Cawley and Talbot (2010); Bailey et al. (2017),Explain selection bias when choosing models or strategies from finite historical evidence.,Earlier-only fitting protects each prediction; the final policy recommendation still needs independent evaluation.

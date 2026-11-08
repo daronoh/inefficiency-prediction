@@ -1,7 +1,7 @@
 {
   "renderer": "Matplotlib mathtext / STIX vector outlines",
-  "inline_occurrences": 37,
-  "display_equations": 3,
+  "inline_occurrences": 34,
+  "display_equations": 4,
   "formulas": [
     {
       "tex": "\\mathcal{C}(t)",
@@ -42,6 +42,13 @@
       "tex": "\\min(N,|\\mathcal{C}(t)|)",
       "size_pt": 12,
       "width_pt": 64.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "S_N(t)",
+      "size_pt": 12,
+      "width_pt": 24.0,
       "height_pt": 12.0,
       "depth_pt": 3.0
     },
@@ -144,13 +151,6 @@
       "depth_pt": 13.0
     },
     {
-      "tex": "q\\geq 5",
-      "size_pt": 12,
-      "width_pt": 26.0,
-      "height_pt": 12.0,
-      "depth_pt": 3.0
-    },
-    {
       "tex": "L_j(q,t)",
       "size_pt": 12,
       "width_pt": 33.0,
@@ -169,13 +169,6 @@
       "size_pt": 12,
       "width_pt": 28.0,
       "height_pt": 12.0,
-      "depth_pt": 3.0
-    },
-    {
-      "tex": "y",
-      "size_pt": 12,
-      "width_pt": 6.0,
-      "height_pt": 9.0,
       "depth_pt": 3.0
     },
     {
@@ -200,6 +193,27 @@
       "depth_pt": 3.0
     },
     {
+      "tex": "x_t",
+      "size_pt": 12,
+      "width_pt": 9.0,
+      "height_pt": 8.0,
+      "depth_pt": 2.0
+    },
+    {
+      "tex": "x_{t-1}",
+      "size_pt": 12,
+      "width_pt": 22.0,
+      "height_pt": 8.0,
+      "depth_pt": 2.0
+    },
+    {
+      "tex": "x_t-x_{t-1}",
+      "size_pt": 12,
+      "width_pt": 43.0,
+      "height_pt": 8.0,
+      "depth_pt": 2.0
+    },
+    {
       "tex": "\\widehat{v}(\\mathbf{x})=\\widehat{\\mathbb{P}}(y=1\\mid\\mathbf{x})\\,\\widehat{\\mathbb{E}}[v\\mid y=1,\\mathbf{x}].",
       "size_pt": 12,
       "width_pt": 160.0,
@@ -207,11 +221,18 @@
       "depth_pt": 3.0
     },
     {
-      "tex": "-",
+      "tex": "(K-S)c>A+I.",
       "size_pt": 12,
-      "width_pt": 9.0,
-      "height_pt": 4.0,
-      "depth_pt": 0.0
+      "width_pt": 84.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
+    },
+    {
+      "tex": "\\operatorname{sgn}(x)\\log(1+|x|)",
+      "size_pt": 12,
+      "width_pt": 83.0,
+      "height_pt": 12.0,
+      "depth_pt": 3.0
     }
   ],
   "rasterized_equations": false

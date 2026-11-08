@@ -1,20 +1,12 @@
-Policy,Known P&L $,Attempts,Complete
-Forest: book,"5,873.32",453,436
-Forest + metadata,"5,873.60",456,439
-Logistic + metadata,"5,892.81",434,416
-Classifier ensemble,"5,902.50",462,445
-Tuned logistic,"5,896.85",444,426
-TabM two-stage,"5,857.99",431,413
-Logistic: book,"5,878.47",438,420
-XGBoost + metadata,"5,915.38",449,433
-Value ensemble,"5,834.01",428,410
-Forest two-stage,"5,921.18",454,439
-Tuned XGBoost,"5,886.61",456,440
-Logistic / forest / TabM,"5,874.54",437,419
-Tuned forest,"5,881.06",466,449
-Freshness,"5,778.40",400,384
-Depth,"5,745.85",285,280
-XGBoost: book,"5,187.45",454,437
-Quoted gap,"4,370.05",368,355
-Monitor all,"5,944.97",499,481
-Random mean (20 seeds),"1,123.15",124.6,119.15
+Measure,Value
+Scheduled hours,"2,024"
+Event hours,"19,766"
+Events,44
+Known,"15,787"
+Unknown,"3,979"
+Positive,359
+Positive events,12
+Median candidates,9.00
+Maximum candidates,19
+Competitive hours at N=3,"1,887"
+Total peak value,"8,838.31"

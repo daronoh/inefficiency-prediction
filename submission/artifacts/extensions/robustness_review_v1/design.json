@@ -1,0 +1,62 @@
+{
+  "inputs": {
+    "examples": {
+      "path": "artifacts/extensions/processed_review_v1/inputs/earlier_examples.parquet",
+      "sha256": "740cb9ba76ff9dad7e303fa9e3cfbd71f096777d0e8d647f0fb6b8246a94aacf"
+    },
+    "predictions": {
+      "path": "artifacts/models/predictions.parquet",
+      "sha256": "6d19d6647564f43c18635edb56507773032c20fe5fa9f124e5c5500717b912a2"
+    },
+    "ablations": {
+      "path": "artifacts/extensions/processed_review_v1/ablation_predictions.parquet",
+      "sha256": "41ec11036d96a2bb3d903af70032ff9c114db7f885d78ca77be7ca793d85e289"
+    }
+  },
+  "source_sha256": {
+    "FYP/experiments/robustness_extension.py": "8f7b56d772c2fff17dd80dbdfda2f04a280f0358d925758555ed4516067a8bc5",
+    "FYP/models/estimators.py": "7fc35ccbddb5522ebe0ded7e940ade912687f2edf4812bf31fb5be9cc2de7f49",
+    "FYP/models/features.py": "6ecf858b79b502b4d5faee3047ec19a1fe4365a92ab0fd712ad0c08cdd66b365",
+    "FYP/models/metrics.py": "e17ba94d9f05df17deb02067952e31d9d9d05bc13166c72d77f266b7a5baac3d",
+    "FYP/models/classification.py": "763693e9e6373af64974533fdd9f532090f7bcccdb8ea95cbb0a06f1878761bd",
+    "FYP/models/value.py": "53a599b4bd59117f581d2a28123a08e768badcaf3ab54e22137cac1b0e88e752",
+    "FYP/models/tuning.py": "05e4d7bfd8fa6b27fcdd09628d2823005e0fe63c0add21bc4a600dafc4c1d6db",
+    "FYP/models/settings.py": "994798d9dbb2a720da9ab4fb534b0b02b7731b09e6ea39e0ef98779725c4fdde"
+  },
+  "first": "2025-11-11 00:00:00+00:00",
+  "fitting_end_exclusive": "2026-01-08 00:00:00+00:00",
+  "seeds": [
+    20261001,
+    20261002,
+    20261003
+  ],
+  "history_models": [
+    "history_event_frequency",
+    "history_event_mean_value",
+    "history_last_known_value",
+    "history_family_mean_value"
+  ],
+  "history_smoothing_pseudocount": 24,
+  "history_availability": "known label time + 1 hour strictly before scan; update each scan",
+  "family_exclusion": "all broad family rows removed from training; rank the entire usual candidate pool",
+  "family_models": "fixed forest, three seeds; fixed logistic, one deterministic fit; no tuning",
+  "balanced_estimands": "macro recall and value over positive events; macro families; global N=3 selection",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261102,
+    "units": [
+      "event",
+      "family"
+    ],
+    "paired": true,
+    "multiplicity_adjusted": false
+  },
+  "raw_orderbooks_used": false,
+  "original_study_preserved": true,
+  "interpretation": "Exploratory inspected-data analysis; no independent final test or new economic replay.",
+  "versions": {
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "sklearn": "1.7.2"
+  }
+}

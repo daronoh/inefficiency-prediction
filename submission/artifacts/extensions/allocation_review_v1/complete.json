@@ -1,0 +1,29 @@
+{
+  "files_sha256": {
+    "design.json": "5c7158d4a68df79ce0cadf75143b529e82c0469780e7113b2f68109b9c362c4e",
+    "executed_source.py": "93a9fac2225fe6571ddcaf87312b23949ab280994e37ff5c3da6b599d75fa949",
+    "figure_index.csv": "57dc32728e69be5894a1da11062655f2ecbeb693ad99f2103bf70c4174e43505",
+    "paired_earlier_predictions.parquet": "201f1cd53ba9b6e3ef83219b9c84f4fb439a655eb8c8bd8d2360269dc3d0fdb8",
+    "report_tables.json": "0766b0f759cc5470ce5f0ca382de5094bb1203dbecd21c50c0d28ea7e1ccdadb",
+    "resource_selections.parquet": "06b0acd9d3b37aa4ac9e660828e5a183fe8766dc5706ab46dcde9763e2930063",
+    "selector_predictions.parquet": "1a69f5ac0ae50865c3fab2b196938220b46e0006b274ab3ce3d50ff602911a6c",
+    "table_widths.json": "35338b228cc56ee8696dfa2e6ff957c0d990f1bd36bd51342a1b196c3404e48c",
+    "verification.json": "c9740e7073808987ccc725b08b4bab4fe3d48138fb3df6490b545d79d85b2954",
+    "figures/token_budget_capture.png": "5e941d8d97d67d0a650bfecb7d8d13cd8280cc6b19011a3ef212efedda16c05f",
+    "tables/case_candidate_pools.csv": "142c01e7b11b990435828f8d15d4edd4481eabc3b77fd13e9762002ab70c017c",
+    "tables/paired_cases.csv": "49e80f4acc99875f1e98800cb4b54bbd5e30f4ba8e0eb0b7d3c6bf2f0620980b",
+    "tables/paired_failure_groups.csv": "0d2cc1969206ba257ac6702f2f791df47d2efb24e45542c800e0b1cd766f8994",
+    "tables/report_assumptions_checks.csv": "e73eafcff7764f52291f5eed1c50c191026fa49290dde033583e17e8438c2a95",
+    "tables/report_evidence_scope.csv": "f68bc136a166b67604a3575dd2591c2878e64a3fdea851fac9082ef2b7318b03",
+    "tables/report_paired_cases.csv": "ec2a20e14c0babc3faf7c186310c3cc1dd2cced9e39f934e29494c4c376265f2",
+    "tables/report_policy_choice.csv": "f916a47f32d1252eb7f9a0bce505ca8c3fb5e82d9bbffce9fd96440317dac832",
+    "tables/report_token_cap.csv": "f9b46d0bf8fd1d4f086a6091395f91269f1d943ab1f4c9da224825a134ea907b",
+    "tables/selector_history_audit.csv": "595ab8d0d0dd03f3ad6f7b85ac6df30b0600f3ff9d8dc69549aec5f0fd7e7874",
+    "tables/selector_intervals.csv": "56289da09bc7033960873a5e6618d4c31518b5ca96c0e0d89553b74c2dc7acbb",
+    "tables/selector_metrics.csv": "b160dcb59eeab5e5e0417c320c5fc273d891cc22a13a14374078119d8bc4dbef",
+    "tables/selector_weekly.csv": "c22cbfb0def22b7f67446d911f25ddeb2d6e2a26c742f856a5043feaa1b7aa38",
+    "tables/token_budget_audit.csv": "b2e59dd09ae2dec12e7a12033a81ba356ccb7478f4bb75fb7c56a158f3c84439",
+    "tables/token_budget_intervals.csv": "d1048ac6a943c000df2442eb6d524b79147ee2ae7edff07ccf3ca95f44c97e6c",
+    "tables/token_budget_metrics.csv": "36739202403238b2d09524eead626f0b941222e51daa9be546e1f879d144350c"
+  }
+}

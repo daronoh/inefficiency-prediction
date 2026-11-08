@@ -1,0 +1,6 @@
+Comparator,Recall difference (pp),95% interval (pp),Value difference (pp),Value 95% interval (pp)
+Quoted gap,21.17,"[7.10, 30.30]",38.77,"[2.33, 60.06]"
+Freshness,22.01,"[16.50, 26.21]",4.32,"[1.51, 21.53]"
+Depth,44.01,"[25.33, 60.78]",7.61,"[2.24, 40.55]"
+Logistic: book,3.06,"[0.75, 4.75]",0.72,"[-0.01, 5.64]"
+TabM two-stage,6.69,"[4.48, 9.68]",0.48,"[-0.04, 0.76]"

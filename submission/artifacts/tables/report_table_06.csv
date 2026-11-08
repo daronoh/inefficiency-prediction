@@ -1,3 +1,12 @@
-Policy after event exclusion,Known P&L $
-Forest: book,730.52
-Quoted gap,736.36
+Feature,Definition at scan time,Unit
+Active baskets,Number of audited baskets whose validity intervals include the scan.,Count
+Active tokens,Number of distinct token books needed by those active baskets; shared legs are counted once.,Count
+Seen-member fraction,Previously observed active tokens divided by all active tokens; always one among eligible scans.,0 to 1
+Clean-member fraction,"Active tokens with nonempty two-sided, non-crossed books divided by all active tokens.",0 to 1
+Mean spread,Mean best ask minus best bid across clean active member books; missing if none are clean.,Dollars/share
+Maximum spread,Largest best-ask-minus-best-bid difference across clean active members.,Dollars/share
+Total ask depth,Sum of displayed ask quantities at all recorded levels across distinct active tokens.,Shares
+Maximum book age,Largest elapsed source-time age among the latest observed active member snapshots.,Seconds
+Best quoted margin,Maximum guaranteed payoff minus depth-integrated ask cost across supported basket quantities; negative values are retained.,Dollars
+Size-feasible fraction,"Active baskets with a finite, size- and tick-compatible quoted margin divided by all active baskets.",0 to 1
+Positive-margin fraction,Active baskets whose best quoted margin exceeds zero divided by all active baskets; missing margins do not count as positive.,0 to 1

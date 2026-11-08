@@ -1,0 +1,63 @@
+{
+  "inputs": {
+    "predictions": {
+      "path": "artifacts/models/predictions.parquet",
+      "sha256": "6d19d6647564f43c18635edb56507773032c20fe5fa9f124e5c5500717b912a2"
+    },
+    "historical_predictions": {
+      "path": "artifacts/extensions/robustness_review_v1/historical_predictions.parquet",
+      "sha256": "723fecf3d5a9d6a511454082fc1d3434c42306415285e287dbcc11422d116a90"
+    },
+    "examples": {
+      "path": "artifacts/extensions/processed_review_v1/inputs/earlier_examples.parquet",
+      "sha256": "740cb9ba76ff9dad7e303fa9e3cfbd71f096777d0e8d647f0fb6b8246a94aacf"
+    }
+  },
+  "source_sha256": {
+    "FYP/experiments/allocation_extension.py": "93a9fac2225fe6571ddcaf87312b23949ab280994e37ff5c3da6b599d75fa949",
+    "FYP/experiments/robustness_extension.py": "8f7b56d772c2fff17dd80dbdfda2f04a280f0358d925758555ed4516067a8bc5",
+    "FYP/models/metrics.py": "e17ba94d9f05df17deb02067952e31d9d9d05bc13166c72d77f266b7a5baac3d",
+    "FYP/models/uncertainty.py": "aa2283dde28be7d56d75c707ceb99b3c854acce98194db6377af4043ea8553ac"
+  },
+  "policies": [
+    "history_event_mean_value",
+    "fixed_book_random_forest",
+    "fixed_book_logistic",
+    "quoted_gap_rule",
+    "freshness_rule"
+  ],
+  "token_budgets": [
+    10,
+    25,
+    50,
+    100
+  ],
+  "primary_token_budget": 50,
+  "resource_selection": "descending score, event identifier ties; greedily include an event if its whole token cost fits; skip otherwise; no event-count cap",
+  "resource_cost": "sum of within-event active-token counts; shared tokens across events counted separately; acquisition and inference cost unmeasured",
+  "first": "2025-11-11 00:00:00+00:00",
+  "end_exclusive": "2026-02-03 08:00:00+00:00",
+  "weekly_policy_warmup_blocks": 4,
+  "selection_objective": "cumulative captured quoted value under global N=3 on available earlier forward outcomes",
+  "label_availability": "known label time + one hour strictly before selection origin",
+  "selection_tie_order": [
+    "history_event_mean_value",
+    "fixed_book_random_forest",
+    "fixed_book_logistic",
+    "quoted_gap_rule",
+    "freshness_rule"
+  ],
+  "selection_tie_tolerance_usd": 1e-09,
+  "cases": "earlier feature period; largest known positive value in forest-only, history-only and neither-captured groups; tie by time then event identifier",
+  "case_interpretation": "outcome-selected illustrations, not representative samples or causal explanations",
+  "bootstrap": "existing paired weekly-block procedure; conditional on fitted models and observed selector path; not selection-adjusted inference",
+  "raw_orderbooks_used": false,
+  "model_refits": 0,
+  "new_economic_replay": false,
+  "interpretation": "Designed after earlier results were inspected; exploratory, not an untouched final test.",
+  "versions": {
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  }
+}

@@ -1,0 +1,10 @@
+Target family,Positive hours,Full RF recall (%),Held RF recall (%),Held RF value (%),Held LR recall (%)
+Central bank,231,99.57,95.96,98.41,87.01
+Crypto,13,58.97,74.36,93.76,15.38
+Culture,34,95.10,96.08,99.34,94.12
+Elections,41,78.86,67.48,75.56,80.49
+Geopolitics,0,n/a,n/a,n/a,n/a
+Shutdown,1,100.00,100.00,100.00,0.00
+Sports,9,92.59,100.00,100.00,100.00
+Technology / business,14,88.10,92.86,96.26,85.71
+Tweet counts,0,n/a,n/a,n/a,n/a

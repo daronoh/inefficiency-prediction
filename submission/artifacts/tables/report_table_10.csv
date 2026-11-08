@@ -1,0 +1,6 @@
+Assumption,Check,Remaining limit
+Earlier-only inputs and outcomes,"Backward as-of tests, strict fitting cutoffs and per-scan/per-origin availability audits.",Implemented safeguards; source-to-receiver latency is unmeasured.
+Monitoring budget represents work,Common token-observation caps supplement equal event counts.,"Proxy only; event overlap, update rates and total computing cost are not measured."
+Full historical feedback is available,Historical controls and the chooser admit known labels only after their windows end.,Unselected events also need labels; this acquisition requirement is not validated.
+Relationships transfer across events,"Whole-family exclusions, event-balanced summaries and dominant-event removal.",Mixed transfer; no independent future cohort.
+Execution approximates obtainable fills,"Persistent replay, partial-basket accounting and 0 to 500 ms arrival scenarios.","Simulated fills; queue effects, bounded funding and live execution remain untested."

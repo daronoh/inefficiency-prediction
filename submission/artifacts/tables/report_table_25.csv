@@ -1,0 +1,5 @@
+Policy,Median (ms),95th percentile (ms),Avoided tokens / scan,Overhead / token (µs)
+"Forest, 4 jobs",30.838,31.908,55.0,564.35
+"Forest, 1 job",11.792,12.946,55.0,218.53
+Logistic,4.67,5.447,47.08,102.11
+Quoted gap,2.424,2.808,36.0,69.63

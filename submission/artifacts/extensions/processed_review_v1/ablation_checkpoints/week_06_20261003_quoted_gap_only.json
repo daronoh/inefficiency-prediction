@@ -1,0 +1,24 @@
+{
+  "view": "quoted_gap_only",
+  "seed": 20261003,
+  "fold": "week_06",
+  "start": "2025-12-23 00:00:00+00:00",
+  "end": "2025-12-30 00:00:00+00:00",
+  "train_rows": 19696,
+  "train_positive": 450,
+  "train_last": "2025-12-22 22:00:00+00:00",
+  "last_label_end": "2025-12-22 23:00:00+00:00",
+  "test_rows": 1300,
+  "known_test": 1182,
+  "features": [
+    "x_best_quoted_net_usd"
+  ],
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 10,
+    "min_samples_leaf": 20,
+    "max_features": "sqrt"
+  },
+  "seconds": 2.931710199918598,
+  "predictions_sha256": "5fc17182895812c153f5ab502217af01a874d89f14d8ab41de1bb19e637be00a"
+}

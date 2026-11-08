@@ -1,0 +1,6 @@
+Comparator,Difference (pp),Event 95% interval (pp),Family 95% interval (pp)
+Quoted gap,6.05,"[-4.98, 16.81]","[-5.75, 16.03]"
+Freshness,13.87,"[-6.36, 33.05]","[-3.96, 33.38]"
+Logistic: book,15.55,"[2.44, 33.22]","[3.07, 35.36]"
+TabM two-stage,1.7,"[-5.74, 9.95]","[-4.10, 8.68]"
+Past event mean value,29.91,"[5.75, 55.76]","[7.05, 57.16]"

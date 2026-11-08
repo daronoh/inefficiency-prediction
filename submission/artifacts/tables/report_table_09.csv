@@ -1,0 +1,7 @@
+Step,Operation
+1,"At each scan, identify valid active baskets and require all active members to have been seen. Keep candidates regardless of later label availability."
+2,"Read each token at its latest source timestamp at or before the scan; construct current features, consecutive-hour lags and changes."
+3,"Offline, label the following hour only when every active interval is decidable. Record occurrence and the maximum qualifying one-basket margin; preserve unknown targets."
+4,"At a weekly origin, fit preprocessing and models on known examples with label-end time strictly before the origin. Retune only at declared origins using earlier inner blocks."
+5,"Score every eligible event in the evaluation block at its hourly scan. Select up to N by descending score, resolving ties by event identifier."
+6,Evaluate selected rows against their known labels. Separately replay selected monitoring windows under fixed arrival and unwind assumptions.

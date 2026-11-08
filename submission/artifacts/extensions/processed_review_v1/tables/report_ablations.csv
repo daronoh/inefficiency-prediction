@@ -1,0 +1,10 @@
+Feature view / rule,Features,Recall: mean [range] (%),Value: mean [range] (%)
+All 33 book features,33,"94.46 [94.17, 94.75]","99.53 [99.52, 99.54]"
+Current features only,11,"93.39 [93.00, 93.88]","99.10 [98.81, 99.26]"
+Quoted margin only,1,"74.93 [74.64, 75.22]","61.40 [61.36, 61.42]"
+Without quoted margin,27,"87.07 [86.30, 88.34]","99.30 [99.26, 99.36]"
+Without book age,30,"95.24 [95.04, 95.34]","99.48 [99.40, 99.56]"
+Current margin and age,2,"75.90 [75.80, 76.09]","72.70 [72.65, 72.78]"
+Quoted-gap rule,1,72.30,60.38
+Freshness rule,1,71.43,95.16
+Depth rule,1,49.27,91.85

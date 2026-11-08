@@ -1,0 +1,25 @@
+{
+  "input_sha256": {
+    "C:\\Users\\kyous\\coding\\inefficiency-prediction\\submission\\FYP\\experiments\\processed_extension.py": "85ed280a9ddffc4f9eb5ce5fbe11e9fd82bed2fcdebc9a871db1b0d5af839d33",
+    "C:\\Users\\kyous\\coding\\inefficiency-prediction\\data\\processed\\opportunity_value\\examples.parquet": "740cb9ba76ff9dad7e303fa9e3cfbd71f096777d0e8d647f0fb6b8246a94aacf",
+    "C:\\Users\\kyous\\coding\\inefficiency-prediction\\submission\\artifacts\\models\\predictions.parquet": "6d19d6647564f43c18635edb56507773032c20fe5fa9f124e5c5500717b912a2",
+    "C:\\Users\\kyous\\coding\\inefficiency-prediction\\submission\\inputs\\study.json": "f3b0df7110208b7385536e4b9ad42b165df14fa866d0d043821f8234940023e3",
+    "C:\\Users\\kyous\\coding\\inefficiency-prediction\\submission\\FYP\\models\\classification.py": "763693e9e6373af64974533fdd9f532090f7bcccdb8ea95cbb0a06f1878761bd",
+    "C:\\Users\\kyous\\coding\\inefficiency-prediction\\submission\\FYP\\models\\estimators.py": "7fc35ccbddb5522ebe0ded7e940ade912687f2edf4812bf31fb5be9cc2de7f49",
+    "C:\\Users\\kyous\\coding\\inefficiency-prediction\\submission\\FYP\\models\\tuning.py": "05e4d7bfd8fa6b27fcdd09628d2823005e0fe63c0add21bc4a600dafc4c1d6db"
+  },
+  "ablation_start": "2025-11-11 00:00:00+00:00",
+  "ablation_end_exclusive": "2026-01-08 00:00:00+00:00",
+  "seeds": [
+    20261001,
+    20261002,
+    20261003
+  ],
+  "family": "Fixed random forest; no new hyperparameter selection",
+  "original_study_preserved": true,
+  "raw_orderbooks_used": false,
+  "interpretation": "Exploratory analysis of inspected data; no independent final test and no new execution replay.",
+  "python": "3.14.3",
+  "numpy": "2.5.4",
+  "sklearn": "1.7.2"
+}

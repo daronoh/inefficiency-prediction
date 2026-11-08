@@ -1,0 +1,34 @@
+{
+  "view": "current_book",
+  "seed": 20261003,
+  "fold": "week_07",
+  "start": "2025-12-30 00:00:00+00:00",
+  "end": "2026-01-06 00:00:00+00:00",
+  "train_rows": 20883,
+  "train_positive": 453,
+  "train_last": "2025-12-29 22:00:00+00:00",
+  "last_label_end": "2025-12-29 23:00:00+00:00",
+  "test_rows": 746,
+  "known_test": 714,
+  "features": [
+    "x_active_packages",
+    "x_active_tokens",
+    "x_seen_fraction",
+    "x_clean_fraction",
+    "x_spread_mean",
+    "x_spread_max",
+    "x_ask_depth_sum",
+    "x_book_age_max_s",
+    "x_best_quoted_net_usd",
+    "x_size_feasible_package_fraction",
+    "x_positive_quoted_net_package_fraction"
+  ],
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 10,
+    "min_samples_leaf": 20,
+    "max_features": "sqrt"
+  },
+  "seconds": 2.708482500165701,
+  "predictions_sha256": "22cdfc8d653151f01ae6030a2060a31f03b81966c174d18524bc01e255bc3423"
+}

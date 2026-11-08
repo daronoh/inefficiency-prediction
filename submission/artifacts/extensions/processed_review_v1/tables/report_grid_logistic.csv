@@ -1,0 +1,9 @@
+ID,Configuration
+0,C=1.0; penalty=l2; class_weight=balanced; solver=lbfgs
+1,C=0.01; penalty=l2; class_weight=balanced; solver=lbfgs
+2,C=0.1; penalty=l2; class_weight=balanced; solver=lbfgs
+3,C=10.0; penalty=l2; class_weight=balanced; solver=lbfgs
+4,C=0.1; penalty=l1; class_weight=balanced; solver=liblinear
+5,C=1.0; penalty=l1; class_weight=balanced; solver=liblinear
+6,C=0.1; penalty=l2; class_weight=None; solver=lbfgs
+7,C=1.0; penalty=l2; class_weight=None; solver=lbfgs

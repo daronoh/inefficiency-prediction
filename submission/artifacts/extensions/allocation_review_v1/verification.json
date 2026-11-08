@@ -1,0 +1,19 @@
+{
+  "original_tables_preserved": 25,
+  "primary_prediction_and_economic_tables_unchanged": true,
+  "prior_extension_manifests_unchanged": true,
+  "source_and_input_digests_verified": true,
+  "resource_cap_audits": 40480,
+  "resource_cap_violations": 0,
+  "resource_spending_reconciled": true,
+  "selector_origins": 9,
+  "candidate_policy_histories": 45,
+  "strict_history_cutoffs": true,
+  "disjoint_known_positive_cases": 3,
+  "earlier_case_population_positive": 343,
+  "original_tests_passed": 28,
+  "extension_tests_passed": 8,
+  "model_refits": 0,
+  "raw_orderbooks_used": false,
+  "new_economic_replay": false
+}

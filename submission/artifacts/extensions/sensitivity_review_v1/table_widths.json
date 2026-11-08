@@ -1,0 +1,20 @@
+{
+  "literature_synthesis": [
+    0.27,
+    0.32,
+    0.41
+  ],
+  "design_sensitivity": [
+    0.34,
+    0.22,
+    0.22,
+    0.22
+  ],
+  "scoring_overhead": [
+    0.28,
+    0.16,
+    0.2,
+    0.18,
+    0.18
+  ]
+}

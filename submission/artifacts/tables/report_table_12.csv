@@ -1,0 +1,18 @@
+Policy,Positive hours captured,Recall (%),Value capture (%)
+Forest: book,340,94.71,99.53
+Forest + metadata,333,92.76,99.41
+Logistic + metadata,331,92.20,99.20
+Classifier ensemble,334,93.04,99.16
+Tuned logistic,334,93.04,99.06
+TabM two-stage,316,88.02,99.04
+Logistic: book,329,91.64,98.81
+XGBoost + metadata,321,89.42,98.75
+Value ensemble,315,87.74,98.58
+Forest two-stage,315,87.74,98.57
+Tuned XGBoost,321,89.42,98.40
+Logistic / forest / TabM,323,89.97,98.37
+Tuned forest,328,91.36,98.02
+Freshness,261,72.70,95.21
+Depth,182,50.70,91.92
+XGBoost: book,323,89.97,82.98
+Quoted gap,264,73.54,60.76

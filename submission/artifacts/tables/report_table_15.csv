@@ -1,0 +1,4 @@
+Fixed model,Recall change (pp),Value change (pp)
+Logistic,+0.56,+0.39
+Random forest,-1.95,-0.12
+XGBoost,-0.56,+15.76

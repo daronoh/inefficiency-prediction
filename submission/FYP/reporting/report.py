@@ -16,8 +16,11 @@ from FYP.paths import PROJECT_ROOT
 from FYP.data.pipeline import write_json
 from FYP.reporting.artifacts import LABELS
 from FYP.reporting.math import MathRenderer
+from FYP.reporting.readability import TABLE_WIDTHS as READING_TABLE_WIDTHS, tables as reading_tables
 
-ABSTRACT='''This dissertation investigates whether hourly event-level order-book features can allocate limited monitoring capacity to structural arbitrage in prediction markets. A frozen Dome cohort contains 46 negRisk and five ladder events. Coverage-aware labels distinguish observable opportunities from missing evidence, while a separate economic replay isolates execution assumptions from learning targets. Thirteen weekly expanding-history fits compare rules, logistic regression, random forests, XGBoost, two-stage value models, TabM and rank ensembles. At a primary budget of three events, the fixed book-feature forest captures 94.71% of known positive hours and 99.53% of peak quoted value, versus 73.54% and 60.76% for the quoted-gap rule. Under a 100 ms, uncapped-capital replay, their known simulated P&L is $5,873.32 and $4,370.05 respectively. However, the December Fed event supplies 83.15% of the quoted-value denominator; excluding it removes the forest's economic advantage. Metadata, tuning and ensembling provide mixed gains, and TabM does not lead. These retrospective results support budgeted opportunity screening within the observed cohort while exposing substantial concentration, coverage and execution limitations. The submission provides raw inputs, source, tests, a reproducible notebook and indexed artifacts.'''
+REPORT_EXTENSIONS=('processed_review_v1','robustness_review_v1','allocation_review_v1','sensitivity_review_v1')
+
+ABSTRACT='''This dissertation studies whether machine learning can choose a few prediction-market events to monitor for structural arbitrage during the next hour. A frozen Dome dataset contains 46 complete-outcome events and five ladders of nested conditions. Models are evaluated across thirteen weekly blocks using only earlier training data. Unknown outcomes remain distinct from hours with no opportunity, and capture is evaluated separately from simulated execution. With three slots, a fixed book-feature random forest retains 94.71% of known positive hours and 99.53% of quoted value, versus 73.54% and 60.76% for ranking current quoted margins. Historical event averages already retain 98.41% of pooled value, but 57.14% when events receive equal weight, compared with the forest's 87.06%. Feature, subject-transfer, training-history and resource comparisons show where the result changes. More complex models do not consistently improve capture. Execution delays create partial-basket losses, and excluding December Fed, which supplies 83.15% of quoted value, removes the forest's simulated profit advantage over quoted gap. Dome's API retirement prevented expansion through the original source. The findings support screening within this cohort, with broader validation limited by coverage, concentration, feedback and execution assumptions.'''
 
 
 def roman(n):
@@ -33,13 +36,14 @@ def report_tables(artifacts):
     economic=pd.read_csv(tables/'economic_summary.csv')
     main=economic.loc[economic.scope.eq('all_events')&economic.fold.eq('all')&economic.top_n.eq(3)&economic.arrival_delay_s.eq(.1)]
     p=pd.read_csv(tables/'population.csv').iloc[0]
-    population=pd.DataFrame([dict(Measure=k.replace('_',' ').capitalize(),Value=f'{v:,.0f}' if k not in ['total_peak_value','median_candidates'] else f'{v:,.2f}') for k,v in p.items()])
+    population_labels={'competitive_hours_n3':'Competitive hours at N=3'}
+    population=pd.DataFrame([dict(Measure=population_labels.get(k,k.replace('_',' ').capitalize()),Value=f'{v:,.0f}' if k not in ['total_peak_value','median_candidates'] else f'{v:,.2f}') for k,v in p.items()])
     prediction=primary[['model','captured_positive_windows','recall','peak_value_recall']].copy()
     prediction['model']=prediction.model.map(LABELS)
     for c in ['recall','peak_value_recall']:prediction[c]=prediction[c].map(lambda x:f'{100*x:.2f}')
-    prediction.columns=['Policy','Positive hours','Recall %','Value %']
+    prediction.columns=['Policy','Positive hours captured','Recall (%)','Value capture (%)']
     meta=pd.read_csv(tables/'metadata_comparison.csv')[['method','recall_change','value_change']].copy()
-    meta['method']=meta.method.str.replace('_',' ')
+    meta['method']=meta.method.map({'logistic':'Logistic','random_forest':'Random forest','xgboost':'XGBoost'})
     for c in meta.columns[1:]:meta[c]=meta[c].map(lambda x:f'{100*x:+.2f}')
     meta.columns=['Fixed model','Recall change (pp)','Value change (pp)']
     economics=primary[['model']].merge(main[['model','known_pnl_usd','attempts','completed']],on='model')
@@ -50,19 +54,29 @@ def report_tables(artifacts):
     economics['model']=economics.model.map(lambda x:LABELS.get(x,x))
     economics['known_pnl_usd']=economics.known_pnl_usd.map(lambda x:f'{x:,.2f}')
     for c in ['attempts','completed']:economics[c]=economics[c].map(lambda x:f'{x:g}')
-    economics.columns=['Policy','Known P&L $','Attempts','Complete']
+    economics.columns=['Policy','Known P&L ($)','Attempts','Complete baskets']
     latency=economic.loc[economic.scope.eq('all_events')&economic.fold.eq('all')&economic.top_n.eq(3)&economic.model.eq('fixed_book_random_forest'),['arrival_delay_s','known_pnl_usd','partial_pnl_usd']].sort_values('arrival_delay_s')
     latency.arrival_delay_s=latency.arrival_delay_s.map(lambda x:f'{1000*x:.0f}')
     for c in ['known_pnl_usd','partial_pnl_usd']:latency[c]=latency[c].map(lambda x:f'{x:,.2f}')
-    latency.columns=['Delay ms','Known P&L $','Partial P&L $']
+    latency.columns=['Delay (ms)','Known P&L ($)','Partial-basket P&L ($)']
     exclusion=economic.loc[economic.scope.eq('exclude_december_fed')&economic.fold.eq('all')&economic.top_n.eq(3)&economic.arrival_delay_s.eq(.1)&economic.model.isin(['fixed_book_random_forest','quoted_gap_rule']),['model','known_pnl_usd']].copy()
-    exclusion.model=exclusion.model.map(LABELS);exclusion.known_pnl_usd=exclusion.known_pnl_usd.map(lambda x:f'{x:,.2f}');exclusion.columns=['Policy after event exclusion','Known P&L $']
-    return {'population':('Forward ranking population',population),
+    exclusion.model=exclusion.model.map(LABELS);exclusion.known_pnl_usd=exclusion.known_pnl_usd.map(lambda x:f'{x:,.2f}');exclusion.columns=['Policy after event exclusion','Known P&L ($)']
+    result={'population':('Forward ranking population',population),
         'primary':('Opportunity capture at N=3',prediction),
         'metadata':('Matched metadata effects at N=3, percentage points',meta),
         'economics':('Economic comparison at N=3 and 100 ms',economics),
         'latency':('Selected forest: fixed selections across latency scenarios',latency),
         'exclusion':('December Fed exclusion: reranked N=3, 100 ms',exclusion)}
+    for directory in REPORT_EXTENSIONS:
+        extension=artifacts/'extensions'/directory/'report_tables.json'
+        if not extension.exists():continue
+        for key,entry in json.loads(extension.read_text()).items():
+            if key in result:raise ValueError('Duplicate report table key: '+key)
+            result[key]=(entry['caption'],pd.read_csv(artifacts/entry['file'],keep_default_na=False))
+    for key,entry in reading_tables(artifacts).items():
+        if key in result:raise ValueError('Duplicate reader-aid table key: '+key)
+        result[key]=entry
+    return result
 
 
 def build(artifacts=None,output=None):
@@ -78,9 +92,21 @@ def build(artifacts=None,output=None):
     content=content.replace('99.04%',f'{100*neural.peak_value_recall:.2f}%').replace('88.02%',f'{100*neural.recall:.2f}%')
     tables=report_tables(artifacts)
     figures=pd.read_csv(artifacts/'figure_index.csv').set_index('number')
+    table_widths=dict(READING_TABLE_WIDTHS)
+    for directory in REPORT_EXTENSIONS:
+        extension=artifacts/'extensions'/directory
+        if (extension/'figure_index.csv').exists():
+            figures=pd.concat([figures,pd.read_csv(extension/'figure_index.csv').set_index('number')])
+        if (extension/'table_widths.json').exists():
+            table_widths.update(json.loads((extension/'table_widths.json').read_text()))
+    if figures.index.duplicated().any():raise ValueError('Duplicate figure identifiers')
+    # References follow placement order, including optional extension tables.
+    table_order=re.findall(r'\{\{TABLE:(\w+)\}\}',content)
+    figure_order=re.findall(r'\{\{FIGURE:(\d+)\}\}',content)
+    for index,name in enumerate(table_order,1):content=content.replace('{{TABLE_NUMBER:'+name+'}}',str(index))
+    for index,name in enumerate(figure_order,1):content=content.replace('{{FIGURE_NUMBER:'+name+'}}',str(index))
+    if '{{TABLE_NUMBER:' in content or '{{FIGURE_NUMBER:' in content:raise ValueError('Unresolved report cross-reference')
     if len(ABSTRACT.split())>200:raise ValueError('Abstract exceeds 200 words')
-    for number,(name,(caption,table)) in enumerate(tables.items(),1):
-        table.to_csv(artifacts/'tables'/f'report_table_{number:02d}.csv',index=False)
     math=MathRenderer()
     body=ParagraphStyle('Body',fontName='Times-Roman',fontSize=12,leading=18,autoLeading='max',spaceAfter=9,alignment=TA_JUSTIFY)
     heading=ParagraphStyle('Chapter',parent=body,fontName='Times-Bold',fontSize=16,leading=22,spaceBefore=12,spaceAfter=16,keepWithNext=True)
@@ -90,7 +116,7 @@ def build(artifacts=None,output=None):
     caption_style=ParagraphStyle('Caption',parent=body,fontSize=12,leading=18,alignment=0,spaceBefore=6,spaceAfter=12)
     cell=ParagraphStyle('Cell',parent=body,alignment=0,leading=16,spaceAfter=0)
     toc_style=ParagraphStyle('TOC',parent=body,leftIndent=0,firstLineIndent=0,spaceBefore=6,spaceAfter=3)
-    toc_sub=ParagraphStyle('TOCsection',parent=toc_style,leftIndent=18,fontSize=12,leading=18,spaceBefore=2)
+    toc_sub=ParagraphStyle('TOCsection',parent=toc_style,leftIndent=18,fontSize=12,leading=18,spaceBefore=1)
     class Document(BaseDocTemplate):
         def __init__(self,*args,**kwargs):
             super().__init__(*args,**kwargs)
@@ -122,7 +148,7 @@ def build(artifacts=None,output=None):
     for is_title in [False,True]:
         story.extend([Spacer(1,20*mm),para('B.Comp. Dissertation',center),Spacer(1,20*mm),para(identity['project_title'],title),Spacer(1,7*mm),para('Budgeted event screening for structural arbitrage',center),Spacer(1,18*mm),para('By',center),para(identity['student_name'],center),para(identity['student_number'],center),Spacer(1,17*mm),para(identity['department'],center),para(identity['institution'],center),para(identity['academic_year'],center)])
         if is_title:
-            story.extend([Spacer(1,13*mm),para('Project ID: '+identity['project_id'],center),para('Advisor: '+identity['advisor'],center),Spacer(1,8*mm),para('Deliverables: report (one volume); FYP Python package (28 tests); research.ipynb; artifacts (CSV tables and 50 figures).',center)])
+            story.extend([Spacer(1,13*mm),para('Project ID: '+identity['project_id'],center),para('Advisor: '+identity['advisor'],center),Spacer(1,8*mm),para('Deliverables: report (one volume); FYP Python package (28 tests); research.ipynb; indexed tables, figures and processed-data extension.',center)])
         story.append(PageBreak())
     story.extend([para('Abstract',title),Spacer(1,6*mm),para(ABSTRACT),para('Subject descriptors: Machine learning; Simulation evaluation; Financial markets.',body),para('Keywords: prediction markets; structural arbitrage; event ranking; order-book replay; tabular learning.',body),para('Implementation: Python 3.12; pandas; scikit-learn; XGBoost; PyTorch/TabM; local parquet data. CUDA acceleration is optional.',body),PageBreak()])
     story.append(para('Table of contents',title));toc=TableOfContents();toc.levelStyles=[toc_style,toc_sub];story.extend([toc,PageBreak()])
@@ -136,13 +162,15 @@ def build(artifacts=None,output=None):
         elif block.startswith('## '):story.append(para(block[3:],subheading));rendered.append(block)
         elif re.fullmatch(r'\{\{TABLE:\w+\}\}',block):
             name=block[len('{{TABLE:'):-2];caption,table=tables[name];table_number+=1
-            label=f'Table {table_number}. {caption}.'
-            story.append(para(label,caption_style))
+            table.to_csv(artifacts/'tables'/f'report_table_{table_number:02d}.csv',index=False)
+            label=f'Table {table_number}. {caption.rstrip(".")}.'
             data_rows=[[Paragraph('<b>'+math.markup(str(c))+'</b>',cell) for c in table]]+[[para(str(v),cell) for v in row] for row in table.itertuples(index=False,name=None)]
-            widths=[doc.width*.46]+[doc.width*.54/(len(table.columns)-1)]*(len(table.columns)-1)
+            fractions=table_widths.get(name,[.46]+[.54/(len(table.columns)-1)]*(len(table.columns)-1))
+            if len(fractions)!=len(table.columns) or abs(sum(fractions)-1)>1e-7:raise ValueError('Invalid table column widths')
+            widths=[doc.width*f for f in fractions]
             t=LongTable(data_rows,colWidths=widths,repeatRows=1,hAlign='LEFT')
             t.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('LINEBELOW',(0,0),(-1,0),.7,colors.black),('LINEBELOW',(0,-1),(-1,-1),.5,colors.black),('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5),('LEFTPADDING',(0,0),(-1,-1),3),('RIGHTPADDING',(0,0),(-1,-1),3)]))
-            story.extend([t,Spacer(1,10)])
+            story.append(KeepTogether([para(label,caption_style),t,Spacer(1,10)]))
             md='| '+' | '.join(table.columns)+' |\n| '+' | '.join(['---']*len(table.columns))+' |\n'+'\n'.join('| '+' | '.join(str(v) for v in row)+' |' for row in table.itertuples(index=False,name=None))
             rendered.append(label+'\n\n'+md)
         elif re.fullmatch(r'\{\{FIGURE:\d+\}\}',block):

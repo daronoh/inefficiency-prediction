@@ -1,0 +1,25 @@
+{
+  "view": "current_gap_and_age",
+  "seed": 20261001,
+  "fold": "week_06",
+  "start": "2025-12-23 00:00:00+00:00",
+  "end": "2025-12-30 00:00:00+00:00",
+  "train_rows": 19696,
+  "train_positive": 450,
+  "train_last": "2025-12-22 22:00:00+00:00",
+  "last_label_end": "2025-12-22 23:00:00+00:00",
+  "test_rows": 1300,
+  "known_test": 1182,
+  "features": [
+    "x_best_quoted_net_usd",
+    "x_book_age_max_s"
+  ],
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 10,
+    "min_samples_leaf": 20,
+    "max_features": "sqrt"
+  },
+  "seconds": 3.617853400297463,
+  "predictions_sha256": "a9651adb52a751401f9c9e9657c769b1d2d3952a8c0745c93035ca615a53bd8b"
+}

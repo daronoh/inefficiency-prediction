@@ -1,0 +1,62 @@
+{
+  "cohort_structure": {
+    "caption": "Frozen basket membership by structural type",
+    "file": "extensions/processed_review_v1/tables/report_cohort_structure.csv"
+  },
+  "features": {
+    "caption": "Current book features before adding hourly lags and changes",
+    "file": "extensions/processed_review_v1/tables/report_features.csv"
+  },
+  "fixed_settings": {
+    "caption": "Fixed classical model settings",
+    "file": "extensions/processed_review_v1/tables/report_fixed_settings.csv"
+  },
+  "validation_windows": {
+    "caption": "Exact chronological validation blocks; endpoints are exclusive",
+    "file": "extensions/processed_review_v1/tables/report_validation_windows.csv"
+  },
+  "workflow": {
+    "caption": "Chronological feature, label, fitting and selection procedure",
+    "file": "extensions/processed_review_v1/tables/report_workflow.csv"
+  },
+  "monitoring_burden": {
+    "caption": "Monitoring burden at N=3; shares of all eligible event-hours and token counts",
+    "file": "extensions/processed_review_v1/tables/report_monitoring_burden.csv"
+  },
+  "structure_results": {
+    "caption": "Capture by basket type within the shared N=3 allocation",
+    "file": "extensions/processed_review_v1/tables/report_structure_results.csv"
+  },
+  "exclusion_capture": {
+    "caption": "Opportunity capture after removing December Fed and reranking at N=3",
+    "file": "extensions/processed_review_v1/tables/report_exclusion_capture.csv"
+  },
+  "strong_controls": {
+    "caption": "Forest-minus-control capture differences and conditional 95% block intervals",
+    "file": "extensions/processed_review_v1/tables/report_strong_controls.csv"
+  },
+  "ablations": {
+    "caption": "Earlier-period ablations at N=3; three-seed means and observed seed ranges",
+    "file": "extensions/processed_review_v1/tables/report_ablations.csv"
+  },
+  "grid_logistic": {
+    "caption": "Logistic regression candidate configurations; zero-based IDs",
+    "file": "extensions/processed_review_v1/tables/report_grid_logistic.csv"
+  },
+  "grid_random_forest": {
+    "caption": "Random forest candidate configurations; zero-based IDs",
+    "file": "extensions/processed_review_v1/tables/report_grid_random_forest.csv"
+  },
+  "grid_xgboost": {
+    "caption": "XGBoost candidate configurations; zero-based IDs",
+    "file": "extensions/processed_review_v1/tables/report_grid_xgboost.csv"
+  },
+  "grid_tabm_two_stage": {
+    "caption": "Two-stage TabM candidate configurations; zero-based IDs",
+    "file": "extensions/processed_review_v1/tables/report_grid_tabm_two_stage.csv"
+  },
+  "selected_settings": {
+    "caption": "Selected configurations at the three tuning origins",
+    "file": "extensions/processed_review_v1/tables/report_selected_settings.csv"
+  }
+}

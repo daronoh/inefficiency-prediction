@@ -1,0 +1,5 @@
+number,title,file,source_table,caption
+101,Opportunity capture across monitoring budgets,extensions/processed_review_v1/figures/budget_curves.png,extensions/processed_review_v1/tables/budget_curves.csv,Full-period saved predictions are reranked; these budgets have not been replayed economically.
+102,Weekly capture against simple controls,extensions/processed_review_v1/figures/weekly_controls.png,extensions/processed_review_v1/tables/weekly_controls.csv,N=3; gaps indicate an undefined denominator rather than zero capture.
+103,Capture across opportunity-bearing events,extensions/processed_review_v1/figures/event_controls.png,extensions/processed_review_v1/tables/capture_by_event.csv,N=3; events are ordered by quoted-value contribution. Each event uses its own positive-hour denominator.
+104,Earlier-period forest feature ablations,extensions/processed_review_v1/figures/feature_ablations.png,extensions/processed_review_v1/tables/ablation_metrics.csv,"11 November 2025 to 8 January 2026, N=3. Bars show three-seed means; whiskers show seed minima and maxima, not confidence intervals."

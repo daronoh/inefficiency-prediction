@@ -1,0 +1,33 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "ARMv8 (64-bit) Family 8 Model 1 Revision 201, Qualcomm Technologies Inc",
+  "logical_cpus": 8,
+  "python": "3.14.3",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "sklearn": "1.7.2",
+  "timer": "perf_counter_ns",
+  "timer_unit": "microseconds in saved samples",
+  "bundle_origin": "2026-01-06 00:00:00+00:00",
+  "sample_scans": [
+    "2026-01-06 00:00:00+00:00",
+    "2026-01-06 04:00:00+00:00",
+    "2026-01-06 08:00:00+00:00",
+    "2026-01-06 12:00:00+00:00",
+    "2026-01-06 17:00:00+00:00",
+    "2026-01-06 21:00:00+00:00",
+    "2026-01-07 01:00:00+00:00",
+    "2026-01-07 05:00:00+00:00",
+    "2026-01-07 10:00:00+00:00",
+    "2026-01-07 14:00:00+00:00",
+    "2026-01-07 18:00:00+00:00",
+    "2026-01-07 23:00:00+00:00"
+  ],
+  "sampling": "12 equally spaced scan indices in the final retained weekly block",
+  "warmups_per_policy_per_scan": 5,
+  "measured_repeats": 30,
+  "order": "scan ascending; forest 4 jobs, forest 1 job, logistic, quoted gap; fixed descriptive order",
+  "included": "cached DataFrame feature selection, fitted preprocessing, scoring and N=3 allocation",
+  "excluded": "raw-book reads, feature construction, network, historical-label feedback, fitting, model loading and execution",
+  "interpretation": "Warm local timings, not production tail latency or an end-to-end savings estimate."
+}

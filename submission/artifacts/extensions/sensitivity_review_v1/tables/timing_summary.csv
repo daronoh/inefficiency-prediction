@@ -1,0 +1,5 @@
+model,mode,measured_calls,scans,min_candidates,max_candidates,median_score_us,median_selection_us,median_total_us,p95_total_us,mean_total_us,mean_avoided_token_observations,overhead_us_per_avoided_token
+fixed_book_logistic,saved,360,12,4,5,2142.1,2503.7,4669.9,5446.685,4807.9025,47.083333333333336,102.11474336283187
+fixed_book_random_forest,saved_4_jobs,360,12,4,5,27586.8,3140.2,30838.3,31908.100000000002,31039.467777777772,55.0,564.3539595959595
+fixed_book_random_forest,single_job,360,12,4,5,9060.25,2634.0,11791.95,12945.515,12019.325277777776,55.0,218.53318686868684
+quoted_gap_rule,saved,360,12,4,5,43.0,2379.7,2423.6000000000004,2808.300000000001,2506.5733333333333,36.0,69.62703703703704

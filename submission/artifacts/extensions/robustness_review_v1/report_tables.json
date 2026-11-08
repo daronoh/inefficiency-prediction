@@ -1,0 +1,18 @@
+{
+  "history_controls": {
+    "caption": "Historical-label controls on the full evaluation period, N=3",
+    "file": "extensions/robustness_review_v1/tables/report_history_controls.csv"
+  },
+  "family_transfer": {
+    "caption": "Earlier-period family transfer at N=3; forest columns are three-seed means",
+    "file": "extensions/robustness_review_v1/tables/report_family_transfer.csv"
+  },
+  "balanced_results": {
+    "caption": "Equal-weight capture over 12 positive events and eight positive families, N=3",
+    "file": "extensions/robustness_review_v1/tables/report_balanced_results.csv"
+  },
+  "balanced_intervals": {
+    "caption": "Forest-minus-control differences in mean event value capture; conditional paired intervals",
+    "file": "extensions/robustness_review_v1/tables/report_balanced_intervals.csv"
+  }
+}

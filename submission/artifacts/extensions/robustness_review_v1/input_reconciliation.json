@@ -1,0 +1,10 @@
+{
+  "earlier_rows": 26835,
+  "earlier_evaluation_rows": 17293,
+  "full_evaluation_rows": 19766,
+  "timeline_rows": 29308,
+  "timeline_known": 23452,
+  "timeline_positive": 470,
+  "full_features_available": false,
+  "full_label_timeline_reconstructed": true
+}

@@ -13,18 +13,146 @@ uncapped capital and shares, and zero exchange fees for the frozen cohort.
 
 | Item | Location |
 | --- | --- |
-| Dissertation volume and editable source | `report/dissertation.pdf`, `report/dissertation.md` |
+| Dissertation volume, generated Markdown and authoring source | `report/dissertation.pdf`, `report/dissertation.md`, `report/content.md` |
 | Python package, including 28 focused tests | `FYP/` |
 | Executable research workflow | `research.ipynb` |
 | CSV tables, 50 figures and indexes | `artifacts/tables/`, `artifacts/figures/`, `artifacts/*_index.csv` |
+| Processed-data extension: four figures, ablations and detailed report tables | `artifacts/extensions/processed_review_v1/` |
+| Robustness extension: historical controls, family-withheld fits and balanced evaluation | `artifacts/extensions/robustness_review_v1/` |
+| Allocation extension: token-resource caps, earlier-only policy choice and paired cases | `artifacts/extensions/allocation_review_v1/` |
+| Focused sensitivities: smoothing, training windows and cached-feature timing | `artifacts/extensions/sensitivity_review_v1/` |
 | Saved weekly models and predictions | `artifacts/models/` |
 | Persistent economic replay evidence | `artifacts/replay/` |
 | Frozen membership, schemas and metadata | `inputs/` |
-| Relevant raw token books and prepared examples | `data/` |
+| Earlier processed examples for the extension | `artifacts/extensions/processed_review_v1/inputs/earlier_examples.parquet` |
+| Original raw token books and full prepared examples | Separate local archive required by the original `data/` workflow |
 
 Only the Dome study is included. All paths are relative to this directory;
 there is no dependency on a parent repository. Source installation and local
 data are separate: copying the package alone does not copy the data/artifacts.
+
+## Review and rebuild without raw books
+
+The processed-data extension preserves the original study's models, predictions,
+labels and economic replay. It adds full-period budget curves, event and basket-type
+comparisons, paired comparisons against strong controls, and 162 fixed-forest
+ablations on the verified earlier subset. The latter use six feature views, three
+seeds and nine chronological fits. They are exploratory experiments on inspected
+data, not an independent final test.
+
+Edit prose in `report/content.md`; `report/dissertation.md` is regenerated. With
+the dependencies installed, rebuild the report from the saved evidence with:
+
+```powershell
+python rebuild_report.py
+```
+
+The report includes a fictional hourly example and a map of its three
+overlapping evaluation periods. `FYP/reporting/readability.py` prepares those
+reader aids from explicitly illustrative values and existing saved metrics.
+They add no empirical predictions or labels. Detailed numerical preprocessing,
+TabM training, validation boundaries and historical estimates are retained in
+Appendix D; the main methods chapter explains their roles and safeguards.
+
+This command does not read raw books or fit models. It checks extension evidence,
+regenerates presentation tables and compiles the PDF. The build enforces the
+supplied 55-page limit on main text, from the introduction through the
+conclusion. Covers, front matter, references and appendices are outside that
+count. `report/format_check.json` records the main-text count and its boundaries;
+the complete PDF can therefore contain more than 55 pages. The original default and full
+workflows below additionally require their full prepared dataset and, for raw
+reconstruction or replay, the separately retained book archive.
+
+To repeat the processed-data experiment, choose a new output directory so the
+supplied evidence is preserved:
+
+```powershell
+python FYP/experiments/processed_extension.py --examples artifacts/extensions/processed_review_v1/inputs/earlier_examples.parquet --output artifacts/extensions/recomputed_review
+```
+
+The input and source digests, environment versions, feature views, per-fit audits,
+predictions and score reconciliation are saved with each run. The exact experiment
+source used for the submitted extension is archived as `executed_source.py`.
+The earlier input ends on 7 January 2026; new fits do not reconstruct the missing
+later feature table or change the original opportunity definitions. Saved full-period
+predictions permit analysis through the original study endpoint.
+
+The second extension adds four causal historical-label controls on the full
+evaluation period, fits forests and logistic models with each broad subject
+family removed from earlier training, and reports event- and family-balanced
+capture with paired bootstrap intervals. Historical feedback updates after each
+scan and assumes full earlier labels are available; it does not demonstrate that
+a three-event monitor could collect those labels. Withheld-family models rank
+the whole candidate pool before evaluating that family's capture. Each family
+defines a separate model scenario, not one combined deployment policy.
+
+```powershell
+python FYP/experiments/robustness_extension.py --output artifacts/extensions/recomputed_robustness
+python -m unittest discover -s extension_tests -v
+```
+
+The robustness script reads the packaged earlier examples, saved original
+predictions and three-seed unrestricted forest predictions. It freezes its
+protocol, source and input digests, resumes verified per-fit checkpoints, and
+stores all scores, availability audits, family exclusions and metric outputs in
+its own directory. The report rebuild verifies the submitted extensions. No
+new labels or execution outcomes are constructed in these extensions.
+
+The allocation extension adds common per-scan caps of 10, 25, 50 and 100
+event-token observations, with 50 declared as its primary cap. Whole events are
+included greedily in score order if their cost fits; there is no simultaneous
+three-event limit. Shared tokens across events are counted separately, and
+actual utilization can vary, so this is a common-cap proxy comparison rather
+than measured computing or subscription cost. The earlier-only chooser retains
+N=3 and uses the first four scored weeks for warm-up. It chooses among five
+policies using cumulative captured value on earlier known label windows ending
+strictly before each weekly origin. Evaluating candidate policies assumes full
+historical feedback, including events the chooser would not have monitored.
+Three outcome-selected cases illustrate disagreements and shared misses on the
+earlier feature subset; they are not a representative sample or causal analysis.
+
+```powershell
+python FYP/experiments/allocation_extension.py --output artifacts/extensions/recomputed_allocation
+python -m unittest discover -s extension_tests -v
+```
+
+This script performs no model refits or economic replay. It retains the frozen
+design, executed source, input digests, per-scan resource audits, per-origin
+candidate histories, complete case features and competing candidate pools.
+The report rebuild verifies the submitted extensions and adds the
+assumption/check and conclusion/evidence tables from saved results. All new
+analyses remain exploratory because the dataset and earlier results had already
+been inspected.
+
+The focused sensitivity study tests historical event-mean priors of 6, 24 and
+72 observations, plus 14-day and 28-day forest training windows. The latter add
+54 fixed-setting fits over nine origins and three seeds, with strict label-end
+cutoffs; the expanding controls reuse existing three-seed scores. Every setting
+is reported without selecting a new primary policy. New fits use only the
+earlier feature period, while historical controls also use the full-period
+saved outcome timeline. Their different denominators remain explicit.
+
+```powershell
+python FYP/experiments/sensitivity_extension.py --output artifacts/extensions/recomputed_sensitivity
+python -m unittest discover -s extension_tests -v
+```
+
+The same script measures warm scoring and N=3 allocation on 12 cached scans from
+the last retained feature block, using saved forest/logistic models and quoted
+gap. Five warm-ups precede 30 measured calls per scan and configuration. Forest
+timings compare four jobs with one, preserving original predictions. Individual
+samples, candidate counts, token savings, timer units, software/machine metadata
+and exclusions are retained. These timings exclude raw reads, feature
+construction, feeds, fitting and historical feedback; they do not establish
+end-to-end savings. Existing timing evidence is reused on resume; choose a new
+directory to measure another machine or run. Report rebuilds regenerate tables
+from saved measurements without retiming or refitting.
+
+There are 28 original tests and ten extension tests. The report integrates the
+results by research question, adds a critical literature comparison, and retains
+the original prediction and economic outputs. All four extensions remain
+retrospective analyses of an inspected cohort. Their protocol/source digests
+prevent a changed experiment from silently replacing submitted evidence.
 
 ## Reproduce
 

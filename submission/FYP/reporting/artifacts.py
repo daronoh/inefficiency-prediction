@@ -220,7 +220,7 @@ def generate(models=MODELS,replay=REPLAY,data=None,output=None):
             v=p.cumulative_pnl_usd.iloc[-1] if len(p) else 0
             ax.step([FIRST]+p.accounting_time.tolist()+[END],[0]+p.cumulative_pnl_usd.tolist()+[v],where='post',label=LABELS[model],color=color)
         ax.set_title(LABELS[name]);ax.set_ylabel('Known P&L ($)');ax.tick_params(axis='x',rotation=20,labelsize=7);ax.legend(fontsize=7)
-    save(43,'Cumulative PnL comparisons','N=3, 100 ms; separate panels and a common quoted-gap reference avoid crowded lines.',curves.loc[curves.top_n.eq(3)&curves.arrival_delay_s.eq(.1)&curves.scope.eq('all_events')],fig)
+    save(43,'Cumulative PnL comparisons','N=3, 100 ms; cumulative known simulated P&L, with quoted gap repeated as a reference in each panel.',curves.loc[curves.top_n.eq(3)&curves.arrival_delay_s.eq(.1)&curves.scope.eq('all_events')],fig)
     selected=core.loc[core.model.eq(BEST)].copy();selected['week']=((selected.decision_time-FIRST)//pd.Timedelta(days=7)).astype(int)
     g=selected.groupby(['week','status'],as_index=False).pnl_usd.sum()
     fig,ax=plt.subplots(figsize=(10,4),layout='constrained');g.pivot(index='week',columns='status',values='pnl_usd').fillna(0).plot.bar(ax=ax,rot=0);ax.set_ylabel('Known P&L ($)')

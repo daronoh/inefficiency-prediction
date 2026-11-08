@@ -1,0 +1,6 @@
+Question,Evidence,Supported scope
+Does learned screening improve capture?,"N=3 pooled and event-balanced comparisons, historical controls and paired intervals.",Strong cohort-specific capture; advantage depends on the comparator and weighting.
+Which information supports the result?,"Controlled feature ablations, family exclusions and paired decision cases.",Predictive dependence within the recorded cohort; no causal attribution.
+Does capture survive a common resource cap?,"At 50 tokens, forest recall 98.61% and historical-mean recall 96.66%; logistic leads this cap.",Common cap on a proxy; no measured end-to-end efficiency gain.
+Can the policy be chosen before its evaluation week?,The earlier-only chooser selects the forest at all nine origins and captures 75/77 positives.,Post-warm-up inspected-data test with full feedback; no untouched final test.
+Does opportunity capture establish economic advantage?,"Separate simulated execution, latency sensitivity and December Fed exclusion.",Economic advantage over quoted gap disappears on exclusion; no historical-control replay.

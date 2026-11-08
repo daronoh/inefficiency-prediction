@@ -1,0 +1,3 @@
+comparator,seven_day_blocks,recall_difference,recall_lower95,recall_upper95,recall_defined_draws,value_capture_difference,value_capture_lower95,value_capture_upper95,value_capture_defined_draws
+fixed_book_random_forest,9,0.0,0.0,0.0,10000,0.0,0.0,0.0,10000
+history_event_mean_value,9,0.37662337662337664,0.0,0.7,10000,0.08036694071452692,0.0,0.19342767606545794,10000

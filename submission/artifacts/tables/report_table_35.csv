@@ -1,0 +1,13 @@
+Origin,Family,ID,Selected refit epochs
+week_00,logistic,6,Not applicable
+week_00,random forest,2,Not applicable
+week_00,xgboost,1,Not applicable
+week_00,tabm two stage,0,"{""classifier"": 38, ""amount"": 21}"
+week_04,logistic,7,Not applicable
+week_04,random forest,0,Not applicable
+week_04,xgboost,5,Not applicable
+week_04,tabm two stage,2,"{""classifier"": 57, ""amount"": 31}"
+week_08,logistic,7,Not applicable
+week_08,random forest,0,Not applicable
+week_08,xgboost,4,Not applicable
+week_08,tabm two stage,1,"{""classifier"": 58, ""amount"": 8}"

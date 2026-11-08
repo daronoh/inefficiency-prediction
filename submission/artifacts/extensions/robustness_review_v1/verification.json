@@ -1,0 +1,18 @@
+{
+  "original_tables_unchanged": [
+    "primary_prediction.csv",
+    "all_prediction_metrics.csv",
+    "economic_summary.csv"
+  ],
+  "strict_training_cutoffs": true,
+  "withheld_families_absent_from_training": true,
+  "family_fits": 252,
+  "forest_fits": 189,
+  "logistic_fits": 63,
+  "skipped_family_week_scenarios": 18,
+  "history_scans": 2024,
+  "strict_history_cutoffs": true,
+  "original_tests_passed": 28,
+  "history_availability_tests_passed": 3,
+  "note": "Checks apply to processed evidence; raw order-book labels were not reconstructed."
+}

@@ -1,0 +1,5 @@
+Model,Settings
+Logistic classifier,"L2 penalty; C=1; balanced class weights; lbfgs solver; maximum 2,000 iterations."
+Forest classifier,200 trees; maximum depth 10; minimum leaf size 20; square-root feature subsampling; bootstrap sampling; balanced_subsample class weights.
+XGBoost classifier,200 trees; depth 3; learning rate 0.05; minimum child weight 10; row and column subsampling 1; L2 penalty 10; L1 penalty 0; histogram tree construction; negative/positive training-count class-weight ratio.
+Two-stage forest,200 trees per stage; depth 8; minimum leaf size 20; all features considered at each split. The probability stage has no class weighting; the amount stage uses squared-error regression on positive values.

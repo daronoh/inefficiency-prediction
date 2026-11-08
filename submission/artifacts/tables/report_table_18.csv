@@ -1,0 +1,10 @@
+Policy,Event recall (%),Event value (%),Family recall (%),Family value (%)
+Forest: book,83.34,87.06,89.88,97.19
+Quoted gap,77.26,81.01,82.49,84.96
+Freshness,65.27,73.19,74.01,85.42
+Logistic: book,66.56,71.51,71.64,76.09
+TabM two-stage,74.36,85.36,78.6,91.99
+Past event frequency,39.92,46.68,44.78,50.91
+Past event mean value,52.74,57.14,47.15,57.37
+Last known event value,47.88,47.36,56.8,58.82
+Past family mean value,40.39,41.64,37.6,39.01

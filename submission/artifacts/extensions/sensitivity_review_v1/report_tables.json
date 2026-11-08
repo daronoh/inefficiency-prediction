@@ -1,0 +1,14 @@
+{
+  "literature_synthesis": {
+    "caption": "Related research and the methodological requirements for this study",
+    "file": "extensions/sensitivity_review_v1/tables/report_literature_synthesis.csv"
+  },
+  "design_sensitivity": {
+    "caption": "Declared design sensitivities at N=3: historical controls use the full period; forest fits use the earlier feature period. Forest entries are three-seed means [minimum, maximum]; ranges are not confidence intervals.",
+    "file": "extensions/sensitivity_review_v1/tables/report_design_sensitivity.csv"
+  },
+  "scoring_overhead": {
+    "caption": "Warm cached-feature scoring and N=3 selection: 12 scans, 30 measured calls per scan and policy. The final column divides total measured overhead by avoided event-token observations; scan and feature-construction costs are excluded.",
+    "file": "extensions/sensitivity_review_v1/tables/report_scoring_overhead.csv"
+  }
+}

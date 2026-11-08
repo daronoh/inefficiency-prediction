@@ -41,7 +41,7 @@ number,title,file,source_table,caption
 40,Simulated PnL at N5,figures/40_simulated_pnl_at_n5.png,tables/figure_40.csv,"100 ms, uncapped capital/shares; unknown P&L excluded and counted. Dollars, not ROI."
 41,Latency sensitivity at N3,figures/41_latency_sensitivity_at_n3.png,tables/figure_41.csv,Fixed first-layer selections; separate persistent ledgers for 0/50/100/250/500 ms. Dollars.
 42,Latency sensitivity at N5,figures/42_latency_sensitivity_at_n5.png,tables/figure_42.csv,Fixed first-layer selections; separate persistent ledgers for 0/50/100/250/500 ms. Dollars.
-43,Cumulative PnL comparisons,figures/43_cumulative_pnl_comparisons.png,tables/figure_43.csv,"N=3, 100 ms; separate panels and a common quoted-gap reference avoid crowded lines."
+43,Cumulative PnL comparisons,figures/43_cumulative_pnl_comparisons.png,tables/figure_43.csv,"N=3, 100 ms; cumulative known simulated P&L, with quoted gap repeated as a reference in each panel."
 44,Completed and partial basket contributions,figures/44_completed_and_partial_basket_contributions.png,tables/figure_44.csv,"Selected forest, N=3, 100 ms; observed partial fills are unwound after one second."
 45,Execution outcomes by policy,figures/45_execution_outcomes_by_policy.png,tables/figure_45.csv,"N=3, 100 ms; attempts only. Zero imposed random failures."
 46,Selected forest order quantities,figures/46_selected_forest_order_quantities.png,tables/figure_46.csv,"Selected forest, N=3, 100 ms. Available depth bounds quantity despite uncapped capital."

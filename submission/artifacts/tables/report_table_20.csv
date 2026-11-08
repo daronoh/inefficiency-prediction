@@ -1,0 +1,4 @@
+Policy,Positive hours captured,Recall (%),Value capture (%)
+Forest: book,251,95.44,97.5
+Quoted gap,214,81.37,88.36
+Freshness,197,74.9,89.95

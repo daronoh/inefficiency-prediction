@@ -1,0 +1,7 @@
+Setting / population,Recall (%),Value (%),Event value (%)
+"Historical mean, prior 6 / 359 positives",79.39,98.34,57.09
+"Historical mean, prior 24 / 359 positives",79.67,98.41,57.14
+"Historical mean, prior 72 / 359 positives",80.50,98.56,54.44
+Expanding forest / 343 positives,"94.46 [94.17, 94.75]","99.53 [99.52, 99.54]","85.98 [85.54, 86.52]"
+28-day forest / 343 positives,"94.36 [93.88, 95.04]","99.62 [99.42, 99.91]","85.18 [83.15, 86.31]"
+14-day forest / 343 positives,"90.38 [90.09, 90.67]","93.71 [90.81, 95.33]","81.87 [81.46, 82.24]"

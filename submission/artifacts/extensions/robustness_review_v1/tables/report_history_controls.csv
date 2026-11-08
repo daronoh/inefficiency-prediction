@@ -1,0 +1,8 @@
+Policy,Captured / 359,Recall (%),Value (%),Unknown slots (%)
+Forest: book,340,94.71,99.53,16.16
+Quoted gap,264,73.54,60.76,28.26
+Freshness,261,72.70,95.21,9.98
+Past event frequency,293,81.62,92.19,12.04
+Past event mean value,286,79.67,98.41,12.19
+Last known event value,190,52.92,59.89,21.01
+Past family mean value,260,72.42,93.72,19.69
